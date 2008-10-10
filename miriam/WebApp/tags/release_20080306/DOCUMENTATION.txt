@@ -1,0 +1,30 @@
+Documentation for Miriam Web Application:
+
+
+(*) Organisation of the source code
+
+- only one directory for the Java code ('src')
+- JSPs stored in 'WebContent-version' (where 'version' equals 'demo' or 'main')
+  The differences are:
+  - sid and alpha need to include 'head.html' and 'foot.html' with a full path
+  - the <h1> tag, for the title, shows the version, except for 'main'
+  - some javscript code to access to static elements (images)
+- static pages (stub to be included by 'static.jsp') stored in 'static_html' in subfolders according to the version.
+  The differences are:
+  - path to static elements
+  - path to WSDL, JavaDoc, libraries, and dependancies for the Web Services page
+- Log4J properties file, stored in 'properties' in subfolders according to the version.
+
+
+(*) Compile et deploy the application:
+
+- an Ant file is available for all the version, called 'build-version.xml' (where 'version' equals 'demo' or 'main')
+- all the war regenerated are stored in 'dist'
+
+
+(*) Contact the author:
+
+- Camille Laibe:
+    camille.laibe@ebi.ac.uk
+    camille.laibe@gmail.com
+

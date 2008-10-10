@@ -1,0 +1,9 @@
+<Context path="/compneur-srv/miriamws-alpha" docBase="miriamws-alpha.war">
+ <Resource name="mail/Session" type="javax.mail.Session" auth="Container"/>
+ <ResourceParams name="mail/Session">
+  <parameter>
+   <name>mail.smtp.host</name>
+   <value>localhost</value>
+  </parameter>
+ </ResourceParams>
+</Context>

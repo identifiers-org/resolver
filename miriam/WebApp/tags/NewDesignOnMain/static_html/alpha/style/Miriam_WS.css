@@ -1,0 +1,119 @@
+/* role: CSS style sheet for the Miriam: web services demo part */
+/* author: Camille Laibe */
+/* version: 20061110 */
+/* copyright: EMBL-EBI, Computational Neurobiology Group */
+
+
+p {
+	text-indent: 1em;
+}
+
+fieldset.request {
+	width: 330px;
+	margin-left: 3em;
+}
+
+legend {
+	padding: 1px 4px;
+	border-color: #999 #ccc #ccc #999;
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgb(238, 238, 238);
+	color: rgb(0, 0, 0);
+}
+
+label {
+	font-style: italic;
+	text-align: left;
+}
+
+textarea {
+	vertical-align: middle;
+}
+
+div#result {
+	font-weight: bold;
+}
+
+span.result {
+	font-weight: bold;
+}
+
+span.query {
+	font-style: italic;
+}
+
+div.request {
+	margin-bottom: 1em;
+}
+
+div.right {
+	/*margin-right: 1em;*/
+	margin-left: 0em;
+	margin-top: 1em;
+	margin-bottom: 1em;
+	min-width: 300px;
+}
+
+div.answer {
+	background-color: rgb(204, 204, 204);
+  color: rgb(0, 0, 0);
+  font-weight: bold; 
+	/*border: 1px solid rgb(102, 102, 102);*/
+	border: 1px solid rgb(113, 130, 138);
+	min-height: 4em;
+	padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+
+div.answer ul {
+	padding-left: 1em;
+	margin-left: 1em;
+	list-style-type: square;
+}
+
+div.answerStatus {
+	background-color: rgb(204, 204, 204);
+	border: 1px dashed rgb(153, 153, 153);
+	color: rgb(0, 0, 0);
+	margin-top: 1px;
+	height: 3em;
+}
+
+div.separe {
+	border-top: 1px dashed gray;
+	color: gray;
+	margin-bottom: 1em;
+	/*clear: both;*/
+	background-color: inherit;
+}
+
+table.table_help {
+	margin-left: 3em;
+	background-color: rgb(238, 238, 238);
+}
+
+table.table_help td {
+	padding: 3px;
+	border: 1px solid rgb(204, 204, 204);
+}
+
+td.help_element {
+	width: 200px;
+	text-decoration: underline;
+}
+
+td.help_value {
+	font-style: italic;
+}
+
+td.help_result {
+	color: rgb(113, 130, 138);
+	font-weight: bold;
+}
+
+option.line-above {
+	border-top: 1px dotted rgb(172, 192, 210);
+}

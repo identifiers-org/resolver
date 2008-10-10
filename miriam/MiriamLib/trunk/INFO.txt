@@ -1,0 +1,19 @@
+MIRIAM Java Library:
+  Provides an easy access to MIRIAM Web Services.
+
+
+Content of the Subversion repository:
+- build-elements: dependencies needed for the standalone jar (packages)
+- doc: javadoc (HTML)
+- example: sample program to show how to use the library
+- jar: archive of the library (JAR)
+- jar-standalone: standalone (no need other jars) archive of the library (JAR)
+- lib: dependencies needed to use the library
+- src: source code of the library
+- build.xml: ant file for building the jars and the documentation of the library
+- README.txt: this file
+
+
+COPYRIGHT:
+Camille Laibe <camille.laibe@ebi.ac.uk>
+2007-2008  EMBL - European Bioinformatics Institute, Computational Neurobiology Group

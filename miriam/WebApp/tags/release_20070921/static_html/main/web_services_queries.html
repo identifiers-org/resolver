@@ -1,0 +1,858 @@
+<p>
+	Here is the list of all the services available.
+</p>
+<p>
+	We will be pleased to add any other queries that you would need.
+</p>
+
+<h2>List of available queries</h2>
+
+<!-- ========== METHOD SUMMARY =========== -->
+<ol>
+    <li>
+	    <code><b><a href="#getDataEntries">getDataEntries</a></b></code>
+	    <br />
+		Retrieves the physical locationS (URLs) of web pageS about the data-entry.
+    </li>
+    
+    <li>
+	    <code><b><a href="#getDataEntriesURI">getDataEntries</a></b></code>
+	    <br />
+		Retrieves the physical locationS (URLs) of web pageS about the data-entry.
+    </li>
+    
+    <li>
+	    <code><b><a href="#getDataEntry">getDataEntry</a></b></code>
+	    <br />
+		Retrieves the physical location (URL) of a web page (using a specific resource) about the data-entry.
+    </li>
+
+    <li>
+	    <code><b><a href="#getDataResources">getDataResources</a></b></code>
+	    <br />
+		Retrieves all the physical locations (URLs) of the services providing the data-type (web page).
+    </li>
+
+	<li>
+	    <code><b><a href="#getDataTypeAllURIs">getDataTypeAllURIs</a></b></code>
+	    <br />
+		Retrieves all the URIs (URNs and URLs) of the data-type.
+    </li>
+    
+
+    <li>
+	    <code><b><a href="#getDataTypeDef">getDataTypeDef</a></b></code>
+	    <br />
+		Retrieves the definition of the data-type.
+    </li>
+	
+    <li>
+	    <code><b><a href="#getDataTypePattern">getDataTypePattern</a></b></code>
+	    <br />
+		Retrieves the pattern (regular expression) of the data-type.
+    </li>
+
+    <li>
+		<code><b><a href="#getDataTypeSynonyms">getDataTypeSynonyms</a></b></code>
+		<br />
+		Retrieves all the synonym names of the data-type, with the original name.
+    </li>
+	
+    <li>
+    	<code><b><a href="#getDataTypeURI">getDataTypeURI</a></b></code>
+    	<br />
+		Retrieves the unique (official) URL or URN of the data-type (example: <em>http://www.taxonomy.org/</em>, <em>urn:lsid:uniprot.org</em>).
+    </li>
+	
+    <li>
+    	<code><b><a href="#getDataTypeURIs">getDataTypeURIs</a></b></code>
+    	<br />
+		Retrieves all the URLs or URNs of the data-type (examples: <em>http://www.taxonomy.org/</em>, <em>urn:lsid:uniprot.org</em>) including all the deprecated ones.
+    </li>
+	
+    <li>
+    	<code><b><a href="#getDataTypeURL">getDataTypeURL</a></b></code>
+    	<br />
+		Retrieves the unique (official) URL (not a physical URL but a URI) of the data-type (example: <em>http://www.taxonomy.org/</em>).
+    </li>
+	
+    <li>
+    	<code><b><a href="#getDataTypeURLs">getDataTypeURLs</a></b></code>
+    	<br />
+    	Retrieves the unique (official) URL (not a physical URL but a URI) of the data-type (example: <em>http://www.taxonomy.org/</em>) and all the deprecated ones.
+    </li>
+	
+    <li>
+    	<code><b><a href="#getDataTypeURN">getDataTypeURN</a></b></code>
+    	<br />
+    	Retrieves the unique URN of a data-type (example: <em>urn:lsid:uniprot.org</em>).
+    </li>
+	
+    <li>
+    	<code><b><a href="#getDataTypeURNs">getDataTypeURNs</a></b></code>
+    	<br />
+		Retrieves the unique (official) URN of the data-type (example: <em>urn:lsid:uniprot.org</em>) and all the deprecated ones.
+    </li>
+    
+    <li>
+	    <code><b><a href="#getDataTypesName">getDataTypesName</a></b></code>
+	    <br />
+		Retrieves the list of names of all the data types available.
+    </li>
+    
+    <li>
+	    <code><b><a href="#getDataTypesId">getDataTypesId</a></b></code>
+	    <br />
+		Retrieves the list of identifiers (stable and perenial) of all the data types.
+    </li>
+    
+    <li>
+	    <code><b><a href="#checkRegExp">checkRegExp</a></b></code>
+	    <br />
+		Checks if the identifier given follows the regular expression of the data type (also provided).
+    </li>
+	
+    <li>
+    	<code><b><a href="#getName">getName</a></b></code>
+    	<br />
+    	Retrieves the common name of a data-type.
+    </li>
+	
+    <li>
+    	<code><b><a href="#getNames">getNames</a></b></code>
+    	<br />
+		Retrieves all the names (with synonyms) of a data-type.
+    </li>
+	
+    <li>
+    	<code><b><a href="#getOfficialURI">getOfficialURI</a></b></code>
+    	<br />
+    	Retrieves the offical URI (URN if the user entered a URN, URL if not) of a data-type corresponding to the deprecated one.
+    </li>
+
+    <li>
+    	<code><b><a href="#getResourceInfo">getResourceInfo</a></b></code>
+    	<br />
+		Retrieves the general information about a precise resource of a data-type.
+    </li>
+
+    <li>
+    	<code><b><a href="#getResourceInstitution">getResourceInstitution</a></b></code>
+    	<br />
+		Retrieves the institution which manages a precise resource of a data-type.
+    </li>
+
+    <li>
+    	<code><b><a href="#getResourceLocation">getResourceLocation</a></b></code>
+    	<br />
+		Retrieves the location of the servers of a location.
+    </li>
+	
+    <li>
+    	<code><b><a href="#getURI">getURI</a></b></code>
+    	<br />
+		Retrieves the unique URI (URL or URN) of the data-entry (example: <em>http://www.geneontology.org/#GO:0045202</em>, <em>urn:lsid:uniprot.org</em>).
+    </li>
+	
+    <li>
+    	<code><b><a href="#getURL">getURL</a></b></code>
+    	<br />
+		Retrieves unique URL of the data-entry (example: <em>http://www.geneontology.org/#GO:0045202</em>).
+    </li>
+	
+    <li>
+    	<code><b><a href="#getURN">getURN</a></b></code>
+    	<br />
+		Retrieves the unique URN of the data-entry (example: <em>urn:lsid:uniprot.org:P62158</em>).
+    </li>
+	
+    <li>
+    	<code><b><a href="#isDeprecated">isDeprecated</a></b></code>
+    	<br />
+		Says if a URI of a data-type is deprecated.
+    </li>
+</ol>
+
+
+<!-- ============ METHOD DETAIL ========== -->
+<h2>Queries in detail</h2>
+
+<h3 id="getDataTypeURN">getDataTypeURN</h3>
+<pre>
+public java.lang.String <b>getDataTypeURN</b>(java.lang.String name)
+</pre>
+
+<dl>
+	<dd>Retrieves the unique URN of a data-type (example: <em>urn:lsid:uniprot.org</em>).</dd>
+
+	<dd>
+	<dl>
+		<dt>Parameters:</dt>
+
+		<dd><code>name</code> - name primary name (or synonym) of a
+		data-type (examples: <em>ChEBI</em>, <em>UniProt</em>, <em>GO</em>)</dd>
+
+		<dt>Returns:</dt>
+
+		<dd>unique (official) URN of the data-type</dd>
+	</dl>
+	</dd>
+</dl>
+
+<hr />
+
+  <h3 id="getDataTypeURNs">getDataTypeURNs</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypeURNs</b>(java.lang.String name)
+</pre>
+
+  <dl>
+    <dd>Retrieves the unique (official) URN of the data-type
+    (example: <em>urn:lsid:uniprot.org</em>) and all the deprecated
+    ones.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name or synonym of a data-type
+        (examples: <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URN and all the deprecated ones</dd>
+      </dl>
+    </dd>
+  </dl>
+  
+  <hr />
+
+  <h3 id="getDataTypeURL">getDataTypeURL</h3>
+  <pre>
+public java.lang.String <b>getDataTypeURL</b>(java.lang.String name)
+</pre>
+
+  <dl>
+    <dd>Retrieves unique (official) URL (not a physical URL but a
+    URI) of the data-type (example:
+    <em>http://www.taxonomy.org/</em>).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of a data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URL of the data-type</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypeURLs">getDataTypeURLs</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypeURLs</b>(java.lang.String name)
+</pre>
+
+  <dl>
+    <dd>Retrieves the unique (official) URL (not a physical URL but
+    a URI) of the data-type (example: <em>http://www.taxonomy.org/</em>)
+    and all the deprecated ones.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of a data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URL of the data-type and all the deprecated ones</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypeURI">getDataTypeURI</h3>
+  <pre>
+public java.lang.String <b>getDataTypeURI</b>(java.lang.String name,
+                                       java.lang.String type)
+</pre>
+
+  <dl>
+    <dd>Retrieves the unique (official) URL or URN of the data-type
+    (example: <em>http://www.taxonomy.org/</em>,
+    <em>urn:lsid:uniprot.org</em>).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of the data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dd><code>type</code> - type of the URI the user wants to
+        recover ('URN' or 'URL')</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URL or URN of the data-type</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypeURIs">getDataTypeURIs</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypeURIs</b>(java.lang.String name,
+                                          java.lang.String type)
+</pre>
+
+  <dl>
+    <dd>Retrieves all the URLs or URNs of the data-type (examples:
+    <em>http://www.taxonomy.org/</em>, <em>urn:lsid:uniprot.org</em>) including
+    all the deprecated ones.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of the data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dd><code>type</code> - type of the URI the user wants to
+        recover ('URN' or 'URL'), can be empty (URL is used in this
+        case)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>all the URIs (URLs or URNs) of the data-type including
+        all the deprecated ones</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypeAllURIs">getDataTypeAllURIs</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypeAllURIs</b>(java.lang.String name)
+</pre>
+
+  <dl>
+    <dd>Retrieves all the URIs (URNs and URLs) of the
+    data-type</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of a data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>all the URIs (URLs and URNs) of the data-type including
+        all the deprecated ones</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getURN">getURN</h3>
+  <pre>
+public java.lang.String <b>getURN</b>(java.lang.String name,
+                               java.lang.String id)
+</pre>
+
+  <dl>
+    <dd>Retrieves the unique URN of the data-entry (example:
+    <em>urn:lsid:uniprot.org:P62158</em>).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of a data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dd><code>id</code> - identifier of an element (examples:
+        <em>GO:0045202</em>, <em>P62158</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URN of the data-entry</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getURL">getURL</h3>
+  <pre>
+public java.lang.String <b>getURL</b>(java.lang.String name,
+                               java.lang.String id)
+</pre>
+
+  <dl>
+    <dd>Retrieves unique URL of the data-entry (example:
+    <em>http://www.geneontology.org/#GO:0045202</em>).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of a data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dd><code>id</code> - identifier of an element (examples:
+        <em>GO:0045202</em>, <em>P62158</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URN of the data-entry</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getURI">getURI</h3>
+  <pre>
+public java.lang.String <b>getURI</b>(java.lang.String name,
+                               java.lang.String id,
+                               java.lang.String type)
+</pre>
+
+  <dl>
+    <dd>Retrieves the unique URI (URL or URN) of the data-entry
+    (example: <em>http://www.geneontology.org/#GO:0045202</em>,
+    <em>urn:lsid:uniprot.org</em>).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name of a data-type (examples:
+        <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dd><code>id</code> - identifier of an element (examples:
+        <em>GO:0045202</em>, <em>P62158</em>)</dd>
+
+        <dd><code>type</code> - type of the URI the user wants to
+        recover ('URN' or 'URL')</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>unique URI of the data-entry</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypeDef">getDataTypeDef</h3>
+  <pre>
+public java.lang.String <b>getDataTypeDef</b>(java.lang.String nickname)
+</pre>
+
+  <dl>
+    <dd>Retrieves the definition of the data-type.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>nickname</code> - name or URI (URN or URL) of a
+        data-type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>definition of the data-type</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+  
+  <h3 id="getDataTypesName">getDataTypesName</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypesName</b>()
+</pre>
+
+  <dl>
+    <dd>Retrieves the list of names of all the data types available.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd>no parameter</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>list of names of all the data types</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+  
+    <h3 id="getDataTypesId">getDataTypesId</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypesId</b>()
+</pre>
+
+  <dl>
+    <dd>Retrieves the list of identifiers (stable and perenial) of all the data types.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd>no parameter</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>list of identifiers of all the data types</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+  
+    <h3 id="checkRegExp">checkRegExp</h3>
+  <pre>
+public java.lang.String <b>getDataTypeDef</b>(java.lang.String identifier,
+                                       java.lang.String datatype)
+</pre>
+
+  <dl>
+    <dd>Checks if the identifier given follows the regular expression of the data type (also provided).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>identifier</code> - internal identifier of an element (within the data type)</dd>
+        <dd><code>datatype</code> - name, synonym or MIRIAM URI of a data type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>"true" if the identifier follows the regular expression, "false" otherwise</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataEntries">getDataEntries</h3>
+  <pre>
+public java.lang.String[] <b>getDataEntries</b>(java.lang.String nickname,
+                                         java.lang.String id)
+</pre>
+
+  <dl>
+    <dd>Retrieves the physical locationS (URLs) of web pageS about
+    the data-entry.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>nickname</code> - name (can be a synonym) or URN
+        or URL of a data-type (examples: <em>ChEBI</em>, <em>UniProt</em>)</dd>
+
+        <dd><code>id</code> - identifier of an element (examples:
+        <em>GO:0045202</em>, <em>P62158</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>physical locationS of web pageS about the
+        data-entry</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+  
+    <h3 id="getDataEntriesURI">getDataEntries</h3>
+  <pre>
+public java.lang.String[] <b>getDataEntries</b>(java.lang.String uri)
+</pre>
+
+  <dl>
+    <dd>Retrieves the physical locationS (URLs) of web pageS about
+    the data-entry.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>uri</code> - MIRIAM URI of an element (example: <em>http://www.geneontology.org/#GO:0045202</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>physical locationS of web pageS about the data-entry</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+  
+    <h3 id="getDataEntry">getDataEntry</h3>
+  <pre>
+public java.lang.String <b>getDataEntry</b>(java.lang.String uri,
+                                     java.lang.String resource)
+</pre>
+
+  <dl>
+    <dd>Retrieves the physical location (URL) of a web page about the data-entry, using a specific resource.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>uri</code> - MIRIAM URI of an element (example: <em>http://www.geneontology.org/#GO:0045202</em>)</dd>
+
+        <dd><code>resource</code> - identifier of a resource in <b>MIRIAM Resources</b> (example: <em>MIR:00100005</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>physical location of a web page (using a specific resource) about the data-entry</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataResources">getDataResources</h3>
+  <pre>
+public java.lang.String[] <b>getDataResources</b>(java.lang.String nickname)
+</pre>
+
+  <dl>
+    <dd>Retrieves all the physical locations (URLs) of the services
+    providing the data-type (web page).</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>nickname</code> - name (can be a synonym) or URL
+        or URN of a data-type name (or synonym) or URI (URL or
+        URN)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>array of strings containing all the physical
+        locations</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="isDeprecated">isDeprecated</h3>
+  <pre>
+public java.lang.String <b>isDeprecated</b>(java.lang.String uri)
+</pre>
+
+  <dl>
+    <dd>Says if a URI of a data-type is deprecated.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>uri</code> - (URN or URL) of a data-type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>answer ("true" or "false") to the question: is this URI
+        deprecated?</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getOfficialURI">getOfficialURI</h3>
+  <pre>
+public java.lang.String <b>getOfficialURI</b>(java.lang.String uri)
+</pre>
+
+  <dl>
+    <dd>Retrieves the offical URI (URN if the user entered a URN,
+    URL if not) of a data-type corresponding to the deprecated
+    one.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>uri</code> - deprecated URI (URN or URL) of a
+        data-type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>the offical URI corresponding to the deprecated
+        one</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypePattern">getDataTypePattern</h3>
+  <pre>
+public java.lang.String <b>getDataTypePattern</b>(java.lang.String nickname)
+</pre>
+
+  <dl>
+    <dd>Retrieves the pattern (regular expression) of the
+    data-type.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>nickname</code> - data-type name (or synonym) or
+        URI (URL or URN)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>pattern of the data-type</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getResourceInfo">getResourceInfo</h3>
+  <pre>
+public java.lang.String <b>getResourceInfo</b>(java.lang.String id)
+</pre>
+
+  <dl>
+    <dd>Retrieves the general information about a precise resource
+    of a data-type.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>id</code> - identifier of a resource (example:
+        <em>MIR:00100005</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>general information about a resource</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getResourceInstitution">getResourceInstitution</h3>
+  <pre>
+public java.lang.String <b>getResourceInstitution</b>(java.lang.String id)
+</pre>
+
+  <dl>
+    <dd>Retrieves the institution which manages a precise resource
+    of a data-type.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>id</code> - identifier of a resource (example:
+        <em>MIR:00100005</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>institution which manages a resource</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getResourceLocation">getResourceLocation</h3>
+  <pre>
+public java.lang.String <b>getResourceLocation</b>(java.lang.String id)
+</pre>
+
+  <dl>
+    <dd>Retrieves the location of the servers of a location.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>id</code> - identifier of a resource (example:
+        <em>MIR:00100005</em>)</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>location of the servers of a resource</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getDataTypeSynonyms">getDataTypeSynonyms</h3>
+  <pre>
+public java.lang.String[] <b>getDataTypeSynonyms</b>(java.lang.String name)
+</pre>
+
+  <dl>
+    <dd>Retrieves all the synonym names of the data-type, with the
+    original name.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>name</code> - name or synonym of a data-type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>all the synonym names of the data-type</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getName">getName</h3>
+  <pre>
+public java.lang.String <b>getName</b>(java.lang.String uri)
+</pre>
+
+  <dl>
+    <dd>Retrieves the common name of a data-type.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>uri</code> - URI (URL or URN) of a data-type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>the common name of the data-type</dd>
+      </dl>
+    </dd>
+  </dl>
+  <hr />
+
+  <h3 id="getNames">getNames</h3>
+  <pre>
+public java.lang.String[] <b>getNames</b>(java.lang.String uri)
+</pre>
+
+  <dl>
+    <dd>Retrieves all the names (with synonyms) of a
+    data-type.</dd>
+
+    <dd>
+      <dl>
+        <dt>Parameters:</dt>
+
+        <dd><code>uri</code> - URI (URL or URN) of a data-type</dd>
+
+        <dt>Returns:</dt>
+
+        <dd>the common name of the data-type and all the
+        synonyms</dd>
+      </dl>
+    </dd>
+  </dl>

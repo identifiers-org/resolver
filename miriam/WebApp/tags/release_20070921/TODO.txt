@@ -1,0 +1,21 @@
+TODO LIST:
+
+- link to images in static html pages (via a c:import)
+The thing I want:
+<p>
+	<img src="${param.staticPagesAdr}/img/Delete.gif" title="Testing!" alt="Testing!" height="16" width="16" />
+</p>
+with an import like that:
+<c:import url="${initParam.www}${requestScope.section}" charEncoding="UTF-8"> <%-- var="staticInclude" scope="page" --%>
+	<c:param name="staticPagesAdr" value="${initParam.www}" />
+</c:import>
+
+The current solution:
+<p>
+	<img src="http://www.ebi.ac.uk/compneur-srv/miriam/img/Delete.gif" title="Testing!" alt="Testing!" height="16" width="16" />
+</p>
+
+- think about the "getDataEntries()" method with only one String in parameter 
+	and a method to cut the URI in two part (data-type and element identifier)
+- perhaps change the search for the physical URLs (based on the MIRIAM URIs) for the data-type browsing
+- 

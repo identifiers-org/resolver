@@ -1,0 +1,77 @@
+<h2>Web Services</h2>
+
+<p>
+	MIRIAM database provides some web services for programmatic access.
+</p>
+
+
+<h2>WSDL</h2>
+<p>
+	You can access to the <acronym title="Web Services Description Language">WSDL</acronym> file <a href="http://www.ebi.ac.uk/compneur-srv/miriamws-main/MiriamWebServices?wsdl" title="WSDL file of MIRIAM Web Services">here</a>.
+</p>
+
+<h2>Java Library</h2>
+<p>
+	In order to communicate with the web services of Miriam in a Java program, you can use the library below (distributed under the terms of the GNU General Public License). Two versions are provided:
+</p>
+<ul>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/MiriamLib-20070112.jar" title="simple jar library">simple version</a> (you need a couple of external jars to use it)</li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/MiriamLib-standalone-20070112.jar" title="standalone jar library">standalone version</a> (all the dependencies are included in the jar)</li>
+</ul>
+<p>
+	Here are the dependencies:
+</p>
+<ul>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/axis.jar" title="axis.jar">axis</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/commons-discovery-0.2.jar" title="commons-discovery-0.2.jar">commons-discovery</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/commons-logging-1.1.jar" title="commons-logging-1.1.jar">commons-logging</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/jaxrpc.jar" title="jaxrpc.jar">jaxrpc</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/log4j-1.2.8.jar" title="log4j-1.2.8.jar">log4j</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/saaj.jar" title="saaj.jar">saaj</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/wsdl4j-1.5.1.jar" title="wsdl4j-1.5.1.jar">wsdl4j</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/activation.jar" title="activation.jar">activation</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/MiriamLib/dependencies/mail.jar" title="mail.jar">mail</a></li>
+</ul>
+<p>
+	Note: you can find the latest version of each of these packages on their official web site.
+</p>
+
+<h2>Documentation</h2>
+<p>
+	The documentation (javadoc) can be found <a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/lib-doc/index.html" title="documentation of the library">here</a>.
+</p>
+
+<h2>Tutorial</h2>
+<p>
+	Here is a sample program to show how to use the library:
+</p>
+<p class="source">
+import uk.ac.ebi.miriam.lib.*;<br />
+<br />
+public class WebServicesTesting<br />
+{<br />
+&nbsp;	public static void main(String[] args)<br />
+&nbsp;	{<br />
+&nbsp;&nbsp;		// creation of the link to the web services<br />
+&nbsp;&nbsp;		MiriamLink link = new MiriamLink();<br />
+<br />
+&nbsp;&nbsp;		// changes the default address<br />
+&nbsp;&nbsp;		ws.setAddress("http://www.ebi.ac.uk/compneur-srv/miriamws-main/MiriamWebServices");<br />
+<br />
+&nbsp;&nbsp;		System.out.println("Test 0:");<br />
+&nbsp;&nbsp;		System.out.print("Is 'http://www.ebi.ac.uk/IntEnz/' deprecated? ");<br />
+&nbsp;&nbsp;		System.out.println(link.isDeprecated("http://www.ebi.ac.uk/IntEnz/"));<br />
+&nbsp;&nbsp;		System.out.println("Official URI: " + link.getOfficialURI("http://www.ebi.ac.uk/IntEnz/"));<br />
+<br />
+&nbsp;&nbsp;		System.out.println("Test 1:");<br />
+&nbsp;&nbsp;		System.out.print("Is 'http://www.who.int/classifications/icd/' deprecated? ");<br />
+&nbsp;&nbsp;		System.out.println(link.isDeprecated("http://www.who.int/classifications/icd/"));<br />
+&nbsp;&nbsp;		System.out.println("Official URI: " + link.getOfficialURI("http://www.who.int/classifications/icd/"));<br />
+&nbsp;	}<br />
+}<br />
+</p>
+
+<h2>Warning!</h2>
+<p class="warning">
+	This version of the library is a beta. You are welcome to inform us of any special features found.
+</p>

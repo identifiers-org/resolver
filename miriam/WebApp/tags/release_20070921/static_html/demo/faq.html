@@ -1,0 +1,215 @@
+<h2>Frequently Asked Questions</h2>
+
+<p>
+	You will find here all the frequently asked questions and their answers about <em>MIRIAM Standard</em> and <em>MIRIAM Resources</em>.
+</p>
+
+<h3>Table of content</h3>
+<ol>
+	<li><a href="mdb?section=faq#general" title="General Questions">General questions</a>
+		<ol>
+			<li><a href="mdb?section=faq#MIRIAMAcronym" title="MIRIAM acronym">What does MIRIAM stand for?</a></li>
+			<li><a href="mdb?section=faq#MIRIAMStandard" title="MIRIAM Standard">What is MIRIAM Standard?</a></li>
+			<li><a href="mdb?section=faq#MIRIAMResources" title="MIRIAM Resources">What are MIRIAM Resources?</a></li>
+			<li><a href="mdb?section=faq#MIRIAMUri" title="MIRIAM URI">What is a MIRIAM URI?</a></li>
+			<li><a href="mdb?section=faq#MIRIAMUriNeeds" title="MIRIAM URI needs">Why do we need MIRIAM URIs?</a></li>
+			<li><a href="mdb?section=faq#DataType" title="Data-types">What is a data-type?</a></li>
+			<li><a href="mdb?section=faq#Resource" title="Resources">What is a resource?</a></li>
+			<li><a href="mdb?section=faq#MIRIAMResolution" title="MIRIAM URIs resolution services">What are the resolving services provided for MIRIAM URIs?</a></li>
+		</ol>
+	</li>
+	<li><a href="mdb?section=faq#MIRIAMMaintenance" title="MIRIAM maintenance questions">Questions about creation/edition/update of data-types</a>
+		<ol>
+			<li><a href="mdb?section=faq#DataTypeMaintenance" title="Maintenance of the data">Who maintains MIRIAM URIs and their associated data?</a></li>
+			<li><a href="mdb?section=faq#DataTypeCreation" title="Create a new data-type">How to create a new data-type?</a></li>
+			<li><a href="mdb?section=faq#DataTypeUpdate" title="Modify a data-type">How to modify/update an existing data-type?</a></li>
+			<li><a href="mdb?section=faq#UriDeletion" title="Deletion of a MIRIAM URI">Can a user delete a MIRIAM URI?</a></li>
+		</ol>
+	</li>
+	<li><a href="mdb?section=faq#MIRIAMRegistration" title="Registered users questions">Questions about registered users</a>
+		<ol>
+			<li><a href="mdb?section=faq#RegisteredUsers" title="Registration">Who are registered users?</a></li>
+			<li><a href="mdb?section=faq#UnregisteredUsers" title="Unregistered users">What can unregistered users do?</a></li>
+			<li><a href="mdb?section=faq#RegisteredFeatures" title="Registered users">What can registered users do?</a></li>
+		</ol>
+	</li>
+	<li><a href="mdb?section=faq#WebServices" title="Web Services questions">Web Services</a>
+		<ol>
+			<li><a href="mdb?section=faq#ServicesAvailable" title="Web Services available">What are the services available?</a></li>
+			<li><a href="mdb?section=faq#WebServicesUsage" title="Web Services usage">How to use the web services?</a></li>
+			<li><a href="mdb?section=faq#SourceCode" title="Source Code">How to get the source code?</a></li>
+		</ol>
+	</li>
+</ol>
+
+
+<h3 id="MIRIAMGeneral">General questions:</h3>
+
+<h4 id="MIRIAMAcronym">What does MIRIAM stand for?</h4>
+<p>
+	<acronym title="Minimal Information Requested In the Annotation of biochemical Models">MIRIAM</acronym> is an acronym for <a href="http://dx.doi.org/10.1038/nbt1156" title="MIRIAM publication in Nature Biotechnology">Minimal Information Requested In the Annotation of biochemical Models</a>.
+</p>
+
+<h4 id="MIRIAMStandard">What is MIRIAM Standard?</h4>
+<p>
+	<em>MIRIAM Standard</em> is an effort to standardize the Minimal Information Requested In the Annotation of biochemical Models, so that different groups can collaborate on annotating and curating computational models in biology. The goal of the project, initiated by the <a href="http://www.biomodels.net/" title="BioModels.net">BioModels.net</a> effort is to produce a set of guidelines suitable for use with any structured format (<a href="http://sbml.org/" title="Systems Biology Markup Language">SBML</a>, <a href="http://www.cellml.org/" title="CellML">CellML</a>, <a href="http://www.genesis-sim.org/GENESIS/" title="GEneral NEural SImulation System">GENESIS</a>, <a href="http://www.cellml.org/" title="CellML">CellML</a>, ...) for computational models.
+</p>
+<p>
+	More information is available on the <a href="mdb?section=standard" title="MIRIAM Standard">MIRIAM Standard page</a>.
+</p>
+
+<h4 id="MIRIAMResources">What are MIRIAM Resources?</h4>
+<p>
+	As explained on the <a href="mdb?section=standard" title="MIRIAM Standard">MIRIAM Standard page</a> and <a href="#MIRIAMStandard" title="What is MIRIAM Standard?">just above</a>, the community has to agree on a set of standard valid <acronym title="Uniform Resource Identifiers">URIs</acronym>. <em>MIRIAM Resources</em> is a set of services and resources composed of a database, powered by <a href="http://www.mysql.com/" title="MySQL database management system">MySQL</a> (<em>MIRIAM Database</em>), <acronym title="Simple Object Access Protocol">SOAP</acronym>-based Web Services, using <a href="http://ws.apache.org/axis/" title="Apache Axis Web Services framework">Apache Axis</a> (<em>MIRIAM Web Services</em>), a library to access these Web Services, currently available in Java, but other languages will be supported soon (<em>MIRIAM Library</em>) and a web application, running with <a href="http://tomcat.apache.org/" title="web container Apache Tomcat">Apache Tomcat</a> (<em>MIRIAM Web Application</em>).
+</p>
+<p>
+	The database and the associated <acronym title="Application Programming Interface">API</acronym> (Web Services) have been developed at the <a href="http://www.ebi.ac.uk/" title="European Bioinformatics Institute">European Bioinformatics Institute</a> to provide the generation and interpretation of <em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em>.
+</p>
+<p>
+	<em>MIRIAM Resources</em> are available at this address: <a href="http://www.ebi.ac.uk/miriam/" title="MIRIAM Resources">http://www.ebi.ac.uk/miriam/</a>.
+</p>
+
+<h4 id="MIRIAMUri">What is a MIRIAM URI?</h4>
+<p>
+	<em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em> is a way to identify, in a stable and perennial way, elements, like proteins, genes, publications, etc. It was first designed to manage components of computational models, but the system can be used for other purposes.
+</p>
+<p>
+	As an example: <code>http://www.pubmed.gov/#16333295</code> is the <em>MIRIAM <acronym title="Uniform Resource Identifier">URI</acronym></em> of the publication about <acronym title="Minimal Information Requested In the Annotation of biochemical Models">MIRIAM</acronym>.
+</p>
+<p>
+	A <em>MIRIAM <acronym title="Uniform Resource Identifier">URI</acronym></em> is composed of two parts. The first one (before the #), is the <acronym title="Uniform Resource Identifier">URI</acronym> of the data-type (PubMed, Uniprot, Ensembl, ...). The second part is the identifier of a precise element within this data-type (for example, in the case of a publication, this identifier will be the <acronym title="PubMed unique IDentifier">PMID</acronym>).
+</p>
+
+<h4 id="MIRIAMUriNeeds">Why do we need MIRIAM URIs?</h4>
+<p>
+	The usage of <em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em> permits:
+</p>
+<ul>
+  <li>uniquely describe entities with a perennial and stable identifier;</li>
+  <li>link an entity to one or more online resources, where extra knowledge about it is available;</li>
+</ul>
+<p>
+	<em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em> are not dependant on physical addresses (like the <acronym title="Uniform Resource Locators">URLs</acronym> used with a web browser), that is why they are <em>persistent</em>.
+</p>
+
+<h4 id="DataType">What is a data-type?</h4>
+<p>
+	A data-type is a unique, controlled description of the type of the data. For example, if the entity is a protein, the data-type will be Uniprot, if the entity is an enzyme, the data-type will be Enzyme Nomenclature, ...
+</p>
+
+<h4 id="Resource">What is a resource?</h4>
+<p>
+	A resource is a service (frequently a database accessible on-line through a web-based interface) providing information about the elements of a data-type. For each data-type, several resources can exist. Some are real mirrors, but others provide a slightly different information.
+</p>
+
+<h4 id="MIRIAMResolution">What are the resolving services provided for MIRIAM URIs?</h4>
+<p>
+	<em>MIRIAM Resources</em> provide Web Services in order to perform several resolution processes. There are two main different ways to use the resolution service. One way is designed to be used by curators or model creators and the other one is for software developers.
+</p>
+<p>
+	For a curator (or even a model creator), the need to put some extra knowledge in an already created (or new) model is mandatory. Whatever the format is to store the model (SBML, BioPAX, CellML, \dots), in order to obtain a <acronym title="Minimal Information Requested In the Annotation of biochemical Models">MIRIAM</acronym> compliant model, all the components must be linked with a <em>MIRIAM <acronym title="Uniform Resource Identifier">URI</acronym></em>. However, the curator knows the components of his model. For example, if one of them is a <code>F-actin capping protein subunit beta</code>, he knows its primary accession number (<code>P47757</code>) used by UniProt (Universal Protein Resource). Therefore, he just need to use his favourite software tool (the one he usually uses to curate or annotate models, like <a href="http://www.ebi.ac.uk/compneur-srv/SBMLeditor.html" title="SBMLeditor">SBMLeditor</a>) to generate the appropriate URI, providing these two pieces of information. Of course, this tool just need to use the method called <code>getURI()</code> of <em>MIRIAM Web Services</em>.
+</p>
+<p>
+	As an example, if a user wants to retrieve the <em>MIRIAM <acronym title="Uniform Resource Identifier">URI</acronym></em> of the protein <code>P47757</code> (via UniProt), he or she will obtain: <code>http://www.uniprot.org/#P47757</code>.
+</p>
+<p>
+	A developer works with models already encoded, so in a digital form. If he wants to create an interface (web-based or rich client) to display them, he needs to convert all the <em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em> into physical addresses that can be used to recover the knowledge stored in the annotations (mainly via online resources). The conversion from <em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em> to physical addresses can be done using the <code>getDataEntries()</code> method of <em>MIRIAM Web Services</em>. In the case of a web-based interface, the developer will be able to link all the model constituents towards more information.
+</p>
+<p>
+	As an example, if a user wants to retrieve the physical locations of extra information about the entity <code>http://www.uniprot.org/#P47757</code>, he or she will obtain the following list:
+</p>
+<ul>
+  <li><code>http://www.ebi.uniprot.org/entry/P47757</code></li>
+  <li><code>http://www.pir.uniprot.org/cgi-bin/upEntry?id=P47757</code></li>
+  <li><code>http://us.expasy.org/uniprot/P47757</code></li>
+</ul>
+<p>
+	More information is available from the <a href="mdb?section=ws" title="MIRIAM Web Services">Web Services page</a>.
+</p>
+
+<h3 id="MIRIAMMaintenance">Questions about creation/edition/update of data-types:</h3>
+
+<h4 id="DataTypeMaintenance">Who maintains MIRIAM URIs and their associated data?</h4>
+<p>
+	Data-types are submited by creators, maintainers or researchers who need them.
+</p>
+<p>
+	It is important to notice that the data-types are not updated automatically when their associated resources change. Therefore, it is the duty of the creator of the data-type, to keep it up to date.
+</p>
+
+<h4 id="DataTypeCreation">How to create a new data-type?</h4>
+<p>
+	Everybody can create a new data-type, using the <a href="mdb?section=submit" title="Submit a new data-type">submission page</a>.
+</p>
+<p>
+	If the user is registered, the data-type will be added instantly, if not, the addition will be done after a human checking process.
+</p>
+
+<h4 id="DataTypeUpdate">How to modify/update an existing data-type?</h4>
+<p>
+	Everybody can modify an existing data-type, using the <a href="mdb?section=browse" title="Browse the data-types">browsing page</a>. Once the details of a data-type are displayed, an edition icon is available on the left of the name of the data-type. That brings to a form where all the recorded data can be modify.
+</p>
+<p>
+	If the user is registered, the data-type will be updated instantly, if not, the modifications will be applied after a human checking process.
+</p>
+
+<h4 id="UriDeletion">Can a user delete a MIRIAM URI?</h4>
+<p>
+	Users cannot access directly to <em>MIRIAM <acronym title="Uniform Resource Identifiers">URIs</acronym></em>. These <acronym title="Uniform Resource Identifiers">URIs</acronym> only exist through a data-type and data-type can't be removed by users.
+</p>
+<p>
+ If a user modify a data-type and remove its <acronym title="Uniform Resource Identifier">URI</acronym>, it will not be deleted, but only deprecated. Moreover, users can't delete a data-type.
+</p>
+
+
+<h3 id="MIRIAMRegistration">Questions about registered users:</h3>
+
+<h4 id="RegisteredUsers">Who are registered users?</h4>
+<p>
+	Registered users are from the <a href="http://biomodels.net/" title="BioModels.net">BioModels.net</a> initiative.
+</p>
+
+<h4 id="UnregisteredUsers">What can unregistered users do?</h4>
+<p>
+	Users can perform several action via the <a href="http://www.ebi.ac.uk/miriam/" title="MIRIAM Resources">web interface</a>:
+</p>
+<ul>
+  <li>access to all the data-type available</li>
+  <li>view all the information stored about a data-type</li>
+  <li>create new data-types</li>
+  <li>modify existing data-types</li>
+  <li>have an <a href="mdb?section=request" title="Perform queries">overview of the Web Services deployed</a></li>
+  <li>use the <a href="mdb?section=ws" title="MIRIAM Web Services">Web Services</a></li>
+  <li><a href="mdb?section=export" title="Exports of the database">export the content of the database</a></li>
+  <li>read several pieces of documentation: <a href="mdb?section=standard" title="MIRIAM Standard">MIRIAM Standard</a>, <a href="mdb?section=qualifiers" title="BioModels.net Qualifiers">BioModels.net qualifiers</a> or <a href="mdb?section=faq" title="Frequently Asked Questions">frequently asked questions</a></li>
+  <li>...</li>
+</ul>
+
+<h4 id="RegisteredFeatures">What can registered users do?</h4>
+<p>
+	Registered users can do the <a href="#UnregisteredUsers" title="What can unregistered users do?">same actions as unregistered users</a>, but without going through a checking process: all the modifications are instantly done on the database and available for all users.
+</p>
+
+
+<h3 id="WebServices">Web Services:</h3>
+
+<h4 id="ServicesAvailable">What are the services available?</h4>
+<p>
+	There is an <a href="mdb?section=request" title="Perform queries">overview of the Web Services available</a>. The <acronym title="Web Services Description Language">WSDL</acronym> is also accessible <a href="http://www.ebi.ac.uk/compneur-srv/miriamws-demo/MiriamWebServices?wsdl" title="WSDL file of MIRIAM Web Services">here</a>.
+</p>
+
+<h4 id="WebServicesUsage">How to use the web services?</h4>
+<p>
+	The easiest way to access the Web Services provided is to used the <a href="mdb?section=ws" title="MIRIAM Library">MIRIAM Library</a>. An example of usage is also given there.
+</p>
+<p>
+	Currently only a Java version of the library is available, but it is planned to distribute a Perl module soon.
+</p>
+
+<h4 id="SourceCode">How to get the source code?</h4>
+<p>
+	The source code of <em>MIRIAM Library</em> is available, under the terms of the GNU General Public License, on <a href="http://www.ebi.ac.uk/miriam/" title="MIRIAM Resources (at the EBI)">MIRIAM Resources</a> and on <a href="https://sourceforge.net/projects/miriam/" title="MIRIAM on SourceForge.net">SourceForge</a>.
+</p>
+<p>
+	The source code of <em>MIRIAM Web Services</em> and <em>MIRIAM Web Application</em> will be release soon, under the same license, at the same locations.
+</p>

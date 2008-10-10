@@ -1,0 +1,106 @@
+<h2>BioModels.net qualifiers</h2>
+
+<p>
+	The qualification of an annotation is important to grasp the relation between a model component and its annotation. The relationships is rarely one-to-one, and the information content of an annotation is greatly increased if one knows what it represents rather than to know it is "related to".
+</p>
+<p>
+	The qualifier of an annotation should reflect the relationships between the biological objects represented by the model element and the annotation:
+</p>
+
+<br />
+<img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/qualifiers.png" alt="Relation between model and data" width="500" height="189" />
+<br />
+
+<p>
+	The following is a list of the elements in the <code>http://biomodels.net/biology-qualifiers/</code> and <code>http://biomodels.net/model-qualifiers/</code> namespaces. These elements are used in the SBML standard RDF annotation format. This list may grow but no element will be removed.
+</p>
+<p>
+	In all cases using the biology qualifiers, the 'object' of the relation is the biological or biochemical object represented by the enclosing model element. In the cases of the model qualifiers, the 'object' of the relation is the model component itself.
+</p>
+
+<h2>model-qualifiers</h2>
+
+<h3>is</h3>
+<p class="indentParagraph">
+	The modelling object represented by the model component is the subject of the referenced resource. For instance, this qualifier might be used to link the encoded model to a database of models.
+</p>
+
+<h3>isDescribedBy</h3>
+<p class="indentParagraph">
+	The modelling object represented by the component of the encoded model is described by the referenced resource. This relation might be used to link a model or a kinetic law to the literature that describes this model or this kinetic law.
+</p>
+
+
+<h2>biology-qualifiers</h2>
+
+<h3>is</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component is the subject of the referenced resource. This relation might be used to link a reaction to its exact counterpart in KEGG or Reactome for instance.
+</p>
+
+<h3>hasPart</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component includes the subject of the referenced resource, either physically or logically. This relation might be used to link a complex to the description of its components.
+</p>
+
+<h3>isPartOf</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component is a physical or logical part of the subject of the referenced resource. This relation might be used to link a component to the description of the complex is belongs to.
+</p>
+
+<h3>isVersionOf</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component is a version or an instance of the subject of the referenced resource.
+</p>
+
+<h3>hasVersion</h3>
+<p class="indentParagraph">
+	The subject of the referenced resource is a version or an instance of the biological entity represented by the model component.
+</p>
+
+<h3>isHomologTo</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component is homolog, to the subject of the referenced resource, i.e. they share a common ancestor.
+</p>
+
+<h3>isDescribedBy</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component is described by the referenced resource. This relation should be used for instance to link a species or a parameter to the literature that describes the concentration of the species or the value of the parameter.
+</p>
+
+<h3>isEncodedBy</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component is encoded, directly, or by transitivity, by the subject of the referenced resource.
+</p>
+
+<h3>encodes</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component encodes, directly or by transitivity the subject of the referenced resource.
+</p>
+
+<h3>occursIn</h3>
+<p class="indentParagraph">
+	The biological entity represented by the model component takes place in the subject of the reference resource.
+</p>
+
+
+<h2>How to use BioModels.net qualifiers</h2>
+
+<p>
+	Here is an example of the annotation one could add to a model element representing a complex between two proteins:
+</p>
+
+<pre class="source">
+&lt;rdf:RDF xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" 
+            xmlns:bqbiol="http://biomodels.net/biology-qualifiers/" 
+            xmlns:bqmodel="http://biomodels.net/model-qualifiers/" &gt;
+  &lt;rdf:Description rdf:about="#MyModelElement"&gt;
+    &lt;bqbiol:hasPart&gt;
+      &lt;rdf:Bag&gt;
+        &lt;rdf:li rdf:resource="http://www.uniprot.org/#P04551"/&gt;
+        &lt;rdf:li rdf:resource="http://www.uniprot.org/#P10815"/&gt;
+      &lt;/rdf:Bag&gt;
+    &lt;/bqbiol:hasPart&gt;
+  &lt;/rdf:Description&gt;
+&lt;/rdf:RDF&gt;
+</pre>

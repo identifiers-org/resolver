@@ -1,0 +1,34 @@
+TESTING:
+
+URN:
+- uniprot - urn:lsid:uniprot.org go
+
+URL:
+- gene ontology - http://www.geneontology.org/
+
+URLs (deprecated):
+- EC code
+- Taxonomy
+- PubMed
+
+Physical locationS:
+- EC code
+- UniProt
+- Gene Ontology
+
+SYNONYMS:
+- gene ontology, go
+- digital object identifier, doi
+- Online Mendelian Inheritance in Man, OMIM
+
+DEFINITION:
+- BIND
+- Gene Ontology
+
+
+
+TODO:
+- documentation
+
+
+

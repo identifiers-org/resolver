@@ -1,0 +1,44 @@
+<h2>Database exports</h2>
+
+<p>
+	With this page, you can perform several kinds of exports of MIRIAM Database.
+</p>
+
+
+<h2>XML Export</h2>
+
+<p>
+ Export in an <acronym title="eXtensible Markup Language">XML</acronym> file (like the old <i>Resources.xml</i>):
+</p>
+
+<form method="post" action="XMLExport">
+	<p>
+		Name of the output file (without any extension): <input type="text" name="getNameParam" size="30" id="fileName" />
+	</p>
+	<p>
+		<input type="submit" value="Export!" class="submit_button" />
+	</p>
+</form>
+
+
+<h2>XML Schema</h2>
+
+<p>
+	The <a href="http://en.wikipedia.org/wiki/XML_Schema" title="XML Schema (W3C)">XML Schema</a> of the export of MIRIAM Database is available for download: [<a href="http://www.ebi.ac.uk/compneur-srv/miriam/main/xml/MiriamXML.xsd" title="XML Schema for MIRIAM Database Export">MiriamXML.xsd</a>].
+</p>
+
+
+<h2>SQL dump</h2>
+
+<p>
+ <acronym title="Structured Query Language">SQL</acronym> dump of the structure and the content of the database (to be able to run your own local copy of MIRIAM Database):
+</p>
+<p>
+	<i>Coming soon...</i>
+</p>
+
+<!-- some useful scripts -->
+<script type="text/javascript">
+	// focus sur le champ de saisie du login
+	document.forms[0]['getNameParam'].focus();
+</script>

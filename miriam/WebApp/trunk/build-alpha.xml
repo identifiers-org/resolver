@@ -1,0 +1,139 @@
+<!-- ANT Build file for the ALPHA version of MIRIAM Resources -->
+<!-- Camille Laibe <camille.laibe@ebi.ac.uk> -->
+<!-- 20080515 -->
+
+
+<project name="MIRIAM" default="" basedir=".">
+	
+  <!-- This section sets properties used in the rest of this build file  -->
+	<property name="app.name" value="miriam"/>
+	<property name="app.status" value="alpha"/>
+	<property name="server.name" value="SERVER-ALFA"/>
+	<property name="build" value="deploy" />
+	<property name="sources" value="src" />
+	<property name="web" value="WebContent-${app.status}" />
+	<property name="libs" value="lib" />
+	<property name="html" value="static_html/${app.status}" />
+	<property name="properties" value="properties" />
+	<property name="package" value="dist"/>
+	<property name="tomcat_libs" value="/ebi/research/compneur/biomodels/${server.name}/apache-tomcat-5.5.23-res-022/common/lib" />
+	<!--<property name="tomcat_libs" value="/scratch/Camille_bin/apache-tomcat-5.5.23/common/lib" />-->
+	<property name="webapp" value="/ebi/research/compneur/biomodels/${server.name}/apache-tomcat-5.5.23-res-022/webapps/${app.name}-${app.status}" />
+	<property name="static" value="/ebi/research/compneur/WWW/miriam/${app.status}" />
+	<property environment="laibe" />
+	
+  <!-- These libraries are needed to be included in the CLASSPATH -->
+  <path id="classpath"> 
+    <fileset dir="${tomcat_libs}">
+      <include name="*.jar"/>
+    </fileset>
+		<fileset dir="${libs}">
+      <include name="*.jar"/>
+    </fileset>
+  </path>
+	
+	<!-- Initialization -->
+	<target name="init" description="Initialization: setting Timestamps">
+		<echo>Initialization of Timestamps...</echo>
+		<tstamp>
+			<format property="DATE_SUFFIX" pattern="yyyyMMdd-kkmm" />
+			<format property="DATE_SIMPLE" pattern="MMM yyyy" />
+		</tstamp>
+	</target>
+	
+  <!-- This section prepares the directory structure needed for Web applications -->
+  <target name="prepare" depends="init, clean" description="Create build directories">
+  	<echo>Prepares the build directories...</echo>
+    <mkdir dir="${build}/WEB-INF/classes" />
+  	<mkdir dir="${build}/WEB-INF/lib" />
+  	<mkdir dir="${build}/export" />
+  </target>
+	
+  <!-- This section compiles the Java files -->
+  <target name="build" depends="prepare" description="Compile Java files" >
+  	<echo>Compiles the Java classes...</echo>
+    <javac srcdir="${sources}" destdir="${build}/WEB-INF/classes">
+      <include name="**/*.java" />
+      <classpath refid="classpath" />
+    </javac>
+	</target>
+	
+	<!-- This section copies the HTML and JSP pages to the appropriate locations -->
+	<!-- The "build" folder is an excat copy of what will be in the web container -->
+	<target name="predeploy" depends="build" description="Copy HTML, JSP and XML files">
+		<echo>Copies the HTML, JSP and XML files to the build directory...</echo>
+    <copy todir="${build}">
+      <fileset dir="${web}">
+          <include name="*.html" />
+          <include name="*.jsp" />
+	      	<include name="*.js" />
+      </fileset>
+    </copy>
+    <copy todir="${build}/WEB-INF">
+      <fileset dir="${web}/WEB-INF">
+        <include name="web.xml" />
+      	<include name="*.tld" />
+      	<include name="**/*.tag" />
+      </fileset>
+    </copy>
+    <copy todir="${build}/WEB-INF/lib">
+      <fileset dir="${libs}">
+        <include name="*.jar" />
+      </fileset>
+    </copy>
+    <copy todir="${build}/WEB-INF/classes">
+      <fileset dir="${properties}/${app.status}">
+        <include name="*.properties" />
+      </fileset>
+    </copy>
+  </target>
+	
+	<!-- This section ONLY update the static pages of the web app -->
+	<target name="static">
+		<echo>Updates the static pages...</echo>
+		<copy todir="${static}">
+			<fileset dir="${html}" />
+		</copy>
+	</target>
+	
+  <!-- This section deploys the application by copying the appropriate files to the webapps/ directory on the server -->
+<!-- Too dangerous...
+  <target name="deploy" depends="predeploy, static" description="Deploy application to Web Container">
+  	<echo>Deploys the application...</echo>
+    <copy todir="${webapp}">
+      <fileset dir="${build}" />
+    </copy>
+  </target>
+-->
+	
+	<!-- This section cleans the webapp folder on the Web Container -->
+	<target name="clean" description="Clean the Web Container">
+		<echo>Cleans the build directory...</echo>
+		<delete dir="${build}" verbose="false" includeEmptyDirs="true" />
+		<!-- <delete dir="${webapp}" verbose="false" includeEmptyDirs="true" /> -->
+	</target>
+	
+	<!-- This section copy and modify the 'context.xml' for the future .war file  -->
+	<target name="context" depends="predeploy" description="Creates the 'context.xml' file for the war">
+		<!-- 
+		<echo>Creates the 'context.xml' file</echo>
+		<copy file="new_context.xml" toFile="${build}/META-INF/context.xml">
+			<filterset>
+				<filter token="DATE" value="${DATE_SUFFIX}" />
+				<filter token="VERSION" value="${app.status}" />
+			</filterset>
+		</copy>
+		-->
+	</target>
+	
+	<!-- This section creates a war file to deploy the web application -->
+	<target name="package" depends="predeploy, context, static" description="Builds a war file for deployment">
+		<echo>Builds the war file...</echo>
+		<!--<property name="war.file" value="${app.name}-${app.status}_${DATE_SUFFIX}.war" />-->
+		<property name="war.file" value="${app.name}-${app.status}.war" />
+		<war destfile="${package}/${war.file}" webxml="${build}/WEB-INF/web.xml">
+			<fileset dir="${build}" excludes="**/web.xml" />
+		</war>
+	</target>
+  
+</project>

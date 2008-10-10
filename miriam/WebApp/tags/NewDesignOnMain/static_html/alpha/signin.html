@@ -1,0 +1,62 @@
+<h2><span class="box_green">Miriam</span> Sign In</h2>
+
+<p>
+	Sign in here using your username and password (this is the same account as for <a href="http://www.ebi.ac.uk/biomodels/" title="Biomodels web site">BioModels.net</a>):
+</p>
+
+<form method="post" action="signIn">
+	<table width="100" summary="SignIn form">
+		<tr>
+			<td>
+				<label for="login_id">Username:</label>
+			</td>
+			<td>
+				<input type="text" size="16" name="username" id="login_id" onfocus="javascript:this.select();" />
+			</td>
+		</tr>
+		<tr>
+			<td>
+				<label for="pass_id">Password:</label>
+			</td>
+			<td>
+				<input type="password" size="16" name="password" id="pass_id" onfocus="javascript:this.select();" />
+			</td>
+		</tr>
+	</table>
+	<p>
+		<input type="submit" value="SignIn" class="action_button" />
+		<input type="reset" value="Reset" class="action_button" />
+	</p>
+</form>
+
+
+<h3><span class="h3_right">Forgot your password?</span></h3>
+<p>
+	Type your username below, leave the password blank, and click the <i>Forgotten Password</i> button below. Your password will be sent to you by email.
+</p>
+
+<form method="post" action="passReminder">
+	<table width="100" summary="Password reminder form">
+		<tr>
+			<td>
+				<label for="username_id">Username:</label>
+			</td>
+			<td>
+				<input type="text" size="16" name="username" id="username_id" onfocus="javascript:this.select();" />
+			</td>
+		</tr>
+	</table>
+	<p>
+		<input type="submit" value="Forgotten Password" class="action_button" />
+	</p>
+</form>
+
+<h3><span class="h3_right">Warning</span></h3>
+<p>
+	You need to enable <i>cookies</i> in your web browser in order to use the <b>Sign In</b> functionality.
+</p>
+
+<!-- focus on the input field of the login -->
+<script type="text/javascript">
+	document.forms[0]['login_id'].focus();
+</script>

@@ -1,0 +1,99 @@
+<h2>Web Services</h2>
+
+<p>
+	MIRIAM Resources provide some Web Services for programmatic access.
+</p>
+
+
+<h2>List of services available</h2>
+<p>
+	All the services provided are listed in detail <a href="mdb?section=ws_help" title="Available services">here</a>.
+</p>
+<p>
+	Alternatively, you can access to the <acronym title="Web Services Description Language">WSDL</acronym> file <a href="http://res-022:9951/miriamws-alpha/MiriamWebServices?wsdl" title="WSDL file of MIRIAM Web Services">here</a>.
+</p>
+
+<h2>Java Library</h2>
+<p>
+	In order to communicate with the web services of MIRIAM in a Java program, you can use the library below (distributed under the terms of the GNU General Public License). Two versions are provided:
+</p>
+<ul>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/MiriamJavaLib-20080414.jar" title="simple jar library">simple version</a> (18.6 KB, you need a couple of external jars to use it)</li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/MiriamJavaLib-standalone-20080414.jar" title="standalone jar library">standalone version</a> (2.6 MB, all the dependencies are included in the jar)</li>
+</ul>
+<p>
+	Here are the dependencies:
+</p>
+<ul>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/axis.jar" title="axis.jar">axis</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/commons-discovery-0.2.jar" title="commons-discovery-0.2.jar">commons-discovery</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/commons-logging-1.1.jar" title="commons-logging-1.1.jar">commons-logging</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/jaxrpc.jar" title="jaxrpc.jar">jaxrpc</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/log4j-1.2.8.jar" title="log4j-1.2.8.jar">log4j</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/saaj.jar" title="saaj.jar">saaj</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/wsdl4j-1.5.1.jar" title="wsdl4j-1.5.1.jar">wsdl4j</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/activation-1.1.jar" title="activation-1.1.jar">activation</a></li>
+	<li><a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/MiriamLib/dependencies/mail-1.4.jar" title="mail-1.4.jar">mail</a></li>
+</ul>
+<p>
+    Java 1.5 (or newer) is required in order to use the library. 
+</p>
+<p>
+	Note: you can find the latest version of each of these packages on their official web site.
+</p>
+
+<h2>Documentation</h2>
+<p>
+	The documentation (javadoc) can be found <a href="http://www.ebi.ac.uk/compneur-srv/miriam/alpha/lib-doc/index.html" title="documentation of the library">here</a>.
+</p>
+
+<h2>Tutorial</h2>
+<p>
+	Here is a sample program to show how to use the library:
+</p>
+<pre class="source">
+import uk.ac.ebi.miriam.lib.*;
+
+public class WebServicesTesting
+{
+ public static void main(String[] args)
+ {
+  // creation of the link to the web services
+  MiriamLink link = new MiriamLink();
+
+  // changes the default address
+  link.setAddress("http://res-022:9951/compneur-srv/miriam-alpha/MiriamWebServices");
+
+  System.out.println("Test 0:");
+  System.out.print("Is 'http://www.ebi.ac.uk/IntEnz/' deprecated? ");
+  System.out.println(link.isDeprecated("http://www.ebi.ac.uk/IntEnz/"));
+  System.out.println("Official URI: " + link.getOfficialURI("http://www.ebi.ac.uk/IntEnz/"));
+
+  System.out.println("Test 1:");
+  System.out.print("Is 'http://www.who.int/classifications/icd/' deprecated? ");
+  System.out.println(link.isDeprecated("http://www.who.int/classifications/icd/"));
+  System.out.println("Official URI: " + link.getOfficialURI("http://www.who.int/classifications/icd/"));
+ }
+}
+</pre>
+
+<p>
+  And the result should be:
+</p>
+
+<div class="xround"><b class="xtop"><b class="xb1">&nbsp;</b><b class="xb2">&nbsp;</b><b class="xb3">&nbsp;</b><b class="xb4">&nbsp;</b></b><div class="xboxcontent">
+<p class="indentParagraph">
+  Test 0:<br />
+  Is 'http://www.ebi.ac.uk/IntEnz/' deprecated? true<br />
+  Official URI: http://www.ec-code.org/<br />
+  Test 1:<br />
+  Is 'http://www.who.int/classifications/icd/' deprecated? false<br />
+  Official URI: http://www.who.int/classifications/icd/<br />
+</p>
+</div><b class="xbottom"><b class="xb4">&nbsp;</b><b class="xb3">&nbsp;</b><b class="xb2">&nbsp;</b><b class="xb1">&nbsp;</b></b></div>
+
+
+<h2>Warning!</h2>
+<p class="warning">
+	This version of the library is a beta. You are welcome to inform us of any special features found.
+</p>

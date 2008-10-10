@@ -1,0 +1,31 @@
+MIGRATION TO NEW TOMCAT INFRASTRUCTURE:
+- modify server-config.wsdd
+- modify web.xml
+- ...
+
+
+
+TODO:
+
+- 20080619, Nico: find the data type of a dataset based on its identifier
+- 20080609, Camille Laibe: use JAX-WS instead of the old Axis 1.3
+- 20080609, Camille Laibe: use Hibernate for the ORM
+- 20080418, Camille Laibe: go through the TODO of MiriamProvider and add the missing pieces
+- 20070716, Camille Laibe, Cyril Combe: return complex types, like the whole data type with all the information + a light data type (name + ID)
+- 20070716, Camille Laibe, Cyril Combe: use more the ID as a parameter of each method (name, synonym, URI, deprecated URI and ID)
+- 20070716, Camille Laibe, Cyril Combe: MIRIAM web service client packaged as a Maven 2 project
+
+
+- change the behavior of the "getDataTypeAllURIs" in order to have a good order in the answer:
+		official URL, official URN, deprecated URLs and deprecated URNs
+- add a "getDataTypeAllURI" (find a better name) which returns all the official URIs (maximum: one URI and one URL)
+- ...
+
+
+ALREADY SOLVED:
+- modify (find a solution) in DataSourceManager.java for loading the MiriamDB.properties,
+	 in a way no dependant of the status of the application (sid, alpha, demo, main)
+	==> use the "web.xml" file to store the database connection parameters
+
+
+DONE:

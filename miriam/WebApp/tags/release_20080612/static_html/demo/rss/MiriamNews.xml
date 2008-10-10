@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+    <channel>
+        
+        <title>MIRIAM News</title>
+        <link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=news</link>
+        <description>MIRIAM News Feed</description>
+        <language>en-gb</language>
+        <copyright>Copyright 2008, EMBL-EBI</copyright>
+        <managingEditor>camille.laibe@ebi.ac.uk (Camille Laibe)</managingEditor>
+        <category>EMBL-EBI</category>
+        <generator>My little hands (so far...)</generator>
+        <docs>http://en.wikipedia.org/wiki/RSS</docs>
+        <atom:link href="http://www.ebi.ac.uk/compneur-srv/miriam/main/rss/MiriamNews.xml" rel="self" type="application/rss+xml" />
+        <lastBuildDate>Thu, 12 Jun 2008 10:00:07 GMT</lastBuildDate>
+		
+		<!--
+		Categories:
+		Web Interface/Web Services/New Feature/New Data Type/Database Content/General/User/Document/Test
+		-->
+		
+		<image>
+			<title>MIRIAM News</title>
+			<url>http://www.ebi.ac.uk/Information/images/newsfeed.jpg</url>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=news</link>      
+		</image>
+        
+        <item>
+            <title>New features</title>
+            <description><![CDATA[A search engine is now available to easily retrieve the data types your are looking for. In order to make this experience better, we introduced tags associated with each data types. Of course, you can easily use them to search data types matching one or several tags. Moreover, we updated the XML export (and the XML Schema) in order to provide you with even more information.]]></description>
+            <link>http://www.ebi.ac.uk/compneur-srv/miriam-main/</link>
+            <guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/</guid>
+            <pubDate>Thu, 12 Jun 2008 10:00:01 GMT</pubDate>
+            <category>Database Content</category>
+            <category>General</category>
+            <category>New Feature</category>
+        </item>
+        
+        <item>
+            <title>XML Schema updated</title>
+            <description><![CDATA[The XML Schema of the XML export of the content of MIRIAM Database has been updated to match the recent changes on the format. This export now includes some examples of annotation in various formats (for example SBML, BioPAX or CellML). Moreover, the format now follows a nested structure for 'uris', 'resources', 'synonyms' and 'documentations'.]]></description>
+            <link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=export</link>
+            <guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=export</guid>
+            <pubDate>Wed, 23 Apr 2008 15:00:01 GMT</pubDate>
+            <category>Database Content</category>
+            <category>General</category>
+        </item>
+        
+        <item>
+            <title>New XML export</title>
+            <description><![CDATA[The XML export has been updated in order to contain more information. The examples of annotation in several formats (such as SBML, BioPAX or CellML) are now available in this XML file. The XML Schema has also been updated and will be available soon.]]></description>
+            <link>http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=export</link>
+            <guid>http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=export</guid>
+            <pubDate>Thu, 17 Apr 2008 18:00:01 GMT</pubDate>
+            <category>General</category>
+        </item>
+        
+        <item>
+            <title>Web Services updated</title>
+            <description><![CDATA[MIRIAM Web Services have been updated in order to provide an easy way for users to manage the transition between the old to the new MIRIAM URIs. For example the method 'getOfficialEntryURI()' allows you to convert an old MIRIAM URI into its official one. Don't forget to download the latest Java library to use these new features.]]></description>
+            <link>http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=ws</link>
+            <guid>http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=ws</guid>
+            <pubDate>Wed, 16 Apr 2008 18:00:01 GMT</pubDate>
+            <category>General</category>
+        </item>
+        
+        <item>
+            <title>New Scheme for MIRIAM URIs (Beta)</title>
+            <description><![CDATA[We released the new MIRIAM URIs, based on URN. These are more coherent and reliable than the ones used previously. In order to make the transition easier, don't forget to use the latest version of the Web Services and the associated library.]]></description>
+            <link>http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=browse</link>
+            <guid>http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=browse</guid>
+            <pubDate>Mon, 14 Apr 2008 15:00:01 GMT</pubDate>
+            <category>Database Content</category>
+        </item>
+        
+		<item>
+			<title>New BioModels.net qualifier: "occursIn"</title>
+			<description><![CDATA[New BioModels.net qualifier: "occursIn". For example: "MAP-kinase cascade <b>occursIn</b> human". For more information, cf. <a href="http://www.ebi.ac.uk/compneur-srv/miriam-demo/mdb?section=qualifiers" title="Access to the BioModels.net qualifiers section">qualifiers section</a>.]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=qualifiers</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=qualifiers</guid>
+			<pubDate>Thu, 20 Mar 2008 16:50:01 GMT</pubDate>
+			<category>General</category>
+		</item>
+		
+		<item>
+			<title>XML Schema updated</title>
+			<description><![CDATA[The XML Schema of the XML export of the content of MIRIAM Database has been updated to match (slight) recent changes on the format (cf. news about the DOI support in documentation).]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=export</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=export</guid>
+			<pubDate>Wed, 19 Mar 2008 14:30:01 GMT</pubDate>
+			<category>Database Content</category>
+			<category>General</category>
+		</item>
+		
+		<item>
+			<title>A curator for MIRIAM Resources and the Systems Biology Ontology</title>
+			<description><![CDATA[A curator, Nick Juty, has been hired to work on <a href="http://www.ebi.ac.uk/miriam/" title="MIRIAM Resources">MIRIAM Resources</a> and the <a href="http://www.ebi.ac.uk/sbo/" title="Systems Biology Ontology">Systems Biology Ontology</a>, as part of the <a href="http://www.elixir-europe.org/" title="European Life sciences Infrastructure for Biological Information">European project ELIXIR</a>.]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=news</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=news</guid>
+			<pubDate>Thu, 06 Mar 2008 14:30:06 GMT</pubDate>
+			<category>General</category>
+		</item>
+		
+		<item>
+			<title>DOI support for pieces of documentation</title>
+			<description><![CDATA[Pieces of documentation for a data type can now be stored using a DOI (as well as a PMID or a physical location).]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=submit</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=submit</guid>
+			<pubDate>Wed, 20 Feb 2008 16:00:01 GMT</pubDate>
+			<category>Web Interface</category>
+			<category>New Feature</category>
+		</item>
+		
+		<item>
+			<title>New data type in MIRIAM Resources: SABIO-RK Reaction</title>
+			<description><![CDATA[SABIO-RK is a relational database system that contains information about biochemical reactions, their kinetic equations with their parameters, and the experimental conditions under which these parameters were measured.]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=browse&amp;data=MIR:00000038</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=browse&amp;data=MIR:00000038</guid>
+			<pubDate>Thu, 31 Jan 2008 01:06:43 GMT</pubDate>
+			<category>Database Content</category>
+			<category>New Data Type</category>
+		</item>
+		
+		<item>
+			<title>Welcome to MIRIAM News Feed!</title>
+			<description><![CDATA[New RSS feed to keep track of what happen on <a href="http://www.ebi.ac.uk/miriam/" title="MIRIAM Resources">MIRIAM Resources</a>.]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam/main/rss/MiriamNews.xml</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam/main/rss/MiriamNews.xml</guid>
+			<pubDate>Wed, 30 Jan 2008 08:05:02 GMT</pubDate>
+			<category>Web Interface</category>
+			<category>New Feature</category>
+		</item>
+		
+		<!-- 
+		<item>
+			<title></title>
+			<description><![CDATA[   ]]></description>
+			<link></link>
+			<guid></guid>
+			<pubDate></pubDate>
+			<category></category>
+		</item>
+		-->
+		
+	</channel>
+</rss>

@@ -1,0 +1,87 @@
+<img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/miriam_small_border.png" title="MIRIAM Logo" alt="MIRIAM Logo" width="113" height="75" class="grouplogo" />
+
+<p>
+  <b>MIRIAM</b> is an effort to standardize the <a href="http://dx.doi.org/10.1038/nbt1156" title="MIRIAM publication in Nature Biotechnology"><em>Minimal Information Requested In the Annotation of biochemical Models</em></a>, so that different groups can collaborate on annotating and curating computational models in biology. The goal of the project, initiated by the <a href="http://biomodels.net/" title="BioModels.net">BioModels.net</a> effort is to produce a set of guidelines suitable for use with any structured format for computational models.
+</p>
+<p>
+	<b>MIRIAM</b> is a registered project of the <a href="http://mibbi.sourceforge.net/" title="Minimum Information for Biological and Biomedical Investigations">MIBBI</a> (Minimum Information for Biological and Biomedical Investigations).
+</p>
+
+<table border="0" width="100%" style="background: #FF5858; border: 1px solid #bfbfbf; margin: 5px 5px 5px 5px;" summary="downtime announce">
+  <tr>
+    <td align="center">
+      <p>
+        <b>WARNING:</b> Because of essential maintenance of the electrical system of the EBI data center, most Web services will be affected between <b>7th-9th March 2008</b>. Work will commence on Friday 7th March at 16:00 GMT. <b>MIRIAM Resources</b> will therefore be down during this period. We apologise for any inconvenience caused.
+      </p>
+    </td>
+  </tr>
+</table>
+
+
+<h2>MIRIAM Standard</h2>
+<p>
+  An important part of the standard consists in the controlled annotation of model components, based on Uniform Resource Identifiers (URI). For more information on the use of those <acronym title="Uniform Resource Identifiers">URIs</acronym> to annotate models, see the <a href="http://sbml.org/wiki/" title="Systems Biology Markup Language">specification of SBML Level 2 Version 2</a>. In order to enable interoperability of this annotation, the community has to agree on a set of recognised data-types. MIRIAM Resources (using a <a href="http://www.mysql.com/" title="MySQL">MySQL</a> database) is an online service created to catalogue the data-types, their <acronym title="Uniform Resource Identifiers">URIs</acronym> and the corresponding physical <acronym title="Uniform Resource Locators">URLs</acronym> or resources, whether these are controlled vocabularies or databases.
+</p>
+<p>
+  Each entry contains a diverse set of details about the data-type: official name and synonyms, root <acronym title="Uniform Resource Identifiers">URIs</acronym> (<acronym title="Uniform Resource Locator">URL</acronym> and <acronym title="Uniform Resource Name">URN</acronym> forms), patterns of identifiers, documentation, etc. Each data-type can be associated with several resources (or physical locations). For instance:
+</p>
+
+<ul>
+  <li><em>name</em>: Gene Ontology</li>
+  <li><em>synonym</em>: GO</li>
+  <li><em>pattern</em>: GO:\d{7}$</li>
+  <li><em>URI</em>: <tt>http://www.geneontology.org/</tt></li>
+  <li><em>Resources:</em>
+    <ul>
+    <li><em>location home</em>: <tt>http://www.ebi.ac.uk/ego/</tt></li>
+    <li><em>root URL</em>: <tt>http://www.ebi.ac.uk/ego/DisplayGoTerm?selected=$1</tt></li>
+    </ul>
+    <ul>
+      <li><em>location home</em>: <tt>http://www.godatabase.org/cgi-bin/amigo/go.cgi</tt></li>
+      <li><em>root URL</em>: <tt>http://www.godatabase.org/cgi-bin/amigo/go.cgi?query=$1</tt></li>
+    </ul>
+    [...]
+  </li>
+</ul>
+
+<p>
+  Note that the <acronym title="Uniform Resource Identifiers">URIs</acronym> can take either a <acronym title="Uniform Resource Locator">URL</acronym> form (<tt>http://www.uniprot.org/</tt>) or a <acronym title="Uniform Resource Name">URN</acronym> form (<tt>urn:lsid:uniprot.org</tt>). A <acronym title="Uniform Resource Identifier">URI</acronym> is NOT a "real" website, but a unique string. For instance the <acronym title="Uniform Resource Identifier">URI</acronym> representing the enzyme classification is <tt>http://www.ec-code.org/</tt>.
+</p>
+
+
+<h2>MIRIAM Resources</h2>
+
+<p>
+  A freely available web site is being developed, using an <a href="http://tomcat.apache.org/" title="Apache Tomcat">Apache Tomcat</a> server to provide an interface for the database. Users will be able to perform queries such as retrieving valid physical locations (<acronym title="Uniform Resource Locators">URLs</acronym>) corresponding to a given <acronym title="Uniform Resource Identifier">URI</acronym> (whether a generic data-type or a precise piece of knowledge), retrieving all the information stored about a data-type (such as its name, its synonyms, links to some documentation, etc.) and immediately get the results in a dynamic way, using <a href="http://en.wikipedia.org/wiki/AJAX" title="AJAX on Wikipedia">Asynchronous JavaScript and XML</a> (AJAX).
+</p>
+<p>
+  Moreover, a programmatic access through web services (based on <a href="http://ws.apache.org/axis/" title="Apache Axis">Apache Axis</a> and <a href="http://en.wikipedia.org/wiki/SOAP" title="SOAP on Wikipedia">SOAP</a> messages) is now available. This <acronym title="Application Programming Interface">API</acronym> permits not only to resolved model annotations, but also to generate the correct <acronym title="Uniform Resource Identifiers">URIs</acronym> based on resource name and accession numbers.
+</p>
+
+
+<h2>Acknowledgements</h2>
+
+<p>
+  MIRIAM Resources are developed at the <a href="http://www.ebi.ac.uk" title="EBI">European Bioinformatics Institute</a> in the <a href="http://www.ebi.ac.uk/compneur-srv/" title="Computational Neurobiology Group">Computational Neurobiology Group</a> by <acronym title="laibe AT ebi DOT ac DOT uk">Camille Laibe</acronym> and curated by <acronym title="juty AT ebi DOT ac DOT uk">Nick Juty</acronym>.
+</p>
+
+<p>
+  MIRIAM Resources are developed with the help of the <a href="http://www.bbsrc.ac.uk/" title="BBSRC web site">Biotechnology and Biological Sciences Research Council</a>. It also benefitted of funding from the <a href="http://www.embl.org/" title="EMBL web site">European Molecular Biology Laboratory</a> and the <a href="http://www.nigms.nih.gov/" title="NIGMS web site">National Institute of General Medical Sciences</a>.
+</p>
+
+<!-- European Life Sciences Infrastructure For Biological Information
+
+The mission of ELIXIR is to construct and operate a sustainable infrastructure for biological information in Europe to support life science research and its translation to medicine and the environment, the bio-industries and society.
+
+cf. http://www.ebi.ac.uk/Information/eu/index.html 
+ -->
+
+
+<table align="center" width="400" cellspacing="20" summary="funding partners">
+  <tr>
+    <td><a href="http://www.bbsrc.ac.uk/" title="Biotechnology and Biological Sciences Research Council (BBSRC)"><img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/BBSRC_small_logo.png" title="Biotechnology and Biological Sciences Research Council (BBSRC)" alt="BBSRC logo" /></a></td>
+    <td><a href="http://www.embl.org/" title="European Molecular Biology Laboratory (EMBL)"><img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/embl.gif" title="European Molecular Biology Laboratory (EMBL)" alt="EMBL logo" /></a></td>
+    <td><a href="http://www.nigms.nih.gov/" title="National Institute of General Medical Sciences (NIGMS)"><img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/NIGMS_logo.png" title="National Institute of General Medical Sciences (NIGMS)" alt="NIGMS logo" /></a></td>
+    <td><a href="http://www.elixir-europe.org/" title="European Life sciences Infrastructure for Biological Information"><img src="http://www.ebi.ac.uk/compneur-srv/miriam/img/ELIXIR_logo.png" title="European Life sciences Infrastructure for Biological Information" alt="ELIXIR logo" /></a></td>
+  </tr>
+</table>

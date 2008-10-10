@@ -1,0 +1,39 @@
+MIRIAM Resources Documentation
+Camille Laibe <camillle.laibe@ebi.ac.uk>
+Version 20080313
+
+
+(*) Organisation of the source code
+
+- only one directory for the Java code ('src')
+- JSPs stored in 'WebContent-version' (where 'version' equals 'demo' or 'main')
+  The differences are:
+  - sid and alpha need to include 'head.html' and 'foot.html' with a full path
+  - the <h1> tag, for the title, shows the version, except for 'main'
+  - some javascript code to access to static elements (images)
+- static pages (stub to be included by 'static.jsp') stored in 'static_html' in subfolders according to the version.
+  The differences are:
+  - path to static elements
+  - path to WSDL, JavaDoc, libraries, and dependencies for the Web Services page
+- Log4J properties file, stored in 'properties' in subfolders according to the version.
+
+
+(*) Compile and deploy the application:
+
+- an Ant file is available for all the version, called 'build-version.xml' (where 'version' equals 'demo' or 'main')
+- all the war regenerated are stored in 'dist'
+
+
+(*) Migration from Apache Tomcat 5.0.28 to 5.5.23:
+- add "commons-pool-1.3.jar" in the lib folder
+- remove the "context.xml" file from the war
+- update of the MySQL/Java driver (from 5.0.5 to 5.1.6)
+- 
+
+
+(*) Contact the author:
+
+- Camille Laibe:
+    <camille.laibe@ebi.ac.uk>
+    <camille.laibe@gmail.com>
+

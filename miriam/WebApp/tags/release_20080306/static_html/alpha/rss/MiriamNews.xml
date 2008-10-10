@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+
+	<channel>
+		
+		<title>MIRIAM News</title>
+		<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=news</link>
+		<description>MIRIAM News Feed</description>
+		<language>en-gb</language>
+		<copyright>Copyright 2008, EMBL-EBI</copyright>
+		<managingEditor>camille.laibe@ebi.ac.uk (Camille Laibe)</managingEditor>
+		<category>EMBL-EBI</category>
+		<generator>My little hands (so far...)</generator>
+		<docs>http://en.wikipedia.org/wiki/RSS</docs>
+		<atom:link href="http://www.ebi.ac.uk/compneur-srv/miriam/main/rss/MiriamNews.xml" rel="self" type="application/rss+xml" />
+	    <lastBuildDate>Wed, 20 Feb 2008 21:30:07 GMT</lastBuildDate>  
+		
+		<!--
+		Categories:
+		Web Interface/Web Services/New Feature/New Data Type/Database Content/General/User/Document/Test
+		-->
+		
+		<image>
+			<title>MIRIAM News</title>
+			<url>http://www.ebi.ac.uk/Information/images/newsfeed.jpg</url>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=news</link>      
+		</image>
+		
+		
+		<item>
+			<title>DOI support for pieces of documentation</title>
+			<description><![CDATA[Pieces of documentation for a data type can now be stored using a DOI (as well as a PMID or a physical location).]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=submit</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=submit</guid>
+			<pubDate>Wed, 20 Feb 2008 16:00:01 GMT</pubDate>
+			<category>Web Interface</category>
+			<category>New Feature</category>
+		</item>
+		
+		<item>
+			<title>New data type in MIRIAM Resources: SABIO-RK Reaction</title>
+			<description><![CDATA[SABIO-RK is a relational database system that contains information about biochemical reactions, their kinetic equations with their parameters, and the experimental conditions under which these parameters were measured.]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=browse&amp;data=MIR:00000038</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam-main/mdb?section=browse&amp;data=MIR:00000038</guid>
+			<pubDate>Thu, 31 Jan 2008 01:06:43 GMT</pubDate>
+			<category>Database Content</category>
+			<category>New Data Type</category>
+		</item>
+		
+		<item>
+			<title>Welcome to MIRIAM News Feed!</title>
+			<description><![CDATA[New RSS feed to keep track of what happen on <a href="http://www.ebi.ac.uk/miriam/" title="MIRIAM Resources">MIRIAM Resources</a>.]]></description>
+			<link>http://www.ebi.ac.uk/compneur-srv/miriam/main/rss/MiriamNews.xml</link>
+			<guid>http://www.ebi.ac.uk/compneur-srv/miriam/main/rss/MiriamNews.xml</guid>
+			<pubDate>Wed, 30 Jan 2008 08:05:02 GMT</pubDate>
+			<category>Web Interface</category>
+			<category>New Feature</category>
+		</item>
+		
+		<!-- 
+		<item>
+			<title></title>
+			<description><![CDATA[   ]]></description>
+			<link></link>
+			<guid></guid>
+			<pubDate></pubDate>
+			<category></category>
+		</item>
+		-->
+		
+	</channel>
+</rss>

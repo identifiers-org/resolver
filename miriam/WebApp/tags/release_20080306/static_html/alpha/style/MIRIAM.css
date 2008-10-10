@@ -1,0 +1,284 @@
+/* role     : CSS style sheet for MIRIAM Resources       */
+/* address  : http://www.ebi.ac.uk/miriam/               */
+/* author   : Camille Laibe                              */
+/* version  : 20080111                                   */
+/* copyright: EMBL-EBI, Computational Neurobiology Group */
+
+
+/* properties for the menu (previously an iframe) */
+div#leftmenu2 {
+ margin: 0;
+ border: 0;
+ width: 145px;
+ height: 700px;
+ visibility: visible;
+ display: block;
+ z-index: 2;
+}
+
+/* log box: displays the user logged */
+div#loginfo {
+	position: absolute;
+	top: 36px;
+	right: 2em;
+}
+
+table.sqlresult {
+	border: 1px solid rgb(191, 191, 191);
+	width: 100%;
+	border-collapse: collapse;
+	text-align: center;
+	margin-bottom: 1em;
+	margin-top: 1em;
+}
+
+table.sqlresult th {
+	background-color: rgb(94, 158, 158);
+	color: rgb(255, 255, 255);
+	padding-right: 1em;
+	padding-left: 1em;
+	text-align: center;
+	border: 1px solid rgb(191, 191, 191);
+}
+
+table.sqlresult td.par {
+	border: 1px solid rgb(191, 191, 191);
+	background-color: rgb(255, 255, 255);
+	color: inherit;
+}
+
+table.sqlresult td.odd {
+	border: 1px solid rgb(191, 191, 191);
+	background-color: rgb(238, 245, 245);
+	color: inherit;
+}
+
+
+table.simple {
+	border: 1px solid rgb(191, 191, 191);
+	margin-top: 1em;
+}
+
+option.line-above {
+	border-top: 1px dotted rgb(191, 191, 191);
+}
+
+fieldset {
+	margin-top: 1em;
+  margin-bottom: 1em;
+  border: 1px solid rgb(191, 191, 191);
+}
+
+legend {
+	padding: 1px 4px;
+	border-color: rgb(191, 191, 191);
+	border-style: solid;
+	border-width: 1px;
+	background-color: rgb(238, 245, 245);
+	color: rgb(0, 0, 0);
+}
+
+fieldset.request {
+	width: 380px;
+	margin-left: 3em;
+	margin-top: 1em;
+	background-color: rgb(238, 245, 245);
+	color: inherit;
+}
+
+div.request {
+	margin-bottom: 1em;
+}
+
+div.answer {
+	background-color: rgb(94, 158, 158);
+  color: rgb(255, 255, 255);
+  font-weight: bold; 
+	border: 1px solid rgb(173, 173, 173);
+	min-height: 4em;
+	padding-right: 5px;
+	padding-top: 0px;
+	padding-bottom: 0px;
+	padding-left: 5px;
+}
+
+div.answer ul {
+	padding-left: 1em;
+	margin-left: 1em;
+	list-style-type: square;
+}
+
+div.answerStatus {
+	background-color: rgb(94, 158, 158);
+	border: 1px dashed rgb(173, 173, 173);
+	color: rgb(255, 255, 255);
+	margin-top: 1px;
+	height: 3em;
+}
+
+table.table_help {
+	margin-left: 3em;
+	background-color: rgb(238, 245, 245);
+}
+
+table.table_help td.help_element {
+	border: 1px solid rgb(191, 191, 191);
+	font-weight: bold;
+}
+
+table.table_help td.help_value {
+	border: 1px solid rgb(191, 191, 191);
+	font-style: italic;
+}
+
+table.table_help td.help_result {
+	border: 1px solid rgb(191, 191, 191);
+	font-style: italic;
+}
+
+table.resources {
+	border-bottom: 1px solid rgb(191, 191, 191);
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+}
+
+div.docSubmitForm {
+	border-bottom: 1px solid rgb(191, 191, 191);
+	padding-bottom: 3px;
+	margin-bottom: 5px;
+}
+
+table.datatyperesult {
+	margin-top: 1em;
+	border-width: 1px;
+	border-style: solid;
+	border-color: rgb(109, 169, 219);
+	border-collapse: collapse;
+	width: 100%;
+	text-align: left;
+}
+
+table.datatyperesult th {
+	background-color: rgb(94, 158, 158);
+	color: rgb(255, 255, 255);
+	padding-right: 1em;
+	padding-left: 1em;
+	text-align: center;
+	border-bottom: 1px solid rgb(191, 191, 191);
+}
+
+table.datatyperesult td.desc {
+	background-color: rgb(255, 255, 255);
+	color: inherit;
+	border: 1px solid rgb(191, 191, 191);
+	width: 20em;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+table.datatyperesult td.desc2 {
+	background-color: rgb(255, 255, 255);
+	color: inherit;
+	border: 1px solid rgb(191, 191, 191);
+	width: 10em;
+	font-weight: bold;
+	padding-left: 5px;
+}
+
+table.datatyperesult td.element {
+	background-color: rgb(255, 255, 255);
+	color: inherit;
+	border: 1px solid rgb(191, 191, 191);
+	padding-left: 5px;
+}
+
+table.datatyperesult td.subElement {
+  background-color: rgb(255, 255, 255);
+  color: inherit;
+  padding-left: 5px;
+}
+
+table.nothing {
+	width: 100%;
+	border: 0;
+	margin: 0;
+	padding: 0;
+	border-spacing: 0;
+	border-collapse: collapse;
+}
+
+table.nothing tr, td {
+	padding: 0;
+	border: 0;
+	margin: 0;
+}
+
+li.optional {
+	display: none;
+	margin-left: 1em;
+}
+
+ul.noPoint {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+}
+
+acronym.idInfo {
+	text-decoration: none;
+	border: none;
+	cursor: help;
+}
+
+p.source {
+	text-indent: 0;
+	color: black;
+	background-color: rgb(238, 245, 245);
+	border: 1px solid rgb(191, 191, 191);
+	font-family: courier, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	text-align: left;
+	padding-left: 1em;
+}
+
+span.source {
+	font-family: courier, Arial, Helvetica, sans-serif;
+}
+
+pre.indent {
+	margin-left: 2em;
+}
+
+pre.source {
+	text-indent: 0;
+	color: black;
+	background-color: rgb(238, 245, 245);
+	border: 1px solid rgb(191, 191, 191);
+	font-family: courier, Arial, Helvetica, sans-serif;
+	font-size: 90%;
+	padding-left: 1em;
+}
+
+p.indentParagraph {
+	margin-left: 2em;
+}
+
+span.pubtitle {
+	background-color: #FFFFFF;
+	color: #006666;
+	font-style: normal;
+	font-weight: bold;	
+}
+
+img {
+	border: 0;
+}
+
+.action_button {
+	cursor: pointer;
+}
+
+/* spam filter, not visible by a human */
+fieldset.SpicedHam {
+	display: none;
+}

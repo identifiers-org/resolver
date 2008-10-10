@@ -1,0 +1,158 @@
+<!-- Ant build file: Java Library for using MIRIAM Web Services -->
+<!-- EMBL-EBI, Computational Neurobiology Group -->
+<!-- Camille Laibe <camille.laibe@ebi.ac.uk> -->
+<!-- 20080413 -->
+
+<project name="MiriamJavaLib" default="" basedir=".">
+	
+	<!-- Variables -->
+	<property name="simpleJar" value="jar" />
+	<property name="standAlone" value="jar-standalone" />
+	<property name="sources" value="src" />
+	<property name="binary" value="bin" />
+	<property name="tempJar" value="temp-build" />
+	<property name="libs" value="lib" />
+	<property name="docs" value="doc" />
+	<property name="staticAlpha" value="/homes/laibe/public_html/miriam/alpha/" />
+	
+	<!-- ClassPath -->
+	<path id="classpath">
+		<fileset dir="${libs}">
+			<include name="*.jar"/>
+		</fileset>
+	</path>
+	
+	<!-- Initialisation -->
+	<target name="init" description="Setting Timestamps">
+		<echo>Initialisation of Timestamps...</echo>
+		<tstamp>
+			<format property="DATE_SUFFIX" pattern="yyyyMMdd-hhmm" />
+			<format property="DATE_SIMPLE" pattern="MMM yyyy" />
+		</tstamp>
+	</target>
+	
+	<!-- This section compiles the Java files -->
+	<target name="build" depends="init" description="Compile Java files" >
+		<echo>Compiles the Java classes...</echo>
+		<javac srcdir="${sources}" destdir="${sources}">
+			<include name="**/*.java" />
+			<classpath refid="classpath" />
+		</javac>
+	</target>
+	
+	<!-- Generates a jar with only the MIRIAM library -->
+	<target name="jarSimple" depends="build" description="Generates the simple jar of the library">
+		<echo>Generates the simple jar of the library...</echo>
+		<jar destfile="${simpleJar}/MiriamJavaLib-${DSTAMP}.jar" basedir="${binary}">
+			<fileset dir="${sources}" />
+			<fileset dir="jar-elements">
+				<include name="build.xml" />
+			</fileset>
+			<fileset dir="./">
+				<include name="COPYING.txt" />
+				<include name="README.txt" />
+			</fileset>
+			<manifest>
+				<attribute name="Author" value="Camille Laibe (camille.laibe@ebi.ac.uk)" />
+				<section name="Shared">
+					<attribute name="Title" value="MIRIAM Web Services Java Library" />
+					<attribute name="Vendor" value="EMBL - European Bioinformatics Institute,                            Computational Neurobiology Group" />
+					<attribute name="Date" value="${TODAY}" />
+				</section>
+				<section name="Copyright">
+					<attribute name="Copy" value="Copyright (C) 2006-2008 Camille Laibe (camille.laibe@ebi.ac.uk),     under the terms of the GNU GPL" />
+				</section>
+			</manifest>
+		</jar>
+	</target>
+	
+	<!-- Generates a jar with the MIRIAM library including all the dependencies -->
+	<target name="jarComplex" depends="build" description="Generates the standalone jar of the library">
+		<echo>Generates the standalone jar of the library...</echo>
+		<!-- erases the temporary folder -->
+		<delete dir="${tempJar}" />
+		<!-- creates a temporary folder -->
+		<mkdir dir="${tempJar}" />
+		<!-- copies the compiled classes into the temporary folder -->
+		
+		<!--
+		<copy todir="${tempJar}">
+			<fileset dir="${binary}" />
+		</copy>
+		-->
+		
+		<!-- generates the standalone jar -->
+		<jar destfile="${standAlone}/MiriamJavaLib-standalone-${DSTAMP}.jar" basedir="${binary}">
+			<fileset dir="${sources}" />
+			<!-- includes the dependencies -->
+			<zipfileset src="${libs}/activation-1.1.jar" />
+			<zipfileset src="${libs}/axis.jar" />
+			<zipfileset src="${libs}/commons-discovery-0.2.jar" />
+			<zipfileset src="${libs}/commons-logging-1.1.jar" />
+			<zipfileset src="${libs}/jaxrpc.jar" />
+			<zipfileset src="${libs}/log4j-1.2.8.jar" />
+			<zipfileset src="${libs}/mail-1.4.jar" />
+			<zipfileset src="${libs}/saaj.jar" />
+			<zipfileset src="${libs}/wsdl4j-1.5.1.jar" />
+			<fileset dir="jar-elements">
+				<include name="build.xml" />
+			</fileset>
+			<fileset dir="./">
+				<include name="COPYING.txt" />
+				<include name="README.txt" />
+			</fileset>
+			<manifest>
+				<attribute name="Author" value="Camille Laibe (camille.laibe@ebi.ac.uk)" />
+				<section name="Shared">
+					<attribute name="Title" value="MIRIAM Web Services Java Library (standalone version)" />
+					<attribute name="Vendor" value="EMBL - European Bioinformatics Institute,                            Computational Neurobiology Group" />
+					<attribute name="Date" value="${TODAY}" />
+				</section>
+				<section name="Copyright">
+					<attribute name="Copy" value="Copyright (C) 2006-2008 Camille Laibe (camille.laibe@ebi.ac.uk),     under the terms of the GNU GPL" />
+				</section>
+			</manifest>
+		</jar>
+	</target>
+	
+	<!-- Generates the javadoc -->
+	<target name="documentation" depends="init" description="Generates the javadoc">
+		<echo>Generates the javadoc...</echo>
+		<javadoc
+				 destdir="${docs}"
+				 author="true"
+				 version="true"
+				 use="true"
+				 windowtitle="MIRIAM Web Services Java Library"
+				 classpathref="classpath"
+				 breakiterator="true">
+			<packageset dir="${sources}">
+				<include name="**" />
+			</packageset>
+			<doctitle>MIRIAM Java Library</doctitle>
+			<bottom>EMBL-EBI, Computational Neurobiology Group - ${DATE_SIMPLE}</bottom>
+			<link href="http://java.sun.com/j2se/1.4.2/docs/api"/>
+		</javadoc>
+	</target>
+	
+	<!-- Updates the static pages directory for the Miriam Web App -->
+	<target name="static" description="Updates the static pages directory for the MIRIAM Web App (Alpha)">
+		<echo>Updates the static pages directory for the MIRIAM Web App (Alpha)</echo>
+		<copy todir="${staticAlpha}/MiriamLib">
+			<fileset dir="jar" />
+			<fileset dir="jar-standalone" />
+		</copy>
+		<copy todir="${staticAlpha}/MiriamLib/dependencies/">
+			<fileset dir="${libs}" />
+		</copy>
+		<copy todir="${staticAlpha}/lib-doc">
+			<fileset dir="${docs}" />
+		</copy>
+	</target>
+	
+	<!-- Generates jars and doc (do all the stuff) -->
+	<target name="all" depends="jarSimple, jarComplex, documentation, static" description="Generates the jars and the doc">
+		<echo>Generates the jars and the doc</echo>
+	</target>
+	
+</project>

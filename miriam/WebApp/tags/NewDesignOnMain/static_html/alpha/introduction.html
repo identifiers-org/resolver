@@ -1,0 +1,65 @@
+<h2><span class="box_green">Miriam</span> Resources</h2>
+<div class="img_right">
+  <img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/miriam_small_border.png" title="Miriam Logo" alt="Miriam Logo" width="113" height="75" />
+</div>
+
+<p>
+  <b>MIRIAM</b> is an effort to standardize the <a href="http://dx.doi.org/10.1038/nbt1156"><em>Minimal Information Requested In the Annotation of biochemical Models</em></a>, so that different groups can collaborate on annotating and curating computational models in biology. The goal of the project, initiated by the <a href="http://biomodels.net/">BioModels.net</a> effort is to produce a set of guidelines suitable for use with any structured format for computational models.
+</p>
+
+<h3><span class="h3_right">Information</span></h3>
+<p>
+  An important part of the standard consists in the controlled annotation of model components, based on Uniform Resource Identifiers. For more information on the use of those URIs to annotate models, see the <a href="http://sbml.org/wiki/">specification of SBML Level 2 Version 2</a>. In order to enable interoperability of this annotation, the community has to agree on a set of recognised data-types. MIRIAM database (using <a href="http://www.mysql.com/" title="MySQL">MySQL</a>) is an online resource created to catalogue the data resources, their URIs and the corresponding physical URLs, whether these are controlled vocabularies or databases.
+</p>
+<p>
+  Each entry contains a diverse set of details about the data-type: official name and synonyms, root URIs (URL and URN forms), patterns of identifiers, documentation, etc. Each data-type can be associated with several physical locations or resources. For instance:
+</p>
+
+<ul>
+  <li><em>name</em>: Gene Ontology</li>
+  <li><em>synonym</em>: GO</li>
+  <li><em>pattern</em>: GO:\d{7}$</li>
+  <li><em>URI</em>: <tt>http://www.geneontology.org/</tt></li>
+  <li><em>Resources</em>
+    <ul>
+    <li><em>location home</em>: <tt>http://www.ebi.ac.uk/ego/</tt></li>
+    <li><em>root URL</em>: <tt>http://www.ebi.ac.uk/ego/DisplayGoTerm?selected=$1</tt></li>
+    </ul>
+    <ul>
+      <li><em>location home</em>: <tt>http://www.godatabase.org/cgi-bin/amigo/go.cgi</tt></li>
+      <li><em>root URL</em>: <tt>http://www.godatabase.org/cgi-bin/amigo/go.cgi?query=$1</tt></li>
+    </ul>
+    [...]
+  </li>
+</ul>
+
+<p>
+  Note that the URIs can be take either a URL form (<tt>http://www.uniprot.org/</tt>) or a URN form (<tt>urn:lsid:uniprot.org</tt>). A URI is NOT a "real" website, but a unique string. For instance the URI representing the enzyme classification is <tt>http://www.ec-code.org/</tt>
+</p>
+<p>
+  A freely available web site is been developed, using an <a href="http://tomcat.apache.org/" title="Apache Tomcat">Apache Tomcat</a> server to provide an interface for the database. Users will be able to perform queries such as retrieving valid physical locations (URLs) corresponding to a given URI (whether a generic data-type or a precise piece of knowledge), retrieving all the information stored about a data-type (such as its name, its synonyms, links to some documentation, etc.) and immediately get the results in a dynamic way, using <a href="http://en.wikipedia.org/wiki/AJAX" title="AJAX on Wikipedia">Asynchronous JavaScript and XML</a> (AJAX).
+</p>
+<p>
+  Moreover, a programmatic access through web services (based on <a href="http://ws.apache.org/axis/" title="Apache Axis">Apache Axis</a> and <a href="http://en.wikipedia.org/wiki/SOAP" title="SOAP on Wikipedia">SOAP</a> messages) will be released soon. This API will permit not only to resolved model annotations, but also to generate the correct URIs based on resource name and accession numbers.
+</p>
+<p>
+  MIRIAM support has been presented at the <a href="http://www.icsb-2006.org/" title="ICSB 2006">Seventh International Conference on Systems Biology</a> [<a href="http://www.ebi.ac.uk/compneur-srv/miriam/elements/Abstract_MIRIAM_ICSB-2006.pdf" title="abtract of the Miriam poster">abstract</a>] [<a href="http://www.ebi.ac.uk/compneur-srv/miriam/elements/Poster_MIRIAM_ICSB-2006.pdf" title="Poster about Miriam Standard and Resources">poster</a>]
+</p>
+
+<h3><span class="h3_right">Acknowledgements</span></h3>
+
+<p>
+  MIRIAM resources are developed with the help of the <a href="http://www.bbsrc.ac.uk/" title="BBSRC web site">Biotechnology and Biological Sciences Research Council</a>. It also benefitted of funding from the <a href="http://www.embl.org/" title="EMBL web site">European Molecular Biology Laboratory</a> and the <a href="http://www.nigms.nih.gov/" title="NIGMS web site">National Institute of General Medical Sciences</a>.
+</p>
+
+<table align="center" width="400" summary="funding partners">
+  <tr>
+    <td><a href="http://www.bbsrc.ac.uk/" title="Biotechnology and Biological Sciences Research Council (BBSRC)"><img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/BBSRC_small_logo.png" title="Biotechnology and Biological Sciences Research Council (BBSRC)" alt="BBSRC logo" /></a></td>
+    <td><a href="http://www.embl.org/" title="European Molecular Biology Laboratory (EMBL)"><img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/embl.gif" title="European Molecular Biology Laboratory (EMBL)" alt="EMBL logo" /></a></td>
+    <td><a href="http://www.nigms.nih.gov/" title="National Institute of General Medical Sciences (NIGMS)"><img src="http://www.ebi.ac.uk/compneur-srv/GRAPHICS/NIGMS_logo.png" title="National Institute of General Medical Sciences (NIGMS)" alt="NIGMS logo" /></a></td>
+  </tr>
+</table>
+
+<p>
+  MIRIAM database and WebServices are developed at the <a href="http://www.ebi.ac.uk" title="EBI">European Bioinformatics Institute</a> in the <a href="http://www.ebi.ac.uk/compneur-srv/" title="Computational Neurobiology Group">Computational Neurobiology Group</a> by <acronym title="laibe AT ebi DOT ac DOT uk">Camille Laibe</acronym>.
+</p>

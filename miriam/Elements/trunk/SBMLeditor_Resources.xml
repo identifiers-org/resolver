@@ -1,0 +1,187 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<listOfResources>
+
+<resource name="BIND"
+          uri="http://www.bind.ca/"
+          location="http://www.bind.ca/"
+          action="http://www.bind.ca/Action?identifier=bindid&amp;idsearch="
+          elements="species rule reaction event"
+          idInputHelper=""
+          idPattern="\d+"
+          />
+
+<resource name="ChEBI"
+          uri="http://www.ebi.ac.uk/chebi/"
+          location="http://www.ebi.ac.uk/chebi/"
+          action="http://www.ebi.ac.uk/chebi/searchFreeText.do?searchString="
+          database="uk.ac.ebi.biomodels.ChEBIDatabase"
+          elements="species"
+          idInputHelper="CHEBI:"
+          idPattern="CHEBI:\d+"
+          />
+
+<resource name="Ensembl"
+          uri="http://www.ensembl.org/"
+          location="http://www.ensembl.org/"
+          elements="species"
+          idInputHelper="ENS"
+          idPattern="ENS\w{3}[FPTG]\d{11}"
+          />
+
+<resource name="Enzyme Nomenclature"
+          uri="http://www.ec-code.org"
+          location="http://www.ebi.ac.uk/intenz/"
+          action="http://www.ebi.ac.uk/intenz/query?cmd=SearchEC&amp;ec="
+          elements="rule reaction event"
+          idInputHelper="EC "
+          idPattern="EC (\d+|\d+\.(-|\d+)|\d+\.\d+\.(-|\d+)|\d+\.\d+\.\d+\.(-|\d+))"
+          />
+
+<resource name="UniProt"
+          uri="http://www.uniprot.org/"
+          location="http://www.uniprot.org/"
+          action="http://www.ebi.uniprot.org/entry/"
+          elements="species"
+          idPattern="([OPQ][0-9][A-Z0-9][A-Z0-9][A-Z0-9][0-9](_[\dA-Z]{1,5})?)"
+          />
+
+<resource name="Taxonomy"
+          uri="http://www.taxonomy.org/"
+          location="http://www.ebi.ac.uk/newt/display"
+          action="http://www.ebi.ac.uk/newt/display?search="
+          elements="model species"
+          idPattern="\d+"
+          />
+
+<resource name="DOI"
+          uri="http://www.doi.org/"
+          location="http://www.doi.org/"
+          action="http://dx.doi.org/"
+          elements="model"
+          idPattern=""
+          />
+
+<resource name="Gene Ontology"
+          uri="http://www.geneontology.org/"
+          location="http://www.ebi.ac.uk/ego/"
+          action="http://www.ebi.ac.uk/ego/DisplayGoTerm?selected="
+          elements="model compartment species rule reaction event"
+          idInputHelper="GO:"
+          idPattern="GO:\d{7}"
+          />
+
+<resource name="ICD"
+          uri="http://www.who.int/classifications/icd/"
+          location="http://www3.who.int/icd/vol1htm2003/fr-icd.htm"
+          elements="model"
+          idInputHelper=""
+          idPattern="[A-Z]\d+(\.[-\d+])?"
+          />
+
+<resource name="IntAct"
+          uri="http://www.ebi.ac.uk/intact"
+          location="http://www.ebi.ac.uk/intact"
+          action="http://www.ebi.ac.uk/intact/search/do/search?searchString="
+          elements="rule reaction event"
+          idInputHelper="EBI-"
+          idPattern="EBI\-[0-9]+"
+          />
+
+<resource name="InterPro"
+          uri="http://www.ebi.ac.uk/interpro/"
+          location="http://www.ebi.ac.uk/interpro/"
+          action="http://www.ebi.ac.uk/interpro/DisplayIproEntry?ac="
+          elements="species"
+          idInputHelper="IPR"
+          idPattern="IPR\d{6}"
+          />
+
+<resource name="KEGG Pathway"
+          uri="http://www.genome.jp/kegg/pathway/"
+          location="http://www.genome.jp/kegg/pathway.html"
+          action="http://www.genome.jp/dbget-bin/show_pathway?"
+          elements="model rule reaction event"
+          idInputHelper=""
+          idPattern="\w{2,3}\d{5}"
+          />
+
+<resource name="KEGG Compound"
+          uri="http://www.genome.jp/kegg/compound/"
+          location="http://www.genome.jp/kegg/ligand.html"
+          action="http://www.genome.jp/dbget-bin/www_bget?cpd:"
+          elements="species"
+          idInputHelper="C"
+          idPattern="C\d+"
+          />
+
+<resource name="KEGG Reaction"
+          uri="http://www.genome.jp/kegg/reaction/"
+          location="http://www.genome.jp/kegg/ligand.html"
+          action="http://www.genome.jp/dbget-bin/www_bget?rn:"
+          elements="rule reaction event"
+          idInputHelper="R"
+          idPattern="R\d+"
+          />
+
+<resource name="PubMed"
+          uri="http://www.pubmed.gov"
+          location="http://www.ncbi.nlm.nih.gov/PubMed/"
+          action="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?cmd=Retrieve&amp;db=pubmed&amp;dopt=Abstract&amp;list_uids="
+          elements="model"
+          idPattern="\d+"
+          />
+
+<resource name="OMIM"
+          uri="http://www.ncbi.nlm.nih.gov/OMIM/"
+          location="http://www.ncbi.nlm.nih.gov/entrez/query.fcgi?db=OMIM"
+          action="http://www.ncbi.nih.gov/entrez/dispomim.cgi?id="
+          elements="model species"
+          idInputHelper=""
+          idPattern="[*#+%^]?\d{6}"
+          />
+
+<resource name="PIRSF"
+          uri="http://pir.georgetown.edu/pirsf/"
+          location="http://pir.georgetown.edu/pirsf/"
+          action="http://pir.georgetown.edu/cgi-bin/ipcSF?id="
+          elements="species"
+          idInputHelper="SF"
+          idPattern="SF\d{6}"
+          />
+
+<resource name="Reactome"
+          uri="http://www.reactome.org/"
+          location="http://www.reactome.org/"
+          action="http://www.reactome.org/cgi-bin/eventbrowser_st_id?ST_ID="
+          elements="model rule reaction event"
+          idInputHelper="REAC_"
+          idPattern="REAC_\d+(\.\d+)?"
+          />
+
+<resource name="BioModels Database"
+          uri="http://www.ebi.ac.uk/biomodels/"
+          location="http://www.ebi.ac.uk/biomodels/"
+          action="http://www.ebi.ac.uk/compneur-srv/biomodels-main/publ-model.do?mid="
+          elements="model"
+          idInputHelper="BIOMD"
+          idPattern="BIOMD\d{10}"
+          />
+
+<resource name="Protein Data Bank"
+          uri="http://www.pdb.org/"
+          location="http://www.pdb.org/"
+          action="http://www.pdb.org/pdb/navbarsearch.do?newSearch=yes&amp;inputQuickSearch="
+          elements="species"
+          idPattern="\d\w{3}"
+          />
+
+<resource name="CluSTr"
+          uri="http://www.ebi.ac.uk/clustr/"
+          location="http://www.ebi.ac.uk/clustr/"
+          action="http://www.ebi.ac.uk/clustr-srv/CCluster?interpro=yes&amp;amp;cluster_varid="
+          elements="species"
+          idPattern="[0-9A-Za-z]+:\d+:\d{1,5}(\.\d+)?"
+          />
+
+</listOfResources>

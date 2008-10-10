@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<!--
+    MiriamXML_Schema: XML Schema of the XML export of Miriam Database
+
+    MIRIAM is an online resource created to catalog biological data-types,
+    their URIs and the corresponding physical URLs,
+    whether these are controlled vocabularies or databases.
+    Ref. http://www.ebi.ac.uk/compneur-srv/miriam/
+
+    Copyright (C) 2007  Camille Laibe
+
+    This program is free software; you can redistribute it and/or
+    modify it under the terms of the GNU General Public License
+    as published by the Free Software Foundation; either version 2
+    of the License, or (at your option) any later version.
+
+    This program is distributed in the hope that it will be useful,
+    but WITHOUT ANY WARRANTY; without even the implied warranty of
+    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+    GNU General Public License for more details.
+
+    You should have received a copy of the GNU General Public License
+    along with this program; if not, write to the Free Software
+    Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston, MA  02110-1301, USA.
+
+    For more information: http://www.gnu.org/licenses/gpl.txt
+
+    version:  20070205
+    Author :  Camille Laibe
+    E-Mail :  laibe@ebi.ac.uk
+    Address:  Computational Neurobiology,
+              EMBL - European Bioinformatics Institute,
+              Wellcome-Trust Genome Campus
+              Hinxton, CAMBRIDGE
+              CB10 1SD
+              United Kingdom
+ -->
+
+
+<xsd:schema targetNamespace="http://www.biomodels.net/MIRIAM/" xmlns="http://www.biomodels.net/MIRIAM/" xmlns:xsd="http://www.w3.org/2001/XMLSchema" elementFormDefault="qualified" attributeFormDefault="unqualified">
+
+  <!-- Definition of the "id" of a data-type-->
+  <xsd:simpleType name="dataTypeID">
+    <xsd:restriction base="xsd:Name">
+      <xsd:pattern value="MIR:000\d{5}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Definition of the "id" of a resource -->
+  <xsd:simpleType name="resourceID">
+    <xsd:restriction base="xsd:Name">
+      <xsd:pattern value="MIR:001\d{5}" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Definition of a "resource" -->
+  <xsd:complexType name="resource">
+    <xsd:sequence>
+      <xsd:element name="dataResource" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="dataEntry" type="dataEntry" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="dataInfo" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="dataInstitution" type="xsd:string" minOccurs="1" maxOccurs="1" />
+      <xsd:element name="dataLocation" type="xsd:string" minOccurs="1" maxOccurs="1" />
+    </xsd:sequence>
+    <xsd:attribute name="id" type="resourceID" use="required" />
+    <xsd:attribute name="obsolete" type="TrueOrFalse" use="optional" />
+  </xsd:complexType>
+
+  <!-- Definition of the type of a "dataEntry" -->
+  <xsd:simpleType name="dataEntry">
+    <xsd:restriction base="xsd:string">
+      <xsd:pattern value="\S*$id\S*" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Definition of a "uri" -->
+  <xsd:complexType name="uri">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:string">
+        <xsd:attribute name="type" type="uriType" use="required" />
+        <xsd:attribute name="deprecated" type="TrueOrFalse" use="optional" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <!-- Definition of the "type" of a URI -->
+  <xsd:simpleType name="uriType">
+    <xsd:restriction base="xsd:Name">
+      <xsd:enumeration value="URN" />
+      <xsd:enumeration value="URL" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Definition of the "type" of a documentation -->
+  <xsd:simpleType name="docType">
+    <xsd:restriction base="xsd:Name">
+      <xsd:enumeration value="MIRIAM" />
+      <xsd:enumeration value="URL" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+  <!-- Definition of a "documentation" -->
+  <xsd:complexType name="documentation">
+    <xsd:simpleContent>
+      <xsd:extension base="xsd:anyURI">
+        <xsd:attribute name="type" type="docType" use="required" />
+      </xsd:extension>
+    </xsd:simpleContent>
+  </xsd:complexType>
+
+  <!-- Definition of a boolean type limited to "true" or "false" (no "1" or "0") -->
+  <xsd:simpleType name="TrueOrFalse">
+    <xsd:restriction base="xsd:boolean">
+      <xsd:pattern value="true" />
+      <xsd:pattern value="false" />
+    </xsd:restriction>
+  </xsd:simpleType>
+
+
+  <!-- Top level element of a MiriamXML document -->
+  <xsd:element name="miriam">
+  <xsd:complexType>
+    <xsd:sequence>
+      <xsd:element name="datatype" maxOccurs="unbounded">
+        <xsd:complexType>
+          <xsd:sequence>
+            <xsd:element name="name" type="xsd:string" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="synonym" type="xsd:string" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="definition" type="xsd:string" minOccurs="1" maxOccurs="1" />
+            <xsd:element name="uri" type="uri" minOccurs="1" maxOccurs="unbounded" />
+            <xsd:element name="documentation" type="documentation" minOccurs="0" maxOccurs="unbounded" />
+            <xsd:element name="resource" type="resource" minOccurs="1" maxOccurs="unbounded" />
+          </xsd:sequence>
+          <xsd:attribute name="id" type="dataTypeID" use="required" />
+          <xsd:attribute name="pattern" type="xsd:string" use="required" />
+        </xsd:complexType>
+      </xsd:element>
+    </xsd:sequence>
+  </xsd:complexType>
+
+  </xsd:element>
+
+</xsd:schema>

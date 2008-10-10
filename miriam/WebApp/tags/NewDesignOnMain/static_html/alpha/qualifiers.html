@@ -1,0 +1,38 @@
+<h2><span class="box_green">BioModels.net</span> Qualifiers</h2>
+
+<p>
+	The following is a list of the elements in the <code>http://biomodels.net/biology-qualifiers/</code> and <code>http://biomodels.net/model-qualifiers/</code> namespaces. These elements are used in the SBML standard RDF annotation format. This list may grow but no element will be removed.
+</p>
+
+<p>
+	In all cases using the biology qualifiers, the 'object' of the relation is the biological or biochemical object represented by the enclosing model element. In the cases of the model qualifiers, the 'object' of the relation is the model component itself.
+</p>
+
+<h3><span class="h3_right">model-qualifiers</span></h3>
+
+<dl>
+	<dt>is</dt>
+	<dd>The modelling object represented by the model component is the subject of the referenced resource. For instance, this qualifier might be used to link the encoded model to a database of models.</dd>
+	<dt><br />isDescribedBy</dt>
+	<dd>The modelling object represented by the component of the encoded model is described by the referenced resource. This relation might be used to link a model or a kinetic law to the literature that describes this model or this kinetic law.</dd>
+</dl>
+
+
+<h3><span class="h3_right">biology-qualifiers</span></h3>
+
+<dl>
+	<dt>is</dt>
+<dd>The biological entity represented by the model component is the subject of the referenced resource. This relation might be used to link a reaction to its exact counterpart in KEGG or Reactome for instance.</dd>
+<dt><br />hasPart</dt>
+<dd>The biological entity represented by the model component includes the subject of the referenced resource, either physically or logically. This relation might be used to link a complex to the description of its components.</dd>
+<dt><br />isPartOf</dt>
+<dd>The biological entity represented by the model component is a physical or logical part of the subject of the referenced resource. This relation might be used to link a component to the description of the complex is belongs to.</dd>
+<dt><br />isVersionOf</dt>
+<dd>The biological entity represented by the model component is a version or an instance of the subject of the referenced resource.</dd>
+<dt><br />hasVersion</dt>
+<dd>The subject of the referenced resource is a version or an instance of the biological entity represented by the model component.</dd>
+<dt><br />isHomologTo</dt>
+<dd>The biological entity represented by the model component is homolog, to the subject of the referenced resource, i.e. they share a common ancestor.</dd>
+<dt><br />isDescribedBy</dt>
+<dd>The biological entity represented by the model component is described by the referenced resource. This relation should be used for instance to link a species or a parameter to the literature that describes the concentration of the species or the value of the parameter.</dd>
+</dl>

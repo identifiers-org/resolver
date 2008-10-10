@@ -1,0 +1,51 @@
+<h2>MIRIAM Standard</h2>
+
+<p>
+	Here are some elements about <em>MIRIAM Standard</em>. More information is available in the <a href="http://dx.doi.org/10.1038/nbt1156" title="Minimum Information Requested In the Annotation of biochemical Models (MIRIAM)">MIRIAM publication</a> and also in the <a href="http://sbml.org/documents/#specdocs" title="Specification of SBML">specification of the <acronym title="Systems Biology Markup Language">SBML</acronym></a>.
+</p>
+<p>
+	<em>MIRIAM Standard</em> is composed of three parts: reference correspondence, attribution annotation, and external resource annotation. They are described below:
+</p>
+
+
+<h3>Reference correspondence</h3>
+
+<ul>
+	<li>The model must be encoded in a public, standardized, machine-readable format (<a href="http://sbml.org/" title="Systems Biology Markup Language">SBML</a>, <a href="http://www.cellml.org/" title="CellML">CellML</a>, <a href="http://www.genesis-sim.org/GENESIS/" title="GEneral NEural SImulation System">GENESIS</a>, ...).</li>
+	<li>The model must comply with the standard in which it is encoded.</li>
+	<li>The model must be clearly related to a single reference description. If a model is composed from different parts, there should still be a description of the derived/combined model.</li>
+	<li>The encoded model structure must reflect the biological processes listed in the reference description.</li>
+	<li>The model must be instantiated in a simulation: all quantitative attributes have to be defined, including initial conditions.</li>
+	<li>When instantiated, the model must be able to reproduce all results given in the reference description within an epsilon (algorithms, round-up errors).</li>
+</ul>
+
+
+<h3>Attribution annotation</h3>
+
+<ul>
+  <li>The model has to be named.</li>
+	<li>A citation of the reference description must be joined (complete citation, unique identifier, unambigous URL). The citation should permit to identify the authors of the model.</li>
+	<li>The name and contact of model creators must be joined.</li>
+	<li>The date and time of creation and last modification should be specified. An history is useful but not required.</li>
+	<li>The model should be linked to a precise statement about the terms of distribution. <acronym title="Minimum Information Requested In the Annotation of biochemical Models">MIRIAM</acronym> does not require “freedom of use” or “no cost”.</li>
+</ul>
+
+
+<h3>External resource annotation</h3>
+
+<ul>
+  <li>The annotation must permit to unambiguously relate a piece of knowledge to a model constituent.</li>
+	<li>The referenced information should be described using a triplet <span class="source">{data-type, identifier, qualifier}</span>:
+		<ul>
+			<li>The data-type should be written as a Unique Resource Identifier (URI).</li>
+			<li>The identifier is analysed within the framework of the data-type.</li>
+			<li>Data-type and identifier can be combined in a single <acronym title="Uniform Resource Identifier">URI</acronym>: <span class="source">http://www.myResource.org/#myIdentifier</span>, is an example of <acronym title="Uniform Resource Locator">URL</acronym> or <span class="source">urn:lsid:myResource.org:myIdentifier</span>, is an example of <acronym title="Uniform Resource Name">URN</acronym>.</li>
+			<li><a href="mdb?section=qualifiers" title="BioModels.net qualifiers">Qualifiers</a> (optional) should refine the link between the model constitutent and the piece of knowledge: “has a”, “is version of”, “is homolog to”, etc.</li>
+		</ul>
+	</li>
+	<li>The community has to agree on a set of standard valid <acronym title="Uniform Resource Identifiers">URIs</acronym>. A database and the associated <acronym title="Application Programming Interface">API</acronym> (Web Services) have been developed at the <acronym title="European Bioinformatics Institute">EBI</acronym> to provide the generation and interpretation of <acronym title="Uniform Resource Identifiers">URIs</acronym>.</li>
+</ul>
+
+<p>
+	This is at this step that <em>MIRIAM Resources</em> become useful, allowing the storage of the <acronym title="Uniform Resource Identifiers">URIs</acronym> of the data-types and the resolution between them and the physical locations of the pieces of knowledge.
+</p>

@@ -1,0 +1,189 @@
+TODO LIST:
+
+- 20080903, Nick Juty: add an email notification while editing the name and definition of a tag (ServletTagEditInfo)
+- 20080831, NLN: update front page of MIRIAM Resources (focus on Resources not Standard -put it on the dedicated page-, link to publiations, explanations of the 4 parts of the resources -database, web services, library, web app-)
+- 20080829, Cam: remove xml-api.jar, xercersImpl.jar and serializer.jar from the war, they are now in the shared/lib of tc-compneur-demo
+- 20080829, Cam: warn the user if he was logged while starting to do an action (submitting a new data type) and his session timeout when he finishes it
+- 20080818, Nick Juty: display the definition of a tag with a tooltip above the tag in the 'tag' tab of a data type
+- 20080808, Nick Juty: when searching by tag and selecting no tags, an exception is raised (NullPointerException, uk.ac.ebi.miriam.web.ServletTagSearch.doPost)
+- 20080805, Cam: Web Services issue, cf file
+- 20080805, Cam: "&" in 'institution' field of a resource cause generation of invalid XML
+- 20080805, Cam: add a comment to explain why a resource is obsolete 
+- 20080801, Nick Juty: keep preferences for the paged browsing (in a cookie?)
+- 20080731, NLN: add Web Services access information (and more if possible) for each resource of each data type (we could first store the WDSL address and the address of the documentation)
+- license/usage information for each data type
+- 20080731, NLN: create synonyms of tags (the could would only display one)?
+- way to merge several tags in one
+- 20080703, Luisa Montecchi: tabular export of the list of tags associated with each data type
+by data type:
+SELECT d.name, d.datatype_id, t.tag FROM mir_tag t, mir_datatype d, mir_tag_link l WHERE ((d.datatype_id = l.ptr_datatype) AND (t.id = l.ptr_tag)) ORDER BY d.name
+by tag:
+SELECT t.tag, d.name, d.datatype_id FROM mir_tag t, mir_datatype d, mir_tag_link l WHERE ((d.datatype_id = l.ptr_datatype) AND (t.id = l.ptr_tag)) ORDER BY t.tag
+by tag (simple):
+SELECT t.tag, d.name FROM mir_tag t, mir_datatype d, mir_tag_link l WHERE ((d.datatype_id = l.ptr_datatype) AND (t.id = l.ptr_tag)) ORDER BY t.tag, d.name
+- 20080619, All: update "web services demo" page: new title (Annotation Services, URI Services, Online Services, Using Resources, ...), better names for methods, add new methods and remove obsolete ones
+- 20080619, NLN: be able to performed a search based on several words (and, or, ....)
+- 20080612, NLN: give the number of occurrences next to the list of tags considered in the search result
+- 20080612, Chen Li: modify the "query" page: change the name 'web services demo' ("Using Resources", "Online Services", "URI Services", "Annotation Services", ...), remove the obsolete methods, make it easier to use, show new methods
+- 20080611, Cam: after the update of a data type, instead of displaying the result in a specific page, use the mdb?section=browse&data=MIR:000000XX with a message (update successful, error, ...) to the user
+- 20080611, Cam: when publishing a data type, do a basic check to be sure that the data type in the curation pipeline doesn't already exist in the public website 
+- 20080610, Cam: find a much better way to manage the functions (diff and generateId) which are present in DataTypeHybernate and CuraDataTypeDao (but only slightly different): it is like that because I am in a hurry right now... 
+- 20080609, Cam: finish edition of examples of annotation (deletion, creation)
+- 20080513, Cam: create custom tags 'hasCuratorRights' and 'hasAdminRights' and use them in JSP like 'dynamic_browse.jsp'
+- 20080513, Cam: update the Web Services and the library to manage obsolete data types
+- 20080509, NLN, Nick Juty: in submission form add a "term of use" field or more advanced way to explain this aspect of a data type
+- 20080417, Camille Laibe, Michael Hucka: automatically detect that a resource is down
+- 20080417, Camille Laibe, NLN: explicite FAQ and "HowTo use the resources" with screenshot (how to edit a data type, ...)
+- 200803??, Camille Laibe: encodes "&" by "&amp;" in the submission form
+- 200803??, Camille Laibe: encode all reserved characters (http://java.sun.com/j2se/1.5.0/docs/api/java/net/URLEncoder.html)
+- 20080325, Nick Juty: copyright notice (accession/usage/redistribution to the data) for each data type, based on a small list (restricted, limited for free, free for all, download, reuse, redistribution). 
+- 20080324, Chen Li: add methods to Web Services: data type URI/ name -> data type ID
+- 2008032?, Camille Laibe, Nick Juty, Chen Li: issue?: one ressource only provide information for a subset of the data type. Example: PDB and PDB of transmembrane proteins.
+- 200803??, Camille Laibe: "how to use the resources" pages, for edition, Web Services, ... with screen shots
+- 20080226, Nicolas Le Novère: documentation with UML/class diagram, gant charts, ... 
+
+
+Priority??
+Sub tasks??
+
+
+- manage the different role of user in a better way (anonymous, curator, administrator)
+- ServletDataTypeAdd.java
+  - remove the "http://www.pubmed.gov/#" and other "http://www.doi.org/" which are hard coded ==> retrieve that from the DB!
+  - add the setting 'obsolete' for a resource in the edit interface (instead of the current 'delete')
+-  in DataTypeHybernate only commit the update/creation of a data type if all the SQL queries have been successful --> CAN'T BE DONE ANY MORE: NOT USING InnoDB any more (NFS issues)
+
+
+DECISIONS:
+- 20080619 -> no need to store the version of the format for the examples of annotation (NLN)
+- 20080??? -> 2008032?, Nick Juty: ontology of data type? (with browsing by terms...) -> no need for an ontology, simple tags should be enough (NLN)
+
+
+
+DONE:
+- 20081007 -> link to curation pipeline only displays pending data type by default
+- 20080908 -> 20080904, NLN: update the "services available" page and put back the link from the left menu (better look: http://www.ebi.ac.uk/Tools/webservices/) -> done: I created a Groovy script to generate the HTML from the Java class based on the Javadoc
+           -> 20080831, NLN: change the link to MIBBI in the front page (http://www.mibbi.org/) -> done
+           -> 20080831, NLN: update MIRIAM page on Wikipedia
+- 20080820 -> session timeout extended from 10 minutes to 1 hour
+- 20080818 -> contact page updated in order to add the BioModels.net mailing lists
+- 20080814 -> 'Statistics' typo corrected + link in the export page
+- 20080807 -> 20080805, Cam: documentation issue (while updating a data type), cf file
+              SQL Exception raised: Data truncation: Out of range value adjusted for column 'doc_id' at row 1
+              db.DataTypeHybernate (            ?:?)     - Result of the adding query #7.0 (new data-type, documentation IDs): 0
+              -> fixed: SQL 'tinyint' is limited to 128 values!!! + cleaning of the database
+           -> syntax coherence: a bit less 'data-type', replaced by 'data type' in the sources 
+           -> 20080505, Cam: 'data-version' attribute in XML export doesn't contain good hour, min and sec information -> fixed
+           -> 20080805, Cam: in the stats box, put the number total of data types (including the obsoslete ones) and the number of total (without the obsolete ones) -> done
+           -> 20080801, Nick Juty: open a popup while clicking on the example of identifier (in public browsing interface) -> done
+           -> 20080805, Nick Juty: testing link for example of identifier in the editing interface (like the one in the curator's interface) -> done
+- 20080729 -> correction of several bugs on MIRIAM Resources (main version): 
+              - submission of a data type while not logged ('public_id' field of 'cura_material' was empty and generated an error)
+              - dynamic testing link while editing a data type in the curation pipeline (link was not working)
+- 20080714 -> preparation for deployment on main
+- 20080711 -> 20080710, Cam: browse obsolete data types should not display a "next page" link: bug fixed
+           -> 20080710, Cam: curation pipeline: the test link should be updated while editing: done
+           -> 20080610, Cam: test link in curator interface dynamic using javascript (can manage update of the values and still point to the update location): done (duplicate from previous entry)
+- 20080710 -> 20080619, NLN: edition of tags (list of tags, rename, change definition): finished
+           -> deployment of the latest version on demo
+- 20080709 -> authentication to access tags managament added
+           -> progress with tag management feature
+- 20080708 -> "Media" page rename by "Documentation"
+           -> 20080708, Cam: put the DILS poster in the media page: done (in alpha)
+           -> huge improvement of the tag management: graphical interface finished, backend still needed
+- 20080707 -> basic statistics displayed in the exports page (the dedicated page for statistics has been postpone, when usage of the web services will be monitored)
+           -> IN PROGRESS: tags management for curators/admin with ajax features
+- 20080704 -> obsolete warning displayed for the example of annotation page
+           -> some explainations added to the search page
+           -> tags added to the XML export
+           -> 20080611, Cam: update XML schema to match the 'obsolete' feature -> XML Schema updated (tags)
+           -> display of the definition of a tag in the page showing all the data types associated with (if there is a definition stored)
+           -> STARTED: stats page: data version (last updated), nb data types, nb tags, nb queries performed with the web services, ...
+           -> STARTED: tags management for curators/admin
+- 20080703 -> 20080619, Chen: rename "SignIn" by "SignOut" (with logout action) while logged in -> item removed from the menu because useless
+           -> BOND as synonym of BIND + full version of these acronyms
+           -> 20080612, Cam: have a browsing page displaying only a subset of the available data types -> paged browsing finished: browing button moved + tests done
+           -> 20080619, all: warning obsolete data type: give the name of the replacement (instead of the id) -> fixed
+           -> obsolete warning displayed for the general information page as well as the tags one
+- 20080623 -> paged generic browsing: demo working (previous/next arrows need to be moved)
+- 20080620 -> 20080612, NLN: add match "all" or "any" in the search by tag page -> done
+           -> 20080620, Cam: edition of data types in the curation pipeline: first email notification gives the new state not the old one -> done
+- 20080611 -> publication of a data type from the curation pipeline to the public website
+           -> improvement of the interface of the curation pipeline
+           -> improvement of the cloud tags
+           -> 20080513, Cam: update the XML export to show if a data type is obsolete -> done
+           -> bug fixed: update of a data type (public and in curation) didn't take into account the example of identifier
+
+- 20080610 -> update last modification date of the data type when editing the tags and the examples of annotation
+           -> data type submission curation (display of the 'pending' data types, edition and publication of these)
+
+- 20080609 -> secure the page 'mdb?section=edit_tag&data=MIR:0000000?' 
+           -> addition of a new example of annotation to a data type (with ajax)
+
+- 20080608 -> deletion of tags
+           -> bug fixed for the browsing of data types based on several tags (now return a true result)
+           -> addition of existing tag
+           -> addition of new tag
+           -> bug fixed in the menu (access to documents/media)
+
+- 20080604 -> edit form for tag management (logged users) (but no actions implemented)
+           -> support page: available from the left menu but also used for anonymous users while editing tags or annotation (with simple spam detection)
+
+- 20080602 -> display of a proper "tag cloud" with size of the tags proportional to their number of occurrence + check box to select several and a search button
+
+- 20080526 -> tags display
+           -> browsing by tags
+
+- 20080518 -> curator view of pending data types (edition of a pending data type doesn't fully implemented yet)
+- 20080518 -> error page if request for a data type which doesn't exist explaining it
+
+- 20080516 -> extremely simple administration console
+
+- 20080515 -> custom menus (normal users, curators, administrators) with access to restricted features
+- 20080515 -> new Front Controller internals: cleaner, better performance
+
+- 20080514 -> - 20080325, Nicolas Le Novère: search feature. -> basic search (looks into data types, sysnonyms and resources) 
+
+- 20080513 -> 20080512, Camille Laibe: be able to update the user info (by the user himself)
+- 20080513 -> 200803??, Nicolas Le Novère: notification deprecated "replaced by/instead you can use..."
+- 20080512 -> 20030401, Camille Laibe: separate database for user rights management (with passwords encoded with SHA, several possible roles per user (for BioModels, for MIRIAM, for SBO, admin, curator, ...), ...)
+- 20080512 -> 20080425, Camille Laibe, Nick Juty: change subject of email notification: add the name of the data type (add/edit)
+
+- 200805?? -> 200803??, Nick Juty: add example of identifiers (linked to one resource, not one data type in case the manage different subsets).add a example of identifier for each resource (with a physical link generated in the browsing interface)
+
+- 20080506 (they can't use our Web Services, they need more flexibility, cf email 'Re: Database name' from franckv@ebi.ac.uk) -> 200803??, Nicolas Le Novère: contact External Services (Frank Valentin) to explain the usage of MIRIAM Resources
+- 20080417 -> 20080328 (from the past), Camille Laibe: update the XML export adding the example annotations.
+- 20080407 -> 200803??, Nick Juty: emails notifications to several people (admin, curators, ...)
+- 20080320 - new qualifier "occursIn" added in MIRIAM + news updated
+- dump InnoDB engine for MyISAM: too many issues while using it with NFS (locks not released)
+
+
+PROBABLY DONE:
+- update send email (search with "admin.email") + CC  
+- finish example of identifier management
+- dedicated authentication DB
+- update password page
+
+
+
+PROBABLY OBSOLETE:
+
+- link to images in static html pages (via a c:import)
+The thing I want:
+<p>
+	<img src="${param.staticPagesAdr}/img/Delete.gif" title="Testing!" alt="Testing!" height="16" width="16" />
+</p>
+with an import like that:
+<c:import url="${initParam.www}${requestScope.section}" charEncoding="UTF-8"> <%-- var="staticInclude" scope="page" --%>
+	<c:param name="staticPagesAdr" value="${initParam.www}" />
+</c:import>
+
+The current solution:
+<p>
+	<img src="http://www.ebi.ac.uk/compneur-srv/miriam/img/Delete.gif" title="Testing!" alt="Testing!" height="16" width="16" />
+</p>
+
+- think about the "getDataEntries()" method with only one String in parameter 
+	and a method to cut the URI in two part (data-type and element identifier)
+- perhaps change the search for the physical URLs (based on the MIRIAM URIs) for the data-type browsing
+- 

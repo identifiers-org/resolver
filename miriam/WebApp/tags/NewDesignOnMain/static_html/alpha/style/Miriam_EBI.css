@@ -1,0 +1,138 @@
+/* role: CSS style sheet for MIRIAM: copying the EMBL-EBI display */
+/* author: Camille Laibe */
+/* version: 20061110 */
+/* copyright: EMBL-EBI, Computational Neurobiology Group */
+
+
+div#ebi_banner {
+	background-color: rgb(195, 205, 214);
+	color: rgb(0, 0, 0);
+	height: 70px;
+}
+
+div#content {
+	margin-top: 0;
+	padding-top: 0;
+	padding-left: 20px;
+	padding-right: 20px;
+	margin-left: 160px;
+	border-top: 6px solid rgb(197, 206, 213);
+	background-image: url("img/corner.gif");
+	background-repeat: no-repeat;
+	background-position: top left;
+}
+
+img {
+	border: 0;
+}
+
+div#ebi_menus {
+	background-color: rgb(195, 205, 214);
+	color: rgb(255, 255, 255);
+	height: 18px;
+}
+
+div#ebi_site_map {
+	position: absolute;
+	top: 36px;
+	right: 0px;
+}
+
+div#ebi_group_menu {
+	width: 150px;
+	float: left;
+	background-color: rgb(197, 206, 213);
+	background-image: url("img/right.gif");
+	background-repeat: no-repeat;
+	background-position: bottom right;
+	color: rgb(0, 0, 0);
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	padding-left: 10px;
+	padding-bottom: 1em;
+}
+
+div#ebi_group_menu ul {
+	margin-left: 0;
+	margin-right: 1em;
+	padding-left: 1em;
+	padding-bottom: 1em;
+	background-image: url(http://www.ebi.ac.uk/compneur-srv/biomodels/icons/hor.png);
+	background-repeat: repeat-x;
+	background-position: bottom left;
+}
+
+div#ebi_group_menu li {
+	list-style-image: url("img/bullet.gif");
+	margin-left: 0;
+	padding-left: 0;
+}
+
+div#ebi_group_menu img.top_menu_img {
+	padding-top: 26px;
+	padding-bottom: 0;
+}
+
+div#ebi_group_menu img {
+	padding-bottom: 10px;
+}
+
+ul#ebi_nav {
+	margin: 0;
+	padding: 0;
+}
+
+ul#ebi_nav li {
+	list-style: none;
+	float: left;
+	margin: 0;
+	width: 97px;
+	height: 18px;
+}
+
+h1.ebi_h1 {
+	font-weight: normal;
+	font-size: 9pt;
+	font-family: Arial, Helvetica, sans-serif;
+	height: 18px;
+	border-bottom: 3px solid rgb(238, 242, 246);
+	padding-bottom: 2px;
+	padding-top: 0;
+	margin-bottom: 0;
+	margin-top: 0;
+	clear: left;   /* for the float items of the menu */
+}
+
+a.ebi_h1_link {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	background-color: inherit;
+}
+
+a.ebi_h1_link:visited {
+	color: rgb(255, 255, 255);
+	text-decoration: none;
+	background-color: inherit;
+}
+
+a.ebi_h1_link:hover {
+	color: rgb(204, 204, 204);
+	text-decoration: none;
+	background-color: inherit;
+}
+
+a.ebi_h1_link:active {
+	color: rgb(204, 204, 204);
+	text-decoration: none;
+	background-color: inherit;
+}
+
+a.ebi_h1_link:focus {
+	color: rgb(204, 204, 204);
+	text-decoration: none;
+	background-color: inherit;
+}
+
+div.ebi_hidden {
+	visibility: hidden;
+}
