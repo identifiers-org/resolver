@@ -1,6 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
-
+import uk.ac.ebi.miriam.common.ResourceRecord
 import uk.ac.ebi.miriam.exception.InvalidEntityIdentifierException
 import uk.ac.ebi.miriam.exception.ResolverErrorException
 import uk.ac.ebi.miriam.common.UriRecord
@@ -19,7 +19,7 @@ import javax.servlet.http.HttpServletRequest
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2012 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -39,7 +39,7 @@ import javax.servlet.http.HttpServletRequest
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20120823
+ * @version 20130426
  */
 class UriRecordController
 {
@@ -354,7 +354,7 @@ class UriRecordController
             }
         }
     }
-    
+
 
     /**
      * Renders the HTML response.
@@ -381,9 +381,24 @@ class UriRecordController
         }
         else   // more than one resource: we display all of them in a table
         {
-            render(status:300, view:"resolve", model:[record:record])
+            // separates the primary/official resource (if any) from the other(s), for easier display
+            ResourceRecord primaryResource = null
+            List<ResourceRecord> allResources = []
+            record.dataCollection.resources.each {
+                if (it.primary)
+                {
+                    primaryResource = it
+                }
+                else
+                {
+                    allResources << it
+                }
+            }
+
+            render(status:300, view:"resolve", model:[record:record, primaryResource:primaryResource, allResources:allResources])
         }
     }
+
 
     /**
      * Renders the plain text response.

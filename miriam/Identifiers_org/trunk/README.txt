@@ -36,7 +36,7 @@ Generate war for use in London Data Centres
   grails -Dgrails.env=ldc war
 
 Grails docs
-  http://grails.org/doc/2.0.1/
+  http://grails.org/doc/2.1.0/
 
 
 Functional Testing

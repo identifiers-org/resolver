@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.common
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2011 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,11 +27,11 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20110812
+ * @version 20130426
  */
 class Constants
 {
-    static final String RESOLVER_URL_ROOT = "http://identifiers.org/"
-    //static final String RESOLVER_URL_ROOT = "http://localhost:8080/resolver/"
+    static final String RESOLVER_URL_ROOT = "http://identifiers.org"
+    //static final String RESOLVER_URL_ROOT = "http://localhost:8080/resolver"
     static final String MIRIAM_URL_ROOT = "http://www.ebi.ac.uk/miriam/main/"
 }

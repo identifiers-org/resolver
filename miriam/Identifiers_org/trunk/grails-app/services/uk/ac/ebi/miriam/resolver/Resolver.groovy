@@ -14,6 +14,7 @@ import uk.ac.ebi.miriam.common.DataCollection
 import uk.ac.ebi.miriam.exception.NotExistingDataCollectionException
 import uk.ac.ebi.miriam.common.DataCollectionRecord
 
+
 /**
  * Where all the resolving work is done.
  *
@@ -21,7 +22,7 @@ import uk.ac.ebi.miriam.common.DataCollectionRecord
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2012 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -41,7 +42,7 @@ import uk.ac.ebi.miriam.common.DataCollectionRecord
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20120823
+ * @version 20130429
  */
 class Resolver
 {
@@ -85,8 +86,9 @@ class Resolver
                 {
                     record.requestedUriBase = url
                 }
-                //record.officialUri = Constants.RESOLVER_URL_ROOT + dataRecord.officialUrn().substring(11) + "/" + URLEncoder.encode(entity)
-                record.officialUri = Constants.RESOLVER_URL_ROOT + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
+                record.namespace = dataRecord.officialUrn().substring(11)
+                //record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + URLEncoder.encode(entity)
+                record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
                 record.entityId = entity
                 DataCollectionRecord tempDataCollection = new DataCollectionRecord()
                 tempDataCollection.id = dataRecord.id
@@ -110,6 +112,7 @@ class Resolver
                         tempRes.location = it.location
                         tempRes.deprecated = it.obsolete
                         tempRes.deniesFrame = it.deniesFrame
+                        tempRes.primary = it.primary
 
                         if (null != it.reliability)   // so far, no health record is available for the first day(s) after creation of a new data collection
                         {

@@ -1,7 +1,7 @@
 <%--
   Page displaying (in xHTML) the response of a resolving query.
   Camille Laibe
-  20120217
+  20130426
 --%>
 
 <%@ page contentType="text/html;charset=UTF-8" %>
@@ -26,10 +26,6 @@
 
         <div id="content">
 
-            <%-- TODO: remove the following div once resolver stable
-            <div id="beta">beta</div>
-            --%>
-            
             <g:each in="${record.messages}" var="message">
                 <div class="feedback_user">
                     <div class="feedback_summary">${message.summary}</div><div class="feedback_description">${message.description}</div>
@@ -37,7 +33,32 @@
             </g:each>
 
             <table class="resources">
-                <g:each in="${0..record.dataCollection.resources.size()-1}" var="counter">
+                <%-- primary/official resource (if any) --%>
+                <g:if test="${primaryResource != null}">
+                    <tr>
+                        <td colspan="2" align="center">
+                            <div style="text-align:right; font-size:70%; color:grey;">Primary location</div>
+                            <div class="resource">
+                                <div class="resource_overview" style="background-color:#A2C7C7; background-image:none;"></div>
+                                <div class="resource_info">
+                                    <a href="${primaryResource.urls[0].link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${primaryResource.id})">
+                                        <span class="desc">${primaryResource.description.encodeAsHTML()}</span>
+                                        <span class="institution">${primaryResource.institution.encodeAsHTML()}</span>
+                                        <span class="country">${primaryResource.location.encodeAsHTML()}</span>
+                                        <g:if test="${primaryResource.reliability == 0}">
+                                            <span class="status">(Uptime: <i>unknown</i>)</span>
+                                        </g:if>
+                                        <g:else>
+                                            <span class="status">(Uptime: ${primaryResource.reliability}%)</span>
+                                        </g:else>
+                                    </a>
+                                </div>
+                            </div>
+                        </td>
+                    </tr>
+                </g:if>
+                <%-- all other resource(s) --%>
+                <g:each in="${0..allResources.size()-1}" var="counter">
                     <g:if test="${(counter % 2) == 0}">
                        <tr>
                     </g:if>
@@ -46,22 +67,22 @@
                       <div class="resource">
                         <div class="resource_overview"></div>
                         <div class="resource_info">
-                          <a href="${record.dataCollection.resources[counter].urls[0].link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${record.dataCollection.resources[counter].id})">
-                            <span class="desc">${record.dataCollection.resources[counter].description.encodeAsHTML()}</span>
-                            <span class="institution">${record.dataCollection.resources[counter].institution.encodeAsHTML()}</span>
-                            <span class="country">${record.dataCollection.resources[counter].location.encodeAsHTML()}</span>
-                            <g:if test="${record.dataCollection.resources[counter].reliability == 0}">
+                          <a href="${allResources[counter].urls[0].link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${allResources[counter].id})">
+                            <span class="desc">${allResources[counter].description.encodeAsHTML()}</span>
+                            <span class="institution">${allResources[counter].institution.encodeAsHTML()}</span>
+                            <span class="country">${allResources[counter].location.encodeAsHTML()}</span>
+                            <g:if test="${allResources[counter].reliability == 0}">
                                 <span class="status">(Uptime: <i>unknown</i>)</span>
                             </g:if>
                             <g:else>
-                                <span class="status">(Uptime: ${record.dataCollection.resources[counter].reliability}%)</span>
+                                <span class="status">(Uptime: ${allResources[counter].reliability}%)</span>
                             </g:else>
                           </a>
                         </div>
                       </div>
                     </td>
 
-                    <g:if test="${(counter % 2) || (counter == record.dataCollection.resources.size()-1)}">
+                    <g:if test="${(counter % 2) || (counter == allResources.size()-1)}">
                         </tr>
                     </g:if>
                 </g:each>
@@ -71,7 +92,7 @@
 
           <div id="footer">
             <div class="powered">Powered by <a href="http://identifiers.org/registry/" title="Go to: MIRIAM Registry">MIRIAM Registry</a></div>
-            <div class="formats">Information also available in: <a href="${record.requestedUri}?format=rdfxml" title="Information in RDF">RDF</a></div>
+            <div class="formats">Information also available in: <a href="${record.requestedUri}?format=rdfxml" title="Information in RDF">RDF/XML</a></div>
             <div class="end"></div>
           </div>
 
