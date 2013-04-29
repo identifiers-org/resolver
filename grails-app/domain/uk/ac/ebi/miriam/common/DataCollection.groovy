@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.common
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2012 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20120823
+ * @version 20130426
  */
 class DataCollection implements Comparable
 {
@@ -75,7 +75,7 @@ class DataCollection implements Comparable
         uris fetch:"join"   // foreign key in table 'mir_uri'   // column:"ptr_datatype", type:"string",
         resources fetch:"join"   // foreign key in table 'mir_resource'  column:"ptr_datatype", fetch:"select", lazy:false, type:"string",
         definition column:"definition", type:"text"   // longer than varchar(255)
-        regexp column:"pattern"
+        regexp column:"pattern", enumType:"string", sqlType:"varchar(255)"   // to be safer with the handling of special characters in regular expressions
         dateCreation column:"date_creation"
         dateModification column:"date_modif"
         obsolete column:"obsolete"
@@ -117,6 +117,6 @@ class DataCollection implements Comparable
      */
     String officialUrl()
     {
-        return Constants.RESOLVER_URL_ROOT + officialUrn().substring(11) + "/"  // we enforce the final '/'
+        return Constants.RESOLVER_URL_ROOT + "/" + officialUrn().substring(11) + "/"  // we enforce the final '/'
     }
 }

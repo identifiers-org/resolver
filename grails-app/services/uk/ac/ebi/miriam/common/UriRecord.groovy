@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.common
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2011 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20110930
+ * @version 20130426
  */
 class UriRecord
 {
@@ -35,6 +35,7 @@ class UriRecord
     String requestedUriBase
     String officialUri
     String entityId
+    String namespace
     DataCollectionRecord dataCollection
     /* in case the response does not fully correspond to the request, we can inform the user via this way */
     List<FeedbackUser> messages = []   // to avoid null list

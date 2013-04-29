@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.common
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2012  BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013  BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20120823
+ * @version 20130425
  */
 class ResourceRecord
 {
@@ -40,6 +40,7 @@ class ResourceRecord
     String state
     Integer reliability
     Boolean deniesFrame
+    Boolean primary
     /* link towards a license or some terms of use */
     String license
     UrlRecord[] urls

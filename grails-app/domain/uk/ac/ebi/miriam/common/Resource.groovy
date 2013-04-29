@@ -8,7 +8,7 @@ package uk.ac.ebi.miriam.common
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2012 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -28,7 +28,7 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20120823
+ * @version 20130425
  */
 class Resource
 {
@@ -52,6 +52,8 @@ class Resource
     Boolean obsolete
     /* is the resource allowing loading of its content from a frame? */
     Boolean deniesFrame
+    /* whether the resource is the primary/official one of the data collection (optional) */
+    Boolean primary
     /* percentage of reliability (uptime) */
 
 
@@ -73,6 +75,7 @@ class Resource
         exampleId column:"example"
         obsolete column:"obsolete"
         deniesFrame column:"frame_deny"
+        primary column:"official"
 
         dataCollection column:"ptr_datatype", type:"string"   // foreign key
         reliability fetch:"join"  // lazy:false
