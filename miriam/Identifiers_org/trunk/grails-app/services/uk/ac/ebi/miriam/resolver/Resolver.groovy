@@ -88,7 +88,7 @@ class Resolver
                 }
                 record.namespace = dataRecord.officialUrn().substring(11)
                 //record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + URLEncoder.encode(entity)
-                record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
+                record.officialUri = Constants.RESOLVER_SUBDOM + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
                 record.entityId = entity
                 DataCollectionRecord tempDataCollection = new DataCollectionRecord()
                 tempDataCollection.id = dataRecord.id

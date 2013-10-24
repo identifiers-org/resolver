@@ -2,36 +2,114 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="5d6a8298-3eab-41b5-8359-08e1747ab918" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/README.txt" afterPath="$PROJECT_DIR$/README.txt" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Resource.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Resource.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/ResourceRecord.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/ResourceRecord.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/ant.xml" afterPath="$PROJECT_DIR$/.idea/ant.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/test/functional/uk/ac/ebi/miriam/resolver/UriRecordControllerTests.groovy" afterPath="$PROJECT_DIR$/test/functional/uk/ac/ebi/miriam/resolver/UriRecordControllerTests.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/application.properties" afterPath="$PROJECT_DIR$/application.properties" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/compiler.xml" afterPath="$PROJECT_DIR$/.idea/compiler.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/error/custom_error.gsp" afterPath="$PROJECT_DIR$/grails-app/views/error/custom_error.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/misc.xml" afterPath="$PROJECT_DIR$/.idea/misc.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resolver-grailsPlugins.iml" afterPath="$PROJECT_DIR$/resolver-grailsPlugins.iml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/resolver.iml" afterPath="$PROJECT_DIR$/resolver.iml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="resolver.iws" />
     <ignored path=".idea/workspace.xml" />
-    <ignored path="$USER_HOME$/.grails/" />
-    <file path="/a.dummy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1367002836776" ignored="false" />
-    <file path="/Resource.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366909962819" ignored="false" />
-    <file path="/ResourceRecord.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366910128259" ignored="false" />
-    <file path="/Resolver.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1367249446907" ignored="false" />
-    <file path="/resolve.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366987714092" ignored="false" />
-    <file path="/UriRecordController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366987461575" ignored="false" />
-    <file path="/ResponseRdf.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366997598970" ignored="false" />
-    <file path="/BuildConfig.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366995844898" ignored="false" />
-    <file path="/UriRecord.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366997529408" ignored="false" />
+    <ignored path="$USER_HOME_GRAILS$/" />
     <file path="/DataCollection.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1367002610189" ignored="false" />
+    <file path="/UriRecord.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366997529408" ignored="false" />
+    <file path="/BuildConfig.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379684321950" ignored="false" />
+    <file path="/ResponseRdf.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366997598970" ignored="false" />
+    <file path="/UriRecordController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1381760652005" ignored="false" />
+    <file path="/resolve.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366987714092" ignored="false" />
+    <file path="/Resolver.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1381926581086" ignored="false" />
+    <file path="/ResourceRecord.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366910128259" ignored="false" />
+    <file path="/Resource.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1366909962819" ignored="false" />
+    <file path="/a.dummy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382021199180" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grialsexample/.idea/workspace.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379511929236" ignored="false" />
+    <file path="/fragment.java" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382359437790" ignored="false" />
+    <file path="/Dummy.txt" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380788841607" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/webapp/explore.html" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380551497107" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/webapp/query.html" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380551497107" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/webapp/WEB-INF/ebi-lode-service.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380537252353" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/webapp/WEB-INF/web.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380551497107" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/resources/lode.properties" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380551497107" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/resources/log4j.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379668903612" ignored="false" />
+    <file path="/explore.html" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379592318439" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/domain/com/acme/Race.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379940769541" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/RegistrationTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379672166261" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/domain/com/acme/Registration.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379682074633" ignored="false" />
+    <file path="/Registration.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379682020955" ignored="false" />
+    <file path="/Race.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379672390172" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/RaceControllerTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379672529994" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/controllers/com/acme/RaceController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379941532301" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/controllers/com/acme/com/acme/RegistrationController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379672814481" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/controllers/com/acme/RegistrationController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379673941663" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/RegistrationControllerTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379672983018" ignored="false" />
+    <file path="/RegistrationController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379673009705" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/i18n/messages.properties" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379675322914" ignored="false" />
+    <file path="/messages.properties" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379674689649" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/RaceTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379680175919" ignored="false" />
+    <file path="/RaceTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379680172500" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/target/test-reports/TEST-unit-unit-com.acme.RaceTests.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379675803240" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/target/test-reports/TESTS-TestSuites.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379934105084" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/integration/RaceIntegrationTests.java" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379675984463" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/integration/com/acme/RaceIntegrationTests.java" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379679775261" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/integration/com/acme/RaceIntegrationTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379680612954" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/RunnerTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379681931776" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/domain/com/acme/Runner.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379681959802" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/RunnerControllerTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379682206995" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/controllers/com/acme/RunnerController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379682218202" ignored="false" />
+    <file path="/RunnerController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379682218202" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/conf/BootStrap.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379941623423" ignored="false" />
+    <file path="/BootStrap.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379683046537" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/conf/BuildConfig.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379684353804" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/conf/DataSource.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931297964" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/UserTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379935033351" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/domain/com/acme/User.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379937854841" ignored="false" />
+    <file path="/index.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379688680048" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/views/layouts/main.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379928155636" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/views/layouts/_header.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379941368927" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/web-app/css/main.css" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379941517996" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/views/layouts/_footer.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379928695153" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/taglib/racetrack/FooterTagLib.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379928733446" ignored="false" />
+    <file path="/_footer.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379928692729" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/src/templates/artifacts/Controller.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379929107260" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/src/templates/artifacts/DomainClass.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379929122613" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/src/templates/scaffolding/list.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931157874" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/src/templates/scaffolding/create.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931379335" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/src/templates/scaffolding/edit.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931561898" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/src/templates/scaffolding/show.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931573754" ignored="false" />
+    <file path="/edit.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931560759" ignored="false" />
+    <file path="/show.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379931571483" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/controllers/com/acme/UserController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379939661534" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/views/user/login.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379932154536" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/target/test-reports/TEST-unit-unit-com.acme.UserTests.xml" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379934105084" ignored="false" />
+    <file path="/UserTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379934972106" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/test/unit/com/acme/UserControllerTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379938604137" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/utils/SHACodec.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379937756504" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/taglib/racetrack/LoginTagLib.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379938766853" ignored="false" />
+    <file path="/UserController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379939657733" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/conf/racetrack/AdminFilters.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379940015125" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/views/layouts/_raceSearch.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379941341940" ignored="false" />
+    <file path="$USER_HOME$/ideaprojects/grailsexample/racetrack/grails-app/views/race/list.gsp" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379941506680" ignored="false" />
+    <file path="/DataSource.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1379946338152" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/lode-core-api/src/main/resources/sparql-queries.txt" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380537293230" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/README.md" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380537293230" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/web-ui/src/main/webapp/scripts/lode.js" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380551497107" ignored="false" />
+    <file path="$PROJECT_DIR$/../../../../GitHub/lodestar/lode-core-api/src/main/java/uk/ac/ebi/fgpt/lode/impl/JenaExploreService.java" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1380537293230" ignored="false" />
+    <file path="$APPLICATION_HOME_DIR$/plugins/Grails/lib/grails_integration.jar!/org/jetbrains/plugins/grails/lang/gsp/resolve/taglib/tld/grails.tld" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1381492839660" ignored="false" />
+    <file path="/Dummy.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382539138241" ignored="false" />
+    <file path="/Config.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382435306375" ignored="false" />
+    <file path="/InfoFilters.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382521212056" ignored="false" />
+    <file path="/UrlMappings.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1381916777983" ignored="false" />
+    <file path="/RedirectController.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1381918359767" ignored="false" />
+    <file path="/Constants.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1381839420384" ignored="false" />
+    <file path="/InfoFiltersTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382358457912" ignored="false" />
+    <file path="/UriRecordControllerTests.groovy" changelist="5d6a8298-3eab-41b5-8359-08e1747ab918" time="1382609133630" ignored="false" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -56,6 +134,7 @@
     <sortChildren value="false" />
   </component>
   <component name="DebuggerManager">
+    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
     <breakpoint_any default_suspend_policy="SuspendAll" default_condition_enabled="true">
       <breakpoint>
         <option name="NOTIFY_CAUGHT" value="true" />
@@ -92,7 +171,83 @@
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
     </breakpoint_any>
-    <ui_properties default_suspend_policy="SuspendAll" default_condition_enabled="true" />
+    <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" line="58" class="uk.ac.ebi.miriam.resolver.UriRecordController" package="uk.ac.ebi.miriam.resolver">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" line="7" class="InfoFilters" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" line="8" class="InfoFilters" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" line="14" class="InfoFilters" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" line="9" class="InfoFilters" package="">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
+    </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
   </component>
@@ -102,73 +257,55 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="UriRecordController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
+      <file leaf-file-name="Constants.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="422" column="52" selection-start="19226" selection-end="19226" vertical-scroll-proportion="-105.479164">
-              <folding>
-                <element signature="e#35#80#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="ResponseRdf.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="111" column="87" selection-start="5249" selection-end="5249" vertical-scroll-proportion="0.0">
-              <folding>
-                <element signature="e#36#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resolve.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="46" column="103" selection-start="2750" selection-end="2765" vertical-scroll-proportion="-7.0212765">
+            <state line="36" column="70" selection-start="1403" selection-end="1403" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="custom_error.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/error/custom_error.gsp">
+      <file leaf-file-name="UriRecordControllerTests.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/test/functional/uk/ac/ebi/miriam/resolver/UriRecordControllerTests.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="19" column="87" selection-start="635" selection-end="650" vertical-scroll-proportion="-6.06383">
+            <state line="217" column="12" selection-start="7350" selection-end="7350" vertical-scroll-proportion="0.70422536">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Resolver.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="UrlMappings.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Resolver.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="92" column="30" selection-start="3697" selection-end="3697" vertical-scroll-proportion="0.19320843">
-              <folding>
-                <element signature="e#36#76#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="DataCollection.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy">
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="77" column="154" selection-start="3532" selection-end="3532" vertical-scroll-proportion="-5.632653">
+            <state line="90" column="49" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="InvalidEntityIdentifierException.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/exception/InvalidEntityIdentifierException.groovy">
+      <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="7" column="50" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
+            <state line="52" column="92" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="InfoFilters.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="7" column="0" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
               <folding />
             </state>
           </provider>
@@ -184,22 +321,22 @@
   <component name="IdeDocumentHistory">
     <option name="changedFiles">
       <list>
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/conf/CustomHeaderFromIFrameFilters.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/MyDataCollection.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Resource.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/ResourceRecord.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" />
-        <option value="$PROJECT_DIR$/README.txt" />
         <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/error/custom_error.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy" />
+        <option value="$PROJECT_DIR$/application.properties" />
+        <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/resolver/InfoFilters.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/RedirectController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
+        <option value="$PROJECT_DIR$/test/unit/resolver/InfoFiltersTests.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" />
+        <option value="$PROJECT_DIR$/test/functional/uk/ac/ebi/miriam/resolver/UriRecordControllerTests.groovy" />
       </list>
     </option>
   </component>
@@ -211,10 +348,10 @@
     <option name="LAST_EDITED_TAB_NAME" />
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-4" />
-    <option name="y" value="25" />
-    <option name="width" value="1688" />
-    <option name="height" value="1003" />
+    <option name="x" value="1272" />
+    <option name="y" value="-8" />
+    <option name="width" value="1936" />
+    <option name="height" value="1096" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <OptionsSetting value="true" id="Add" />
@@ -223,6 +360,8 @@
     <OptionsSetting value="true" id="Update" />
     <OptionsSetting value="true" id="Status" />
     <OptionsSetting value="true" id="Edit" />
+    <OptionsSetting value="true" id="Undo Check Out" />
+    <OptionsSetting value="true" id="Get Latest Version" />
     <ConfirmationsSetting value="0" id="Add" />
     <ConfirmationsSetting value="0" id="Remove" />
   </component>
@@ -256,7 +395,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
+              <option name="myItemId" value="trunk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -266,29 +405,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
+              <option name="myItemId" value="trunk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="lib" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,143 +419,19 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
+              <option name="myItemId" value="trunk" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
+              <option name="myItemId" value="test" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="uriRecord" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="error" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="domain" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="common" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miriam" />
+              <option name="myItemId" value="functional" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="miriam" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="resolver" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="grails-app" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="conf" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -464,33 +461,109 @@
     </panes>
   </component>
   <component name="PropertiesComponent">
+    <property name="project.structure.last.edited" value="Modules" />
     <property name="GoToFile.includeJavaFiles" value="false" />
-    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="project.structure.proportion" value="0.0" />
     <property name="options.splitter.main.proportions" value="0.3" />
-    <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="options.lastSelected" value="preferences.pluginManager" />
-    <property name="recentsLimit" value="5" />
     <property name="MemberChooser.sorted" value="false" />
+    <property name="recentsLimit" value="5" />
+    <property name="options.lastSelected" value="preferences.pluginManager" />
+    <property name="project.structure.side.proportion" value="0.2" />
+    <property name="MemberChooser.copyJavadoc" value="false" />
+    <property name="GoToClass.toSaveIncludeLibraries" value="false" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="MemberChooser.showClasses" value="true" />
+    <property name="FullScreen" value="false" />
     <property name="GoToClass.includeLibraries" value="false" />
     <property name="options.searchVisible" value="true" />
+    <property name="dynamic.classpath" value="false" />
     <property name="options.splitter.details.proportions" value="0.2" />
-    <property name="MemberChooser.copyJavadoc" value="false" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
+      <recent name="" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk\grails-app\conf" />
       <recent name="$PROJECT_DIR$/grails-app/conf" />
     </key>
   </component>
-  <component name="RunManager" selected="Grails.Grails:resolver">
-    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
-      <module name="" />
-      <setting name="path" value="" />
-      <setting name="vmparams" value="" />
-      <setting name="params" value="" />
-      <setting name="workDir" value="file://$PROJECT_DIR$" />
-      <setting name="debug" value="false" />
+  <component name="RunManager" selected="JUnit.UriRecordControllerTests.testInfoFilterWithEntity">
+    <configuration default="false" name="UriRecordControllerTests.testInfoFilter" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.ebi.miriam.resolver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="resolver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="uk.ac.ebi.miriam.resolver" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.ebi.miriam.resolver.UriRecordControllerTests" />
+      <option name="METHOD_NAME" value="testInfoFilter" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Debug">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Debug" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method />
+    </configuration>
+    <configuration default="false" name="UriRecordControllerTests.testInfoFilterWithEntity" type="JUnit" factoryName="JUnit" temporary="true">
+      <extension name="coverage" enabled="false" merge="false" runner="idea">
+        <pattern>
+          <option name="PATTERN" value="uk.ac.ebi.miriam.resolver.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <module name="resolver" />
+      <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="false" />
+      <option name="ALTERNATIVE_JRE_PATH" />
+      <option name="PACKAGE_NAME" value="uk.ac.ebi.miriam.resolver" />
+      <option name="MAIN_CLASS_NAME" value="uk.ac.ebi.miriam.resolver.UriRecordControllerTests" />
+      <option name="METHOD_NAME" value="testInfoFilterWithEntity" />
+      <option name="TEST_OBJECT" value="method" />
+      <option name="VM_PARAMETERS" />
+      <option name="PARAMETERS" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
+      <option name="ENV_VARIABLES" />
+      <option name="PASS_PARENT_ENVS" value="true" />
+      <option name="TEST_SEARCH_SCOPE">
+        <value defaultName="moduleWithDependencies" />
+      </option>
+      <envs />
+      <patterns />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method />
+    </configuration>
+    <configuration default="false" name="testInfoFilterWithoutEntity()" type="GrailsRunConfigurationType" factoryName="Grails" temporary="true">
+      <module name="resolver" />
+      <setting name="vmparams" value="" />
+      <setting name="cmdLine" value="test-app functional: uk.ac.ebi.miriam.resolver.UriRecordController.testInfoFilterWithoutEntity -echoOut" />
+      <setting name="depsClasspath" value="true" />
+      <setting name="passParentEnv" value="true" />
+      <extension name="coverage" enabled="false" merge="false" runner="idea" />
+      <setting name="launchBrowser" value="true" />
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="Run" />
+      <method>
+        <option name="Make" enabled="false" />
+      </method>
     </configuration>
     <configuration default="true" type="GrailsRunConfigurationType" factoryName="Grails">
       <module name="" />
@@ -503,6 +576,33 @@
       <method>
         <option name="Make" enabled="true" />
       </method>
+    </configuration>
+    <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy">
+      <module name="" />
+      <setting name="path" value="" />
+      <setting name="vmparams" value="" />
+      <setting name="params" value="" />
+      <setting name="workDir" value="file://$PROJECT_DIR$" />
+      <setting name="debug" value="false" />
+      <method />
+    </configuration>
+    <configuration default="true" type="AndroidTestRunConfigurationType" factoryName="Android Tests">
+      <module name="" />
+      <option name="TESTING_TYPE" value="0" />
+      <option name="INSTRUMENTATION_RUNNER_CLASS" value="" />
+      <option name="METHOD_NAME" value="" />
+      <option name="CLASS_NAME" value="" />
+      <option name="PACKAGE_NAME" value="" />
+      <option name="TARGET_SELECTION_MODE" value="EMULATOR" />
+      <option name="PREFERRED_AVD" value="" />
+      <option name="USE_COMMAND_LINE" value="true" />
+      <option name="COMMAND_LINE" value="" />
+      <option name="WIPE_USER_DATA" value="false" />
+      <option name="DISABLE_BOOT_ANIMATION" value="false" />
+      <option name="NETWORK_SPEED" value="full" />
+      <option name="NETWORK_LATENCY" value="none" />
+      <option name="CLEAR_LOGCAT" value="false" />
+      <method />
     </configuration>
     <configuration default="true" type="Remote" factoryName="Remote">
       <option name="USE_SOCKET_TRANSPORT" value="true" />
@@ -569,13 +669,31 @@
       <setting name="passParentEnv" value="true" />
       <extension name="coverage" enabled="false" merge="false" runner="idea" />
       <setting name="launchBrowser" value="true" />
+      <RunnerSettings RunnerId="GrailsMavenDebuggerRunner">
+        <option name="DEBUG_PORT" value="" />
+        <option name="TRANSPORT" value="0" />
+        <option name="LOCAL" value="true" />
+      </RunnerSettings>
+      <RunnerSettings RunnerId="Run" />
+      <ConfigurationWrapper RunnerId="GrailsMavenDebuggerRunner" />
+      <ConfigurationWrapper RunnerId="Run" />
       <method>
         <option name="Make" enabled="false" />
       </method>
     </configuration>
-    <list size="1">
+    <list size="4">
       <item index="0" class="java.lang.String" itemvalue="Grails.Grails:resolver" />
+      <item index="1" class="java.lang.String" itemvalue="JUnit.UriRecordControllerTests.testInfoFilter" />
+      <item index="2" class="java.lang.String" itemvalue="JUnit.UriRecordControllerTests.testInfoFilterWithEntity" />
+      <item index="3" class="java.lang.String" itemvalue="Grails.testInfoFilterWithoutEntity()" />
     </list>
+    <recent_temporary>
+      <list size="3">
+        <item index="0" class="java.lang.String" itemvalue="Grails.testInfoFilterWithoutEntity()" />
+        <item index="1" class="java.lang.String" itemvalue="JUnit.UriRecordControllerTests.testInfoFilterWithEntity" />
+        <item index="2" class="java.lang.String" itemvalue="JUnit.UriRecordControllerTests.testInfoFilter" />
+      </list>
+    </recent_temporary>
     <configuration default="true" type="GroovyScriptRunConfiguration" factoryName="Groovy Script">
       <module name="" />
       <setting name="path" value="" />
@@ -619,20 +737,20 @@
     <option name="myMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$PROJECT_DIR$" />
-          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+          <option name="myVcsRoot" value="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk" />
+          <option name="myCopyRoot" value="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk" />
         </SvnCopyRootSimple>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$PROJECT_DIR$/.idea" />
-          <option name="myCopyRoot" value="$PROJECT_DIR$/.idea" />
+          <option name="myVcsRoot" value="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk\.idea" />
+          <option name="myCopyRoot" value="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk\.idea" />
         </SvnCopyRootSimple>
       </list>
     </option>
     <option name="myMoreRealMappingRoots">
       <list>
         <SvnCopyRootSimple>
-          <option name="myVcsRoot" value="$PROJECT_DIR$" />
-          <option name="myCopyRoot" value="$PROJECT_DIR$" />
+          <option name="myVcsRoot" value="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk" />
+          <option name="myCopyRoot" value="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk" />
         </SvnCopyRootSimple>
       </list>
     </option>
@@ -671,39 +789,39 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-4" y="25" width="1688" height="1003" extended-state="6" />
-    <editor active="true" />
+    <frame x="1272" y="-8" width="1936" height="1096" extended-state="6" />
+    <editor active="false" />
     <layout>
-      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.052828174" sideWeight="0.6709265" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3246311" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.249694" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6704362" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.5908608" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.53567624" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32965517" sideWeight="0.0" order="8" side_tool="true" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="true" content_ui="tabs" />
-      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925338" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925338" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23959444" sideWeight="0.6485623" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33013844" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32925338" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.6704362" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.22766218" sideWeight="0.6753689" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.12059765" sideWeight="0.6709265" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3290735" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3278237" sideWeight="0.0" order="11" side_tool="false" content_ui="tabs" />
+      <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32306057" sideWeight="0.0" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="combo" />
       <window_info id="Data Sources" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32967034" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39983714" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3312034" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
     </layout>
@@ -775,129 +893,108 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy">
+    <entry file="file://$PROJECT_DIR$/test/unit/uk/ac/ebi/miriam/resolver/MediaControllerTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="37" column="20" selection-start="1236" selection-end="1236" vertical-scroll-proportion="0.6487119">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error_generic.gsp">
+    <entry file="file://$PROJECT_DIR$/test/unit/uk/ac/ebi/miriam/resolver/ErrorControllerTests.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error/error.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding>
-            <marker date="1313081335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1313081335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1313081335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-            <marker date="1313081335000" expanded="true" signature="-1:-1" placeholder="{...}" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error/invalid_request.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="39" selection-start="716" selection-end="734" vertical-scroll-proportion="0.22833724">
+        <state line="26" column="51" selection-start="1307" selection-end="1307" vertical-scroll-proportion="-0.025185185" />
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/software/grails-2.2.4/lib/junit/junit/jars/junit-4.10.jar!/org/junit/internal/runners/JUnit38ClassRunner.class">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="16" selection-start="534" selection-end="534" vertical-scroll-proportion="0.2990654" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/unit/resolver/InfoFiltersTests.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="6" column="82" selection-start="68" selection-end="68" vertical-scroll-proportion="0.24878049" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/InfoController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="9" column="6" selection-start="126" selection-end="126" vertical-scroll-proportion="-6.652174">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="111" column="18" selection-start="4422" selection-end="4422" vertical-scroll-proportion="0.55140185">
+          <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/RedirectController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="34" column="21" selection-start="1144" selection-end="1144" vertical-scroll-proportion="0.27142859">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/ErrorController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="96" column="46" selection-start="3195" selection-end="3195" vertical-scroll-proportion="0.6880734">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error/custom_error.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="87" selection-start="635" selection-end="650" vertical-scroll-proportion="-6.06383">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="46" column="103" selection-start="2750" selection-end="2765" vertical-scroll-proportion="-7.0212765">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$PROJECT_DIR$/../../../bin/grails-2.1.0/src/grails-datastore-gorm-1.0.9.RELEASE-sources.jar!/org/grails/datastore/gorm/GormStaticApi.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="252" column="13" selection-start="8081" selection-end="8081" vertical-scroll-proportion="0.33274648">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar:///ebi/research/software/Linux_x86_64/opt/java/jdk1.6/src.zip!/java/lang/Exception.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="19" column="13" selection-start="479" selection-end="479" vertical-scroll-proportion="-0.071428575">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/exception/InvalidEntityIdentifierException.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="7" column="50" selection-start="240" selection-end="240" vertical-scroll-proportion="0.0">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="111" column="87" selection-start="5249" selection-end="5249" vertical-scroll-proportion="0.0">
-          <folding>
-            <element signature="e#36#76#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy">
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="154" selection-start="3532" selection-end="3532" vertical-scroll-proportion="-5.632653">
+        <state line="79" column="14" selection-start="2567" selection-end="2567" vertical-scroll-proportion="0.44061962">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="422" column="52" selection-start="19226" selection-end="19226" vertical-scroll-proportion="-105.479164">
-          <folding>
-            <element signature="e#35#80#0" expanded="true" />
-          </folding>
+        <state line="58" column="0" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.20598592">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="7" column="0" selection-start="148" selection-end="148" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="52" column="92" selection-start="2550" selection-end="2550" vertical-scroll-proportion="0.0">
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="92" column="30" selection-start="3697" selection-end="3697" vertical-scroll-proportion="0.19320843">
-          <folding>
-            <element signature="e#36#76#0" expanded="true" />
-          </folding>
+        <state line="90" column="49" selection-start="3501" selection-end="3501" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="70" selection-start="1403" selection-end="1403" vertical-scroll-proportion="0.0">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/test/functional/uk/ac/ebi/miriam/resolver/UriRecordControllerTests.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="217" column="12" selection-start="7350" selection-end="7350" vertical-scroll-proportion="0.70422536">
+          <folding />
         </state>
       </provider>
     </entry>
@@ -908,14 +1005,14 @@
         <entry key="resolver">
           <value>
             <GrailsSettings>
-              <option name="buildConfigCrc" value="-99879383" />
-              <option name="pluginDependenciesCrc" value="-707531024" />
+              <option name="buildConfigCrc" value="-1365041108" />
+              <option name="pluginDependenciesCrc" value="1143293631" />
               <option name="properties">
                 <map>
-                  <entry key="grails.global.plugins.dir" value="$USER_HOME$/.grails/2.0.1/global-plugins" />
-                  <entry key="grails.project.plugins.dir" value="$USER_HOME$/.grails/2.0.1/projects/resolver/plugins" />
-                  <entry key="grails.project.work.dir" value="$USER_HOME$/.grails/2.0.1/projects/resolver" />
-                  <entry key="grails.work.dir" value="$USER_HOME$/.grails/2.0.1" />
+                  <entry key="grails.global.plugins.dir" value="C:\Users\sarala.EBI\.grails\2.2.4\global-plugins" />
+                  <entry key="grails.project.plugins.dir" value="C:\Users\sarala.EBI\.grails\2.2.4\projects\resolver\plugins" />
+                  <entry key="grails.project.work.dir" value="C:\Users\sarala.EBI\.grails\2.2.4\projects\resolver" />
+                  <entry key="grails.work.dir" value="C:\Users\sarala.EBI\.grails\2.2.4" />
                 </map>
               </option>
             </GrailsSettings>
@@ -928,6 +1025,103 @@
         </entry>
       </map>
     </option>
+  </component>
+  <component name="masterDetails">
+    <states>
+      <state key="ArtifactsStructureConfigurable.UI">
+        <settings>
+          <artifact-editor />
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="Copyright.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+      <state key="FacetStructureConfigurable.UI">
+        <settings>
+          <last-edited>Hibernate</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="GlobalLibrariesConfigurable.UI">
+        <settings>
+          <last-edited>grails-2.2.4</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="JdkListConfigurable.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ModuleStructureConfigurable.UI">
+        <settings>
+          <last-edited>resolver</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectJDKs.UI">
+        <settings>
+          <last-edited>1.6</last-edited>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ProjectLibrariesConfigurable.UI">
+        <settings>
+          <splitter-proportions>
+            <option name="proportions">
+              <list>
+                <option value="0.2" />
+              </list>
+            </option>
+          </splitter-proportions>
+        </settings>
+      </state>
+      <state key="ScopeChooserConfigurable.UI">
+        <settings>
+          <splitter-proportions />
+        </settings>
+      </state>
+    </states>
   </component>
 </project>
 

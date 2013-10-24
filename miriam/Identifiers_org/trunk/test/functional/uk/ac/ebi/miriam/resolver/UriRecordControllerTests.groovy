@@ -207,4 +207,18 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
         assertContentContains "The requested URI is deprecated"
     }
     */
+
+    /* Filter test - redirecting to info.servername - tested on local host
+    * */
+    void testInfoFilterWithEntity(){
+        redirectEnabled = false
+        get("http://localhost:8080/pubmed/16333295")
+        assertRedirectUrl("http://info.localhost:8080/pubmed/16333295")
+    }
+
+    void testInfoFilterWithoutEntity(){
+        redirectEnabled = false
+        get("http://info.localhost:8080/pubmed")
+        assertRedirectUrl("http://localhost:8080/pubmed")
+    }
 }

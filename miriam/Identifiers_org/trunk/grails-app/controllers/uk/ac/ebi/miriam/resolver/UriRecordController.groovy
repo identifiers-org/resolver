@@ -180,6 +180,7 @@ class UriRecordController
                 record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
             }
 
+
             // renders the response, based on 'UriRecord', the optional "format" parameter and some content negotiation
             if (null != params.format)
             {
@@ -216,6 +217,7 @@ class UriRecordController
                 }
             }
         }
+
         catch (NotExistingDataCollectionException e)
         {
             // 404 with custom message
