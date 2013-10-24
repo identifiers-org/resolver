@@ -1,3 +1,5 @@
+import uk.ac.ebi.miriam.common.Constants
+
 /**
  * Mapping of all URLs used.
  *
@@ -63,7 +65,7 @@ class UrlMappings
             controller = "uriRecord"
 	        action = "resolvePartialUrl"
         }
-        
+
         // any proper MIRIAM URL
         "/$dataCollection/$entity" {
 	        controller = "uriRecord"
