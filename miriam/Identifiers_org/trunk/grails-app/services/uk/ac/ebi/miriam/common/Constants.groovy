@@ -33,10 +33,10 @@ class Constants
 {
 /*    static final String RESOLVER_URL_ROOT = "http://identifiers.org"
     static final String RESOLVER_SUBDOM = "http://info.identifiers.org"*/
-    static final String RESOLVER_URL_ROOT = "http://localhost:8080"
-    static final String RESOLVER_SUBDOM = "http://info.localhost:8080"
-/*    static final String RESOLVER_URL_ROOT = "http://dev.identifiers.org"
-    static final String RESOLVER_SUBDOM = "http://dev.info.identifiers.org"*/
+/*    static final String RESOLVER_URL_ROOT = "http://localhost:8080"
+    static final String RESOLVER_SUBDOM = "http://info.localhost:8080"*/
+    static final String RESOLVER_URL_ROOT = "http://dev.identifiers.org"
+    static final String RESOLVER_SUBDOM = "http://dev.info.identifiers.org"
 
     static final String MIRIAM_URL_ROOT = "http://www.ebi.ac.uk/miriam/main/"
 }

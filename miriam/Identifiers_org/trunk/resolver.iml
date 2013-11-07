@@ -47,7 +47,14 @@
       <library name="Grails User Library (resolver)">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.servlet/jstl/jars/jstl-1.1.2.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/javax.servlet/jstl/jars/jstl-1.1.2.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/jars/tomcat-embed-logging-juli-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/jars/tomcat-catalina-ant-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/joda-time/joda-time/jars/joda-time-2.3.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -55,7 +62,7 @@
       </library>
     </orderEntry>
     <orderEntry type="module" module-name="resolver-grailsPlugins" />
-    <orderEntry type="library" name="grails-2.1.0" level="application" />
+    <orderEntry type="library" name="grails-2.2.4" level="application" />
   </component>
 </module>
 
