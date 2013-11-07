@@ -1,5 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
+import uk.ac.ebi.miriam.common.Constants
 import uk.ac.ebi.miriam.common.ResourceRecord
 import uk.ac.ebi.miriam.exception.InvalidEntityIdentifierException
 import uk.ac.ebi.miriam.exception.ResolverErrorException
@@ -49,6 +50,11 @@ class UriRecordController
     // resolves the URL
     def resolve = {
         resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
+    }
+
+    def doiResolve ={
+        String entityId = params.entity + "/" + params.subEntity;
+        resolveProcess((String) request.request.requestURL, params.dataCollection, entityId, params, request)
     }
 
     private def resolveProcess(String url, String namespace, String entityId, Map params, HttpServletRequest request)
@@ -180,40 +186,41 @@ class UriRecordController
                 record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
             }
 
-
+            if(request.serverName.contains("info.")){
             // renders the response, based on 'UriRecord', the optional "format" parameter and some content negotiation
-            if (null != params.format)
-            {
-                def formatParam = params.format.toLowerCase()
-                if (("rdfxml" == formatParam) || ("rdf" == formatParam))   // 'rdfxml' should be preferred
+                    if (null != params.format)
                 {
-                    if (null == params.resource)
+                    def formatParam = params.format.toLowerCase()
+                    if (("rdfxml" == formatParam) || ("rdf" == formatParam))   // 'rdfxml' should be preferred
                     {
-                        renderResponseRdf(record)
+                        if (null == params.resource)
+                        {
+                            renderResponseRdf(record)
+                        }
+                        else   // the user also added some format parameter: it should not be taken into consideration
+                        {
+                            record.addMessage("Improper usage of the 'format' parameter", "Identifiers.org does not yet support the usage of the 'format' parameter when requesting a specific resource.")
+                            renderResponseHtml(record)
+                        }
                     }
-                    else   // the user also added some format parameter: it should not be taken into consideration
+                    else if ("html" == formatParam)
                     {
-                        record.addMessage("Improper usage of the 'format' parameter", "Identifiers.org does not yet support the usage of the 'format' parameter when requesting a specific resource.")
+                        renderResponseHtml(record)
+                    }
+                    else   // anything else... (not supported)
+                    {
+                        record.addMessage("Invalid 'format' parameter", "The format '$formatParam' is not supported. Please refer to <a href=\"/help\" title=\"Help page\">the help page</a> for the complete list of supported formats.")
                         renderResponseHtml(record)
                     }
                 }
-                else if ("html" == formatParam)
+                else
                 {
-                    renderResponseHtml(record)
-                }
-                else   // anything else... (not supported)
-                {
-                    record.addMessage("Invalid 'format' parameter", "The format '$formatParam' is not supported. Please refer to <a href=\"/help\" title=\"Help page\">the help page</a> for the complete list of supported formats.")
-                    renderResponseHtml(record)
-                }
-            }
-            else
-            {
-                withFormat {
-                    html { renderResponseHtml(record) }   // also handles 'all'
-                    rdf { renderResponseRdf(record) }
-                    //text { renderResponseText(record) }
-                    //xml { renderResponseXml(record) }
+                    withFormat {
+                        html { renderResponseHtml(record) }   // also handles 'all'
+                        rdf { renderResponseRdf(record)}
+                        //text { renderResponseText(record) }
+                        //xml { renderResponseXml(record) }
+                    }
                 }
             }
         }
@@ -234,7 +241,8 @@ class UriRecordController
             forward(controller:"error", action:"internalServerError", params:[url:request.request.requestURL, message:e.getMessage()])
         }
     }
-    
+
+
     /**
      * Resolves URLs with only indication of a data collection
      */
@@ -348,6 +356,7 @@ class UriRecordController
         {
             if (!entityId.empty)
             {
+
                 resolveProcess((String) request.request.requestURL, namespace, entityId, params, request)
             }
             else

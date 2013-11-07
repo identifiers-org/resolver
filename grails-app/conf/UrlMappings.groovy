@@ -72,6 +72,12 @@ class UrlMappings
 	        action = "resolve"
         }
 
+        // doi MIRIAM URL
+        "/$dataCollection/$entity/$subEntity" {
+	        controller = "uriRecord"
+	        action = "doiResolve"
+        }
+
         // any other URLs
         "/**" {
             controller = "uriRecord"
