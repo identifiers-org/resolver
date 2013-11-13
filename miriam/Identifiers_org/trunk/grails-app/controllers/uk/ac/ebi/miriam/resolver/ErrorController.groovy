@@ -101,6 +101,17 @@ class ErrorController
         generateResponse(error)
     }
 
+    def unavailableFormat = {
+        FeedbackError error = new FeedbackError()
+        error.title = "Requested format is unavailable"
+        error.code = "400 Bad Request"
+        error.message = "'$params.url' is not available."
+        error.request = params.url
+        error.status = 400
+
+        generateResponse(error)
+    }
+
 
     def reportError = {
         render(text:"Please do something about that!", contentType:"text/plain", encoding:"UTF-8")
