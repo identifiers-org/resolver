@@ -186,7 +186,7 @@ class UriRecordController
                 record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
             }
 
-            if(request.serverName.contains("info.")){
+ /*           if(request.serverName.contains("info.")){
             // renders the response, based on 'UriRecord', the optional "format" parameter and some content negotiation
                     if (null != params.format)
                 {
@@ -220,6 +220,17 @@ class UriRecordController
                         rdf { renderResponseRdf(record)}
                         //text { renderResponseText(record) }
                         //xml { renderResponseXml(record) }
+                    }
+                }*/
+            if(request.serverName.contains("info.")){
+                withFormat {
+                    html { renderResponseHtml(record) }   // also handles 'all'
+                    rdf { renderResponseRdf(record)}
+                }
+            }else{
+                withFormat {
+                    rdf {
+                        forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL])
                     }
                 }
             }
@@ -284,7 +295,7 @@ class UriRecordController
             }
             withFormat {
                 html { renderPartialResponseHtml(data, (String) request.request.requestURL, obsolete) }   // also handles 'all'
-                //rdf { renderPartialResponseRdf(data) }
+                rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
             }
         }
         catch (NotExistingDataCollectionException e)

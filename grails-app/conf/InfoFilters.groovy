@@ -10,9 +10,9 @@ class InfoFilters {
                     response.setHeader("Location", Constants.RESOLVER_URL_ROOT+request.forwardURI)
                     response.flushBuffer()
                     return false
-                }else if(params.entity != null && !request.serverName.contains("info.")){
+                }else if(params.entity != null && !request.serverName.contains("info.") && !request.forwardURI.endsWith(".rdf")){
                     response.setStatus(301)
-                    response.setHeader("Location", Constants.RESOLVER_SUBDOM+request.forwardURI.replace(".rdf",""))
+                    response.setHeader("Location", Constants.RESOLVER_SUBDOM+request.forwardURI)
                     response.flushBuffer()
                     return false
                 }
