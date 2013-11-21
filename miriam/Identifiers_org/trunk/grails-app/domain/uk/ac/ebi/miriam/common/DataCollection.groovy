@@ -1,5 +1,7 @@
 package uk.ac.ebi.miriam.common
 
+import grails.util.Holders
+
 /**
  * Contains all the information about a MIRIAM data collection.
  *
@@ -117,6 +119,6 @@ class DataCollection implements Comparable
      */
     String officialUrl()
     {
-        return Constants.RESOLVER_URL_ROOT + "/" + officialUrn().substring(11) + "/"  // we enforce the final '/'
+        return Holders.getGrailsApplication().config.grails.serverURL + "/" + officialUrn().substring(11) + "/"  // we enforce the final '/'
     }
 }

@@ -58,12 +58,18 @@ grails.exceptionresolver.params.exclude = ['password']
 environments {
     production {
         grails.serverURL = "http://identifiers.org"
+        subdomain = "http://info.identifiers.org"
     }
     development {
         grails.serverURL = "http://dev.identifiers.org"
+        subdomain = "http://dev.info.identifiers.org"
+        staticpages = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/dev/"
+
     }
     test {
         grails.serverURL = "http://localhost:8080"
+        subdomain = "http://info.localhost:8080"
+        staticpages = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/dev/"
     }
 
 }
