@@ -1,6 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
-
+import grails.util.Holders
 import uk.ac.ebi.miriam.common.UriRecord
 import uk.ac.ebi.miriam.common.UrlRecord
 import uk.ac.ebi.miriam.common.ResourceRecord
@@ -13,6 +13,8 @@ import uk.ac.ebi.miriam.common.Constants
 import uk.ac.ebi.miriam.common.DataCollection
 import uk.ac.ebi.miriam.exception.NotExistingDataCollectionException
 import uk.ac.ebi.miriam.common.DataCollectionRecord
+
+import javax.xml.ws.Holder
 
 
 /**
@@ -88,7 +90,7 @@ class Resolver
                 }
                 record.namespace = dataRecord.officialUrn().substring(11)
                 //record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + URLEncoder.encode(entity)
-                record.officialUri = Constants.RESOLVER_SUBDOM + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
+                record.officialUri = Holders.getGrailsApplication().config.getProperty('subdomain') + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
                 record.entityId = entity
                 DataCollectionRecord tempDataCollection = new DataCollectionRecord()
                 tempDataCollection.id = dataRecord.id

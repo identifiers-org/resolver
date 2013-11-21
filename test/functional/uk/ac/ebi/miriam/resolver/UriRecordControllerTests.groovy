@@ -1,5 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
+import grails.util.Holders
 import uk.ac.ebi.miriam.common.Constants
 
 /**
@@ -40,7 +41,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
         redirectEnabled = false   // for properly handling the 303
         //get('http://localhost:8080/resolver/uniprot/P12345')   // Accept: */*
         //get('/uniprot/P12345')
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/P12345')   // Accept: */*
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/P12345')   // Accept: */*
 //        assertStatus 303
 
         assertContentType "text/html"   // the application returns the new media type
@@ -51,7 +52,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testResolveHtmlObsolete()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/P12345') {
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/P12345') {
             headers['Accept'] = 'text/html'
         }
 //        assertStatus 303
@@ -63,7 +64,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testResolveHtml()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/P12345') {
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/P12345') {
             headers['Accept'] = 'application/xhtml+xml'
         }
 //        assertStatus 303
@@ -75,7 +76,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testResolveXml()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/P12345') {
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/P12345') {
             headers['Accept'] = 'text/xml'
         }
 //        assertStatus 303
@@ -87,7 +88,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testResolveRdf()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/P12345') {
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/P12345') {
             headers['Accept'] = 'application/rdf+xml'
         }
 //        assertStatus 303
@@ -99,7 +100,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testResolvePlain()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/P12345') {
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/P12345') {
             headers['Accept'] = 'text/plain'
         }
 //        assertStatus 303
@@ -110,7 +111,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     // test not existing data collection
     void testNotExistingDataCollection()
     {
-        get(Constants.RESOLVER_SUBDOM + '/wrong/P12345')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/wrong/P12345')
         assertStatus 404
         assertContentType "text/html"
         assertContentContains "Unknown data collection"
@@ -119,7 +120,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     // test invalid entity identifier
     void testInvalidEntityIdentifier()
     {
-        get(Constants.RESOLVER_SUBDOM + '/uniprot/123456')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/uniprot/123456')
         assertStatus 400
         assertContentType "text/html"
         assertContentContains "Invalid entity identifier"
@@ -128,7 +129,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testDoiPercentEncoded()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/doi/10.1038%2Fnbt1156')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/doi/10.1038%2Fnbt1156')
 //        assertStatus 303
         assertContentType "text/html"   // the application returns the new media type
         assertContentContains "Digital Object Identifier"
@@ -137,7 +138,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testDoiNotPercentEncoded()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/doi/10.1038/nbt1156')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/doi/10.1038/nbt1156')
 //        assertStatus 303
         assertContentType "text/html"   // the application returns the new media type
         assertContentContains "Digital Object Identifier"
@@ -146,7 +147,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testOntologyPercentEncoded()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/obo.go/GO%3A0006915')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/obo.go/GO%3A0006915')
 //        assertStatus 303
         assertContentType "text/html"   // the application returns the new media type
         assertContentContains "Gene Ontology"
@@ -155,7 +156,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testOntologyNotPercentEncoded()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/obo.go/GO:0006915')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/obo.go/GO:0006915')
 //        assertStatus 303
         assertContentType "text/html"   // the application returns the new media type
         assertContentContains "Gene Ontology"
@@ -164,7 +165,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testFormatHtmlInUrl()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/obo.go/GO:0006915?format=html')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/obo.go/GO:0006915?format=html')
 //        assertStatus 303
         assertContentType "text/html"
         assertContentContains "html"
@@ -173,7 +174,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testFormatRdfInUrl()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/obo.go/GO:0006915?format=rdf')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/obo.go/GO:0006915?format=rdf')
 //        assertStatus 303
         assertContentType "application/rdf+xml"
         assertContentContains "rdf"
@@ -191,7 +192,7 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testObsoleteEntityUrl()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Constants.RESOLVER_SUBDOM + '/teddy/TEDDY_0000050')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/teddy/TEDDY_0000050')
 //        assertStatus 303
         assertContentType "text/html"   // the application returns the new media type
         assertContentContains "Obsolete URI"
@@ -212,13 +213,13 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     * */
     void testInfoFilterWithEntity(){
         redirectEnabled = false
-        get(Constants.RESOLVER_URL_ROOT+"/pubmed/16333295")
-        assertRedirectUrl(Constants.RESOLVER_SUBDOM+"/pubmed/16333295")
+        get(Holders.getGrailsApplication().config.grails.serverURL+"/pubmed/16333295")
+        assertRedirectUrl(Holders.getGrailsApplication().config.getProperty('subdomain')+"/pubmed/16333295")
     }
 
     void testInfoFilterWithoutEntity(){
         redirectEnabled = false
-        get(Constants.RESOLVER_SUBDOM+"/pubmed")
-        assertRedirectUrl(Constants.RESOLVER_URL_ROOT+"/pubmed")
+        get(Holders.getGrailsApplication().config.getProperty('subdomain')+"/pubmed")
+        assertRedirectUrl(Holders.getGrailsApplication().config.grails.serverURL+"/pubmed")
     }
 }

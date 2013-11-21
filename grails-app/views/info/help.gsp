@@ -5,7 +5,7 @@
 --%>
 
 
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="grails.util.Holders; uk.ac.ebi.miriam.common.Constants" contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 
 <html>
@@ -16,7 +16,7 @@
     </head>
     <body>
 
-        <c:import url="http://www.ebi.ac.uk/compneur-srv/identifiers-org/help.html" charEncoding="UTF-8" />
+        <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'help.html'}" charEncoding="UTF-8" />
         
     </body>
 </html>

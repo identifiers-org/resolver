@@ -1,6 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
-
+import grails.util.Holders
 import uk.ac.ebi.miriam.common.UriRecord
 import uk.ac.ebi.miriam.common.Constants
 
@@ -57,6 +57,7 @@ class ResponseRdf
      */
     public static def String generateResponse(UriRecord record)
     {
+        String resolver_url_root = Holders.getGrailsApplication().config.grails.serverURL;
         /* Jena test
         Model model = ModelFactory.createDefaultModel()
         Resource resUri = model.createResource(record.requestedUri)
@@ -109,16 +110,16 @@ class ResponseRdf
                         'rdf:type'('rdf:resource':"http://idtype.identifiers.org/$record.namespace/")
                     }
                 }
-                'rdf:type'('rdf:about':"$Constants.RESOLVER_URL_ROOT/$record.namespace/")
+                'rdf:type'('rdf:about':"$resolver_url_root/$record.namespace/")
                 mkp.comment("data collection")
-                'dcterms:source'('rdf:resource':"$Constants.RESOLVER_URL_ROOT/miriam.collection/$record.dataCollection.id")
+                'dcterms:source'('rdf:resource':"$resolver_url_root/miriam.collection/$record.dataCollection.id")
                 mkp.comment("physical locations (resources)")
                 record.dataCollection.resources.each { res ->
                     res.urls.each { url ->
                         'rdfs:seeAlso'() {
                             'rdf:Description'('rdf:about':url.link) {
                                 'dcterms:format'(url.format)
-                                'dcterms:publisher'('rdf:resource':"$Constants.RESOLVER_URL_ROOT/miriam.resource/$res.id")
+                                'dcterms:publisher'('rdf:resource':"$resolver_url_root/miriam.resource/$res.id")
                             }
                         }
                     }
@@ -130,7 +131,7 @@ class ResponseRdf
                 mkp.comment("date of the request which generated this document")
             }
             mkp.comment("information about the data collection $record.dataCollection.id")
-            'rdf:Description'('rdf:about':"$Constants.RESOLVER_URL_ROOT/miriam.collection/$record.dataCollection.id") {
+            'rdf:Description'('rdf:about':"$resolver_url_root/miriam.collection/$record.dataCollection.id") {
                 'dcterms:identifier'(record.dataCollection.id)
                 'dcterms:title'(record.dataCollection.name, 'xml:lang':"en-GB")
                 record.dataCollection.synonyms.each { syn ->
@@ -142,7 +143,7 @@ class ResponseRdf
             }
             record.dataCollection.resources.each { res ->
                 mkp.comment("information about resource $res.id")
-                'rdf:Description'('rdf:about':"$Constants.RESOLVER_URL_ROOT/miriam.resource/$res.id") {
+                'rdf:Description'('rdf:about':"$resolver_url_root/miriam.resource/$res.id") {
                     'dcterms:title'(res.description, 'xml:lang':"en-GB")
                     'vcard:organisation-name'(res.institution)
                     'vcard:country-name'(res.location)
