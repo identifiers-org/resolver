@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.resolver
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2012 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,11 +27,11 @@ package uk.ac.ebi.miriam.resolver
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20120808
+ * @version 20131210
  */
 class MediaController
 {
-    private static final String PATH_TO_MEDIA_FILES = "/nfs/research2/lenovere/WWW/identifiers-org/media/";
+    private static final String PATH_TO_MEDIA_FILES = "/nfs/production/biomodels/WWW/identifiers-org/media/";
 
 
     /**
