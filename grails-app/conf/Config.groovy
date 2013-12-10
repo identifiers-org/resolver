@@ -59,6 +59,7 @@ environments {
     production {
         grails.serverURL = "http://identifiers.org"
         subdomain = "http://info.identifiers.org"
+        staticpages = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/prod/"
     }
     development {
         grails.serverURL = "http://dev.identifiers.org"
@@ -82,6 +83,9 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
+/*     appenders {
+            file name:'file', file:'/nfs/public/rw/webadmin/tomcat/bases/biomodels.net/tc-pst-identifiers_test/logs/identifiers.log'
+        }*/
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP
