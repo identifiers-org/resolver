@@ -31,6 +31,7 @@ package uk.ac.ebi.miriam.common
  */
 class UriRecord
 {
+    String requestedEntityURI
     String requestedUri
     String requestedUriBase
     String officialUri

@@ -174,7 +174,16 @@ class UriRecordControllerTests extends functionaltestplugin.FunctionalTestCase
     void testFormatRdfInUrl()
     {
         redirectEnabled = false   // for properly handling the 303
-        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/obo.go/GO:0006915?format=rdf')
+        get(Holders.getGrailsApplication().config.getProperty('subdomain') + '/obo.go/GO:0006915.rdf')
+//        assertStatus 303
+        assertContentType "application/rdf+xml"
+        assertContentContains "rdf"
+    }
+
+    void testFormatNonExistingRdfInUrl()
+    {
+        redirectEnabled = false   // for properly handling the 303
+        get(Holders.getGrailsApplication().config.grails.serverURL + '/go/GO:0006915.rdf')
 //        assertStatus 303
         assertContentType "application/rdf+xml"
         assertContentContains "rdf"

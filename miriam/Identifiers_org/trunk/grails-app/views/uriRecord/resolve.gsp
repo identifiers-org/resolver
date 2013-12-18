@@ -9,19 +9,22 @@
     <head>
         <%--<meta name="layout" content="resolve" />   declared in the controller--%>
 
-        <title>Identifiers.org [${record.requestedUri}]</title>
+        <title>Identifiers.org [${record.requestedEntityURI}]</title>
     </head>
     <body>
         <div id="header">
-            <h1>${record.requestedUri}</h1>
+            <h1>${record.requestedEntityURI}</h1>
             <div class="info">
+            Identifiers.org URI for identifying <span class="entity">${record.entityId}</span> from <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a>.
+            </div>
+%{--            <div class="info">
                 <g:if test="${record.dataCollection.resources.size() > 1}">
                     <b>${record.dataCollection.resources.size()}</b> physical locations (or resources) are available for accessing <span class="entity">${record.entityId}</span> (from <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a>):
                 </g:if>
                 <g:else>
                     <b>${record.dataCollection.resources.size()}</b> physical location (or resource) is available for accessing <span class="entity">${record.entityId}</span> (from <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a>):
-                </g:else>
-            </div>
+                </g:else>--}%%{--
+            </div>--}%
         </div>
 
         <div id="content">
@@ -31,6 +34,10 @@
                     <div class="feedback_summary">${message.summary}</div><div class="feedback_description">${message.description}</div>
                 </div>
             </g:each>
+
+            <div class="info">
+            Information for entry <span class="entity">${record.entityId}</span> in the <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a> data collection can be accessed from any of the following locations:
+            </div>
 
             <table class="resources">
                 <%-- primary/official resource (if any) --%>
@@ -92,7 +99,7 @@
 
           <div id="footer">
             <div class="powered">Powered by <a href="http://identifiers.org/registry/" title="Go to: MIRIAM Registry">MIRIAM Registry</a></div>
-            <div class="formats">Information also available in: <a href="${record.requestedUri}?format=rdfxml" title="Information in RDF">RDF/XML</a></div>
+            <div class="formats">Information also available in: <a href="${record.requestedUri}.rdf" title="Information in RDF">RDF/XML</a></div>
             <div class="end"></div>
           </div>
 

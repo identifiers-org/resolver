@@ -495,6 +495,7 @@ class UriRecordController
     {
         def isObsoleteURI = true
 
+        providedUri = providedUri.replace('info.',""); //get rid of "info."
         def providedUriParts = providedUri.split('/')   // [http:, , identifiers.org, doi, 10.1038, nbt1155]
         def officialUriParts = officialUri.split('/')
         
