@@ -12,7 +12,7 @@ class InfoFilters {
                     response.flushBuffer()
                     return false
                 }else if(params.entity != null && !request.serverName.contains("info.") && !request.forwardURI.endsWith(".rdf") && request.queryString ==null){
-                    response.setStatus(301)
+                    response.setStatus(303)
                     response.setHeader("Location", Holders.getGrailsApplication().config.getProperty('subdomain')+request.forwardURI)
                     response.flushBuffer()
                     return false

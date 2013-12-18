@@ -88,9 +88,12 @@ class Resolver
                 {
                     record.requestedUriBase = url
                 }
+
+                record.requestedEntityURI = record.requestedUri.replace("info.","")
+
                 record.namespace = dataRecord.officialUrn().substring(11)
                 //record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + URLEncoder.encode(entity)
-                record.officialUri = Holders.getGrailsApplication().config.getProperty('subdomain') + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
+                record.officialUri = Holders.getGrailsApplication().config.grails.serverURL + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
                 record.entityId = entity
                 DataCollectionRecord tempDataCollection = new DataCollectionRecord()
                 tempDataCollection.id = dataRecord.id
