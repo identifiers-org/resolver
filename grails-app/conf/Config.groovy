@@ -83,9 +83,36 @@ log4j = {
     //appenders {
     //    console name:'stdout', layout:pattern(conversionPattern: '%c{2} %m%n')
     //}
-/*     appenders {
-            file name:'file', file:'/nfs/public/rw/webadmin/tomcat/bases/biomodels.net/tc-pst-identifiers_test/logs/identifiers.log'
-        }*/
+     appenders {
+/*         environments {
+             development {
+                 file name:'file', file:'/nfs/public/rw/webadmin/tomcat/bases/biomodels.net/tc-pst-identifiers_test/logs/identifiers.log'
+                 rollingFile name: "stacktrace", maxFileSize: 1024, file: "/nfs/public/rw/webadmin/tomcat/bases/biomodels.net/tc-pst-identifiers_test/logs/stacktrace.log"
+             }
+             test{
+                 String logDir = System.getenv('LOG_FOLDER')
+                       file name: 'stacktrace',
+                            file: "$logDir/stacktrace.log",
+                            layout: pattern(conversionPattern: "'%d [%t] %-5p %c{2} %x -%m%n'")
+             }
+
+         }*/
+
+/*         environments{
+             development{
+                     file name: "stacktrace", append: true,
+                          file: System.getenv('LOG_FOLDER')+"stacktrace.log" //"/nfs/public/rw/webadmin/tomcat/bases/biomodels.net/tc-pst-identifiers_test/logs/ves-hx-4d/stacktrace.log"
+             }
+             test{
+                     file name: "stacktrace", append: true,
+                          file: "C:\\Users\\sarala.EBI\\Downloads\\stacktrace.log"
+             }
+         }*/
+         appenders {
+                 'null' name: "stacktrace"
+             }
+     }
+
 
     error  'org.codehaus.groovy.grails.web.servlet',  //  controllers
            'org.codehaus.groovy.grails.web.pages', //  GSP

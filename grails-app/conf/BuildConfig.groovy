@@ -3,6 +3,7 @@ grails.project.test.class.dir = "target/test-classes"
 grails.project.test.reports.dir = "target/test-reports"
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 grails.project.war.file = "target/identifiers_org.war"
+grails.servlet.version = "2.5"
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -32,10 +33,13 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-/*        runtime ":hibernate:$grailsVersion"*/
-/*        runtime ":jquery:1.6.1.1"*/
-/*        runtime ":resources:1.0"*/
-
+        runtime ":jquery:1.6.1.1"
+        runtime ":resources:1.0"
+        runtime ":functional-test:1.2.7"
+        runtime ":hibernate:$grailsVersion"
+        //build ":tomcat:$grailsVersion"
         build ":tomcat:$grailsVersion"
+
     }
+
 }
