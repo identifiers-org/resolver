@@ -33,7 +33,12 @@
         <entry key="$PROJECT_DIR$">
           <value>
             <SvnBranchConfiguration>
-              <option name="trunkUrl" value="" />
+              <option name="branchUrls">
+                <list>
+                  <option value="https://svn.ebi.ac.uk/compneur/miriam/Identifiers_org/branches" />
+                </list>
+              </option>
+              <option name="trunkUrl" value="https://svn.ebi.ac.uk/compneur/miriam/Identifiers_org/trunk" />
             </SvnBranchConfiguration>
           </value>
         </entry>
