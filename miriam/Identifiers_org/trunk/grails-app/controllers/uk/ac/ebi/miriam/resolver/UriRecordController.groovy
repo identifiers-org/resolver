@@ -1,5 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
+import grails.util.Holders
 import uk.ac.ebi.miriam.common.Constants
 import uk.ac.ebi.miriam.common.ResourceRecord
 import uk.ac.ebi.miriam.exception.InvalidEntityIdentifierException
@@ -53,8 +54,9 @@ class UriRecordController
     }
 
     def doiResolve ={
-        String entityId = params.entity + "/" + params.subEntity;
-        resolveProcess((String) request.request.requestURL, params.dataCollection, entityId, params, request)
+        String entityId = request.forwardURI.substring(5)
+        String dataCollection = "doi"
+        resolveProcess((String) request.request.requestURL, dataCollection, entityId, params, request)
     }
 
     private def resolveProcess(String url, String namespace, String entityId, Map params, HttpServletRequest request)
@@ -367,7 +369,6 @@ class UriRecordController
         {
             if (!entityId.empty)
             {
-
                 resolveProcess((String) request.request.requestURL, namespace, entityId, params, request)
             }
             else
