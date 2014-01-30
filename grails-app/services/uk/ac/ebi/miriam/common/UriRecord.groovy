@@ -38,6 +38,7 @@ class UriRecord
     String entityId
     String namespace
     DataCollectionRecord dataCollection
+    String infoUri
     /* in case the response does not fully correspond to the request, we can inform the user via this way */
     List<FeedbackUser> messages = []   // to avoid null list
 

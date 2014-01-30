@@ -83,6 +83,9 @@ class Profile
         {
             preferredResourceId = Resolver.getMostReliableResourceId(id)
         }
+        else if(this.shortname == "direct"){
+            preferredResourceId = Resolver.getDirectResourceId(id)
+        }
         else
         {
             preferredResourceId = getOrderedDataCollections()?.get(id)?.preferredResourceId

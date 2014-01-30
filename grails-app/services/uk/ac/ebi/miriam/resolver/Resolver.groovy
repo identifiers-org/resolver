@@ -1,6 +1,7 @@
 package uk.ac.ebi.miriam.resolver
 
 import grails.util.Holders
+import uk.ac.ebi.miriam.common.Resource
 import uk.ac.ebi.miriam.common.UriRecord
 import uk.ac.ebi.miriam.common.UrlRecord
 import uk.ac.ebi.miriam.common.ResourceRecord
@@ -94,6 +95,7 @@ class Resolver
                 record.namespace = dataRecord.officialUrn().substring(11)
                 //record.officialUri = Constants.RESOLVER_URL_ROOT + "/" + dataRecord.officialUrn().substring(11) + "/" + URLEncoder.encode(entity)
                 record.officialUri = Holders.getGrailsApplication().config.grails.serverURL + "/" + dataRecord.officialUrn().substring(11) + "/" + entity   // no encoding of the entity identifier part
+                record.infoUri = Holders.getGrailsApplication().config.getProperty('subdomain') + "/" + dataRecord.officialUrn().substring(11) + "/" + entity
                 record.entityId = entity
                 DataCollectionRecord tempDataCollection = new DataCollectionRecord()
                 tempDataCollection.id = dataRecord.id
@@ -152,7 +154,7 @@ class Resolver
         {
             throw new NotExistingDataCollectionException("The data collection '$dataCollection' does not exist!", dataCollection)
         }
-        
+
         return record
     }
 
@@ -161,7 +163,7 @@ class Resolver
     {
         DataCollection data = null
 
-         // searches for data collections with the requested namespace
+        // searches for data collections with the requested namespace
         def criteria = DataCollection.createCriteria()
         def matchingDataCollections = criteria.listDistinct {
             uris {
@@ -173,7 +175,7 @@ class Resolver
         if (matchingDataCollections.size() == 1)
         {
             data = matchingDataCollections.get(0)
-            
+
         }
         else if (matchingDataCollections.size() > 1)   // more than one matching data collections
         {
@@ -230,7 +232,79 @@ class Resolver
                 mostReliableResourceId = bestResources[rand.nextInt(bestResources.size())]
             }
         }
-        
+
         return mostReliableResourceId
+    }
+
+    public static String getDirectResourceId(String id){
+
+        DataCollection data = DataCollection.findById(id)
+        if (null != data)
+        {
+            Set<Resource> runningResources = new HashSet<Resource>();
+
+            //filter running resources
+            data.resources.each {
+                if(it.reliability.state==1 && !it.obsolete){
+                    runningResources.add(it);
+                }
+            }
+
+            int max = 0
+
+            //if there are no running resources orginal list is used
+            if(runningResources.isEmpty()){
+                runningResources = data.resources;
+            }
+            else{
+                for (resource in runningResources){
+                    if(resource.primary){
+                        return resource.id;
+                    }
+                    //searches best reliability
+                    if (resource.reliability.uptimePercent() > max)
+                    {
+                        max = resource.reliability.uptimePercent()
+                    }
+
+
+                }
+            }
+
+            int smallestid = 100000000
+            Set<Resource> highestUpResources =new HashSet<Resource>();
+            // keeps the most reliable resources
+            for (resource in runningResources){
+                if (resource.reliability.uptimePercent() == max)
+                {
+                    highestUpResources.add(resource)
+
+                    int resourceid = resource.id.substring(4).toInteger();
+                    if (resourceid < smallestid){
+                        smallestid = resourceid;
+                    }
+                }
+
+            }
+
+            runningResources = highestUpResources;
+
+            if (runningResources.size() == 1)
+            {
+                return runningResources.iterator().next().id;
+            }
+            else   // several best resources found: smallest id
+            {
+                for (resource in runningResources){
+                    if (resource.id.substring(4).toInteger() == smallestid)
+                    {
+                        return resource.id
+                    }
+                }
+            }
+        }
+
+        return null
+
     }
 }
