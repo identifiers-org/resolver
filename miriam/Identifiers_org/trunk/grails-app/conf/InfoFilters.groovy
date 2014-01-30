@@ -5,7 +5,7 @@ class InfoFilters {
 
     def filters = {
         all(controller:'*', action:'*') {
-            before = {
+/*            before = {
                 if(params.entity == null && request.serverName.contains("info.") ) {
                     response.setStatus(301)
                     response.setHeader("Location", Holders.getGrailsApplication().config.grails.serverURL+request.forwardURI)
@@ -17,7 +17,7 @@ class InfoFilters {
                     response.flushBuffer()
                     return false
                 }
-            }
+            }*/
 /*            after = {
 
 

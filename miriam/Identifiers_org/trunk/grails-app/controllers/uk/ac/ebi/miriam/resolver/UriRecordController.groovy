@@ -71,6 +71,21 @@ class UriRecordController
             // retrieves the record corresponding to the requested URI
             record = Resolver.retrieveUriRecord(url, namespace, entityId)
 
+            //Redirect obsolete to official uri
+            if (isObsoleteURI(record.requestedUriBase, record.officialUri))
+            {
+                if(request.queryString==null){
+                    redirect(url:record.officialUri)
+                }
+                else{
+                    redirect(url:record.officialUri + '?' + request.queryString )
+                    //  record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
+                }
+            }
+
+            if(params.profile == null && !request.serverName.contains("info.")){
+                params.profile = "direct"
+            }
             // checks if a profile is provided as a parameter, with support with the deprecated parameter 'project'
             if ((null != params.profile) || (null != params.project))
             {
@@ -79,6 +94,7 @@ class UriRecordController
                 Profile profile = Profile.findByShortname(profileParam)
                 if (null != profile)
                 {
+
                     // checks if profile is public
                     if (profile.open)
                     {
@@ -183,10 +199,10 @@ class UriRecordController
             }
 
             // checks if the URI provided is deprecated or not (does not check for the percent encoding of the entity identifier)
-            if (isObsoleteURI(record.requestedUriBase, record.officialUri))
+/*            if (isObsoleteURI(record.requestedUriBase, record.officialUri))
             {
                 record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
-            }
+            }*/
 
  /*           if(request.serverName.contains("info.")){
             // renders the response, based on 'UriRecord', the optional "format" parameter and some content negotiation
@@ -389,7 +405,7 @@ class UriRecordController
     private def renderResponseHtml(UriRecord record)
     {
         // there is only one recorded resource: we display it
-        if (record.dataCollection.resources.size() == 1)
+/*        if (record.dataCollection.resources.size() == 1)
         {
             // the resource denies the loading of its content from a frame:
             if (record.dataCollection.resources[0].deniesFrame)
@@ -403,7 +419,7 @@ class UriRecordController
             }
         }
         else   // more than one resource: we display all of them in a table
-        {
+        {*/
             // separates the primary/official resource (if any) from the other(s), for easier display
             ResourceRecord primaryResource = null
             List<ResourceRecord> allResources = []
@@ -419,7 +435,7 @@ class UriRecordController
             }
 
             render(status:300, view:"resolve", model:[record:record, primaryResource:primaryResource, allResources:allResources])
-        }
+    //    }
     }
 
 
