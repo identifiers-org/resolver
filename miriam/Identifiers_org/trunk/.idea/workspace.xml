@@ -2,14 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="5d6a8298-3eab-41b5-8359-08e1747ab918" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy" afterPath="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/resolvePartial.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/resolvePartial.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="resolver.iws" />
@@ -152,6 +145,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" line="240" class="uk.ac.ebi.miriam.resolver.Resolver" package="uk.ac.ebi.miriam.resolver">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -165,16 +173,25 @@
       <file leaf-file-name="DataSource.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="83" column="17" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="2465">
+            <state line="83" column="17" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.0" vertical-offset="1503" max-vertical-offset="2465">
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="resolve.gsp" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="resolve.gsp" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="28" column="178" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.508547" vertical-offset="0" max-vertical-offset="936">
+            <state line="11" column="24" selection-start="339" selection-end="339" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="578">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Config.groovy" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="68" column="42" selection-start="3160" selection-end="3160" vertical-scroll-proportion="0.7626016" vertical-offset="687" max-vertical-offset="1904">
               <folding />
             </state>
           </provider>
@@ -192,19 +209,16 @@
       <file leaf-file-name="Profile.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="0" selection-start="2456" selection-end="2456" vertical-scroll-proportion="0.0" vertical-offset="917" max-vertical-offset="2329">
+            <state line="86" column="47" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.0" vertical-offset="1462" max-vertical-offset="2329">
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
         </entry>
       </file>
-      <file leaf-file-name="Resolver.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
+      <file leaf-file-name="about.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/info/about.gsp">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="240" column="0" selection-start="10103" selection-end="10103" vertical-scroll-proportion="0.0" vertical-offset="4080" max-vertical-offset="5372">
+            <state line="18" column="60" selection-start="541" selection-end="541" vertical-scroll-proportion="-6.244898" vertical-offset="0" max-vertical-offset="442">
               <folding />
             </state>
           </provider>
@@ -213,19 +227,7 @@
       <file leaf-file-name="Reliability.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Reliability.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="32" column="6" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="1870">
-              <folding />
-            </state>
-          </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="UriRecordController.groovy" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="425" column="10" selection-start="19836" selection-end="19836" vertical-scroll-proportion="0.0" vertical-offset="7225" max-vertical-offset="9231">
+            <state line="32" column="6" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1870">
               <folding />
             </state>
           </provider>
@@ -256,9 +258,6 @@
               <folding />
             </state>
           </provider>
-          <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-            <state />
-          </provider>
         </entry>
       </file>
     </leaf>
@@ -279,7 +278,6 @@
         <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
         <option value="$PROJECT_DIR$/application.properties" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy" />
@@ -287,11 +285,12 @@
         <option value="$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" />
         <option value="$PROJECT_DIR$/web-app/css/resolve.css" />
-        <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" />
         <option value="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/views/uriRecord/resolvePartial.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
       </list>
     </option>
   </component>
@@ -343,7 +342,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -477,6 +475,28 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="uriRecord" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="info" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -662,6 +682,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="PackagesPane" />
       <pane id="Scope" />
       <pane id="Favorites" />
     </panes>
@@ -1242,7 +1263,9 @@
       <workItem from="1390383444558" duration="12234000" />
       <workItem from="1390469845977" duration="6849000" />
       <workItem from="1390814994888" duration="24503000" />
-      <workItem from="1391084392391" duration="1250000" />
+      <workItem from="1391084392391" duration="5949000" />
+      <workItem from="1391420942232" duration="468000" />
+      <workItem from="1391421574860" duration="7523000" />
     </task>
     <task id="LOCAL-00001" summary="Updated to latest version of jquery">
       <created>1345725817104</created>
@@ -1272,11 +1295,15 @@
       <created>1390567421282</created>
       <updated>1390567421282</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="identifiers.org -&gt;redirects using profile&#10;info.identifiers.org -&gt; list choices&#10;running on ves-hx-4d">
+      <created>1391085937174</created>
+      <updated>1391085937174</updated>
+    </task>
+    <option name="localTasksCounter" value="9" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="84676000" />
+    <option name="totallyTimeSpent" value="97366000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1304,30 +1331,30 @@
     <layout>
       <window_info id="Palette&#9;" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Changes" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.42810985" sideWeight="0.6969206" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
-      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.5908608" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6704362" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
-      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3312034" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
-      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
-      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
-      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34109312" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.23125" sideWeight="0.6586151" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3514151" sideWeight="0.68196374" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Persistence" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="3" side_tool="true" content_ui="tabs" />
+      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="11" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
-      <window_info id="Bean Validation" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4311741" sideWeight="0.6693679" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3298217" sideWeight="0.6704362" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.5908608" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6377246" sideWeight="0.6693679" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
+      <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3312034" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
       <window_info id="Grails View" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.23959444" sideWeight="0.6709265" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="IDEtalk" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32850242" sideWeight="0.5" order="13" side_tool="false" content_ui="tabs" />
       <window_info id="Web" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.21033211" sideWeight="0.80912864" order="6" side_tool="true" content_ui="tabs" />
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3290735" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.16488793" sideWeight="0.43024495" order="1" side_tool="true" content_ui="tabs" />
-      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.39951378" sideWeight="0.6704362" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34109312" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15416667" sideWeight="0.6586151" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3512146" sideWeight="0.68196374" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32186234" sideWeight="0.32977587" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1343,7 +1370,7 @@
     </layout>
   </component>
   <component name="Vcs.Log.UiProperties">
-    <option name="RECENTLY_FILTERED_USERS">
+    <option name="RECENTLY_FILTERED_USER_GROUPS">
       <collection />
     </option>
   </component>
@@ -1362,7 +1389,8 @@
     <MESSAGE value="pointing to new static files version." />
     <MESSAGE value="- look and feel&#10;- Entity uri is displayed at the top&#10;- error 301 changed to 303&#10;- format parameter is taken out from the links (as pointed out by cami&#10;last time)&#10;- rdf dump describes info stuff." />
     <MESSAGE value="work version for new dev machine ves-hx-4d" />
-    <option name="LAST_COMMIT_MESSAGE" value="work version for new dev machine ves-hx-4d" />
+    <MESSAGE value="identifiers.org -&gt;redirects using profile&#10;info.identifiers.org -&gt; list choices&#10;running on ves-hx-4d" />
+    <option name="LAST_COMMIT_MESSAGE" value="identifiers.org -&gt;redirects using profile&#10;info.identifiers.org -&gt; list choices&#10;running on ves-hx-4d" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1373,23 +1401,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="23" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0" vertical-offset="1275" max-vertical-offset="2108" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="8" column="0" selection-start="175" selection-end="175" vertical-scroll-proportion="0.0" vertical-offset="136" max-vertical-offset="612" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="66" column="0" selection-start="2368" selection-end="2368" vertical-scroll-proportion="0.0" vertical-offset="1122" max-vertical-offset="8959">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="95" column="0" selection-start="3592" selection-end="3592" vertical-scroll-proportion="0.0" vertical-offset="1615" max-vertical-offset="4114">
@@ -1430,7 +1441,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/ErrorController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="17" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.0" vertical-offset="1356" max-vertical-offset="2295" />
+        <state line="103" column="17" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.0" vertical-offset="1356" max-vertical-offset="2295">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
@@ -1513,7 +1526,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/RedirectController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0" />
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="0">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/software/grails-2.2.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.0.8-sources.jar!/org/codehaus/groovy/runtime/DefaultGroovyMethods.java">
@@ -1543,7 +1558,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/ErrorController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="103" column="17" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.7495256" vertical-offset="1356" max-vertical-offset="2295" />
+        <state line="103" column="17" selection-start="3398" selection-end="3398" vertical-scroll-proportion="0.7495256" vertical-offset="1356" max-vertical-offset="2295">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
@@ -1557,11 +1574,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/DataCollection.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="48" column="40" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.39715537" vertical-offset="453" max-vertical-offset="2210" />
-      </provider>
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="48" column="40" selection-start="1727" selection-end="1727" vertical-scroll-proportion="0.39715537" vertical-offset="453" max-vertical-offset="2210">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy">
@@ -1574,18 +1593,6 @@
         <state line="178" column="71" selection-start="6122" selection-end="6122" vertical-scroll-proportion="0.5112782" vertical-offset="2312" max-vertical-offset="7021" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="77" column="22" selection-start="3383" selection-end="3383" vertical-scroll-proportion="1.1654135" vertical-offset="534" max-vertical-offset="1904" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="31" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2244">
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="113" selection-start="763" selection-end="825" vertical-scroll-proportion="0.38992536" vertical-offset="29" max-vertical-offset="595" />
@@ -1593,29 +1600,14 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="52" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.9682836" vertical-offset="314" max-vertical-offset="1003" />
+        <state line="49" column="52" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.9682836" vertical-offset="314" max-vertical-offset="1003">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/web-app/css/resolve.css">
       <provider selected="true" editor-type-id="text-editor">
         <state line="127" column="37" selection-start="1983" selection-end="1983" vertical-scroll-proportion="1.5479453" vertical-offset="1368" max-vertical-offset="4335" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="0" selection-start="2456" selection-end="2456" vertical-scroll-proportion="0.0" vertical-offset="917" max-vertical-offset="2329">
-          <folding />
-        </state>
-      </provider>
-      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="240" column="0" selection-start="10103" selection-end="10103" vertical-scroll-proportion="0.0" vertical-offset="3647" max-vertical-offset="5117">
-          <folding />
-        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolveOne.gsp">
@@ -1630,28 +1622,33 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="425" column="10" selection-start="19836" selection-end="19836" vertical-scroll-proportion="0.0" vertical-offset="7225" max-vertical-offset="9231">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Reliability.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="494" max-vertical-offset="1870">
-          <folding />
-        </state>
-      </provider>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Resource.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="83" column="17" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="2465">
+        <state line="32" column="6" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1547">
           <folding />
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="13" column="31" selection-start="349" selection-end="349" vertical-scroll-proportion="0.0" vertical-offset="561" max-vertical-offset="2244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="250" column="0" selection-start="12866" selection-end="12866" vertical-scroll-proportion="-7.5652175" vertical-offset="3889" max-vertical-offset="9044">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$USER_HOME$/software/grails-2.2.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.0.8-sources.jar!/org/codehaus/groovy/runtime/callsite/AbstractCallSite.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="115" column="0" selection-start="3346" selection-end="3346" vertical-scroll-proportion="0.33208954" vertical-offset="1267" max-vertical-offset="5440" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp">
@@ -1661,19 +1658,64 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Resource.groovy">
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Reliability.groovy">
+      <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1547">
+        <state line="32" column="6" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1870">
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy">
       <provider editor-type-id="org.jetbrains.plugins.grails.perspectives.DomainClassesRelationsEditorProvider">
         <state />
+      </provider>
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="86" column="47" selection-start="2724" selection-end="2724" vertical-scroll-proportion="0.0" vertical-offset="1462" max-vertical-offset="2329">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/index.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2074">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="282" column="33" selection-start="11520" selection-end="11520" vertical-scroll-proportion="0.0" vertical-offset="3914" max-vertical-offset="5185">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/info/about.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="18" column="60" selection-start="541" selection-end="541" vertical-scroll-proportion="-6.244898" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="83" column="17" selection-start="3724" selection-end="3724" vertical-scroll-proportion="0.0" vertical-offset="1785" max-vertical-offset="2465">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="28" column="178" selection-start="1240" selection-end="1240" vertical-scroll-proportion="0.508547" vertical-offset="0" max-vertical-offset="936">
+        <state line="11" column="24" selection-start="339" selection-end="339" vertical-scroll-proportion="-7.1923075" vertical-offset="0" max-vertical-offset="578">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="68" column="42" selection-start="3160" selection-end="3160" vertical-scroll-proportion="0.7626016" vertical-offset="687" max-vertical-offset="1904">
           <folding />
         </state>
       </provider>

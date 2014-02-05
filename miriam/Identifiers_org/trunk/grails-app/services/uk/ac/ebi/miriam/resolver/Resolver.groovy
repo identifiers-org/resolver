@@ -241,6 +241,11 @@ class Resolver
         DataCollection data = DataCollection.findById(id)
         if (null != data)
         {
+            //if there is only one resource, return
+            if (data.resources.size()==1){
+                return data.resources.iterator().next().id;
+            }
+
             Set<Resource> runningResources = new HashSet<Resource>();
 
             //filter running resources
@@ -250,33 +255,32 @@ class Resolver
                 }
             }
 
-            int max = 0
-
             //if there are no running resources orginal list is used
             if(runningResources.isEmpty()){
                 runningResources = data.resources;
             }
-            else{
-                for (resource in runningResources){
-                    if(resource.primary){
-                        return resource.id;
-                    }
-                    //searches best reliability
-                    if (resource.reliability.uptimePercent() > max)
-                    {
-                        max = resource.reliability.uptimePercent()
-                    }
 
+            int max = 0
+            for (resource in runningResources){
 
+                //if there is a primary resource, return
+                if(resource.primary){
+                    return resource.id;
+                }
+
+                //searches best reliability
+                if (resource.reliability.uptimePercent() > max)
+                {
+                    max = resource.reliability.uptimePercent()
                 }
             }
 
             int smallestid = 100000000
             Set<Resource> highestUpResources =new HashSet<Resource>();
+
             // keeps the most reliable resources
             for (resource in runningResources){
-                if (resource.reliability.uptimePercent() == max)
-                {
+                if (resource.reliability.uptimePercent() == max){
                     highestUpResources.add(resource)
 
                     int resourceid = resource.id.substring(4).toInteger();
