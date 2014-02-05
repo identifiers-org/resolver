@@ -1,0 +1,249 @@
+/*
+  CSS stylesheet for the resoling page of MIRIAM Resolver.
+  Camille Laibe
+  20110812
+*/
+
+body {
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+
+.resource_overview {
+  background-repeat: no-repeat;
+  background-position: center center;
+  min-width: 400px;
+  min-height: 240px;
+  text-align: center;
+  background-image: url('../images/blank_screenshot.png');
+}
+
+.resource_info .desc {
+  display: block;
+  position: relative;
+  font-weight: bold;
+}
+
+.resource_info .institution {
+  display: block;
+  position: relative;
+  /*font-weight: bold;*/
+}
+
+.resource_info .country {
+  display: block;
+  position: relative;
+  margin-top: 1em;
+  font-style: italic;
+  /*font-weight: bold;*/
+}
+
+.resource_info .status {
+  display: block;
+  position: relative;
+  margin-top: 2em;
+  font-size: 90%;
+  /*font-weight: bold;*/
+}
+
+.resource_info a {
+  width: 400px;
+  height: 240px;
+  float: left;
+  /*color: #006666;*/
+}
+
+.resource_info {
+  position: absolute;
+  top: 35px;
+  left: 0px;
+  text-align: center;
+  width: 400px;
+  overflow: hidden;
+  clear: both;
+}
+
+.resource {
+  width: 400px;
+  height: 240px;
+  /*float: middle;   INVALID*/
+  position: relative;
+  overflow: hidden;
+}
+
+table.resources {
+    width: 100%;
+    border-spacing: 10px;
+}
+table.resources td {
+  width: 420px;
+  height: 260px;
+  padding: 10px;
+  border: 1px solid #9e9e9e;
+}
+
+#content {
+  padding-top: 70px;
+}
+
+#content .info {
+  text-align: left;
+  padding-left: 10px;
+  padding-top: 4px;
+  font-size: 80%;
+  color: #1f1f1f;
+}
+
+#header {
+  position: fixed;
+  right: 0px;
+  top: 0px;
+  z-index: 5;
+  margin: 0;
+  padding: 10px;
+  background-color: #eef5f5;
+  color: #006666;
+  border-bottom: 1px solid #bfbfbf;
+  width: 100%;
+}
+
+#header h1 {
+  text-align: center;
+  font-size: 125%;
+  font-weight: bold;
+  font-family: helvetica, "trebuchet MS", arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+#header .info {
+  text-align: center;
+  padding-left: 3px;
+  padding-top: 4px;
+  font-size: 80%;
+  color: #1f1f1f;
+}
+
+#header .entity {
+  font-style: italic;
+}
+
+#footer {
+  background-color: #dedede;
+  color: #404040;
+  border-top: 1px solid #bfbfbf;
+  font-size: 80%;
+  margin: 0;
+  padding: 0 4px 0 4px;   /* top, right, bottom, left */
+}
+
+#footer .powered {
+  float: left;
+  text-align: left;
+}
+
+#footer .formats {
+  float: right;
+  text-align: right;
+}
+
+#footer .end {
+  clear: both;
+}
+
+#beta {
+  position: fixed;
+  top: 12px;
+  right: 30px;
+  z-index: 10;
+  color: #DA0025;
+  font-size: 140%;
+  font-weight: bold;
+  font-style: italic;
+}
+
+#top_bar {
+    position: fixed;
+    top: 0px;
+    left: 0px;
+    height: 30px;
+    width: 100%;
+    background-color: #EEF5F5;
+    border-top: 1px solid #e33e3e;
+    border-bottom: 1px solid #e33e3e;
+}
+
+#top_bar .title {
+    text-align: center;
+    color: #e33e3e;
+    font-weight: bold;
+}
+#top_bar .info {
+    font-size: 80%;
+    margin-top: 5px;
+    padding-left: 5px;
+}
+
+#top_bar .close_button {
+    position: fixed;
+    top: 5px;
+    right: 6px;
+    font-size: 80%;
+}
+#top_bar .powered_by {
+    text-align: right;
+    font-size: 60%;
+    margin-right: 10px;
+}
+#top_bar .foot {
+    width: 100%;
+    height: 20px;
+}
+#top_bar .redirect_errors {
+    color: #e33e3e;
+    font-weight: bold;
+}
+
+.help_tooltip {
+    cursor: help;
+    text-decoration: none;
+    border-bottom: 1px dotted #DA0025;
+}
+
+.feedback_user {
+    margin-top: 10px;
+    margin-left: 4em;
+    margin-right: 4em;
+    border:  1px solid #e33e3e;
+    background-color: #fbe6e6;
+    font-size: 80%;
+    text-align: center;
+    color: #e33e3e;
+}
+.feedback_summary {
+    font-weight: bold;
+    padding-bottom: 5px;
+}
+.feedback_description {
+    font-style: italic;
+}
+
+a:link, a:visited {
+  color: #006666;
+}
+
+a:hover, a:active {
+  color: #e33e3e;
+}
+
+a.warning_link:link, a.warning_link:visited {
+    color: #feba12;
+    text-decoration: underline;
+    /*font-weight: bold;*/
+}
+a.warning_link:hover, a.warning_link:active {
+    color: #feba12;
+    text-decoration: none;
+    /*font-weight: normal;*/
+}
