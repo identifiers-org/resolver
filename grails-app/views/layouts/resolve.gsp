@@ -12,10 +12,10 @@
 	<head>
 		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" type="image/x-icon" />
+		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico', base: 'http://static.identifiers.org/')}" type="image/x-icon" />
 		%{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'resolve.css')}" type="text/css" />--}%
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'resolve.css', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/dev/')}" type="text/css" />
-        <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.8.0.min.js', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}"></script>
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'resolve.css', base: 'http://static.identifiers.org/prod/')}" type="text/css" />
+        <script type="text/javascript" src="${resource(dir: 'js', file: 'jquery-1.8.0.min.js', base: 'http://static.identifiers.org/')}"></script>
 
         <title><g:layoutTitle default="MIRIAM Resolver"/></title>
 

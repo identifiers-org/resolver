@@ -22,7 +22,7 @@
                 Entity available from <b>${record.dataCollection.resources.size()}</b> providers, for more information please refer to: <a href="${record.officialUri.encodeAsHTML()}" title="Access to all resources...">${record.officialUri.encodeAsHTML()}</a>.
             </div>
             <div class="close_button">
-                <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar">Close</a> <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar"><img src="${resource(dir: 'images', file: 'red_cross.gif', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" alt="Closing icon" title="Close this top bar" style="vertical-align: middle;" /></a>
+                <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar">Close</a> <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar"><img src="${resource(dir: 'images', file: 'red_cross.gif', base: 'http://static.identifiers.org/')}" alt="Closing icon" title="Close this top bar" style="vertical-align: middle;" /></a>
             </div>
             <div>
                 <table class="foot">

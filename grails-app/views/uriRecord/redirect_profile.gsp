@@ -21,7 +21,7 @@
 --}%            Alternatives to access information for <span class="entity">${record.entityId}</span> (from <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a>) can be found at <a href="${record.infoUri.encodeAsHTML()}" title="Access to other available resources...">${record.infoUri.encodeAsHTML()}</a>
             </div>
             <div class="close_button">
-                <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar">Close</a> <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar"><img src="${resource(dir: 'images', file: 'red_cross.gif', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" alt="Closing icon" title="Close this top bar" style="vertical-align: middle;" /></a>
+                <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar">Close</a> <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" title="Close this top bar"><img src="${resource(dir: 'images', file: 'red_cross.gif', base: 'http://static.identifiers.org/')}" alt="Closing icon" title="Close this top bar" style="vertical-align: middle;" /></a>
             </div>
            %{-- <div>
                 <table class="foot">

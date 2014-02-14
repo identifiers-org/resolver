@@ -20,7 +20,7 @@
                 Access to <span class="entity">${record.entityId}</span> (from <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a>) using the only recorded resource: <acronym title="Description of the resource: ${record.dataCollection.resources[0].description} (${record.dataCollection.resources[0].institution}, ${record.dataCollection.resources[0].location})" class="help_tooltip">${record.dataCollection.resources[0].id}</acronym>.
             </div>
             <div class="close_button">
-                <a href="${record.dataCollection.resources[0].urls[0].link.encodeAsHTML()}" title="Close this top bar">Close</a> <a href="${record.dataCollection.resources[0].urls[0].link.encodeAsHTML()}" title="Close this top bar"><img src="${resource(dir: 'images', file: 'red_cross.gif', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" alt="Closing icon" title="Close this top bar" style="vertical-align: middle;" /></a>
+                <a href="${record.dataCollection.resources[0].urls[0].link.encodeAsHTML()}" title="Close this top bar">Close</a> <a href="${record.dataCollection.resources[0].urls[0].link.encodeAsHTML()}" title="Close this top bar"><img src="${resource(dir: 'images', file: 'red_cross.gif', base: 'http://static.identifiers.org/')}" alt="Closing icon" title="Close this top bar" style="vertical-align: middle;" /></a>
             </div>
             <div style="margin-top:10px;">
                 <table class="foot">

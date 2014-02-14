@@ -15,15 +15,15 @@
 		<!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
 		<title><g:layoutTitle default="MIRIAM Resolver"/></title>
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" type="image/x-icon" />
-		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" type="text/css" />
-		<!--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" type="text/css">-->
+		<link rel="shortcut icon" href="${resource(dir: 'images', file: 'favicon.ico', base: 'http://static.identifiers.org/')}" type="image/x-icon" />
+		<link rel="stylesheet" href="${resource(dir: 'css', file: 'main.css', base: 'http://static.identifiers.org/')}" type="text/css" />
+		<!--<link rel="stylesheet" href="${resource(dir: 'css', file: 'mobile.css', base: 'http://static.identifiers.org/')}" type="text/css">-->
 		<g:layoutHead/>
 	</head>
 	<body>
         <div id="top_page" role="banner">
             <span style="position:absolute; top:13px; left:10px;">
-                <a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://www.ebi.ac.uk/compneur-srv/identifiers-org/')}" alt="Identifiers.org logo"/></a>
+                <a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a>
             </span>
             <%-- menu --%>
             <div class="nav"  style="position:absolute; top:0px; right:10px;">
