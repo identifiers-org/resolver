@@ -39,7 +39,7 @@ class Constants
 
 //    static final String RESOLVER_URL_ROOT = "http://localhost:8080"
 //    static final String RESOLVER_SUBDOM = "http://info.localhost:8080"
-//    static final String STATIC_PAGES = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/dev/"
+//    static final String STATIC_PAGES = "http://static.identifiers.org/dev/"
 
     static final String MIRIAM_URL_ROOT = "http://www.ebi.ac.uk/miriam/main/"
 }

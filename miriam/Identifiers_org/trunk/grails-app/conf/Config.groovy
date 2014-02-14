@@ -57,20 +57,20 @@ grails.exceptionresolver.params.exclude = ['password']
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
-        grails.serverURL = "http://identifiers.org"
+        grails.serverURL = "http://identifiers.org" //"http://ves-"+System.getenv("DATACENTRE")+"-4c:8080" //"http://identifiers.org"
         subdomain = "http://info.identifiers.org"
-        staticpages = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/prod/"
+        staticpages = "http://static.identifiers.org/prod/"
     }
     development {
         grails.serverURL = "http://dev.identifiers.org"
         subdomain = "http://dev.info.identifiers.org"
-        staticpages = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/dev/"
+        staticpages = "http://static.identifiers.org/dev/"
 
     }
     test {
         grails.serverURL = "http://localhost:8080"
         subdomain = "http://info.localhost:8080"
-        staticpages = "http://www.ebi.ac.uk/compneur-srv/identifiers-org/dev/"
+        staticpages = "http://static.identifiers.org/prod/"
     }
 
 }
