@@ -281,8 +281,8 @@ class UriRecordController
             case "help":
                 forward(controller:"info", action:"help")
                 break
-            case "examples":
-                forward(controller:"info", action:"examples")
+            case "documentation":
+                forward(controller:"info", action:"documentation")
                 break
             case "news":
                 forward(controller:"info", action:"news")

@@ -2,15 +2,23 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" readonly="true" id="5d6a8298-3eab-41b5-8359-08e1747ab918" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/web-app/js/resolver.js" />
+      <change type="MOVED" beforePath="C:\Users\sarala.EBI\Documents\SVN\miriam\Identifiers_org\trunk\grails-app\views\info\examples.gsp" afterPath="$PROJECT_DIR$/grails-app/views/info/documentation.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/Config.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" afterPath="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/InfoController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/InfoController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" afterPath="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" afterPath="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/error/custom_error.gsp" afterPath="$PROJECT_DIR$/grails-app/views/error/custom_error.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/error.gsp" afterPath="$PROJECT_DIR$/grails-app/views/error.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/error_generic.gsp" afterPath="$PROJECT_DIR$/grails-app/views/error_generic.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/info/intro.gsp" afterPath="$PROJECT_DIR$/grails-app/views/info/intro.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/error/not_found.gsp" afterPath="$PROJECT_DIR$/grails-app/views/error/not_found.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_resource.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_resource.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/web-app/css/resolve.css" afterPath="$PROJECT_DIR$/web-app/css/resolve.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" afterPath="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/resolveOne.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/resolveOne.gsp" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/resolvePartial.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/resolvePartial.gsp" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" afterPath="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
     </list>
     <ignored path="resolver.iws" />
@@ -78,7 +86,7 @@
       </breakpoint>
     </breakpoint_any>
     <line_breakpoints default_suspend_policy="SuspendAll" default_condition_enabled="true">
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" line="341" class="uk.ac.ebi.miriam.resolver.UriRecordController" package="uk.ac.ebi.miriam.resolver">
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" line="340" class="uk.ac.ebi.miriam.resolver.UriRecordController" package="uk.ac.ebi.miriam.resolver">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -123,7 +131,7 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
-      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" line="387" class="uk.ac.ebi.miriam.resolver.UriRecordController" package="uk.ac.ebi.miriam.resolver">
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" line="386" class="uk.ac.ebi.miriam.resolver.UriRecordController" package="uk.ac.ebi.miriam.resolver">
         <option name="ENABLED" value="true" />
         <option name="LOG_ENABLED" value="false" />
         <option name="LOG_EXPRESSION_ENABLED" value="false" />
@@ -168,6 +176,21 @@
         <option name="CONDITION" value="" />
         <option name="LOG_MESSAGE" value="" />
       </breakpoint>
+      <breakpoint url="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp" line="186" class="gsp.default.layouts/main_gsp" package="gsp.default">
+        <option name="ENABLED" value="true" />
+        <option name="LOG_ENABLED" value="false" />
+        <option name="LOG_EXPRESSION_ENABLED" value="false" />
+        <option name="REMOVE_AFTER_HIT" value="false" />
+        <option name="SUSPEND_POLICY" value="SuspendAll" />
+        <option name="SUSPEND" value="true" />
+        <option name="COUNT_FILTER_ENABLED" value="false" />
+        <option name="COUNT_FILTER" value="0" />
+        <option name="CONDITION_ENABLED" value="true" />
+        <option name="CLASS_FILTERS_ENABLED" value="false" />
+        <option name="INSTANCE_FILTERS_ENABLED" value="false" />
+        <option name="CONDITION" value="" />
+        <option name="LOG_MESSAGE" value="" />
+      </breakpoint>
     </line_breakpoints>
     <breakpoint_rules />
     <ui_properties />
@@ -178,10 +201,37 @@
   </component>
   <component name="FileEditorManager">
     <leaf>
-      <file leaf-file-name="DataSource.groovy" pinned="false" current="true" current-in-tab="true">
+      <file leaf-file-name="main.gsp" pinned="false" current="true" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="192" column="41" selection-start="9997" selection-end="9997" vertical-scroll-proportion="2.6196213" vertical-offset="1742" max-vertical-offset="5729">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="intro.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/info/intro.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="-5.897959" vertical-offset="0" max-vertical-offset="442">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="documentation.gsp" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/views/info/documentation.gsp">
+          <provider selected="true" editor-type-id="text-editor">
+            <state line="17" column="106" selection-start="532" selection-end="532" vertical-scroll-proportion="-5.897959" vertical-offset="0" max-vertical-offset="459">
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DataSource.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="79" column="67" selection-start="3499" selection-end="3543" vertical-scroll-proportion="0.23535676" vertical-offset="1122" max-vertical-offset="2533">
+            <state line="19" column="13" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2057">
               <folding />
             </state>
           </provider>
@@ -190,25 +240,7 @@
       <file leaf-file-name="Config.groovy" pinned="false" current="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state line="56" column="70" selection-start="2726" selection-end="2726" vertical-scroll-proportion="0.0" vertical-offset="952" max-vertical-offset="1904">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="resolve.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="16" column="122" selection-start="853" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="578">
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.gsp" pinned="false" current="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
-          <provider selected="true" editor-type-id="text-editor">
-            <state line="25" column="163" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="884">
+            <state line="66" column="34" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1904">
               <folding />
             </state>
           </provider>
@@ -225,30 +257,37 @@
     <option name="changedFiles">
       <list>
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" />
         <option value="$PROJECT_DIR$/test/functional/uk/ac/ebi/miriam/resolver/UriRecordControllerTests.groovy" />
         <option value="H:/identifiersorg/contextfiles/ROOT.xml" />
         <option value="$PROJECT_DIR$/application.properties" />
         <option value="$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Profile.groovy" />
         <option value="$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Reliability.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy" />
-        <option value="$PROJECT_DIR$/web-app/css/resolve.css" />
         <option value="$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/mapper/Mapper.groovy" />
         <option value="$PROJECT_DIR$/test/unit/uk/ac/ebi/miriam/mapper/MapperTest.java" />
-        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
-        <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
-        <option value="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_resource.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/uriRecord/resolveOne.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/uriRecord/resolvePartial.gsp" />
         <option value="$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/Constants.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/info/intro.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/info/documentation.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/error/custom_error.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/error/not_found.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/error_generic.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/error.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp" />
+        <option value="$PROJECT_DIR$/web-app/css/resolve.css" />
+        <option value="$PROJECT_DIR$/web-app/js/resolver.js" />
+        <option value="$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp" />
         <option value="$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp" />
+        <option value="$PROJECT_DIR$/grails-app/conf/DataSource.groovy" />
         <option value="$PROJECT_DIR$/grails-app/conf/Config.groovy" />
+        <option value="$PROJECT_DIR$/grails-app/views/layouts/main.gsp" />
       </list>
     </option>
   </component>
@@ -300,8 +339,6 @@
       <sortByType />
     </navigator>
     <panes>
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -349,6 +386,24 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="web-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="web-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -549,6 +604,28 @@
               <option name="myItemId" value="grails-app" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="views" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="info" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="resolver" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="trunk" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="grails-app" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
           </PATH>
           <PATH>
             <PATH_ELEMENT>
@@ -666,6 +743,8 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
+      <pane id="PackagesPane" />
       <pane id="Favorites" />
     </panes>
   </component>
@@ -1252,7 +1331,8 @@
       <workItem from="1391609644672" duration="7031000" />
       <workItem from="1391679661655" duration="16073000" />
       <workItem from="1392283839509" duration="4398000" />
-      <workItem from="1392371855249" duration="1125000" />
+      <workItem from="1392371855249" duration="21763000" />
+      <workItem from="1392646734064" duration="3623000" />
     </task>
     <task id="LOCAL-00001" summary="Updated to latest version of jquery">
       <created>1345725817104</created>
@@ -1294,11 +1374,15 @@
       <created>1391612191118</created>
       <updated>1391612191118</updated>
     </task>
-    <option name="localTasksCounter" value="11" />
+    <task id="LOCAL-00011" summary="working london version">
+      <created>1392373382206</created>
+      <updated>1392373382207</updated>
+    </task>
+    <option name="localTasksCounter" value="12" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="127099000" />
+    <option name="totallyTimeSpent" value="151360000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1335,7 +1419,7 @@
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.24919957" sideWeight="0.5908608" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Java Enterprise" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Spring" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.6377246" sideWeight="0.6693679" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36891192" sideWeight="0.6693679" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="5" side_tool="true" content_ui="tabs" />
       <window_info id="IDEtalk Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="17" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.3312034" sideWeight="0.5" order="11" side_tool="true" content_ui="tabs" />
@@ -1349,7 +1433,7 @@
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32901135" sideWeight="0.6704362" order="9" side_tool="false" content_ui="tabs" />
       <window_info id="Application Servers" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.34109312" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
       <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.15974441" sideWeight="0.6586151" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.36642337" sideWeight="0.68196374" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" weight="0.3046632" sideWeight="0.68196374" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Phing Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32186234" sideWeight="0.32977587" order="14" side_tool="false" content_ui="tabs" />
       <window_info id="CDI" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.32986537" sideWeight="0.5" order="12" side_tool="false" content_ui="tabs" />
@@ -1358,7 +1442,7 @@
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="JetGradle" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.0048025614" sideWeight="0.8104366" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.46153846" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4611399" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Messages" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33013844" sideWeight="0.5" order="15" side_tool="false" content_ui="tabs" />
       <window_info id="Dependency Viewer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.33" sideWeight="0.5" order="16" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
@@ -1387,7 +1471,9 @@
     <MESSAGE value="identifiers.org -&gt;redirects using profile&#10;info.identifiers.org -&gt; list choices&#10;running on ves-hx-4d" />
     <MESSAGE value="fixed errors on&#10;identifiers.org -&gt;redirects using profile&#10;" />
     <MESSAGE value="resolve css" />
-    <option name="LAST_COMMIT_MESSAGE" value="resolve css" />
+    <MESSAGE value="working london version" />
+    <MESSAGE value="updated to ebi look&amp;feel" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated to ebi look&amp;feel" />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -1398,50 +1484,6 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="60" column="146" selection-start="2915" selection-end="2915" vertical-scroll-proportion="0.0" vertical-offset="1020" max-vertical-offset="1904">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="12" column="14" selection-start="506" selection-end="506" vertical-scroll-proportion="0.0" vertical-offset="204" max-vertical-offset="867" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="11" column="26" selection-start="261" selection-end="261" vertical-scroll-proportion="0.0" vertical-offset="187" max-vertical-offset="289" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="60" selection-start="62" selection-end="62" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="51" column="69" selection-start="2549" selection-end="2549" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="2363" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriRecordController.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="368" column="13" selection-start="17494" selection-end="17494" vertical-scroll-proportion="0.0" vertical-offset="6256" max-vertical-offset="8942">
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="30" column="40" selection-start="1246" selection-end="1246" vertical-scroll-proportion="0.0" vertical-offset="510" max-vertical-offset="867" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/application.properties">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="2" column="0" selection-start="52" selection-end="52" vertical-scroll-proportion="0.0" vertical-offset="34" max-vertical-offset="289" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="62" column="44" selection-start="2972" selection-end="2972" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2397" />
@@ -1489,11 +1531,6 @@
         <state line="325" column="18" selection-start="11337" selection-end="11337" vertical-scroll-proportion="0.33264032" vertical-offset="4474" max-vertical-offset="5559" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="75" column="23" selection-start="1567" selection-end="1567" vertical-scroll-proportion="0.0" vertical-offset="75" max-vertical-offset="2108" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/ResponseRdf.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="57" column="46" selection-start="1888" selection-end="1888" vertical-scroll-proportion="-0.9969325" vertical-offset="1398" max-vertical-offset="2941" />
@@ -1506,12 +1543,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/common/UriRecord.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="49" column="52" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.9682836" vertical-offset="314" max-vertical-offset="1003" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/web-app/css/resolve.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="127" column="37" selection-start="1983" selection-end="1983" vertical-scroll-proportion="1.5479453" vertical-offset="1368" max-vertical-offset="4335" />
+        <state line="49" column="52" selection-start="1687" selection-end="1687" vertical-scroll-proportion="0.9682836" vertical-offset="314" max-vertical-offset="1003">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/domain/uk/ac/ebi/miriam/common/Resource.groovy">
@@ -1519,7 +1553,9 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1547" />
+        <state line="32" column="6" selection-start="1089" selection-end="1089" vertical-scroll-proportion="0.0" vertical-offset="630" max-vertical-offset="1547">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="jar://$USER_HOME$/software/grails-2.2.4/lib/org.codehaus.groovy/groovy-all/jars/groovy-all-2.0.8-sources.jar!/org/codehaus/groovy/runtime/callsite/AbstractCallSite.java">
@@ -1532,17 +1568,7 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="32" column="6" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1870" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/info/about.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="18" column="60" selection-start="541" selection-end="541" vertical-scroll-proportion="0.54063606" vertical-offset="0" max-vertical-offset="566" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/info/intro.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="615">
+        <state line="32" column="6" selection-start="1101" selection-end="1101" vertical-scroll-proportion="0.0" vertical-offset="544" max-vertical-offset="1870">
           <folding />
         </state>
       </provider>
@@ -1578,7 +1604,9 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="52" column="11" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.33274648" vertical-offset="695" max-vertical-offset="2210" />
+        <state line="52" column="11" selection-start="1920" selection-end="1920" vertical-scroll-proportion="0.33274648" vertical-offset="695" max-vertical-offset="2210">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/test/unit/resolver/InfoFiltersTests.groovy">
@@ -1600,16 +1628,6 @@
         <state line="10" column="21" selection-start="209" selection-end="209" vertical-scroll-proportion="0.2866779" vertical-offset="0" max-vertical-offset="593" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error_generic.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/error.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="1003" />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/BuildConfig.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="12" column="14" selection-start="506" selection-end="506" vertical-scroll-proportion="0.28936172" vertical-offset="0" max-vertical-offset="867" />
@@ -1618,11 +1636,6 @@
     <entry file="file://$PROJECT_DIR$/grails-app/conf/InfoFilters.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state line="15" column="113" selection-start="763" selection-end="825" vertical-scroll-proportion="0.33758864" vertical-offset="0" max-vertical-offset="705" />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp">
-      <provider selected="true" editor-type-id="text-editor">
-        <state line="23" column="396" selection-start="2072" selection-end="2072" vertical-scroll-proportion="0.33333334" vertical-offset="243" max-vertical-offset="867" />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/redirect_resource.gsp">
@@ -1650,7 +1663,9 @@
         <state />
       </provider>
       <provider selected="true" editor-type-id="text-editor">
-        <state line="27" column="6" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2329" />
+        <state line="27" column="6" selection-start="1035" selection-end="1035" vertical-scroll-proportion="0.0" vertical-offset="459" max-vertical-offset="2329">
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/resolver/Resolver.groovy">
@@ -1660,35 +1675,137 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/views/info/about.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="13" column="31" selection-start="349" selection-end="349" vertical-scroll-proportion="0.3437014" vertical-offset="0" max-vertical-offset="2244" />
+        <state line="20" column="7" selection-start="561" selection-end="561" vertical-scroll-proportion="-6.9387755" vertical-offset="0" max-vertical-offset="442" />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
+    <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/InfoController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="25" column="163" selection-start="1446" selection-end="1446" vertical-scroll-proportion="0.0" vertical-offset="425" max-vertical-offset="884">
+        <state line="15" column="21" selection-start="251" selection-end="251" vertical-scroll-proportion="-9.217391" vertical-offset="43" max-vertical-offset="680">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/conf/UrlMappings.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="10" selection-start="696" selection-end="696" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="2108">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/error/not_found.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="15" column="0" selection-start="512" selection-end="512" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="391">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/error.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="27" column="25" selection-start="549" selection-end="549" vertical-scroll-proportion="-8.461538" vertical-offset="239" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/resolve.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="38" column="287" selection-start="2348" selection-end="2348" vertical-scroll-proportion="1.2328244" vertical-offset="0" max-vertical-offset="2244">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/css/main.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="10047" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/js/jquery-1.6.2.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="0" selection-start="0" selection-end="0" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="573" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/js/application.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="1" column="14" selection-start="48" selection-end="48" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="255" />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/error_generic.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="29" column="40" selection-start="576" selection-end="576" vertical-scroll-proportion="0.88035715" vertical-offset="0" max-vertical-offset="1003">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/error/custom_error.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="4" column="69" selection-start="110" selection-end="110" vertical-scroll-proportion="0.129771" vertical-offset="0" max-vertical-offset="527">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/css/resolve.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="112" column="64" selection-start="1689" selection-end="1689" vertical-scroll-proportion="0.0" vertical-offset="1284" max-vertical-offset="4539">
+          <folding>
+            <marker date="1392642259200" expanded="true" signature="-1:-1" placeholder="{...}" />
+            <marker date="1392642259200" expanded="true" signature="-1:-1" placeholder="{...}" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/web-app/js/resolver.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="0" column="9" selection-start="9" selection-end="9" vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="170">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/uriRecord/redirect_profile.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="36" column="96" selection-start="2807" selection-end="2807" vertical-scroll-proportion="-12.489796" vertical-offset="0" max-vertical-offset="969">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/resolve.gsp">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="16" column="122" selection-start="853" selection-end="853" vertical-scroll-proportion="0.0" vertical-offset="272" max-vertical-offset="578">
+        <state line="5" column="62" selection-start="148" selection-end="148" vertical-scroll-proportion="0.15151516" vertical-offset="0" max-vertical-offset="595">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/Config.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="56" column="70" selection-start="2726" selection-end="2726" vertical-scroll-proportion="0.0" vertical-offset="852" max-vertical-offset="1904">
+        <state line="66" column="34" selection-start="3171" selection-end="3171" vertical-scroll-proportion="0.0" vertical-offset="867" max-vertical-offset="1904">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/info/documentation.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="106" selection-start="532" selection-end="532" vertical-scroll-proportion="-5.897959" vertical-offset="0" max-vertical-offset="459">
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/conf/DataSource.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state line="79" column="67" selection-start="3499" selection-end="3543" vertical-scroll-proportion="0.23535676" vertical-offset="1122" max-vertical-offset="2533">
+        <state line="19" column="13" selection-start="812" selection-end="812" vertical-scroll-proportion="0.0" vertical-offset="255" max-vertical-offset="2057">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/info/intro.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="17" column="0" selection-start="532" selection-end="532" vertical-scroll-proportion="-5.897959" vertical-offset="0" max-vertical-offset="442">
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/views/layouts/main.gsp">
+      <provider selected="true" editor-type-id="text-editor">
+        <state line="192" column="41" selection-start="9997" selection-end="9997" vertical-scroll-proportion="2.6196213" vertical-offset="1742" max-vertical-offset="5729">
           <folding />
         </state>
       </provider>

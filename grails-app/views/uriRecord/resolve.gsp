@@ -36,7 +36,7 @@
             </g:each>
 
             <div class="info">
-            Information for entry <span class="entity">${record.entityId}</span> in the <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a> data collection can be accessed from any of the following locations:
+            Information about <span class="entity">${record.entityId}</span> from <a href="http://www.ebi.ac.uk/miriam/main/datatypes/${record.dataCollection.id}" title="Access information about: ${record.dataCollection.name}">${record.dataCollection.name}</a> can be accessed from any of the following locations:
             </div>
 
             <table class="resources">

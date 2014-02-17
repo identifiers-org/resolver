@@ -34,9 +34,9 @@ class UrlMappings
 	        action = "help"
         }
 
-        "/examples" {
+        "/documentation" {
             controller = "info"
-	        action = "examples"
+	        action = "documentation"
         }
         
         "/news" {

@@ -15,6 +15,6 @@
     </head>
     <body>
         <c:import url="${ Holders.getGrailsApplication().config.getProperty('staticpages')+ 'intro.html'}" charEncoding="UTF-8" />
-        
+
     </body>
 </html>
