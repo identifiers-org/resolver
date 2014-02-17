@@ -24,8 +24,8 @@ class InfoController
         render(view:"help")
     }
 
-    def examples = {
-        render(view:"examples")
+    def documentation = {
+        render(view:"documentation")
     }
 
     def about = {

@@ -64,13 +64,13 @@ environments {
     development {
         grails.serverURL = "http://dev.identifiers.org"
         subdomain = "http://dev.info.identifiers.org"
-        staticpages = "http://static.identifiers.org/dev/"
+        staticpages = "http://dev.static.identifiers.org/"
 
     }
     test {
         grails.serverURL = "http://localhost:8080"
         subdomain = "http://info.localhost:8080"
-        staticpages = "http://static.identifiers.org/prod/"
+        staticpages = "http://dev.static.identifiers.org/"
     }
 
 }

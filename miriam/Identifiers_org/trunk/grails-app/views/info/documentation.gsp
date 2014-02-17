@@ -15,7 +15,7 @@
     </head>
     <body>
 
-        <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'examples.html'}" charEncoding="UTF-8" />
+        <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'documentation.html'}" charEncoding="UTF-8" />
         
     </body>
 </html>
