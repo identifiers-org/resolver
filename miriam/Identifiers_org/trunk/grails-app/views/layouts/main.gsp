@@ -81,7 +81,8 @@
   <!-- you can replace this with [projectname]-colours.css. See http://frontier.ebi.ac.uk/web/style/colour for details of how to do this -->
   <!-- also inform ES so we can host your colour palette file -->
  %{-- <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/develop/embl-petrol-colours.css" type="text/css" media="screen">--}%
-
+   %{-- <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css')}" type="text/css" />--}%
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css', base: 'http://dev.static.identifiers.org/')}" type="text/css" />
   <!-- for production the above can be replaced with -->
 
   <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/mini/ebi-fluid-embl.css">
@@ -107,7 +108,7 @@
 
 </head>
 
-<body class="level2"><!-- add any of your classes or IDs -->
+<body class="level2" style="max-width: 1600px;"><!-- add any of your classes or IDs -->
   <div id="skip-to">
     <ul>
       <li><a href="#content">Skip to main content</a></li>
@@ -151,30 +152,24 @@
       <!-- local-search -->
       <!-- NB: if you do not have a local-search, delete the following div, and drop the class="grid_12 alpha" class from local-title above -->
 
-%{--      <div class="grid_12 omega">
-        <form id="local-search" name="local-search" action="[search-action]" method="post">
+        <div class="grid_12 omega">
+            <form id="local-search" name="local-search" action="http://www.ebi.ac.uk/miriam/main/search" method="get">
+                <fieldset>
+                    <div class="left">
+                        <label>
+                            <input type="text" name="query" id="local-searchbox" />
+                        </label>
+                        <!-- some example of search terms -->
+                        <span class="examples">Examples: <a href="http://www.ebi.ac.uk/miriam/main/search?query=ontology" title="Search for 'ontology'">ontology</a>, <a href="http://www.ebi.ac.uk/miriam/main/search?query=enzyme" title="Search for 'enzyme'">enzyme</a>, <a href="http://www.ebi.ac.uk/miriam/main/search?query=Japan" title="Search for 'Japan'">Japan</a>, <a href="http://www.ebi.ac.uk/miriam/main/search?query=EMBL" title="Search for 'EMBL'">EMBL</a></span>
+                    </div>
 
-          <fieldset>
-
-          <div class="left">
-            <label>
-            <input type="text" name="first" id="local-searchbox">
-            </label>
-            <!-- Include some example searchterms - keep them short and few! -->
-            <span class="documentation">Examples: <a href="[search-url-1]">[search-text-1]</a>, <a href="[search-url-1]">[search-text-2]</a>, <a href="[search-url-1]">[search-text-3]</a></span>
-          </div>
-
-          <div class="right">
-            <input type="submit" name="submit" value="Search" class="submit">
-            <!-- If your search is more complex than just a keyword search, you can link to an Advanced Search,
-                 with whatever features you want available -->
-            <span class="adv"><a href="../search" id="adv-search" title="Advanced">Advanced</a></span>
-          </div>
-
-          </fieldset>
-
-        </form>
-      </div>--}%
+                    <div class="right">
+                        <input type="submit" value="Search" class="submit"> <!-- name="submit"  -->
+                        <span class="adv"><a href="http://www.ebi.ac.uk/miriam/main/tags/" id="adv-search" title="Search using types of data">Categories&nbsp;&amp;&nbsp;tags</a></span>
+                    </div>
+                </fieldset>
+            </form>
+        </div>
 
 
 
