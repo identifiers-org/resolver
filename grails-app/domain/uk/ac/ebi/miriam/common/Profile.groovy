@@ -89,23 +89,14 @@ class Profile
         else
         {
             preferredResourceId = getOrderedDataCollections()?.get(id)?.preferredResourceId
-        }
-        
-        /*
-        if (null != dataCollections)
-        {
-            dataCollections.each {
-                if (it.dataCollectionId == id)
-                {
-                    return it.preferredResourceId
-                }
+
+            //if this profile doesn't have a preferred resource, get the direct resource
+            if(preferredResourceId==null){
+                preferredResourceId = Resolver.getDirectResourceId(id);
             }
         }
-        else
-        {
-            return null
-        }
-        */
+        
+
         
         return preferredResourceId
     }

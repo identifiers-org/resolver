@@ -28,12 +28,6 @@ class UrlMappings
 	        action = "intro"
         }
 
-        /* could be move to UriRecordController (resolvePartialUrl), but does not solve the issue with "/registry/" */
-        "/help" {
-            controller = "info"
-	        action = "help"
-        }
-
         "/documentation" {
             controller = "info"
 	        action = "documentation"

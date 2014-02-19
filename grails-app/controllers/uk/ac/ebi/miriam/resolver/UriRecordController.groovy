@@ -42,6 +42,7 @@ import javax.servlet.http.HttpServletRequest
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
  * @version 20130426
+ * @modified Sarala Wimalaratne
  */
 class UriRecordController
 {
@@ -79,47 +80,64 @@ class UriRecordController
                 }
                 else{
                     redirect(url:record.officialUri + '?' + request.queryString )
-                    //  record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
                 }
             }
 
-            if(params.profile == null && !request.serverName.contains("info.")){
-                params.profile = "direct"
+            // checks if a resource is provided as parameter
+            if (null != params.resource){
+
+                // proper resource identifier provided
+                if (params.resource ==~ /^MIR:001\d{5}$/)
+                {
+                    Resource resource = Resource.findById(params.resource)
+                    // checks if the resource actually exists
+                    if (null != resource){
+                        // checks that the resource belongs to the data collection
+                        if (resource.dataCollection.id == record.dataCollection.id){
+                            // direct redirection requested
+                            redirect(url: resource.urlPrefix + params.entity + resource.urlSuffix);
+                            return;
+                        }
+                        else{
+                            // the resource does not belong to the data collection
+                            record.addMessage("Incorrect resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource does not provide access to the requested entity.")
+                        }
+                    }
+                    else {
+                        // the resource does not exist
+                        record.addMessage("Unknown resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource does not exist.")
+                    }
+                }
+                else{
+                    // not proper resource identifier
+                    record.addMessage("Invalid resource identifier", "Your request included information about the resource '$params.resource'. Unfortunately this is not a valid resource identifier.")
+                }
             }
-            // checks if a profile is provided as a parameter, with support with the deprecated parameter 'project'
-            if ((null != params.profile) || (null != params.project))
-            {
-                def profileParam = (null != params.profile) ? params.profile : params.project
+            else {
+                // if profile is not provided assign the direct profile
+                if(params.profile == null && !request.serverName.contains("info.")){
+                    params.profile = "direct"
+                }
+                def profileParam =params.profile;
                 // checks if profile exists
                 Profile profile = Profile.findByShortname(profileParam)
+
                 if (null != profile)
                 {
 
                     // checks if profile is public
-                    if (profile.open)
-                    {
+                    if (profile.open){
                         String preferredResourceId = profile.getPreferredResource(record.dataCollection.id)
-                        if (null != preferredResourceId)
-                        {
-                            Resource preferredResource = Resource.findById(preferredResourceId)
-                            if (params?.redirect == "true")   // direct redirection requested (no top banner to be displayed)
-                            {
-                                redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
-                            }
-                            else   // top banner displayed + resource loaded in a (i)frame
-                            {
-                                render(view:"redirect_profile", model:[record:record, preferredResource:preferredResource, profile:profile, entity:params.entity])
-                            }
-                            
-                            return
+                        Resource preferredResource = Resource.findById(preferredResourceId)
+                        if (params.profile == "direct"){
+                             // top banner displayed + resource loaded in a (i)frame
+                            render(view:"redirect_profile", model:[record:record, preferredResource:preferredResource, profile:profile, entity:params.entity])
                         }
-                        else   // this profile does not have a preferred resource for this specific data collection
-                        {
-                            record.addMessage("No preferred resource recorded", "Your request included information about the profile '$profileParam'. Unfortunately this profile does not have any preferred resource for the requested data collection.")
+                        else{
+                            // direct redirection requested (no top banner to be displayed)
+                            redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
                         }
-
-                        // TODO: direct redirection to preferred resource (with info frame)
-                        //render(text:"You will be directly redirected to your preferred resource (once implemented)...\n", contentType:"text/plain", encoding:"UTF-8")
+                        return;
                     }
                     else   // profile is private
                     {
@@ -148,98 +166,8 @@ class UriRecordController
                     record.addMessage("Unknown profile", "Your request included information about the profile '$profileParam'. Unfortunately this profile does not exist.")
                 }
             }
-            else if (null != params.resource)   // checks if a resource is provided as parameter
-            {
-                // proper resource identifier provided
-                if (params.resource ==~ /^MIR:001\d{5}$/)
-                {
-                    Resource resource = Resource.findById(params.resource)
-                    // checks if the resource actually exists
-                    if (null != resource)
-                    {
-                        // checks that the resource belongs to the data collection
-                        if (resource.dataCollection.id == record.dataCollection.id)
-                        {
-                            // checks if the resource is obsolete
-                            if (!resource.obsolete)
-                            {
-                                if (params?.redirect == "true")   // direct redirection requested (no top banner to be displayed
-                                {
-                                    redirect(url: resource.urlPrefix + params.entity + resource.urlSuffix);
-                                }
-                                else   // top banner displayed + resource loaded in a (i)frame
-                                {
-                                    render(view:"redirect_resource", model:[record:record, preferredResource:resource, entity:params.entity])   // TODO: no profile info
-                                }
-                                return
-                            }
-                            else
-                            {
-                                record.addMessage("Obsolete resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource is now obsolete.")
-                            }
-                        }
-                        else   // the resource does not belong to the data collection
-                        {
-                            record.addMessage("Incorrect resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource does not provide access to the requested entity.")
-                        }
-                    }
-                    else   // the resource does not exist
-                    {
-                        record.addMessage("Unknown resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource does not exist.")
-                    }
-                }
-                else   // not proper resource identifier
-                {
-                    record.addMessage("Invalid resource identifier", "Your request included information about the resource '$params.resource'. Unfortunately this is not a valid resource identifier.")
-                }
-            }
-            else   // no profile or resource specified
-            {
-                // nothing else to do
-            }
 
-            // checks if the URI provided is deprecated or not (does not check for the percent encoding of the entity identifier)
-/*            if (isObsoleteURI(record.requestedUriBase, record.officialUri))
-            {
-                record.addMessage("Obsolete URI", "You queried an obsolete URI! Please use the <a href=\"${record.officialUri}\" title=\"Official URL: ${record.officialUri}\" style=\"font-weight:bold;\">official one</a>.")
-            }*/
 
- /*           if(request.serverName.contains("info.")){
-            // renders the response, based on 'UriRecord', the optional "format" parameter and some content negotiation
-                    if (null != params.format)
-                {
-                    def formatParam = params.format.toLowerCase()
-                    if (("rdfxml" == formatParam) || ("rdf" == formatParam))   // 'rdfxml' should be preferred
-                    {
-                        if (null == params.resource)
-                        {
-                            renderResponseRdf(record)
-                        }
-                        else   // the user also added some format parameter: it should not be taken into consideration
-                        {
-                            record.addMessage("Improper usage of the 'format' parameter", "Identifiers.org does not yet support the usage of the 'format' parameter when requesting a specific resource.")
-                            renderResponseHtml(record)
-                        }
-                    }
-                    else if ("html" == formatParam)
-                    {
-                        renderResponseHtml(record)
-                    }
-                    else   // anything else... (not supported)
-                    {
-                        record.addMessage("Invalid 'format' parameter", "The format '$formatParam' is not supported. Please refer to <a href=\"/help\" title=\"Help page\">the help page</a> for the complete list of supported formats.")
-                        renderResponseHtml(record)
-                    }
-                }
-                else
-                {
-                    withFormat {
-                        html { renderResponseHtml(record) }   // also handles 'all'
-                        rdf { renderResponseRdf(record)}
-                        //text { renderResponseText(record) }
-                        //xml { renderResponseXml(record) }
-                    }
-                }*/
             if(request.serverName.contains("info.")){
                 withFormat {
                     html { renderResponseHtml(record) }   // also handles 'all'
@@ -276,27 +204,6 @@ class UriRecordController
      * Resolves URLs with only indication of a data collection
      */
     def resolvePartialUrl = {
-        /* tried to solved the issue of "/registry/" but that does not work
-        switch (params.dataCollection) {
-            case "help":
-                forward(controller:"info", action:"help")
-                break
-            case "documentation":
-                forward(controller:"info", action:"documentation")
-                break
-            case "news":
-                forward(controller:"info", action:"news")
-                break
-            case "about":
-                forward(controller:"info", action:"about")
-                break
-            case "registry":
-                forward(controller:"redirect", action:"external")
-                break
-            default:
-
-        }
-        */
         resolvePartialUrlProcess((String) request.request.requestURL, params.dataCollection)
     }
     
