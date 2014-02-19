@@ -4,6 +4,7 @@
   Template for the resolving page ("Transitional" as the page uses iframes)
   Camille Laibe
   20120823
+  Modified: Sarala Wimalaratne
 --%>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
@@ -22,9 +23,9 @@
 
 		<g:layoutHead/>
 	</head>
+
 	<body>
-        
         <g:layoutBody />
-		
 	</body>
+
 </html>
