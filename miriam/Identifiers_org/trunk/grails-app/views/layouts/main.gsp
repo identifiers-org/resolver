@@ -40,7 +40,7 @@
   <!-- also inform ES so we can host your colour palette file -->
  %{-- <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/develop/embl-petrol-colours.css" type="text/css" media="screen">--}%
    %{-- <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css')}" type="text/css" />--}%
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css', base: 'http://dev.static.identifiers.org/')}" type="text/css" />
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css', base: 'http://static.identifiers.org/')}" type="text/css" />
   <!-- for production the above can be replaced with -->
 
   <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/mini/ebi-fluid-embl.css">
