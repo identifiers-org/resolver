@@ -81,6 +81,7 @@ class UriRecordController
                 else{
                     redirect(url:record.officialUri + '?' + request.queryString )
                 }
+                return;
             }
 
             // checks if a resource is provided as parameter
@@ -96,7 +97,7 @@ class UriRecordController
                         if (resource.dataCollection.id == record.dataCollection.id){
                             // direct redirection requested
                             redirect(url: resource.urlPrefix + params.entity + resource.urlSuffix);
-                            return;
+                          //  return;
                         }
                         else{
                             // the resource does not belong to the data collection
@@ -113,9 +114,9 @@ class UriRecordController
                     record.addMessage("Invalid resource identifier", "Your request included information about the resource '$params.resource'. Unfortunately this is not a valid resource identifier.")
                 }
             }
-            else {
+            else if (!request.serverName.contains("info.")){
                 // if profile is not provided assign the direct profile
-                if(params.profile == null && !request.serverName.contains("info.")){
+                if(params.profile == null){
                     params.profile = "direct"
                 }
                 def profileParam =params.profile;
@@ -137,7 +138,7 @@ class UriRecordController
                             // direct redirection requested (no top banner to be displayed)
                             redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
                         }
-                        return;
+                     //   return;
                     }
                     else   // profile is private
                     {
@@ -178,6 +179,7 @@ class UriRecordController
                     rdf {
                         forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL])
                     }
+                    html{}
                 }
             }
         }
@@ -311,22 +313,6 @@ class UriRecordController
      */
     private def renderResponseHtml(UriRecord record)
     {
-        // there is only one recorded resource: we display it
-/*        if (record.dataCollection.resources.size() == 1)
-        {
-            // the resource denies the loading of its content from a frame:
-            if (record.dataCollection.resources[0].deniesFrame)
-            {
-                // display in a table (like if there were more than one resource)
-                render(status:300, view:"resolve", model:[record:record])
-            }
-            else   // Identifiers.org banner + external content loaded in a frame
-            {
-                render(status:203, view:"resolveOne", model:[record:record])
-            }
-        }
-        else   // more than one resource: we display all of them in a table
-        {*/
             // separates the primary/official resource (if any) from the other(s), for easier display
             ResourceRecord primaryResource = null
             List<ResourceRecord> allResources = []
@@ -342,7 +328,6 @@ class UriRecordController
             }
 
             render(status:300, view:"resolve", model:[record:record, primaryResource:primaryResource, allResources:allResources])
-    //    }
     }
 
 
