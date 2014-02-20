@@ -103,11 +103,11 @@ class ErrorController
 
     def unavailableFormat = {
         FeedbackError error = new FeedbackError()
-        error.title = "Requested format is unavailable"
-        error.code = "400 Bad Request"
+        error.title = "Requested format is not supported"
+        error.code = "415 Unsupported Media Type"
         error.message = "'$params.url' is not available."
         error.request = params.url
-        error.status = 400
+        error.status = 415
 
         generateResponse(error)
     }
