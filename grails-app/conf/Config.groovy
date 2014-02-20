@@ -59,7 +59,7 @@ environments {
     production {
         grails.serverURL = "http://identifiers.org" //"http://ves-"+System.getenv("DATACENTRE")+"-4c:8080" //"http://identifiers.org"
         subdomain = "http://info.identifiers.org"
-        staticpages = "http://static.identifiers.org/prod/"
+        staticpages = "http://static.identifiers.org/"
     }
     development {
         grails.serverURL = "http://dev.identifiers.org"
