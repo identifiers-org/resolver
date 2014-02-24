@@ -54,6 +54,10 @@ grails.spring.bean.packages = []
 // request parameters to mask when logging exceptions
 grails.exceptionresolver.params.exclude = ['password']
 
+//to go arround a security issue. This can be removed once grails is updated to 2.3.6 http://cxsecurity.com/issue/WLB-2014020172
+grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**']
+grails.resources.adhoc.excludes = ['/WEB-INF/**']
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {
