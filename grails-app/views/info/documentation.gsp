@@ -10,7 +10,7 @@
 
 <html>
     <head>
-        <title>Identifiers.org [examples]</title>
+        <title>Identifiers.org [documentation]</title>
     </head>
     <body>
         <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'documentation.html'}" charEncoding="UTF-8" />
