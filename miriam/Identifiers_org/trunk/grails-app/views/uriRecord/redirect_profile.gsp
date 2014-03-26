@@ -26,7 +26,7 @@
     <div class="update">
         <p id="loadertext">Display of <span class="entity">${record.entityId}</span>: please wait, loading in process...</p>
     </div>
-    <iframe id="externalContent" src="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" frameborder="0" width="100%" height="1000px" scrolling="yes" onload="hideProgress()">
+    <iframe id="externalContent" src="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}" frameborder="0" width="100%" height="2000px" scrolling="yes" onload="hideProgress()">
         If your browser was supporting frames, you would see here the content provided by: <a href="${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}">${preferredResource.urlPrefix.encodeAsHTML()}${entity}${preferredResource.urlSuffix.encodeAsHTML()}</a>.
     </iframe>
 </div>
@@ -46,6 +46,10 @@
         });
     });
 
+/*    function leave() {
+        window.location.href=parent.document.getElementById('externalContent').src;
+    }
+    setTimeout("leave()", 5000);*/
 </script>
 
 </body>
