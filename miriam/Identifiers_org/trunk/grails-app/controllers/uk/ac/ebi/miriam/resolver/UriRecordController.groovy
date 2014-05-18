@@ -1,7 +1,5 @@
 package uk.ac.ebi.miriam.resolver
 
-import grails.util.Holders
-import uk.ac.ebi.miriam.common.Constants
 import uk.ac.ebi.miriam.common.ResourceRecord
 import uk.ac.ebi.miriam.exception.InvalidEntityIdentifierException
 import uk.ac.ebi.miriam.exception.ResolverErrorException
@@ -21,7 +19,7 @@ import javax.servlet.http.HttpServletRequest
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2014 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -41,8 +39,8 @@ import javax.servlet.http.HttpServletRequest
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20130426
  * @modified Sarala Wimalaratne
+ * @version 20140518
  */
 class UriRecordController
 {
@@ -75,81 +73,91 @@ class UriRecordController
             //Redirect obsolete to official uri
             if (isObsoleteURI(record.requestedUriBase, record.officialUri))
             {
-                if(request.queryString==null){
+                if(request.queryString==null)
+                {
                     redirect(url:record.officialUri)
                 }
-                else{
+                else
+                {
                     redirect(url:record.officialUri + '?' + request.queryString )
                 }
                 return;
             }
 
-            // checks if a resource is provided as parameter
-            if (null != params.resource){
-
+            // checks if a resource identifier is provided as parameter
+            if (null != params.resource)
+            {
                 // proper resource identifier provided
                 if (params.resource ==~ /^MIR:001\d{5}$/)
                 {
                     Resource resource = Resource.findById(params.resource)
                     // checks if the resource actually exists
-                    if (null != resource){
+                    if (null != resource)
+                    {
                         // checks that the resource belongs to the data collection
-                        if (resource.dataCollection.id == record.dataCollection.id){
+                        if (resource.dataCollection.id == record.dataCollection.id)
+                        {
                             // direct redirection requested
                             redirect(url: resource.urlPrefix + params.entity + resource.urlSuffix);
-                          //  return;
                         }
-                        else{
+                        else
+                        {
                             // the resource does not belong to the data collection
                             record.addMessage("Incorrect resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource does not provide access to the requested entity.")
                         }
                     }
-                    else {
+                    else
+                    {
                         // the resource does not exist
                         record.addMessage("Unknown resource", "Your request included information about the resource '$params.resource'. Unfortunately this resource does not exist.")
                     }
                 }
-                else{
+                else
+                {
                     // not proper resource identifier
                     record.addMessage("Invalid resource identifier", "Your request included information about the resource '$params.resource'. Unfortunately this is not a valid resource identifier.")
                 }
             }
-            else if (!request.serverName.contains("info.")){
+            else if (!request.serverName.contains("info."))   // canonical URIs
+            {
                 // if only one resource redirect
-                if(record.dataCollection.resources.size() == 1) {
+                if(record.dataCollection.resources.size() == 1)
+                {
                     Resource preferredResource = Resource.findById(record.dataCollection.resources.iterator().next().id);
                     redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
                     return;
                 }
 
-                // if profile is not provided assign the direct profile
-                if(params.profile == null){
+                // if profile is not provided, the assigns the 'direct' profile
+                if(params.profile == null)
+                {
                     params.profile = "direct"
                 }
-                def profileParam =params.profile;
-                // checks if profile exists
-                Profile profile = Profile.findByShortname(profileParam)
+                def profileParam = params.profile;
 
+                // checks if requested profile exists
+                Profile profile = Profile.findByShortname(profileParam)
                 if (null != profile)
                 {
-
                     // checks if profile is public
-                    if (profile.open){
+                    if (profile.open)
+                    {
                         String preferredResourceId = profile.getPreferredResource(record.dataCollection.id)
                         Resource preferredResource = Resource.findById(preferredResourceId)
-                        if (params.profile == "direct"){
-                             // top banner displayed + resource loaded in a (i)frame
+                        if (params.profile == "direct")
+                        {
+                             // top banner displayed + one chosen resource loaded in a (i)frame
                             render(view:"redirect_profile", model:[record:record, preferredResource:preferredResource, profile:profile, entity:params.entity])
                         }
-                        else{
-                            // direct redirection requested (no top banner to be displayed)
+                        else
+                        {
+                            // direct redirection (no top banner is displayed)
                             redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
                         }
-                     //   return;
                     }
                     else   // profile is private
                     {
-                        // checks is a key has been provided
+                        // checks if a key has been provided
                         if (null != params.key)
                         {
                             // checks if the key is correct
@@ -174,19 +182,18 @@ class UriRecordController
                     record.addMessage("Unknown profile", "Your request included information about the profile '$profileParam'. Unfortunately this profile does not exist.")
                 }
             }
-
-
-            if(request.serverName.contains("info.")){
+            if (request.serverName.contains("info."))   // info subdomain URIs
+            {
                 withFormat {
                     html { renderResponseHtml(record) }   // also handles 'all'
                     rdf { renderResponseRdf(record)}
                 }
-            }else{
+            }
+            else   // other URIs: error
+            {
                 withFormat {
-                    rdf {
-                        forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL])
-                    }
-                    html{}
+                    rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
+                    html{ }
                 }
             }
         }
@@ -210,17 +217,17 @@ class UriRecordController
 
 
     /**
-     * Resolves URLs with only indication of a data collection
+     * Resolves data collection URLs.
      */
-    def resolvePartialUrl = {
-        resolvePartialUrlProcess((String) request.request.requestURL, params.dataCollection)
+    def resolveCollectionUrl = {
+        resolveCollectionUrlProcess((String) request.request.requestURL, params.dataCollection)
     }
     
-    private def resolvePartialUrlProcess(String url, String namespace)
+    private def resolveCollectionUrlProcess(String url, String namespace)
     {
         try
         {
-            DataCollection data = Resolver.retrievePartialUriRecord(url, namespace)
+            DataCollection data = Resolver.retrieveCollectionUriRecord(url, namespace)
             Boolean obsolete = true
 
             if (data.officialUrl().equalsIgnoreCase((String) request.request.requestURL))
@@ -228,8 +235,9 @@ class UriRecordController
                 obsolete = false;
             }
             withFormat {
-                html { renderPartialResponseHtml(data, (String) request.request.requestURL, obsolete) }   // also handles 'all'
-                rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
+                html { renderPartialResponseHtml(data, (String) request.request.requestURL, obsolete) }   // also handles 'all'   //TODO: directly displays content from Identifiers.org
+                rdf { renderCollectionResponseRdf(data, (String) request.request.requestURL, obsolete) }
+                //rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
             }
         }
         catch (NotExistingDataCollectionException e)
@@ -305,7 +313,7 @@ class UriRecordController
             }
             else
             {
-                resolvePartialUrlProcess(url, namespace)
+                resolveCollectionUrlProcess(url, namespace)
             }
         }
     }
@@ -386,9 +394,8 @@ class UriRecordController
 
 
     /**
-     * Renders the partial (only request for a namespace) HTML response.
-     * Initially was using "303 See Other", but due to issues with IE8.
-     * Same issues with "302 Found", "307 Temporary Redirect".
+     * Renders the response to a collection URI in HTML.
+     * Initially was using "303 See Other", but issues with IE8. Same issues with "302 Found", "307 Temporary Redirect".
      * Currently using: "203 Non-Authoritative Information" (The server successfully processed the request, but is returning information that may be from another source).
      * @param record
      * @param url
@@ -397,7 +404,20 @@ class UriRecordController
      */
     private def renderPartialResponseHtml(DataCollection record, String url, Boolean obsolete)
     {
-        render(status:203, view:"resolvePartial", model:[record:record, requestedUri:url, obsolete:obsolete])
+        render(status:203, view:"resolveCollection", model:[record:record, requestedUri:url, obsolete:obsolete])
+    }
+
+    /**
+     * Renders the partial (only request for a namespace) HTML response.
+     *
+     * @param record
+     * @param url
+     * @param obsolete
+     * @return
+     */
+    private def renderCollectionResponseRdf(DataCollection record, String url, Boolean obsolete)
+    {
+        render(status:200, text:ResponseRdf.generateCollectionResponse(record, url, obsolete), contentType:"application/rdf+xml", encoding:"UTF-8")
     }
 
     /**

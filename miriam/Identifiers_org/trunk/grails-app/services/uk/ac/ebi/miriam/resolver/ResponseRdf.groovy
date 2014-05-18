@@ -1,6 +1,7 @@
 package uk.ac.ebi.miriam.resolver
 
 import grails.util.Holders
+import uk.ac.ebi.miriam.common.DataCollection
 import uk.ac.ebi.miriam.common.UriRecord
 import uk.ac.ebi.miriam.common.Constants
 
@@ -23,7 +24,7 @@ import com.hp.hpl.jena.datatypes.xsd.XSDDatatype
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2014 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -43,7 +44,7 @@ import com.hp.hpl.jena.datatypes.xsd.XSDDatatype
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20130426
+ * @version 20140518
  */
 class ResponseRdf
 {
@@ -51,7 +52,7 @@ class ResponseRdf
     public static final String EDAM_NAMESPACE = "http://identifiers.org/edamontology/"
 
     /**
-     * Generates the RDF response for a resolving query.
+     * Generates the RDF response for a full canonical URI query.
      * @param record
      * @return
      */
@@ -96,7 +97,7 @@ class ResponseRdf
 
         def rdf = new MarkupBuilder(writer)
         //mkp.xmlDeclaration(version:'1.0')
-        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#", 'xmlns:dcterms':"http://purl.org/dc/terms/", 'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#", 'xmlns:doap':"http://usefulinc.com/ns/doap#", 'xmlns:sio':"http://semanticscience.org/resource/", 'xmlns:edam':"http://identifiers.org/edam/", 'xmlns:mir':"http://identifiers.org/") {
+        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#", 'xmlns:dcterms':"http://purl.org/dc/terms/", 'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#", 'xmlns:doap':"http://usefulinc.com/ns/doap#", 'xmlns:sio':"http://semanticscience.org/resource/", 'xmlns:edam':"http://identifiers.org/edam/", 'xmlns:idot':"http://identifiers.org/idot/") {
             'rdf:Description'('rdf:about':record.requestedUri) {
                 'dcterms:title'("Entity $record.entityId provided by the data collection $record.dataCollection.name ($record.dataCollection.id).", 'xml:lang':"en-GB")
                 mkp.comment("human readable description")
@@ -107,10 +108,10 @@ class ResponseRdf
                 'sio:SIO_000671'() {   // has identifier
                     'edam:data_2091'() {   // Accession
                         'sio:SIO_000300'(record.entityId)   // has value
-                        'rdf:type'('rdf:resource':"http://idtype.identifiers.org/$record.namespace/")
+                        'rdf:type'('rdf:resource':"http://idtype.identifiers.org/$record.namespace")
                     }
                 }
-                'rdf:type'('rdf:about':"$resolver_url_root/$record.namespace/")
+                'rdf:type'('rdf:about':"$resolver_url_root/$record.namespace")
                 mkp.comment("data collection")
                 'dcterms:source'('rdf:resource':"$resolver_url_root/miriam.collection/$record.dataCollection.id")
                 mkp.comment("physical locations (resources)")
@@ -149,13 +150,13 @@ class ResponseRdf
                     'vcard:country-name'(res.location)
                     'doap:homepage'('rdf:resource':res.homepage)
                     //'dcterms:license'('rdf:resource':URL)
-                    'mir:state'(res.state)
+                    'idot:state'(res.state)
                     mkp.comment("state")
-                    'mir:reliability'(res.reliability)
+                    'idot:reliability'(res.reliability)
                     mkp.comment("reliability")
                     if (res.primary)
                     {
-                        'mir:primary'("true")
+                        'idot:primary'("true")
                     }
                 }
             }
@@ -172,6 +173,76 @@ class ResponseRdf
                     }
                 }
                 //'dcterms:modified'()
+            }
+        }
+
+        return writer.toString()
+    }
+
+    /**
+     * Generates the RDF response for a partial canonical URI query (collection info only).
+     * @param record
+     * @param requested URL
+     * @param whether the requested URL is deprecated or not
+     * @return
+     */
+    public static def String generateCollectionResponse(DataCollection collection, String url, Boolean obsolete)
+    {
+        String resolver_url_root = Holders.getGrailsApplication().config.grails.serverURL;
+
+        // Groovy way
+        def writer = new StringWriter()
+        writer.append("""<?xml version="1.0" encoding="utf-8"?>\n""")
+
+        def rdf = new MarkupBuilder(writer)
+
+        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#", 'xmlns:dcterms':"http://purl.org/dc/terms/", 'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#", 'xmlns:doap':"http://usefulinc.com/ns/doap#", 'xmlns:sio':"http://semanticscience.org/resource/", 'xmlns:edam':"http://identifiers.org/edam/", 'xmlns:idot':"http://identifiers.org/idot/") {
+            'dcat:CatalogRecord'('rdf:about': url) {
+                'dcat:identifier'(collection.id)
+                'idot:namespace'(collection.namespace())
+                'dcterms:title'(collection.name, 'xml:lang':"en-GB")
+                'dcat:description'(collection.definition)
+                collection.synonyms.each { syn ->
+                    'dcterms:alternative'(syn)
+                }
+                'idot:idRegexPattern'(collection.regexp)
+                'void:uriSpace'('rdf:resource': url + "/")   // final '/' is mandatory here
+                'void:exampleResource'(collection.resources.iterator().next().exampleId)
+                'dcat:issued'(collection.dateCreation)
+                'dcat:modified'(collection.dateModification)
+                /* TODO
+                collection.tags.each { tag ->
+                    'dcat:keyword'(tag)
+                }
+                */
+                /* physical locations (resources) */
+                'dcat:distribution' {
+                    collection.resources.each { res ->
+                        mkp.comment("information about resource $res.id")
+                        'dcat:Distribution'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id + "#" + res.mime) {
+                            'dcterms:publisher'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id) {
+                                'dcterms:title'(res.info, 'xml:lang': "en-GB")
+                                'vcard:organisation-name'(res.institution)
+                                if (null != res.location)
+                                {
+                                    'vcard:country-name'(res.location)
+                                }
+                                'dcat:landingPage'(res.urlRoot)
+                                //mkp.comment("state")
+                                //'idot:state'(res)   // TODO
+                                mkp.comment("reliability")
+                                'idot:reliability'(res.reliability)
+                                if (res.primary)
+                                {
+                                    'idot:primary'("true")
+                                }
+                                //'dcterms:license'('rdf:resource':URL)
+                            }
+                            'dcat:mediaType'(res.mime)
+                            'dcat:accessURL'(res.urlPrefix + '$id' + res.urlSuffix)
+                        }
+                    }
+                }
             }
         }
 

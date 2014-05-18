@@ -9,7 +9,7 @@ import grails.util.Holders
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2014 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ import grails.util.Holders
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20130426
+ * @version 20140518
  */
 class DataCollection implements Comparable
 {
@@ -38,7 +38,7 @@ class DataCollection implements Comparable
     /* official name of the data collection */
     String name
     /* synonyms of the name of the data collection */
-    // TODO: List<String> synonyms
+    //List<String> synonyms
     /* official URN of the data collection */
     // TODO: String URN
     /* official URL of the data collection */
@@ -46,7 +46,7 @@ class DataCollection implements Comparable
     /* deprecated URIs */
     // TODO: List<Identifier> deprecatedURIs
     // GORM one-to-many relationships
-    static hasMany = [uris: Identifier, resources: Resource, synonyms: Synonym]
+    static hasMany = [uris: Identifier, resources: Resource, synonyms: Synonym, tags: Tag]
     /* definition of the data collection */
     String definition
     /* regular expression of the identifiers used by the data collection */
@@ -74,6 +74,7 @@ class DataCollection implements Comparable
 		id generator:"assigned", column:"datatype_id", type:"string"  // name:"id", sqlType:"char", length:12
         name column:"name"
         synonyms fetch:"join"
+        tags fetch:"join"
         uris fetch:"join"   // foreign key in table 'mir_uri'   // column:"ptr_datatype", type:"string",
         resources fetch:"join"   // foreign key in table 'mir_resource'  column:"ptr_datatype", fetch:"select", lazy:false, type:"string",
         definition column:"definition", type:"text"   // longer than varchar(255)
@@ -119,6 +120,25 @@ class DataCollection implements Comparable
      */
     String officialUrl()
     {
-        return Holders.getGrailsApplication().config.grails.serverURL + "/" + officialUrn().substring(11) + "/"  // we enforce the final '/'
+        return Holders.getGrailsApplication().config.grails.serverURL + "/" + officialUrn().substring(11)   // we don't enforce the final '/' (this is a pain in Turtle, as it needs to be escaped)
+    }
+
+    /**
+     * Retrieves the current namespace (there may be deprecated one(s)).
+     * @return
+     */
+    String namespace()
+    {
+        String namespace = null
+
+        uris.each {
+            if ((!it.deprecated) && (it.type == "URN"))
+            {
+                String uri = it.uriPrefix   // returns the first (and hopefully only) URI which is not deprecated and is a URN
+                namespace = uri.substring(uri.lastIndexOf(":"))
+            }
+        }
+
+        return namespace
     }
 }

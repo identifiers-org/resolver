@@ -57,7 +57,7 @@ class UrlMappings
         // access to a data collection
         "/$dataCollection" {
             controller = "uriRecord"
-	        action = "resolvePartialUrl"
+	        action = "resolveCollectionUrl"
         }
 
         // any proper MIRIAM URL
