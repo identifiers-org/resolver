@@ -135,7 +135,7 @@ class DataCollection implements Comparable
             if ((!it.deprecated) && (it.type == "URN"))
             {
                 String uri = it.uriPrefix   // returns the first (and hopefully only) URI which is not deprecated and is a URN
-                namespace = uri.substring(uri.lastIndexOf(":"))
+                namespace = uri.substring(uri.lastIndexOf(":")+1)   // extracts the namespace from the official MIRIAM URN
             }
         }
 
