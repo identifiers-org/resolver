@@ -159,7 +159,7 @@ class Resolver
     }
 
 
-    public static def DataCollection retrievePartialUriRecord(String url, String dataCollection) throws NotExistingDataCollectionException, ResolverErrorException
+    public static def DataCollection retrieveCollectionUriRecord(String url, String dataCollection) throws NotExistingDataCollectionException, ResolverErrorException
     {
         DataCollection data = null
 
