@@ -200,8 +200,8 @@ class ResponseRdf
             'dcat:CatalogRecord'('rdf:about': url) {
                 'dcat:identifier'(collection.id)
                 'idot:namespace'(collection.namespace())
-                'dcterms:title'(collection.name, 'xml:lang':"en-GB")
-                'dcat:description'(collection.definition)
+                'dcterms:title'(collection.name)
+                'dcat:description'(collection.definition, 'xml:lang':"en-GB")
                 collection.synonyms.each { syn ->
                     'dcterms:alternative'(syn)
                 }
@@ -228,10 +228,10 @@ class ResponseRdf
                                     'vcard:country-name'(res.location)
                                 }
                                 'dcat:landingPage'(res.urlRoot)
-                                //mkp.comment("state")
-                                //'idot:state'(res)   // TODO
+                                mkp.comment("state")
+                                'idot:state'(res.reliability.state)
                                 mkp.comment("reliability")
-                                'idot:reliability'(res.reliability)
+                                'idot:reliability'(res.reliability.uptimePercent())
                                 if (res.primary)
                                 {
                                     'idot:primary'("true")
