@@ -219,7 +219,7 @@ class ResponseRdf
                 'dcat:distribution' {
                     collection.resources.each { res ->
                         mkp.comment("information about resource $res.id")
-                        'dcat:Distribution'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id + "#" + res.mime) {
+                        'dcat:Distribution'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id + "#application/xhtml+xml") {
                             'dcterms:publisher'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id) {
                                 'dcterms:title'(res.info, 'xml:lang': "en-GB")
                                 'vcard:organisation-name'(res.institution)
@@ -238,7 +238,7 @@ class ResponseRdf
                                 }
                                 //'dcterms:license'('rdf:resource':URL)
                             }
-                            'dcat:mediaType'(res.mime)
+                            'dcat:mediaType'("application/xhtml+xml")
                             'dcat:accessURL'(res.urlPrefix + '$id' + res.urlSuffix)
                         }
                     }
