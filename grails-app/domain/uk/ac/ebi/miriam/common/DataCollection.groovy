@@ -46,7 +46,7 @@ class DataCollection implements Comparable
     /* deprecated URIs */
     // TODO: List<Identifier> deprecatedURIs
     // GORM one-to-many relationships
-    static hasMany = [uris: Identifier, resources: Resource, synonyms: Synonym, tags: Tag]
+    static hasMany = [uris: Identifier, resources: Resource, synonyms: Synonym]   // , tags: Tag
     /* definition of the data collection */
     String definition
     /* regular expression of the identifiers used by the data collection */
@@ -74,7 +74,7 @@ class DataCollection implements Comparable
 		id generator:"assigned", column:"datatype_id", type:"string"  // name:"id", sqlType:"char", length:12
         name column:"name"
         synonyms fetch:"join"
-        tags fetch:"join"
+        //tags fetch:"join"
         uris fetch:"join"   // foreign key in table 'mir_uri'   // column:"ptr_datatype", type:"string",
         resources fetch:"join"   // foreign key in table 'mir_resource'  column:"ptr_datatype", fetch:"select", lazy:false, type:"string",
         definition column:"definition", type:"text"   // longer than varchar(255)
