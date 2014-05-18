@@ -55,7 +55,7 @@ class Resource
     /* whether the resource is the primary/official one of the data collection (optional) */
     Boolean primary
     /* Internet media type returned */
-    String mime = "application/xhtml+xml"   // TODO: this should not be hard coded!
+    //String mime = "application/xhtml+xml"   // TODO: this should not be hard coded!
 
 
     // GORM: unidirectional many-to-one relationship
