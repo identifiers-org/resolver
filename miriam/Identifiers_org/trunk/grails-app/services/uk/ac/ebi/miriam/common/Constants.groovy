@@ -9,7 +9,7 @@ import grails.util.Holders
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2013 BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2014 BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -29,7 +29,7 @@ import grails.util.Holders
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20130426
+ * @version 20140519
  */
 class Constants
 {
@@ -42,4 +42,6 @@ class Constants
 //    static final String STATIC_PAGES = "http://static.identifiers.org/dev/"
 
     static final String MIRIAM_URL_ROOT = "http://www.ebi.ac.uk/miriam/main/"
+
+    static final states = [0:"down", 1:"up", 2:"unknown", 3:"probably up", 4:"obsolete resource", 5:"restricted access", 8:"na", 9:"no data"]
 }
