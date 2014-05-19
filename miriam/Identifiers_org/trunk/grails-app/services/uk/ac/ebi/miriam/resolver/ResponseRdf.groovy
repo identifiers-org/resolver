@@ -196,7 +196,7 @@ class ResponseRdf
 
         def rdf = new MarkupBuilder(writer)
 
-        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#", 'xmlns:dcterms':"http://purl.org/dc/terms/", 'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#", 'xmlns:doap':"http://usefulinc.com/ns/doap#", 'xmlns:sio':"http://semanticscience.org/resource/", 'xmlns:edam':"http://identifiers.org/edam/", 'xmlns:dcat':"", 'xmlns:idot':"http://identifiers.org/idot/") {
+        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#", 'xmlns:dcterms':"http://purl.org/dc/terms/", 'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#", 'xmlns:doap':"http://usefulinc.com/ns/doap#", 'xmlns:sio':"http://semanticscience.org/resource/", 'xmlns:edam':"http://identifiers.org/edam/", 'xmlns:dcat':"http://www.w3.org/ns/dcat#", 'xmlns:idot':"http://identifiers.org/idot/") {
             'dcat:CatalogRecord'('rdf:about': url) {
                 'dcat:identifier'(collection.id)
                 'idot:namespace'(collection.namespace())
@@ -229,7 +229,7 @@ class ResponseRdf
                                 }
                                 'dcat:landingPage'(res.urlRoot)
                                 mkp.comment("state")
-                                'idot:state'(res.reliability.state)
+                                'idot:state'(res.reliability.state.getHumanState())
                                 mkp.comment("reliability")
                                 'idot:reliability'(res.reliability.uptimePercent())
                                 if (res.primary)
