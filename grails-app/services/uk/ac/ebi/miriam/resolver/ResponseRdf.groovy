@@ -229,7 +229,7 @@ class ResponseRdf
                                 }
                                 'dcat:landingPage'(res.urlRoot)
                                 mkp.comment("state")
-                                'idot:state'(res.reliability.state.getHumanState())
+                                'idot:state'(res.reliability.getHumanState())
                                 mkp.comment("reliability")
                                 'idot:reliability'(res.reliability.uptimePercent())
                                 if (res.primary)
