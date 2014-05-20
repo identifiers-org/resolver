@@ -220,23 +220,23 @@ class ResponseRdf
                     collection.resources.each { res ->
                         mkp.comment("information about resource $res.id")
                         'dcat:Distribution'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id + "#application/xhtml+xml") {
-                            'dcterms:publisher'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id) {
-                                'dcterms:title'(res.info, 'xml:lang': "en-GB")
-                                'vcard:organisation-name'(res.institution)
-                                if (null != res.location)
-                                {
-                                    'vcard:country-name'(res.location)
+                            'rdf:Description'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id) {
+                                'dcterms:publisher' {
+                                    'dcterms:title'(res.info)
+                                    'vcard:organisation-name'(res.institution)
+                                    if (null != res.location) {
+                                        'vcard:country-name'(res.location)
+                                    }
+                                    'dcat:landingPage'(res.urlRoot)
+                                    mkp.comment("state")
+                                    'idot:state'(res.reliability.getHumanState(res.reliability.state))
+                                    mkp.comment("reliability")
+                                    'idot:reliability'(res.reliability.uptimePercent())
+                                    if (res.primary) {
+                                        'idot:primary'("true")
+                                    }
+                                    //'dcterms:license'('rdf:resource':URL)
                                 }
-                                'dcat:landingPage'(res.urlRoot)
-                                mkp.comment("state")
-                                'idot:state'(res.reliability.getHumanState(res.reliability.state))
-                                mkp.comment("reliability")
-                                'idot:reliability'(res.reliability.uptimePercent())
-                                if (res.primary)
-                                {
-                                    'idot:primary'("true")
-                                }
-                                //'dcterms:license'('rdf:resource':URL)
                             }
                             'dcat:mediaType'("application/xhtml+xml")
                             'dcat:accessURL'(res.urlPrefix + '$id' + res.urlSuffix)
