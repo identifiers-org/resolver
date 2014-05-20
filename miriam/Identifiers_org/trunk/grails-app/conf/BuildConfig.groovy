@@ -41,6 +41,7 @@ grails.project.dependency.resolution = {
         //runtime 'org.openrdf.sesame:sesame-http-workbench:2.7.10'
         //runtime 'org.openrdf.sesame:sesame-http-server:2.7.10'
         runtime 'org.openrdf.sesame:sesame-queryresultio-sparqljson:2.7.10'
+        runtime "junit:junit:4.8.1"
     }
 
     plugins {
