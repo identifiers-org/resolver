@@ -72,6 +72,12 @@ class UrlMappings
 	        action = "doiResolve"
         }
 
+        // virtual SPARQL endpoint for URI schemes conversion
+        "/sparql" {
+            controller = "uriConvertSparql"
+            action = "index"
+        }
+
         // any other URLs
         "/**" {
             controller = "uriRecord"
