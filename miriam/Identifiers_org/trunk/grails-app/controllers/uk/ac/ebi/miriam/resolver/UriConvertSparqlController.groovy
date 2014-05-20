@@ -52,7 +52,7 @@ class UriConvertSparqlController
         Store rep = new Store();
         TemporaryFolder folder = new TemporaryFolder();
         File dataDir = folder.newFolder("data.dir");
-
+        rep.setDataDir(dataDir);
         rep.setValueFactory(new ValueFactoryImpl());
         RdfSailConnection sr = new RdfSailConnection(rep);
         rep.initialize();

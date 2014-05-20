@@ -149,10 +149,34 @@
       <file leaf-file-name="UriConvertSparqlController.groovy" pinned="false" current="true" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriConvertSparqlController.groovy">
           <provider selected="true" editor-type-id="text-editor">
-            <state vertical-scroll-proportion="-0.24324325" vertical-offset="810" max-vertical-offset="1425">
-              <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+            <state vertical-scroll-proportion="0.14414415" vertical-offset="730" max-vertical-offset="1425">
+              <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
               <folding>
                 <element signature="e#35#82#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="Store.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/Store.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+              <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+              <folding>
+                <element signature="e#33#70#0" expanded="true" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="RdfSailConnection.groovy" pinned="false" current="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/RdfSailConnection.groovy">
+          <provider selected="true" editor-type-id="text-editor">
+            <state vertical-scroll-proportion="0.0" vertical-offset="343" max-vertical-offset="3870">
+              <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+              <folding>
+                <element signature="e#32#78#0" expanded="true" />
               </folding>
             </state>
           </provider>
@@ -1117,7 +1141,7 @@
       <workItem from="1400380466986" duration="14208000" />
       <workItem from="1400465498783" duration="2145000" />
       <workItem from="1400488079630" duration="1594000" />
-      <workItem from="1400549139923" duration="16221000" />
+      <workItem from="1400549139923" duration="16661000" />
     </task>
     <task id="LOCAL-00001" summary="Updated to latest version of jquery">
       <created>1345725817104</created>
@@ -1239,11 +1263,15 @@
       <created>1400573877105</created>
       <updated>1400573877105</updated>
     </task>
-    <option name="localTasksCounter" value="31" />
+    <task id="LOCAL-00031" summary="Moved (temporarily) code out from the service to the controller.">
+      <created>1400574642105</created>
+      <updated>1400574642105</updated>
+    </task>
+    <option name="localTasksCounter" value="32" />
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="275657000" />
+    <option name="totallyTimeSpent" value="276097000" />
   </component>
   <component name="TodoView" selected-index="3">
     <todo-panel id="selected-file">
@@ -1324,7 +1352,6 @@
     <option name="myTodoPanelSettings">
       <TodoPanelSettings />
     </option>
-    <MESSAGE value="- look and feel&#10;- Entity uri is displayed at the top&#10;- error 301 changed to 303&#10;- format parameter is taken out from the links (as pointed out by cami&#10;last time)&#10;- rdf dump describes info stuff." />
     <MESSAGE value="work version for new dev machine ves-hx-4d" />
     <MESSAGE value="identifiers.org -&gt;redirects using profile&#10;info.identifiers.org -&gt; list choices&#10;running on ves-hx-4d" />
     <MESSAGE value="fixed errors on&#10;identifiers.org -&gt;redirects using profile&#10;" />
@@ -1349,7 +1376,8 @@
     <MESSAGE value="Initial version of a prototype virtual SPARQL endpoint for URI schemes conversion." />
     <MESSAGE value="Added missing JUnit dependency." />
     <MESSAGE value="Proper order for URL mapping." />
-    <option name="LAST_COMMIT_MESSAGE" value="Proper order for URL mapping." />
+    <MESSAGE value="Moved (temporarily) code out from the service to the controller." />
+    <option name="LAST_COMMIT_MESSAGE" value="Moved (temporarily) code out from the service to the controller." />
     <option name="MAKE_NEW_CHANGELIST_ACTIVE" value="true" />
     <option name="FILE_HISTORY_SPLITTER_PROPORTION" value="0.579661" />
   </component>
@@ -1669,16 +1697,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/Store.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="0.103690684" vertical-offset="76" max-vertical-offset="645">
-          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
-          <folding>
-            <element signature="e#33#70#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/uk/ac/ebi/miriam/exception/ResolverErrorException.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.18453427" vertical-offset="0" max-vertical-offset="569">
@@ -1758,16 +1776,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/RdfSailConnection.groovy">
-      <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.9898477" vertical-offset="1125" max-vertical-offset="3870">
-          <caret line="36" column="28" selection-start-line="36" selection-start-column="28" selection-end-line="36" selection-end-column="28" />
-          <folding>
-            <element signature="e#32#78#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/SparqlUriConversion.groovy">
       <provider selected="true" editor-type-id="text-editor">
         <state vertical-scroll-proportion="0.0" vertical-offset="120" max-vertical-offset="1185">
@@ -1788,10 +1796,30 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/RdfSailConnection.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="343" max-vertical-offset="3870">
+          <caret line="36" column="11" selection-start-line="36" selection-start-column="11" selection-end-line="36" selection-end-column="11" />
+          <folding>
+            <element signature="e#32#78#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/grails-app/services/org/identifiers/sparql/Store.groovy">
+      <provider selected="true" editor-type-id="text-editor">
+        <state vertical-scroll-proportion="0.0" vertical-offset="0" max-vertical-offset="645">
+          <caret line="9" column="6" selection-start-line="9" selection-start-column="6" selection-end-line="9" selection-end-column="6" />
+          <folding>
+            <element signature="e#33#70#0" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/grails-app/controllers/uk/ac/ebi/miriam/resolver/UriConvertSparqlController.groovy">
       <provider selected="true" editor-type-id="text-editor">
-        <state vertical-scroll-proportion="-0.24324325" vertical-offset="810" max-vertical-offset="1425">
-          <caret line="45" column="6" selection-start-line="45" selection-start-column="6" selection-end-line="45" selection-end-column="6" />
+        <state vertical-scroll-proportion="0.14414415" vertical-offset="730" max-vertical-offset="1425">
+          <caret line="54" column="32" selection-start-line="54" selection-start-column="32" selection-end-line="54" selection-end-column="32" />
           <folding>
             <element signature="e#35#82#0" expanded="true" />
           </folding>
