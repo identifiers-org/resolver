@@ -29,10 +29,17 @@ import org.openrdf.sail.SailConnection;
 import org.openrdf.sail.SailException;
 import org.openrdf.sail.UnknownSailTransactionStateException;
 import org.openrdf.sail.UpdateContext;
+import org.openrdf.sail.Sail
+
 
 class RdfSailConnection implements SailConnection
 {
     private ValueFactory vf;   // final
+
+    public RdfSailConnection(Sail sail)
+    {
+        super(sail)
+    }
 
     public RdfSailConnection(ValueFactory vf)
     {
