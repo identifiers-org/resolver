@@ -28,7 +28,7 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20140518
+ * @version 20140520
  */
 class Resource
 {
@@ -56,7 +56,10 @@ class Resource
     Boolean primary
     /* Internet media type returned */
     //String mime = "application/xhtml+xml"   // TODO: this should not be hard coded!
-
+    /* whether the resource is an actual physical location or just the record of a URI scheme */
+    Boolean uriScheme
+    /* URI prefix for conversion purposes */
+    String convertPrefix
 
     // GORM: unidirectional many-to-one relationship
     static belongsTo = [dataCollection:DataCollection]
@@ -82,5 +85,7 @@ class Resource
         reliability fetch:"join"  // lazy:false
         
         version false   // no version column
+        uriScheme column:"urischeme"
+        convertPrefix column:"convertPrefix"
     }
 }

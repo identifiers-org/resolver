@@ -30,6 +30,17 @@ grails.project.dependency.resolution = {
 
         // runtime 'mysql:mysql-connector-java:5.1.13'
         runtime 'joda-time:joda-time:2.3'
+        runtime 'org.openrdf.sesame:sesame-query:2.7.10'
+        runtimt 'org.openrdf.sesame:sesame-runtime:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-queryalgebra-model:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-queryalgebra-evaluation:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-sail-memory:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-repository-sail:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-rio-turtle:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-queryresultio-text:2.7.10'
+        //runtime 'org.openrdf.sesame:sesame-http-workbench:2.7.10'
+        //runtime 'org.openrdf.sesame:sesame-http-server:2.7.10'
+        runtime 'org.openrdf.sesame:sesame-queryresultio-sparqljson:2.7.10'
     }
 
     plugins {
