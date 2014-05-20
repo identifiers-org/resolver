@@ -28,7 +28,7 @@ class Store extends SailBase
 
     @Override
     protected SailConnection getConnectionInternal() throws SailException {
-
+        return new RdfSailConnection(getValueFactory());
     }
 
     public void setValueFactory(ValueFactory vf) {
