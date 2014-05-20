@@ -53,7 +53,13 @@ class UrlMappings
             controller = "redirect"
             action = "external"
         }
-        
+
+        // virtual SPARQL endpoint for URI schemes conversion
+        "/sparql" {
+            controller = "uriConvertSparql"
+            action = "index"
+        }
+
         // access to a data collection
         "/$dataCollection" {
             controller = "uriRecord"
@@ -70,12 +76,6 @@ class UrlMappings
         "/doi/$entity**" {
 	        controller = "uriRecord"
 	        action = "doiResolve"
-        }
-
-        // virtual SPARQL endpoint for URI schemes conversion
-        "/sparql" {
-            controller = "uriConvertSparql"
-            action = "index"
         }
 
         // any other URLs
