@@ -92,6 +92,7 @@
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-repository-sparql/jars/sesame-repository-sparql-2.7.10.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryalgebra-evaluation/jars/sesame-queryalgebra-evaluation-2.7.10.jar!/" />
           <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryalgebra-model/jars/sesame-queryalgebra-model-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit/jars/junit-4.8.1.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
