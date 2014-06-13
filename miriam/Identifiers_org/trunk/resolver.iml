@@ -71,50 +71,55 @@
       <library name="Grails User Library (resolver)">
         <CLASSES>
           <root url="file://$MODULE_DIR$/lib" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/joda-time/joda-time/jars/joda-time-2.3.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/javax.servlet/jstl/jars/jstl-1.1.2.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/jars/tomcat-embed-logging-juli-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-annotations-api/jars/tomcat-annotations-api-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina/jars/tomcat-catalina-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-api/jars/tomcat-api-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-util/jars/tomcat-util-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-coyote/jars/tomcat-coyote-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/jars/tomcat-catalina-ant-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-rio-api/jars/sesame-rio-api-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-util/jars/sesame-util-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-model/jars/sesame-model-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-query/jars/sesame-query-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/com.fasterxml.jackson.core/jackson-core/jars/jackson-core-2.2.1.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryresultio-sparqljson/jars/sesame-queryresultio-sparqljson-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/net.sf.opencsv/opencsv/jars/opencsv-2.0.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryresultio-text/jars/sesame-queryresultio-text-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-rio-turtle/jars/sesame-rio-turtle-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-repository-sail/jars/sesame-repository-sail-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryparser-serql/jars/sesame-queryparser-serql-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-sail-inferencer/jars/sesame-sail-inferencer-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-sail-api/jars/sesame-sail-api-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-sail-memory/jars/sesame-sail-memory-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryresultio-sparqlxml/jars/sesame-queryresultio-sparqlxml-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryparser-sparql/jars/sesame-queryparser-sparql-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryparser-api/jars/sesame-queryparser-api-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-rio-languages/jars/sesame-rio-languages-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-rio-datatypes/jars/sesame-rio-datatypes-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryresultio-api/jars/sesame-queryresultio-api-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/commons-io/commons-io/jars/commons-io-2.4.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-rio-ntriples/jars/sesame-rio-ntriples-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-http-protocol/jars/sesame-http-protocol-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-http-client/jars/sesame-http-client-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-repository-api/jars/sesame-repository-api-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-repository-sparql/jars/sesame-repository-sparql-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryalgebra-evaluation/jars/sesame-queryalgebra-evaluation-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/org.openrdf.sesame/sesame-queryalgebra-model/jars/sesame-queryalgebra-model-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME$/.grails/ivy-cache/junit/junit/jars/junit-4.8.1.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/javax.servlet/jstl/jars/jstl-1.1.2.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/joda-time/joda-time/jars/joda-time-2.3.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-jasper/jars/tomcat-embed-jasper-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-juli/jars/tomcat-embed-logging-juli-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-catalina-ant/jars/tomcat-catalina-ant-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.eclipse.jdt.core.compiler/ecj/jars/ecj-3.7.2.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-logging-log4j/jars/tomcat-embed-logging-log4j-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat.embed/tomcat-embed-core/jars/tomcat-embed-core-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-annotations-api/jars/tomcat-annotations-api-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-catalina/jars/tomcat-catalina-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-servlet-api/jars/tomcat-servlet-api-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-api/jars/tomcat-api-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-util/jars/tomcat-util-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-coyote/jars/tomcat-coyote-7.0.42.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.2.4.zip!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/functional-test/zips/functional-test-1.2.7.zip!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/resources/zips/resources-1.0.zip!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.6.1.1.zip!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/junit/junit/jars/junit-4.8.1.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/com.fasterxml.jackson.core/jackson-core/jars/jackson-core-2.2.1.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryresultio-sparqljson/jars/sesame-queryresultio-sparqljson-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/net.sf.opencsv/opencsv/jars/opencsv-2.0.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryresultio-text/jars/sesame-queryresultio-text-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-rio-turtle/jars/sesame-rio-turtle-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-repository-sail/jars/sesame-repository-sail-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryparser-serql/jars/sesame-queryparser-serql-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-sail-inferencer/jars/sesame-sail-inferencer-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-sail-api/jars/sesame-sail-api-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-sail-memory/jars/sesame-sail-memory-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryresultio-sparqlxml/jars/sesame-queryresultio-sparqlxml-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryparser-sparql/jars/sesame-queryparser-sparql-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryparser-api/jars/sesame-queryparser-api-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-rio-languages/jars/sesame-rio-languages-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-rio-datatypes/jars/sesame-rio-datatypes-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryresultio-api/jars/sesame-queryresultio-api-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/commons-io/commons-io/jars/commons-io-2.4.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-rio-ntriples/jars/sesame-rio-ntriples-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-http-protocol/jars/sesame-http-protocol-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-http-client/jars/sesame-http-client-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-repository-api/jars/sesame-repository-api-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-repository-sparql/jars/sesame-repository-sparql-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryalgebra-evaluation/jars/sesame-queryalgebra-evaluation-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryalgebra-model/jars/sesame-queryalgebra-model-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-rio-api/jars/sesame-rio-api-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-util/jars/sesame-util-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-model/jars/sesame-model-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-query/jars/sesame-query-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.2.4.zip!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />
@@ -123,7 +128,6 @@
     </orderEntry>
     <orderEntry type="library" name="grails-2.2.4" level="application" />
     <orderEntry type="module" module-name="resolver-grailsPlugins" />
-    <orderEntry type="library" name="grails-2.2.4" level="application" />
   </component>
 </module>
 

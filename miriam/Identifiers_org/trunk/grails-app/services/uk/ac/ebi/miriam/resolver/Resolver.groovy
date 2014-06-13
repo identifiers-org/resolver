@@ -109,7 +109,7 @@ class Resolver
                 def tempResources = []
                 dataRecord.resources.each {
                     // we only consider non obsolete resources
-                    if (! it.obsolete)
+                    if (! it.obsolete && it.isAResource)
                     {
                         ResourceRecord tempRes = new ResourceRecord()
                         tempRes.id = it.id
@@ -133,7 +133,10 @@ class Resolver
                         }
                         //TODO: tempRes.license =   // link towards a license or some terms of use
                         def tempUrls = []
-                        tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, "application/xhtml+xml")
+                        tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, "HTML")
+                        it.format.each {
+                            tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, it.mimeType.displaytext)
+                        }
                         tempRes.urls = tempUrls
                         tempResources << tempRes
                     }
