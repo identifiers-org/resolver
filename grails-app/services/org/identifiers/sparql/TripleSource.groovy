@@ -20,14 +20,16 @@ import org.openrdf.query.QueryEvaluationException
 import org.openrdf.query.algebra.evaluation.TripleSource
 
 
-class TripleSource
+class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
 {
     private static final String SAME_AS_QUERY = """SELECT convertPrefix, obsolete, (SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? LIMIT 1 ORDER BY size(convertPrefix)) AS original_prefix FROM mir_resource WHERE urischeme =1 AND ptr_datatype = (SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE ?)"""
     private ValueFactory vf;   // final
+    private DataSource dataSource;
 
-    public TripleSource(ValueFactory value)
+    public TripleSource(ValueFactory value, DataSource dataSource)
     {
         vf = value;
+        this.dataSource = dataSource;
     }
 
     @Override
@@ -148,7 +150,7 @@ class TripleSource
      * @param dataSource database connection
      * @return
      */
-    public List<URIextended> getSameAsURIs(String uri, DataSource dataSource)
+    public List<URIextended> getSameAsURIs(String uri)
     {
         List<URIextended> urls = new ArrayList<URIextended>();
         final String uriTobe = uri.substring(0, uri.lastIndexOf("/") + 1) + '%';

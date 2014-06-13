@@ -2,8 +2,9 @@ package org.identifiers.sparql
 
 import info.aduna.iteration.CloseableIteration;
 import info.aduna.iteration.CloseableIteratorIteration;
-import info.aduna.iteration.EmptyIteration;
+import info.aduna.iteration.EmptyIteration
 
+import javax.sql.DataSource;
 import java.util.Arrays;
 import java.util.Iterator;
 
@@ -35,10 +36,13 @@ import org.openrdf.sail.Sail
 class RdfSailConnection implements SailConnection
 {
     private ValueFactory vf;   // final
+    private DataSource dataSource;
 
-    public RdfSailConnection(Sail sail)
+    public RdfSailConnection(ValueFactory vf, DataSource dataSource)
     {
-        super(sail)
+        super()
+        this.vf = vf
+        this.dataSource = dataSource;
     }
 
     public RdfSailConnection(ValueFactory vf)
@@ -63,7 +67,7 @@ class RdfSailConnection implements SailConnection
             boolean includeInferred) throws SailException {
         try {
 
-            TripleSource tripleSource = new TripleSource(vf);
+            TripleSource tripleSource = new TripleSource(vf,dataSource);
             EvaluationStrategy strategy = new EvaluationStrategyImpl(tripleSource);
             tupleExpr = tupleExpr.clone();
             new BindingAssigner().optimize(tupleExpr, dataset, bindings);
@@ -88,7 +92,7 @@ class RdfSailConnection implements SailConnection
 
         final CloseableIteration<StatementImpl, QueryEvaluationException> bedFileFilterReader;
         try {
-            bedFileFilterReader = new TripleSource(vf).getStatements(subj, pred, obj, contexts);
+            bedFileFilterReader = new TripleSource(vf,dataSource).getStatements(subj, pred, obj, contexts);
         } catch (QueryEvaluationException e1) {
             throw new SailException(e1);
         }
