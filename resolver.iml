@@ -86,10 +86,6 @@
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-util/jars/tomcat-util-7.0.42.jar!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-juli/jars/tomcat-juli-7.0.42.jar!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.apache.tomcat/tomcat-coyote/jars/tomcat-coyote-7.0.42.jar!/" />
-          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/hibernate/zips/hibernate-2.2.4.zip!/" />
-          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/functional-test/zips/functional-test-1.2.7.zip!/" />
-          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/resources/zips/resources-1.0.zip!/" />
-          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/jquery/zips/jquery-1.6.1.1.zip!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/junit/junit/jars/junit-4.8.1.jar!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/com.fasterxml.jackson.core/jackson-core/jars/jackson-core-2.2.1.jar!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryresultio-sparqljson/jars/sesame-queryresultio-sparqljson-2.7.10.jar!/" />
@@ -119,7 +115,8 @@
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-util/jars/sesame-util-2.7.10.jar!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-model/jars/sesame-model-2.7.10.jar!/" />
           <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-query/jars/sesame-query-2.7.10.jar!/" />
-          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.grails.plugins/tomcat/zips/tomcat-2.2.4.zip!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-rio-rdfxml/jars/sesame-rio-rdfxml-2.7.10.jar!/" />
+          <root url="jar://$USER_HOME_GRAILS$/ivy-cache/org.openrdf.sesame/sesame-queryresultio-binary/jars/sesame-queryresultio-binary-2.7.10.jar!/" />
         </CLASSES>
         <JAVADOC />
         <SOURCES />

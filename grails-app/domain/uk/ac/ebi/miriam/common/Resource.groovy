@@ -64,7 +64,7 @@ class Resource
     Boolean isAResource
 
     /*is the resource a uri scheme*/
-    Boolean isAUriScheme
+//    Boolean isAUriScheme
 
 
     // GORM: unidirectional many-to-one relationship
