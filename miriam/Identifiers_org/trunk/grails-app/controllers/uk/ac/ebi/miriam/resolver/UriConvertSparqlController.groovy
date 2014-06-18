@@ -1,5 +1,7 @@
 package uk.ac.ebi.miriam.resolver
 
+import org.codehaus.groovy.grails.web.json.JSONWriter
+import org.identifiers.sparql.QueryFormats
 import org.identifiers.sparql.RdfSailConnection
 import org.identifiers.sparql.Store
 import org.junit.Rule
@@ -8,15 +10,21 @@ import org.openrdf.model.impl.ValueFactoryImpl
 import org.openrdf.model.vocabulary.OWL
 import org.openrdf.query.BooleanQuery
 import org.openrdf.query.GraphQuery
+import org.openrdf.query.Query
 import org.openrdf.query.QueryLanguage
 import org.openrdf.query.TupleQuery
 import org.openrdf.query.TupleQueryResult
 import org.openrdf.query.resultio.BooleanQueryResultFormat
 import org.openrdf.query.resultio.BooleanQueryResultWriter
 import org.openrdf.query.resultio.QueryResultIO
+import org.openrdf.query.resultio.binary.BinaryQueryResultWriter
+import org.openrdf.query.resultio.sparqljson.SPARQLResultsJSONWriter
+import org.openrdf.query.resultio.sparqlxml.SPARQLResultsXMLParser
+import org.openrdf.query.resultio.sparqlxml.SPARQLResultsXMLWriter
 import org.openrdf.query.resultio.text.csv.SPARQLResultsCSVWriter
 import org.openrdf.repository.sail.SailRepository
 import org.openrdf.rio.RDFHandler
+import org.openrdf.rio.rdfxml.RDFXMLWriter
 import org.openrdf.rio.turtle.TurtleWriter
 
 //import org.identifiers.sparql.SparqlUriConversion
@@ -30,17 +38,13 @@ class UriConvertSparqlController
         // retrieves user query
         String query = params.query
 
-        if (null != query)
-        {
-            render(status:200, text:processSparqlQuery(query), contentType:"text/plain", encoding:"UTF-8")
+        if(query!=null){
+            processSparqlQuery(query);
         }
         else
         {
             render(status:200, text:"Identifiers.org URI schemes conversion virtual SPARQL endpoint", contentType:"text/plain", encoding:"UTF-8")
         }
-
-        // 'query' parameter
-        //render(status:200, text:ResponseRdf.generateResponse(record), contentType:"application/rdf+xml", encoding:"UTF-8")
     }
 
     /**
@@ -50,51 +54,81 @@ class UriConvertSparqlController
      * @param query
      * @return
      */
-    def processSparqlQuery(String query)
-    {
+    def processSparqlQuery(String query) {
         Store rep = new Store(dataSource);
-  //      TemporaryFolder folder = new TemporaryFolder();
-  //      File dataDir = folder.newFolder("data.dir");
         File dataDir = File.createTempFile("data.dir","");
- //       dataDir.delete();
         dataDir.mkdir();
         rep.setDataDir(dataDir);
         rep.setValueFactory(new ValueFactoryImpl());
         SailRepository sr = new SailRepository(rep);
         rep.initialize();
 
-//        String query1 = "PREFIX owl: <http://www.w3.org/2002/07/owl#> \n SELECT ?target WHERE {<http://www.ebi.ac.uk/QuickGO/GTerm?id=GO:0006915> owl:sameAs ?target}";
-//        System.out.println(query);
-        System.out.println(query);
-        TupleQuery pTQ = sr.getConnection().prepareTupleQuery(QueryLanguage.SPARQL, query);
-        TupleQueryResult eval = pTQ.evaluate();
-        /*
-        eval.each {
-            it.getBinding("target").getValue().toString().endsWith("0006915")
-        }
-        */
-        OutputStream outputStream = new ByteArrayOutputStream()
+        Query prepareQuery = sr.getConnection().prepareQuery(QueryLanguage.SPARQL, query);
 
-        //def writer = new StringWriter()
-        if (pTQ instanceof TupleQuery)
-        {
-            SPARQLResultsCSVWriter handler = new SPARQLResultsCSVWriter(outputStream);
-            ((TupleQuery) pTQ).evaluate(handler);
-        }
-        else if (pTQ instanceof GraphQuery)
-        {
-            RDFHandler createWriter = new TurtleWriter(outputStream);
-            ((GraphQuery) pTQ).evaluate(createWriter);
-        }
-        else if (pTQ instanceof BooleanQuery)
-        {
-            BooleanQueryResultWriter createWriter = QueryResultIO.createWriter(BooleanQueryResultFormat.TEXT, outputStream);
-            boolean evaluate = ((BooleanQuery) pTQ).evaluate();
-            createWriter.write(evaluate);
+/*        withFormat {
+            html{render(status:200, text:htmlOutput(pTQ), contentType:"application/sparql-result+text", encoding:"UTF-8")}
+            rdf{render(status:200, text:rdfOutput(pTQ), contentType:"application/sparql-result+xml", encoding:"UTF-8")}
+            json{render(status:200, text:jsonOutput(pTQ), contentType:"application/sparql-result+json", encoding:"UTF-8")}
+        }*/
+
+        String accessType = request.getHeader("Accept");
+        OutputStream output = new ByteArrayOutputStream();
+
+        if (prepareQuery instanceof TupleQuery) {
+            if(isNullOrEmpty(accessType)){
+                accessType = QueryFormats.SPARQL_RESULTS_XML.toString()
+            }
+            executeTupleQuery((TupleQuery) prepareQuery, accessType, output)
+        } else if (prepareQuery instanceof GraphQuery) {
+            if(isNullOrEmpty(accessType)){
+                accessType = QueryFormats.RDFXML.toString()
+            }
+            executeConstructQuery((GraphQuery) prepareQuery, accessType, output);
+        }  else if (prepareQuery instanceof BooleanQuery) {
+            if(isNullOrEmpty(accessType)){
+                accessType = QueryFormats.RDFXML.toString()
+            }
+            executeBooleanQuery((BooleanQuery) prepareQuery, accessType, output);
         }
 
         dataDir.delete()
 
-        return outputStream.toString()
     }
+
+    private void executeTupleQuery(TupleQuery prepareQuery, String accessType, OutputStream output){
+        if (accessType.equals(QueryFormats.SPARQL_RESULTS_JSON.toString())) {
+            prepareQuery.evaluate(new SPARQLResultsJSONWriter(output));
+        } else if (accessType.equals(QueryFormats.SPARQL_RESULTS_XML.toString())) {
+            prepareQuery.evaluate(new SPARQLResultsXMLWriter(output));
+        } else if (accessType.equals(QueryFormats.X_BINARY_RDF.toString())){
+            prepareQuery.evaluate(new BinaryQueryResultWriter(output) )
+        }
+        else {
+            prepareQuery.evaluate(new SPARQLResultsXMLWriter(output));
+        }
+        render(text:output, contentType: accessType, encoding:"UTF-8");
+    }
+    private void executeConstructQuery(GraphQuery prepareQuery, String accessType, OutputStream output){
+        if (accessType.equals(QueryFormats.NTRIPLES.toString())) {
+            prepareQuery.evaluate(new TurtleWriter(output));
+        }else  if (accessType.equals(QueryFormats.RDFXML.toString())) {
+            prepareQuery.evaluate(new RDFXMLWriter(output));
+        }else{
+            prepareQuery.evaluate(new RDFXMLWriter(output));
+        }
+        render(text:output, contentType: accessType, encoding:"UTF-8");
+    }
+
+    private void executeBooleanQuery(BooleanQuery prepareQuery, String accessType, OutputStream output) {
+        output.write(String.valueOf(prepareQuery.evaluate()).getBytes());
+        render(text:output, contentType: accessType, encoding:"UTF-8");
+    }
+
+    public static boolean isNullOrEmpty(Object o) {
+   		if (o == null) {
+   			return true;
+   		}
+   		return "".equals(o);
+   	}
+
 }

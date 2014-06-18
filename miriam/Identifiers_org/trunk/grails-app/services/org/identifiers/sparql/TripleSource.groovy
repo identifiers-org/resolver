@@ -22,7 +22,17 @@ import org.openrdf.query.algebra.evaluation.TripleSource
 
 class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
 {
-    private static final String SAME_AS_QUERY = """SELECT convertPrefix, obsolete, (SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? LIMIT 1 ORDER BY size(convertPrefix)) AS original_prefix FROM mir_resource WHERE urischeme =1 AND ptr_datatype = (SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE ?)"""
+//    private static final String SAME_AS_QUERY = """SELECT convertPrefix, obsolete, (SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? LIMIT 1 ORDER BY size(convertPrefix)) AS original_prefix FROM mir_resource WHERE urischeme =1 AND ptr_datatype = (SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE ?)"""
+    private static final String SAME_AS_QUERY = "SELECT convertPrefix, obsolete AS deprecated, " +
+            "(SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? UNION SELECT convertPrefix FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 ) AS original_prefix " +
+            "FROM mir_resource WHERE ptr_datatype = ( " +
+            "SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE ? UNION SELECT ptr_datatype FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 ) " +
+            "UNION " +
+            "SELECT convertPrefix, deprecated AS deprecated, " +
+            "(SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? UNION SELECT convertPrefix FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 ) AS original_prefix " +
+            "FROM mir_uri WHERE ptr_datatype = ( " +
+            "SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE  ? UNION SELECT ptr_datatype FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 )";
+
     private ValueFactory vf;   // final
     private DataSource dataSource;
 
@@ -156,11 +166,11 @@ class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
         final String uriTobe = uri.substring(0, uri.lastIndexOf("/") + 1) + '%';
 
         Sql sql = new Sql(dataSource)
-        def params = [uriTobe, uriTobe]
+        def params = [uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe]
         sql.eachRow(SAME_AS_QUERY, params) {
             String identifier = uri.substring(it.original_prefix.size())
             final String uri2 = it.convertPrefix + identifier
-            urls.add(new URIextended(uri2, it.obsolete))
+            urls.add(new URIextended(uri2, it.deprecated))
         }
 
         return urls;
