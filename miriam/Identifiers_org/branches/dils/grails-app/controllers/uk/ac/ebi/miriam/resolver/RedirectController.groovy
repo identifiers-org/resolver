@@ -49,4 +49,18 @@ class RedirectController
             forward(controller: "info", action: "intro")   // "request" does not work
         }
     }
+
+        // Redirects to sparql endpoint in dev
+    def sparql = {
+        def fullUri = request.forwardURI
+
+        if (fullUri.contains("/services/sparql"))
+        {
+            redirect(url: "http://dev.identifiers.org/services/sparql");   // 302 HTTP status code will be issued by default
+        }
+        else   // default: front page
+        {
+            forward(controller: "info", action: "intro")   // "request" does not work
+        }
+    }
 }
