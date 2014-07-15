@@ -29,11 +29,11 @@ Upgrade to newer Grails version
   grails clean
   grails upgrade
 
-Generate war for use in testing use (available at: http://dev.identifiers.org)
-  grails -Dgrails.env=development war
+Generate war for use in production (at the EBI)
+  grails prod war
 
-Generate war for production use (in London Data Centres)
-  grails -Dgrails.env=production war
+Generate war for use in London Data Centres
+  grails -Dgrails.env=ldc war
 
 Grails docs
   http://grails.org/doc/2.1.0/

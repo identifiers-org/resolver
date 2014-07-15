@@ -109,7 +109,7 @@ class Resolver
                 def tempResources = []
                 dataRecord.resources.each {
                     // we only consider non obsolete resources
-                    if (! it.obsolete && it.isAResource)
+                    if (! it.obsolete)
                     {
                         ResourceRecord tempRes = new ResourceRecord()
                         tempRes.id = it.id
@@ -133,10 +133,7 @@ class Resolver
                         }
                         //TODO: tempRes.license =   // link towards a license or some terms of use
                         def tempUrls = []
-                        tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, "HTML")
-                        it.format.each {
-                            tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, it.mimeType.displaytext)
-                        }
+                        tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, "application/xhtml+xml")
                         tempRes.urls = tempUrls
                         tempResources << tempRes
                     }
@@ -162,7 +159,7 @@ class Resolver
     }
 
 
-    public static def DataCollection retrieveCollectionUriRecord(String url, String dataCollection) throws NotExistingDataCollectionException, ResolverErrorException
+    public static def DataCollection retrievePartialUriRecord(String url, String dataCollection) throws NotExistingDataCollectionException, ResolverErrorException
     {
         DataCollection data = null
 

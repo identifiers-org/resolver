@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.common
  * <dl>
  * <dt><b>Copyright:</b></dt>
  * <dd>
- * Copyright (C) 2006-2014  BioModels.net (EMBL - European Bioinformatics Institute)
+ * Copyright (C) 2006-2013  BioModels.net (EMBL - European Bioinformatics Institute)
  * <br />
  * This program is free software; you can redistribute it and/or
  * modify it under the terms of the GNU General Public License
@@ -27,7 +27,7 @@ package uk.ac.ebi.miriam.common
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20140519
+ * @version 20130425
  */
 class ResourceRecord
 {
@@ -44,26 +44,4 @@ class ResourceRecord
     /* link towards a license or some terms of use */
     String license
     UrlRecord[] urls
-
-
-    /* Returns a human readable value for the state (up, down, unknown, ...) of a resource */
-    String stateStr()
-    {
-        String str = null
-
-        if (null != state)
-        {
-            str = Constants.states.get(state);
-            if (null == str)
-            {
-                str = "unknown"
-            }
-        }
-        else
-        {
-            str = "unknown"
-        }
-
-        return str
-    }
 }

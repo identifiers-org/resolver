@@ -53,17 +53,11 @@ class UrlMappings
             controller = "redirect"
             action = "external"
         }
-
-        // virtual SPARQL endpoint for URI schemes conversion
-        "/sparql" {
-            controller = "uriConvertSparql"
-            action = "index"
-        }
-
+        
         // access to a data collection
         "/$dataCollection" {
             controller = "uriRecord"
-	        action = "resolveCollectionUrl"
+	        action = "resolvePartialUrl"
         }
 
         // any proper MIRIAM URL
