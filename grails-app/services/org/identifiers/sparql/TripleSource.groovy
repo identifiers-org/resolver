@@ -23,7 +23,13 @@ import org.openrdf.query.algebra.evaluation.TripleSource
 class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
 {
 //    private static final String SAME_AS_QUERY = """SELECT convertPrefix, obsolete, (SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? LIMIT 1 ORDER BY size(convertPrefix)) AS original_prefix FROM mir_resource WHERE urischeme =1 AND ptr_datatype = (SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE ?)"""
-    private static final String SAME_AS_QUERY = "SELECT convertPrefix, obsolete AS deprecated, " +
+    private static final String CONVERT_PREFIX = "SELECT convertPrefix FROM mir_resource " +
+            "WHERE convertPrefix LIKE ? " +
+            "UNION SELECT convertPrefix FROM mir_uri " +
+            "WHERE convertPrefix LIKE  ? " +
+            "LIMIT 1";
+
+    private static final String SAME_AS_QUERY_CONPREFIX = "SELECT convertPrefix, obsolete AS deprecated, " +
             "(SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? UNION SELECT convertPrefix FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 ) AS original_prefix " +
             "FROM mir_resource WHERE ptr_datatype = ( " +
             "SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE ? UNION SELECT ptr_datatype FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 ) " +
@@ -32,6 +38,16 @@ class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
             "(SELECT convertPrefix FROM mir_resource WHERE convertPrefix LIKE ? UNION SELECT convertPrefix FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 ) AS original_prefix " +
             "FROM mir_uri WHERE ptr_datatype = ( " +
             "SELECT ptr_datatype FROM mir_resource WHERE convertPrefix LIKE  ? UNION SELECT ptr_datatype FROM mir_uri WHERE convertPrefix LIKE ? LIMIT 1 )";
+
+    private static final String SAME_AS_QUERY_URLPREFIX = "SELECT url_element_prefix AS convertPrefix, obsolete AS deprecated, " +
+            "(SELECT url_element_prefix AS convertPrefix FROM mir_resource WHERE url_element_prefix LIKE ? UNION SELECT uri AS convertPrefix FROM mir_uri WHERE uri LIKE ? LIMIT 1 ) AS original_prefix " +
+            "FROM mir_resource WHERE ptr_datatype = ( " +
+            "SELECT ptr_datatype FROM mir_resource WHERE url_element_prefix LIKE ? UNION SELECT ptr_datatype FROM mir_uri WHERE uri LIKE ? LIMIT 1 ) " +
+            "UNION " +
+            "SELECT uri AS convertPrefix, deprecated AS deprecated, " +
+            "(SELECT url_element_prefix AS convertPrefix FROM mir_resource WHERE url_element_prefix LIKE ? UNION SELECT uri AS convertPrefix FROM mir_uri WHERE uri LIKE ? LIMIT 1 ) AS original_prefix " +
+            "FROM mir_uri WHERE ptr_datatype = ( " +
+            "SELECT ptr_datatype FROM mir_resource WHERE url_element_prefix LIKE ? UNION SELECT ptr_datatype FROM mir_uri WHERE uri LIKE ? LIMIT 1) ";
 
     private ValueFactory vf;   // final
     private DataSource dataSource;
@@ -166,10 +182,25 @@ class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
         final String uriTobe = uri.substring(0, uri.lastIndexOf("/") + 1) + '%';
 
         Sql sql = new Sql(dataSource)
-        def params = [uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe]
-        sql.eachRow(SAME_AS_QUERY, params) {
+        String query;
+        String urn_separater= "";
+
+        def params = [uriTobe,uriTobe]
+        //check whether uriTobe exists in convert prefix
+        if(sql.rows(CONVERT_PREFIX,params).size()!=0){
+            query = SAME_AS_QUERY_CONPREFIX;
+        }else{
+            query = SAME_AS_QUERY_URLPREFIX;
+            urn_separater = ":";
+        }
+        params = [uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe, uriTobe]
+        sql.eachRow(query, params) {
             String identifier = uri.substring(it.original_prefix.size())
-            final String uri2 = it.convertPrefix + identifier
+            String uri2 = it.convertPrefix;
+            if(!uri2.startsWith("http"))
+                uri2 = uri2 + urn_separater + identifier
+            else
+                uri2 = uri2 + identifier
             urls.add(new URIextended(uri2, it.deprecated))
         }
 

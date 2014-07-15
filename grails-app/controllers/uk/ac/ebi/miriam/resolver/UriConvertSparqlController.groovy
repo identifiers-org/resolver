@@ -1,29 +1,18 @@
 package uk.ac.ebi.miriam.resolver
 
-import org.codehaus.groovy.grails.web.json.JSONWriter
 import org.identifiers.sparql.QueryFormats
-import org.identifiers.sparql.RdfSailConnection
 import org.identifiers.sparql.Store
-import org.junit.Rule
-import org.junit.rules.TemporaryFolder
 import org.openrdf.model.impl.ValueFactoryImpl
-import org.openrdf.model.vocabulary.OWL
-import org.openrdf.query.BooleanQuery
-import org.openrdf.query.GraphQuery
-import org.openrdf.query.Query
-import org.openrdf.query.QueryLanguage
-import org.openrdf.query.TupleQuery
-import org.openrdf.query.TupleQueryResult
+import org.openrdf.query.*
 import org.openrdf.query.resultio.BooleanQueryResultFormat
 import org.openrdf.query.resultio.BooleanQueryResultWriter
 import org.openrdf.query.resultio.QueryResultIO
 import org.openrdf.query.resultio.binary.BinaryQueryResultWriter
+import org.openrdf.query.resultio.sparqljson.SPARQLBooleanJSONWriter
 import org.openrdf.query.resultio.sparqljson.SPARQLResultsJSONWriter
-import org.openrdf.query.resultio.sparqlxml.SPARQLResultsXMLParser
+import org.openrdf.query.resultio.sparqlxml.SPARQLBooleanXMLWriter
 import org.openrdf.query.resultio.sparqlxml.SPARQLResultsXMLWriter
-import org.openrdf.query.resultio.text.csv.SPARQLResultsCSVWriter
 import org.openrdf.repository.sail.SailRepository
-import org.openrdf.rio.RDFHandler
 import org.openrdf.rio.rdfxml.RDFXMLWriter
 import org.openrdf.rio.turtle.TurtleWriter
 
@@ -43,7 +32,8 @@ class UriConvertSparqlController
         }
         else
         {
-            render(status:200, text:"Identifiers.org URI schemes conversion virtual SPARQL endpoint", contentType:"text/plain", encoding:"UTF-8")
+            redirect(url: "http://dev.identifiers.org/services/sparql")
+        //    render(status:200, text:"Identifiers.org URI schemes conversion virtual SPARQL endpoint", contentType:"text/plain", encoding:"UTF-8")
         }
     }
 
@@ -64,12 +54,6 @@ class UriConvertSparqlController
         rep.initialize();
 
         Query prepareQuery = sr.getConnection().prepareQuery(QueryLanguage.SPARQL, query);
-
-/*        withFormat {
-            html{render(status:200, text:htmlOutput(pTQ), contentType:"application/sparql-result+text", encoding:"UTF-8")}
-            rdf{render(status:200, text:rdfOutput(pTQ), contentType:"application/sparql-result+xml", encoding:"UTF-8")}
-            json{render(status:200, text:jsonOutput(pTQ), contentType:"application/sparql-result+json", encoding:"UTF-8")}
-        }*/
 
         String accessType = request.getHeader("Accept");
         OutputStream output = new ByteArrayOutputStream();
@@ -98,8 +82,6 @@ class UriConvertSparqlController
     private void executeTupleQuery(TupleQuery prepareQuery, String accessType, OutputStream output){
         if (accessType.equals(QueryFormats.SPARQL_RESULTS_JSON.toString())) {
             prepareQuery.evaluate(new SPARQLResultsJSONWriter(output));
-        } else if (accessType.equals(QueryFormats.SPARQL_RESULTS_XML.toString())) {
-            prepareQuery.evaluate(new SPARQLResultsXMLWriter(output));
         } else if (accessType.equals(QueryFormats.X_BINARY_RDF.toString())){
             prepareQuery.evaluate(new BinaryQueryResultWriter(output) )
         }
@@ -111,8 +93,6 @@ class UriConvertSparqlController
     private void executeConstructQuery(GraphQuery prepareQuery, String accessType, OutputStream output){
         if (accessType.equals(QueryFormats.NTRIPLES.toString())) {
             prepareQuery.evaluate(new TurtleWriter(output));
-        }else  if (accessType.equals(QueryFormats.RDFXML.toString())) {
-            prepareQuery.evaluate(new RDFXMLWriter(output));
         }else{
             prepareQuery.evaluate(new RDFXMLWriter(output));
         }
@@ -120,7 +100,21 @@ class UriConvertSparqlController
     }
 
     private void executeBooleanQuery(BooleanQuery prepareQuery, String accessType, OutputStream output) {
-        output.write(String.valueOf(prepareQuery.evaluate()).getBytes());
+        //output.write(String.valueOf(prepareQuery.evaluate()).getBytes());
+        if (accessType.equals(QueryFormats.JSON.toString())) {
+            SPARQLBooleanJSONWriter booleanJSONWriter = new SPARQLBooleanJSONWriter(output)
+            booleanJSONWriter.write(prepareQuery.evaluate())
+        }else if (accessType.equals(QueryFormats.SPARQL_RESULTS_XML.toString())) {
+            BooleanQueryResultWriter booleanQueryResultWriter = QueryResultIO.createWriter(BooleanQueryResultFormat.SPARQL,output)
+            booleanQueryResultWriter.write(prepareQuery.evaluate());
+        }else if (accessType.equals(QueryFormats.SPARQL_RESULTS_JSON.toString())) {
+            BooleanQueryResultWriter booleanQueryResultWriter = QueryResultIO.createWriter(BooleanQueryResultFormat.JSON,output)
+            booleanQueryResultWriter.write(prepareQuery.evaluate());
+        }
+        else{
+            SPARQLBooleanXMLWriter booleanXMLWriter = new SPARQLBooleanXMLWriter(output)
+            booleanXMLWriter.write(prepareQuery.evaluate())
+        }
         render(text:output, contentType: accessType, encoding:"UTF-8");
     }
 
