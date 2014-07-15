@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Context displayName="Identifiers.org" docBase="/ebi/www/deploy-live/tc-compneur-main/ROOT.war">
+    <Resource name="mail/Session" type="javax.mail.Session" auth="Container" />
+    <ResourceParams name="mail/Session">
+        <parameter>
+            <name>mail.smtp.host</name>
+            <value>localhost</value>
+        </parameter>
+    </ResourceParams>
+    
+</Context>
