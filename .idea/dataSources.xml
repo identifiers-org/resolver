@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="DataSourceManagerImpl" format="xml" hash="2745391769">
+    <data-source source="LOCAL" name="resolver dev" uuid="182fec6a-791b-4d89-869a-2508ad46e79d">
+      <driver-ref>mysql</driver-ref>
+      <jdbc-driver>com.mysql.jdbc.Driver</jdbc-driver>
+      <jdbc-url>jdbc:mysql://mysql-compneur-test:4344/miriam-demo</jdbc-url>
+      <user-name>miriamdb</user-name>
+      <user-password>dfc3dfcedfcfdfc4dfdedfc3dfccdfc3dfcfdfd8dfd9df84dfc5dfd8dfcddff5dfcedfc8</user-password>
+      <libraries>
+        <library>
+          <url>file://$PROJECT_DIR$/lib/mysql-connector-java-5.1.16-bin.jar</url>
+        </library>
+      </libraries>
+    </data-source>
+  </component>
+</project>
+

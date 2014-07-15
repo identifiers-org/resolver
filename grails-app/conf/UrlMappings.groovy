@@ -53,6 +53,11 @@ class UrlMappings
             controller = "redirect"
             action = "external"
         }
+
+        "/services/sparql" {
+            controller = "redirect"
+            action = "sparql"
+        }
         
         // access to a data collection
         "/$dataCollection" {
