@@ -102,7 +102,7 @@
 
       <div class="grid_12 alpha" id="local-title">
         %{--<h1><a href="[service-url]" title="Back to [service-name] homepage">[service-name]</a></h1>--}%
-        <h1><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+        <h1 class="icon icon-generic" data-icon="&gt;"><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
       </div>
 
       <!-- /local-title -->
@@ -140,6 +140,7 @@
           <li class="first"><g:link controller="info" action="intro" title="Identifiers.org">Home</g:link></li>
           <li><g:link controller="info" action="documentation" title="Documentation">Documentation</g:link>
           <li><a href="http://identifiers.org/registry/" title="MIRIAM Registry">Registry</a></li>
+          <li><a href="services/sparql" title="Services">Services</a></li>
           <li class="last"><g:link controller="info" action="about" title="About">About</g:link></li>
           <!-- If you need to include functional (as opposed to purely navigational) links in your local menu,
                add them here, and give them a class of "functional". Remember: you'll need a class of "last" for
