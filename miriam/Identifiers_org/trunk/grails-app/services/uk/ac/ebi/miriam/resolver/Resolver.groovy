@@ -109,7 +109,7 @@ class Resolver
                 def tempResources = []
                 dataRecord.resources.each {
                     // we only consider non obsolete resources
-                    if (! it.obsolete && it.isAResource)
+                    if (! it.obsolete)
                     {
                         ResourceRecord tempRes = new ResourceRecord()
                         tempRes.id = it.id
@@ -253,8 +253,10 @@ class Resolver
 
             //filter running resources
             data.resources.each {
-                if(it.reliability.state==1 && !it.obsolete){
-                    runningResources.add(it);
+                if(it.reliability != null) {
+                    if (it.reliability.state == 1 && !it.obsolete) {
+                        runningResources.add(it);
+                    }
                 }
             }
 

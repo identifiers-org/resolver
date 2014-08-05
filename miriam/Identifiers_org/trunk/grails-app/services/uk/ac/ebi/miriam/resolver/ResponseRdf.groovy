@@ -108,10 +108,10 @@ class ResponseRdf
                 'sio:SIO_000671'() {   // has identifier
                     'edam:data_2091'() {   // Accession
                         'sio:SIO_000300'(record.entityId)   // has value
-                        'rdf:type'('rdf:resource':"http://idtype.identifiers.org/$record.namespace")
+                        'rdf:type'('rdf:resource':"http://idtype.identifiers.org/$record.namespace/")
                     }
                 }
-                'rdf:type'('rdf:about':"$resolver_url_root/$record.namespace")
+                'rdf:type'('rdf:about':"$resolver_url_root/$record.namespace/")
                 mkp.comment("data collection")
                 'dcterms:source'('rdf:resource':"$resolver_url_root/miriam.collection/$record.dataCollection.id")
                 mkp.comment("physical locations (resources)")
@@ -190,13 +190,26 @@ class ResponseRdf
     {
         String resolver_url_root = Holders.getGrailsApplication().config.grails.serverURL;
 
+        if(url.endsWith(".rdf")){
+            url = url.substring(0,url.lastIndexOf(".rdf"))
+        }
+
         // Groovy way
         def writer = new StringWriter()
         writer.append("""<?xml version="1.0" encoding="utf-8"?>\n""")
 
         def rdf = new MarkupBuilder(writer)
 
-        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#", 'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#", 'xmlns:dcterms':"http://purl.org/dc/terms/", 'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#", 'xmlns:doap':"http://usefulinc.com/ns/doap#", 'xmlns:sio':"http://semanticscience.org/resource/", 'xmlns:edam':"http://identifiers.org/edam/", 'xmlns:dcat':"http://www.w3.org/ns/dcat#", 'xmlns:void':"http://rdfs.org/ns/void#", 'xmlns:idot':"http://identifiers.org/idot/") {
+        rdf.'rdf:RDF'('xmlns:rdf':"http://www.w3.org/1999/02/22-rdf-syntax-ns#",
+                'xmlns:rdfs':"http://www.w3.org/2000/01/rdf-schema#",
+                'xmlns:dcterms':"http://purl.org/dc/terms/",
+                'xmlns:vcard':"http://www.w3.org/2006/vcard/ns#",
+                'xmlns:doap':"http://usefulinc.com/ns/doap#",
+                'xmlns:sio':"http://semanticscience.org/resource/",
+                'xmlns:edam':"http://identifiers.org/edam/",
+                'xmlns:dcat':"http://www.w3.org/ns/dcat#",
+                'xmlns:void':"http://rdfs.org/ns/void#",
+                'xmlns:idot':"http://identifiers.org/idot/") {
             'dcat:CatalogRecord'('rdf:about': url) {
                 'dcat:identifier'(collection.id)
                 'idot:namespace'(collection.namespace())
@@ -216,12 +229,13 @@ class ResponseRdf
                 }
                 */
                 /* physical locations (resources) */
-                'dcat:distribution' {
+
                     collection.resources.each { res ->
                         mkp.comment("information about resource $res.id")
+                        'dcat:distribution' {
                         'dcat:Distribution'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id + "#application/xhtml+xml") {
-                            'rdf:Description'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id) {
-                                'dcterms:publisher' {
+                            'dcterms:publisher' {
+                                'rdf:Description'('rdf:about': resolver_url_root + "/miriam.resource/" + res.id) {
                                     'dcterms:title'(res.info)
                                     'vcard:organisation-name'(res.institution)
                                     if (null != res.location) {

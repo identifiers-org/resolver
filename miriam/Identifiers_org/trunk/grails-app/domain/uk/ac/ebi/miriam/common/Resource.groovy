@@ -56,16 +56,8 @@ class Resource
     Boolean primary
     /* Internet media type returned */
     //String mime = "application/xhtml+xml"   // TODO: this should not be hard coded!
-    /* whether the resource is an actual physical location or just the record of a URI scheme */
-    Boolean uriScheme
     /* URI prefix for conversion purposes */
     String convertPrefix
-    /*is the resource a proper resolvable resource*/
-    Boolean isAResource
-
-    /*is the resource a uri scheme*/
-//    Boolean isAUriScheme
-
 
     // GORM: unidirectional many-to-one relationship
     static belongsTo = [dataCollection:DataCollection]
@@ -88,7 +80,7 @@ class Resource
         obsolete column:"obsolete"
         deniesFrame column:"frame_deny"
         primary column:"official"
-        isAResource column:"resource"
+//        isAResource column:"resource"
 //        isAUriScheme column:"urischeme"
 
         dataCollection column:"ptr_datatype", type:"string"   // foreign key
@@ -96,7 +88,7 @@ class Resource
         format fetch:"join"
         
         version false   // no version column
-        uriScheme column:"urischeme"
+//        uriScheme column:"urischeme"
         convertPrefix column:"convertPrefix"
     }
 }
