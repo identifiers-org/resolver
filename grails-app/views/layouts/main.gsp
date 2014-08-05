@@ -102,7 +102,11 @@
 
       <div class="grid_12 alpha" id="local-title">
         %{--<h1><a href="[service-url]" title="Back to [service-name] homepage">[service-name]</a></h1>--}%
-        <h1 class="icon icon-generic" data-icon="&gt;"><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+        <!-- identifiers.org beta banner-->
+        <!--         <h1 class="icon icon-generic" data-icon="&gt;"><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+         -->
+        <h1><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+
       </div>
 
       <!-- /local-title -->

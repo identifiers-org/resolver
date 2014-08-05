@@ -179,7 +179,15 @@ class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
     public List<URIextended> getSameAsURIs(String uri)
     {
         List<URIextended> urls = new ArrayList<URIextended>();
-        final String uriTobe = uri.substring(0, uri.lastIndexOf("/") + 1) + '%';
+
+        String uriTobe;
+        if(uri.startsWith("http")) {
+            uriTobe =uri.substring(0, uri.lastIndexOf("/") + 1) + '%';
+        }else if (uri.lastIndexOf(":")!= -1){
+            uriTobe =uri.substring(0, uri.lastIndexOf(":") + 1) + '%';
+        }else{
+            return urls;
+        }
 
         Sql sql = new Sql(dataSource)
         String query;

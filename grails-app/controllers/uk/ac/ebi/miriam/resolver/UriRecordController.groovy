@@ -220,6 +220,14 @@ class UriRecordController
      * Resolves data collection URLs.
      */
     def resolveCollectionUrl = {
+
+        //url with trailing slash is redirected by removing it
+        String url = (String) request.request.requestURL;
+        if (url.endsWith("/")) {
+            url = url.substring(0, url.lastIndexOf("/"))
+            redirect(url: url);
+            return;
+        }
         resolveCollectionUrlProcess((String) request.request.requestURL, params.dataCollection)
     }
     
@@ -251,6 +259,15 @@ class UriRecordController
             forward(controller:"error", action:"internalServerError", params:[url:request.request.requestURL, message:e.getMessage()])
         }
     }
+
+    /**
+     * Redirects data collection URLs with tailing slash.
+     */
+/*    def redirectCollectionUrl = {
+        String url = (String) request.request.requestURL;
+        url = url.substring(0,url.lastIndexOf("/"))
+        redirect(url:url);
+    }*/
     
     /**
      * The requested URL is not correct (it does not contain a data collection part and a entity/identifier part).
