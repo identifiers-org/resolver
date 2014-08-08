@@ -1,5 +1,7 @@
 package uk.ac.ebi.miriam.resolver
 
+import grails.util.Holders
+
 /**
  * Controller handling the access to media files (such as slides or posters).
  *
@@ -31,32 +33,31 @@ package uk.ac.ebi.miriam.resolver
  */
 class MediaController
 {
-    private static final String PATH_TO_MEDIA_FILES = "/nfs/production/biomodels/WWW/identifiers-org/media/";
+//    private static final String PATH_TO_MEDIA_FILES = Holders.getGrailsApplication().config.getProperty('staticpages')+"media/";
 
 
     /**
      * Allows the download of a given file.
      */
     def download = {
-        def file = null;
-        try
-        {
-            file = new File(PATH_TO_MEDIA_FILES + params.file)
-        }
-        catch (FileNotFoundException e)
-        {
-            file = null;
-        }
-
-        if (null != file)
-        {
-            response.setContentType("application/octet-stream")
-            response.setHeader("Content-disposition", "attachment;filename=${file.getName()}")
-            response.outputStream << file.newInputStream() // Performing a binary stream copy
-        }
-        else
-        {
+        String mediaFile = Holders.getGrailsApplication().config.getProperty('staticpages')+"media/" +params.file
+        if(exists(mediaFile)){
+            redirect(url:mediaFile)
+        }else {
             forward(controller: "error", action: "notFound")   // file not found
         }
     }
+
+    public boolean exists(String url){
+        try {
+          HttpURLConnection.setFollowRedirects(false);
+          HttpURLConnection con = (HttpURLConnection) new URL(url).openConnection();
+          con.setRequestMethod("HEAD");
+          return (con.getResponseCode() == HttpURLConnection.HTTP_OK);
+        }
+        catch (Exception e) {
+           e.printStackTrace();
+           return false;
+        }
+      }
 }

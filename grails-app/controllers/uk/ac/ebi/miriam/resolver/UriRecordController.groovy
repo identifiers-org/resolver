@@ -260,15 +260,7 @@ class UriRecordController
         }
     }
 
-    /**
-     * Redirects data collection URLs with tailing slash.
-     */
-/*    def redirectCollectionUrl = {
-        String url = (String) request.request.requestURL;
-        url = url.substring(0,url.lastIndexOf("/"))
-        redirect(url:url);
-    }*/
-    
+
     /**
      * The requested URL is not correct (it does not contain a data collection part and a entity/identifier part).
      */
