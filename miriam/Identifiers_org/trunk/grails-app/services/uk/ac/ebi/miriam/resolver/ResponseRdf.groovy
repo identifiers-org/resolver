@@ -191,7 +191,7 @@ class ResponseRdf
         String resolver_url_root = Holders.getGrailsApplication().config.grails.serverURL;
 
         if(url.endsWith(".rdf")){
-            url = url.substring(0,url.lastIndexOf(".rdf"))
+            url = url.substring(0,url.lastIndexOf(".rdf")) + "/"
         }
 
         // Groovy way
@@ -219,7 +219,7 @@ class ResponseRdf
                     'dcterms:alternative'(syn)
                 }
                 'idot:idRegexPattern'(collection.regexp)
-                'void:uriSpace'('rdf:resource': url + "/")   // final '/' is mandatory here
+                'void:uriSpace'('rdf:resource': url )   // final '/' is mandatory here
                 'void:exampleResource'(collection.resources.iterator().next().exampleId)
                 'dcat:issued'(collection.dateCreation)
                 'dcat:modified'(collection.dateModification)
