@@ -182,7 +182,14 @@ class TripleSource implements org.openrdf.query.algebra.evaluation.TripleSource
 
         String uriTobe;
         if(uri.startsWith("http")) {
-            uriTobe =uri.substring(0, uri.lastIndexOf("/") + 1) + '%';
+            String stringAfterLastSlash = uri.substring(uri.lastIndexOf("/")+1);
+            //handling different identifier segments
+            if(stringAfterLastSlash.lastIndexOf(":") != -1){
+                uriTobe =uri.substring(0, uri.lastIndexOf(":") + 1) + '%';
+            }else if (stringAfterLastSlash.lastIndexOf("_") != -1)
+                uriTobe =uri.substring(0, uri.lastIndexOf("_") + 1) + '%';
+            else
+                uriTobe =uri.substring(0, uri.lastIndexOf("/") + 1) + '%';
         }else if (uri.lastIndexOf(":")!= -1){
             uriTobe =uri.substring(0, uri.lastIndexOf(":") + 1) + '%';
         }else{

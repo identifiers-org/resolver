@@ -68,7 +68,7 @@ body {
   left: 0px;
   text-align: center;
   width: 400px;
-  overflow: hidden;
+  /*overflow: hidden;*/
   clear: both;
 }
 

@@ -135,7 +135,7 @@ class Resolver
                         def tempUrls = []
                         tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, "HTML")
                         it.format.each {
-                            tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, it.mimeType.displaytext)
+                            tempUrls << new UrlRecord(it.urlPrefix + entity + it.urlSuffix, it.mimetype.displaytext)
                         }
                         tempRes.urls = tempUrls
                         tempResources << tempRes

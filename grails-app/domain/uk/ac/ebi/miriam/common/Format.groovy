@@ -14,19 +14,24 @@ class Format {
     /* suffix part of the physical location (URL) */
     String urlSuffix
 
-/*    static hasOne = [mimetype: MimeType]*/
-    MimeType mimeType
+    String deprecated
 
-    static belongsTo = [resource:Resource]
+//    static hasOne = [mimetype: MimeType]
+//    MimeType mimetype
+
+    static belongsTo = [resource:Resource, mimetype:MimeType]
 
     static mapping = {
         table "mir_res_formats"
         id column:"id"
         urlPrefix column:"url_prefix"
         urlSuffix column:"url_suffix"
+        deprecated column:"deprecated"
 
         resource column:"ptr_resource", type:"string"   // foreign key
-        mimeType column:"ptr_mimetype"
+        mimetype column:"ptr_mimetype", type:"string"
+ //       mimetype column:"ptr_mimetype"
+        mimetype fetch:"join"
 
         version false  // no version column
     }

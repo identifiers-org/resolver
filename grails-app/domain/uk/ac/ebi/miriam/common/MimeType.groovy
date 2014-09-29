@@ -10,7 +10,8 @@ class MimeType {
     String id
     String mimetype
     String displaytext
-    static belongsTo = [format:Format]
+    //static belongsTo = [format:Format]
+    static hasMany = [format:Format]
 
     static mapping = {
         table "mir_mimetype"
