@@ -216,7 +216,7 @@ class ResponseRdf
                 'dcterms:title'(collection.name)
                 'dcat:description'(collection.definition, 'xml:lang':"en-GB")
                 collection.synonyms.each { syn ->
-                    'dcterms:alternative'(syn)
+                    'dcterms:alternative'(syn.name)
                 }
                 'idot:idRegexPattern'(collection.regexp)
                 'void:uriSpace'('rdf:resource': url )   // final '/' is mandatory here

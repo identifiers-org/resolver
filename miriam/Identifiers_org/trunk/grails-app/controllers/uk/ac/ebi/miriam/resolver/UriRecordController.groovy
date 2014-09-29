@@ -192,8 +192,9 @@ class UriRecordController
             else   // other URIs: error
             {
                 withFormat {
-                    rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
                     html{ }
+                    rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
+
                 }
             }
         }
@@ -221,13 +222,6 @@ class UriRecordController
      */
     def resolveCollectionUrl = {
 
-        //url with trailing slash is redirected by removing it
-        String url = (String) request.request.requestURL;
-        if (url.endsWith("/")) {
-            url = url.substring(0, url.lastIndexOf("/"))
-            redirect(url: url);
-            return;
-        }
         resolveCollectionUrlProcess((String) request.request.requestURL, params.dataCollection)
     }
     
@@ -243,7 +237,14 @@ class UriRecordController
                 obsolete = false;
             }
             withFormat {
-                html { renderPartialResponseHtml(data, (String) request.request.requestURL, obsolete) }   // also handles 'all'   //TODO: directly displays content from Identifiers.org
+                html {
+                    //redirects without a traling slash
+                    if (!url.endsWith("/")) {
+                        url = url + "/"
+                        redirect(url: url)
+                        return;
+                    }else
+                        renderPartialResponseHtml(data, (String) request.request.requestURL, obsolete) }   // also handles 'all'   //TODO: directly displays content from Identifiers.org
                 rdf { renderCollectionResponseRdf(data, (String) request.request.requestURL, obsolete) }
                 //rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
             }
@@ -351,7 +352,7 @@ class UriRecordController
                 }
             }
 
-            render(status:300, view:"resolve", model:[record:record, primaryResource:primaryResource, allResources:allResources])
+            render(status:200, view:"resolve", model:[record:record, primaryResource:primaryResource, allResources:allResources])
     }
 
 
