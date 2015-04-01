@@ -74,42 +74,45 @@
                     </tr>
                 </g:if>
                 <%-- all other resource(s) --%>
-                <g:each in="${0..allResources.size()-1}" var="counter">
-                    <g:if test="${(counter % 2) == 0}">
-                       <tr>
-                    </g:if>
+                <g:if test="${allResources.size != 0}">
 
-                    <td align="center">
-                      <div class="resource">
-                        <div class="resource_overview"></div>
-                        <div class="resource_info">
-                        %{--  <a href="${allResources[counter].urls[0].link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${allResources[counter].id})">--}%
-                            <span class="desc">${allResources[counter].description.encodeAsHTML()}</span>
-                            <span class="institution">${allResources[counter].institution.encodeAsHTML()}</span>
-                            <span class="country">${allResources[counter].location.encodeAsHTML()}</span>
-                            <g:if test="${allResources[counter].reliability == 0}">
-                                <span class="status">(Uptime: <i>unknown</i>)</span>
-                            </g:if>
-                            <g:else>
-                                <span class="status">(Uptime: ${allResources[counter].reliability}%)</span>
-                            </g:else>
-                         %{-- </a>--}%
-                            <p class="format">
-                                <g:each in="${allResources[counter].urls}" var="urls" >
-                                    <a href="${urls.link.encodeAsHTML()}" title="'${urls.format.encodeAsHTML()}' access to '${record.entityId}' via this resource (${allResources[counter].id})">${urls.format.encodeAsHTML()}</a>
-                                </g:each>
-                            </p>
-%{--                            <g:each in="${allResources[counter].urls}" var="urls" >
-                                <a href="${urls.link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${primaryResource.id})"/>${urls.format.encodeAsHTML()}
-                            </g:each>--}%
-                        </div>
-                      </div>
-                    </td>
+                    <g:each in="${0..allResources.size()-1}" var="counter">
+                        <g:if test="${(counter % 2) == 0}">
+                            <tr>
+                        </g:if>
 
-                    <g:if test="${(counter % 2) || (counter == allResources.size()-1)}">
-                        </tr>
-                    </g:if>
-                </g:each>
+                        <td align="center">
+                            <div class="resource">
+                                <div class="resource_overview"></div>
+                                <div class="resource_info">
+                                    %{--  <a href="${allResources[counter].urls[0].link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${allResources[counter].id})">--}%
+                                    <span class="desc">${allResources[counter].description.encodeAsHTML()}</span>
+                                    <span class="institution">${allResources[counter].institution.encodeAsHTML()}</span>
+                                    <span class="country">${allResources[counter].location.encodeAsHTML()}</span>
+                                    <g:if test="${allResources[counter].reliability == 0}">
+                                        <span class="status">(Uptime: <i>unknown</i>)</span>
+                                    </g:if>
+                                    <g:else>
+                                        <span class="status">(Uptime: ${allResources[counter].reliability}%)</span>
+                                    </g:else>
+                                %{-- </a>--}%
+                                    <p class="format">
+                                        <g:each in="${allResources[counter].urls}" var="urls" >
+                                            <a href="${urls.link.encodeAsHTML()}" title="'${urls.format.encodeAsHTML()}' access to '${record.entityId}' via this resource (${allResources[counter].id})">${urls.format.encodeAsHTML()}</a>
+                                        </g:each>
+                                    </p>
+                                    %{--                            <g:each in="${allResources[counter].urls}" var="urls" >
+                                                                    <a href="${urls.link.encodeAsHTML()}" title="Access to '${record.entityId}' via this resource (${primaryResource.id})"/>${urls.format.encodeAsHTML()}
+                                                                </g:each>--}%
+                                </div>
+                            </div>
+                        </td>
+
+                        <g:if test="${(counter % 2) || (counter == allResources.size()-1)}">
+                            </tr>
+                        </g:if>
+                    </g:each>
+                </g:if>
             </table>
           </div>
 
