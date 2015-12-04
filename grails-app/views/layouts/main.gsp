@@ -164,7 +164,7 @@
     <div id="content" role="main" class="grid_24 clearfix">
 
         <g:layoutBody />
-        <g:javascript library="application" />
+        %{--<g:javascript library="application" />--}%
 
     </div>
 

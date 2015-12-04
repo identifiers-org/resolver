@@ -5,6 +5,7 @@ package uk.ac.ebi.miriam.exception
  * Camille Laibe
  * 20110919
  */
+
 class NotExistingDataCollectionException extends Exception
 {
     String dataCollection

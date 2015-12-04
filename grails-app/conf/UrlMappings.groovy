@@ -49,7 +49,7 @@ class UrlMappings
         }
 
         // allows "/registry" and "/registry/"
-        "/registry**" {
+        "/registry" {
             controller = "redirect"
             action = "external"
         }
