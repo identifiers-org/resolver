@@ -28,7 +28,7 @@ grails.project.dependency.resolution = {
     dependencies {
         // specify dependencies here under either 'build', 'compile', 'runtime', 'test' or 'provided' scopes eg.
 
-        // runtime 'mysql:mysql-connector-java:5.1.13'
+        runtime 'mysql:mysql-connector-java:5.1.17'
         runtime 'joda-time:joda-time:2.3'
         runtime 'org.openrdf.sesame:sesame-query:2.7.10'
         runtimt 'org.openrdf.sesame:sesame-runtime:2.7.10'
@@ -47,12 +47,11 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        runtime ":jquery:1.6.1.1"
-        runtime ":resources:1.0"
+        runtime ":jquery:1.11.1"
+        runtime ":resources:1.2.8"
         runtime ":functional-test:1.2.7"
-        runtime ":hibernate:$grailsVersion"
-        //build ":tomcat:$grailsVersion"
-        build ":tomcat:$grailsVersion"
+        runtime ":hibernate:3.6.10.16"
+        build ":tomcat:7.0.54"
 
     }
 
