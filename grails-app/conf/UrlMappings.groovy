@@ -67,7 +67,7 @@ class UrlMappings
         }
 
         // any proper MIRIAM URL
-        "/$dataCollection/$entity" {
+        "/$dataCollection/$entity?(.$format)?" {
 	        controller = "uriRecord"
 	        action = "resolve"
         }
