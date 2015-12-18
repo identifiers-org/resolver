@@ -1,4 +1,9 @@
+import com.sun.xml.internal.bind.v2.TODO
+import org.codehaus.groovy.grails.web.mapping.RegexUrlMapping
 import uk.ac.ebi.miriam.common.Constants
+import grails.util.Holders
+
+import java.util.regex.Pattern
 
 /**
  * Mapping of all URLs used.
@@ -67,7 +72,7 @@ class UrlMappings
         }
 
         // any proper MIRIAM URL
-        "/$dataCollection/$entity?(.$format)?" {
+        "/$dataCollection/$entity(.$format)?" {
 	        controller = "uriRecord"
 	        action = "resolve"
         }
