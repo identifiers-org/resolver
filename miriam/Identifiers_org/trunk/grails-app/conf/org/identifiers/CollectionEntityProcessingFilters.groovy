@@ -55,7 +55,11 @@ class CollectionEntityProcessingFilters {
                 String e = params.entity ?: ""
                 String f = params.format ?: ""
                 final StringBuilder sb = new StringBuilder(e.length() + f.length() + 1)
-                sb.append(e).append('.').append(f)
+                sb.append(e)
+
+                if(!f.empty)
+                    sb.append('.').append(f)
+
                 final String entityFormat = sb.toString()
                 boolean found = false
                 for (String fmt in fmts) {
