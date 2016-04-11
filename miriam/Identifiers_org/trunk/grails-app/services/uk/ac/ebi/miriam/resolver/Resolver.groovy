@@ -194,7 +194,9 @@ class Resolver
 
 
     /**
-     * Retrieves the most reliable resource of the data collection which identifier is given in parameter. In case several resources claim this title with the same uptime, one is randomly selected.
+     * Retrieves the most reliable resource of the data collection whose identifier is given as a parameter, favouring EBI resources.
+     *
+     * In case several resources have the same uptime, one is randomly selected.
      * @param id identifier of a data collection
      * @return
      */
@@ -203,10 +205,11 @@ class Resolver
         String mostReliableResourceId = null
 
         DataCollection data = DataCollection.findById(id)
-        if (null != data)
+        if (data)
         {
             int max = 0
             def bestResources = []
+            def endorsedResources = []
             // searches the best reliability
             data.resources.each {
                 if ((! it.obsolete) && (it.reliability.uptimePercent() > max))
@@ -218,9 +221,17 @@ class Resolver
             data.resources.each {
                 if ((! it.obsolete) && (it.reliability.uptimePercent() == max))
                 {
-                    bestResources << it.id
+                    bestResources.add(it.id)
+                }
+                if (isEndorsedResource(it))
+                {
+                    endorsedResources.add(it.id)
                 }
             }
+            if (endorsedResources) {
+                bestResources = endorsedResources
+            }
+
             if (bestResources.size() == 0)   // no (best) resource found: there is an issue here!
             {
                 // nothing: returns 'null'
@@ -239,6 +250,14 @@ class Resolver
         return mostReliableResourceId
     }
 
+    /**
+     * Returns the direct resource for the supplied data collection.
+     *
+     * The precedence order is
+     *      primary resource > endorsed resource > highest uptime
+     *
+     * If the resource is obsolete or currently down, then it's ignored.
+     */
     public static String getDirectResourceId(String id){
 
         DataCollection data = DataCollection.findById(id)
@@ -246,33 +265,38 @@ class Resolver
         {
             //if there is only one resource, return
             if (data.resources.size()==1){
-                return data.resources.iterator().next().id;
+                return data.resources.first().id;
             }
 
-            Set<Resource> runningResources = new HashSet<Resource>();
+            Set<Resource> runningResources = new HashSet<Resource>()
+            Set<Resource> endorsedResources = new HashSet<Resource>()
 
             //filter running resources
             data.resources.each {
-                if(it.reliability != null) {
-                    if (it.reliability.state == 1 && !it.obsolete) {
-                        runningResources.add(it);
+                if (it.obsolete) {
+                    return // simply ignore
+                }
+                if (it.primary && isResourceUp(it)) {
+                        return it.id
+                }
+                if (isResourceUp(it)) {
+                    runningResources.add(it)
+                    if (isEndorsedResource(it)) {
+                        endorsedResources << it
                     }
                 }
             }
+            if (endorsedResources) {
+                return endorsedResources.first()
+            }
 
-            //if there are no running resources orginal list is used
+            // if there are no running resources, we fall back to the original list
             if(runningResources.isEmpty()){
-                runningResources = data.resources;
+                runningResources = data.resources
             }
 
             int max = 0
             for (resource in runningResources){
-
-                //if there is a primary resource, return
-                if(resource.primary){
-                    return resource.id;
-                }
-
                 //searches best reliability
                 if (resource.reliability.uptimePercent() > max)
                 {
@@ -300,7 +324,7 @@ class Resolver
 
             if (runningResources.size() == 1)
             {
-                return runningResources.iterator().next().id;
+                return runningResources.first().id;
             }
             else   // several best resources found: smallest id
             {
@@ -315,5 +339,15 @@ class Resolver
 
         return null
 
+    }
+
+    private static boolean isEndorsedResource(Resource r) {
+        r?.institution?.contains("European Bioinformatics Institute") &&
+                isResourceUp(r) && !r.obsolete
+    }
+
+    private static boolean isResourceUp(Resource r) {
+        final Integer state = r?.reliability?.state //int can't handle null
+        state > 0 && state <= 3
     }
 }
