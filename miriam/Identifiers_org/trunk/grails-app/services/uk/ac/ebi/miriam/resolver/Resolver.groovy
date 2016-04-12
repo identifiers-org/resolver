@@ -45,10 +45,27 @@ import javax.xml.ws.Holder
  * </p>
  *
  * @author Camille Laibe <camille.laibe@ebi.ac.uk>
- * @version 20130429
+ * @author Mihai Glonț <mihai.glont@ebi.ac.uk>
+ * @version 20160412
  */
 class Resolver
 {
+
+    /*
+     * Simple comparator for prioritising a collection's resources.
+     *
+     * Arranges resources in descending order based on their uptime. In case of a tie,
+     * we fall back on the natural order of the resources' id.
+     */
+    private static final Comparator RESOURCE_COMPARATOR = { Resource a, Resource b ->
+        int u1 = a.reliability.uptimePercent()
+        int u2 = b.reliability.uptimePercent()
+        if(u1 == u2) {
+            return a.id <=> b.id
+        }
+        u2 <=> u1
+    } as Comparator
+
     /**
      * Retrieves the UriRecord from the requested URL in order to build the answer.
      * @param dataCollection
@@ -204,50 +221,37 @@ class Resolver
     {
         String mostReliableResourceId = null
 
-        DataCollection data = DataCollection.findById(id)
-        if (data)
-        {
-            int max = 0
-            def bestResources = []
-            def endorsedResources = []
+        boolean collectionExists = DataCollection.exists(id)
+        if (collectionExists) {
+            def orderedResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
+            def endorsedResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
+
+            def data = DataCollection.load(id) // proxy suffices here
+            //TODO data.resources should return all resources, not just one.
+            def resources = Resource.findAllByDataCollection data //data.resources
             // searches the best reliability
-            data.resources.each {
-                if ((! it.obsolete) && (it.reliability.uptimePercent() > max))
-                {
-                    max = it.reliability.uptimePercent()
+            resources.each { Resource r ->
+                if (!r.obsolete) {
+                    orderedResources << r
+                    if (isEndorsedResource(r)) {
+                        endorsedResources.add(r)
+                    }
                 }
-            }
-            // retrieves all most reliable resources
-            data.resources.each {
-                if ((! it.obsolete) && (it.reliability.uptimePercent() == max))
-                {
-                    bestResources.add(it.id)
-                }
-                if (isEndorsedResource(it))
-                {
-                    endorsedResources.add(it.id)
-                }
-            }
-            if (endorsedResources) {
-                bestResources = endorsedResources
             }
 
-            if (bestResources.size() == 0)   // no (best) resource found: there is an issue here!
-            {
-                // nothing: returns 'null'
+            if (endorsedResources) {
+                orderedResources = endorsedResources
             }
-            else if (bestResources.size() == 1)
+
+            if (!orderedResources)   // no (best) resource found: there is an issue here!
             {
-                mostReliableResourceId = bestResources[0]
+                return mostReliableResourceId
             }
-            else   // several best resources found: randomly selects one
-            {
-                Random rand = new Random()
-                mostReliableResourceId = bestResources[rand.nextInt(bestResources.size())]
-            }
+            Resource best = orderedResources.first()
+            mostReliableResourceId = best.id
         }
 
-        return mostReliableResourceId
+        mostReliableResourceId
     }
 
     /**
@@ -260,85 +264,48 @@ class Resolver
      */
     public static String getDirectResourceId(String id){
 
-        DataCollection data = DataCollection.findById(id)
-        if (null != data)
+        boolean collectionExists = DataCollection.exists(id)
+        if (collectionExists)
         {
+            def data = DataCollection.load id
+            //TODO data.resources should return all resources, not just one.
+            def resources = Resource.findAllByDataCollection data
             //if there is only one resource, return
-            if (data.resources.size()==1){
-                return data.resources.first().id;
+            if (resources.size() == 1) {
+                return resources.first().id
             }
 
-            Set<Resource> runningResources = new HashSet<Resource>()
-            Set<Resource> endorsedResources = new HashSet<Resource>()
+            Set<Resource> runningResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
+            Set<Resource> endorsedResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
 
-            //filter running resources
-            data.resources.each {
-                if (it.obsolete) {
-                    return // simply ignore
-                }
-                if (it.primary && isResourceUp(it)) {
-                        return it.id
-                }
-                if (isResourceUp(it)) {
-                    runningResources.add(it)
-                    if (isEndorsedResource(it)) {
-                        endorsedResources << it
+            for (Resource r: resources) {
+                //filter non-obsolete, running resources
+                if (!r.obsolete) {
+                    if (isResourceUp(r)) {
+                        if (r.primary) {
+                            return r.id
+                        }
+                        runningResources.add(r)
+                        if (isEndorsedResource(r)) {
+                            endorsedResources << r
+                        }
                     }
                 }
             }
             if (endorsedResources) {
-                return endorsedResources.first()
+                runningResources = endorsedResources
             }
 
             // if there are no running resources, we fall back to the original list
-            if(runningResources.isEmpty()){
-                runningResources = data.resources
+            if(!runningResources) {
+                runningResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
+                runningResources.addAll(resources)
             }
-
-            int max = 0
-            for (resource in runningResources){
-                //searches best reliability
-                if (resource.reliability.uptimePercent() > max)
-                {
-                    max = resource.reliability.uptimePercent()
-                }
-            }
-
-            int smallestid = 100000000
-            Set<Resource> highestUpResources =new HashSet<Resource>();
-
-            // keeps the most reliable resources
-            for (resource in runningResources){
-                if (resource.reliability.uptimePercent() == max){
-                    highestUpResources.add(resource)
-
-                    int resourceid = resource.id.substring(4).toInteger();
-                    if (resourceid < smallestid){
-                        smallestid = resourceid;
-                    }
-                }
-
-            }
-
-            runningResources = highestUpResources;
-
-            if (runningResources.size() == 1)
-            {
-                return runningResources.first().id;
-            }
-            else   // several best resources found: smallest id
-            {
-                for (resource in runningResources){
-                    if (resource.id.substring(4).toInteger() == smallestid)
-                    {
-                        return resource.id
-                    }
-                }
-            }
+            Resource best = runningResources.first()
+            return best.id
         }
 
         return null
-
     }
 
     private static boolean isEndorsedResource(Resource r) {
