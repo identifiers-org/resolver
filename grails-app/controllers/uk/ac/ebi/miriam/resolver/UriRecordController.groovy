@@ -144,7 +144,7 @@ class UriRecordController
                     {
                         String preferredResourceId = profile.getPreferredResource(record.dataCollection.id)
                         Resource preferredResource = Resource.findById(preferredResourceId)
-                        if (params.profile == "direct")
+                        if (params.banner != null && params.banner == "true")
                         {
                              // top banner displayed + one chosen resource loaded in a (i)frame
                             render(view:"redirect_profile", model:[record:record, preferredResource:preferredResource, profile:profile, entity:params.entity])

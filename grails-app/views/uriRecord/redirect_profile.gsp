@@ -31,7 +31,7 @@
     </iframe>
 </div>
 
-<script>
+%{--<script>
     $(function(){
         var overiFrame = 1;
         $('iframe').hover( function() {
@@ -46,11 +46,7 @@
         });
     });
 
-/*    function leave() {
-        window.location.href=parent.document.getElementById('externalContent').src;
-    }
-    setTimeout("leave()", 5000);*/
-</script>
+</script>--}%
 
 </body>
 
