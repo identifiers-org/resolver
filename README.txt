@@ -57,3 +57,5 @@ Known issues:
   - this came from the fact that a 303 See Other HTTP code was used
   - now uses "203 Non-Authoritative Information" for namespaces (no full URL)
   - now uses "300 Multiple Choices" for displaying the list of possible resources
+
+testing commit
