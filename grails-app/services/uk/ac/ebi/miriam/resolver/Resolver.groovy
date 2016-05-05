@@ -265,15 +265,11 @@ class Resolver
     public static String getDirectResourceId(String id){
 
         boolean collectionExists = DataCollection.exists(id)
-        if (collectionExists)
-        {
+        if (collectionExists){
             def data = DataCollection.load id
             //TODO data.resources should return all resources, not just one.
             def resources = Resource.findAllByDataCollection data
-            //if there is only one resource, return
-            if (resources.size() == 1) {
-                return resources.first().id
-            }
+
 
             Set<Resource> runningResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
             Set<Resource> endorsedResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
@@ -298,7 +294,6 @@ class Resolver
 
             // if there are no running resources, we fall back to the original list
             if(!runningResources) {
-                runningResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
                 runningResources.addAll(resources)
             }
             Resource best = runningResources.first()

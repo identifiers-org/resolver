@@ -121,12 +121,12 @@ class UriRecordController
             else if (!request.serverName.contains("info."))   // canonical URIs
             {
                 // if only one resource redirect
-                if(record.dataCollection.resources.size() == 1)
+/*                if(record.dataCollection.resources.size() == 1)
                 {
                     Resource preferredResource = Resource.findById(record.dataCollection.resources.iterator().next().id);
                     redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
                     return;
-                }
+                }*/
 
                 // if profile is not provided, the assigns the 'direct' profile
                 if(params.profile == null)
