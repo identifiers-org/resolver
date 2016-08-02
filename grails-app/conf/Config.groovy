@@ -58,6 +58,8 @@ grails.exceptionresolver.params.exclude = ['password']
 grails.resources.adhoc.includes = ['/images/**', '/css/**', '/js/**', '/plugins/**']
 grails.resources.adhoc.excludes = ['/WEB-INF/**']
 
+grails.gsp.tldScanPattern='classpath*:/META-INF/*.tld,/WEB-INF/tld/*.tld'
+
 // set per-environment serverURL stem for creating absolute links
 environments {
     production {

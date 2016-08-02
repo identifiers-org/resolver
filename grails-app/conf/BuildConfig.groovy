@@ -4,6 +4,10 @@ grails.project.test.reports.dir = "target/test-reports"
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 grails.project.war.file = "target/identifiers_org.war"
 grails.servlet.version = "2.5"
+grails.project.source.level = 1.7
+grails.project.target.level = 1.7
+grails.project.dependency.resolver = "maven"
+
 grails.project.dependency.resolution = {
     // inherit Grails' default dependencies
     inherits("global") {
@@ -44,14 +48,24 @@ grails.project.dependency.resolution = {
         runtime 'org.openrdf.sesame:sesame-queryresultio-sparqljson:2.7.10'
         runtime 'org.openrdf.sesame:sesame-queryresultio-binary:2.7.10'
         runtime "junit:junit:4.8.1"
+
+        runtime 'javax.servlet:jstl:1.1.2'
+        runtime 'taglibs:standard:1.1.2'
     }
 
     plugins {
-        runtime ":jquery:1.11.1"
-        runtime ":resources:1.2.8"
-        runtime ":functional-test:1.2.7"
-        runtime ":hibernate:3.6.10.16"
         build ":tomcat:7.0.54"
+
+        // plugins for the compile step
+        compile ":scaffold-core:1.3.2"
+        compile ':cache:1.1.8'
+        compile ':asset-pipeline:2.8.0'
+
+        runtime ":jquery:1.11.1"
+        runtime ":resources:1.2.14"
+        runtime ":functional-test:1.2.7"
+        runtime ":hibernate4:4.3.8.1"
+
 
     }
 
