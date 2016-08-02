@@ -50,6 +50,17 @@ class ErrorController
         generateResponse(error)
     }
 
+    def unknownDataResource = {
+        FeedbackError error = new FeedbackError()
+        error.title = "Unknown resource prefix"
+        error.code = "404 Not Found"
+        error.message = "The resource prefix '$params.resourcePrefix' is unknown."
+        error.request = params.url
+        error.status = 404
+
+        generateResponse(error)
+    }
+
     // 500 Internal Server Error
     def internalServerError = {
         FeedbackError error = new FeedbackError()

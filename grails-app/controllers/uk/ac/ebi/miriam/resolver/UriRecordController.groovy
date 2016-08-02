@@ -10,6 +10,7 @@ import uk.ac.ebi.miriam.common.DataCollection
 import uk.ac.ebi.miriam.exception.NotExistingDataCollectionException
 
 import javax.servlet.http.HttpServletRequest
+import java.util.regex.Pattern
 
 /**
  * Controller handling the resolving work.
@@ -222,6 +223,11 @@ class UriRecordController
      */
     def resolveCollectionUrl = {
 
+        if(params.dataCollection.contains(":")){
+            resolveResourcePrefixUrl((String) request.request.requestURL, params.dataCollection);
+            return
+        }
+
         resolveCollectionUrlProcess((String) request.request.requestURL, params.dataCollection)
     }
     
@@ -258,6 +264,24 @@ class UriRecordController
         {
             // 500 with custom error
             forward(controller:"error", action:"internalServerError", params:[url:request.request.requestURL, message:e.getMessage()])
+        }
+    }
+
+    private def resolveResourcePrefixUrl(String url, String prefixedResource) {
+
+        String prefix = prefixedResource.substring(0,prefixedResource.indexOf(":"))
+        String entity = prefixedResource.substring(prefixedResource.indexOf(":")+1)
+
+        def resource = Resource.findAllByResource_prefix(prefix)
+
+        if(resource) {
+            if (Pattern.matches(resource.dataCollection.regexp[0], entity)) {
+                String redirectURL = "${resource.urlPrefix[0]}${entity}${resource.urlSuffix[0]}"
+                redirect(url: redirectURL)
+            } else
+                forward(controller: "error", action: "invalidIdentifier", params: [url: request.request.requestURL, dataCollection: resource.dataCollection, identifier: entity, regexp: resource.dataCollection.regexp])
+        }else{
+            forward(controller:"error", action:"unknownDataResource", params:[url:request.request.requestURL, resourcePrefix:prefix])
         }
     }
 
