@@ -17,39 +17,6 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 
-
-%{--<script>
-    $( function() {
-        var availableTags = [
-            "ActionScript",
-            "AppleScript",
-            "Asp",
-            "BASIC",
-            "C",
-            "C++",
-            "Clojure",
-            "COBOL",
-            "ColdFusion",
-            "Erlang",
-            "Fortran",
-            "Groovy",
-            "Haskell",
-            "Java",
-            "JavaScript",
-            "Lisp",
-            "Perl",
-            "PHP",
-            "Python",
-            "Ruby",
-            "Scala",
-            "Scheme"
-        ];
-        $( "#tags" ).autocomplete({
-            source: availableTags
-        });
-    } );
-</script>--}%
-
 <style>
 .ui-autocomplete {
     max-height: 200px;
@@ -63,6 +30,10 @@
 * html .ui-autocomplete {
     height: 200px;
 }
+.ui-autocomplete-input
+{
+    width: 400px;
+}
 </style>
 
 <script>
@@ -75,30 +46,31 @@
                     url: "${createLink(controller: 'restws',action: 'index')}",
                     data: request,
                     success: function (result) {
-                        var resources = [];
-                        for(var i=0;i < result.item.length; i++){
-                            resources[i] = result.item[i].name + " " + result.item[i].uri;
-                        }
-                        response(resources);
+                        response(result.item);
                     },
                     error: function (msg) {
                         alert(msg.status + ' ' + msg.statusText);
                     }
                 })
-            }/*,
-
+            },
             select: function (event, ui) {
-                $("#tags").val(ui.item.tags);
+                $("#tags").val(ui.item.uri);
+                window.open(ui.item.uri,'_blank');
                 return false;
-            }*/
-        });
+            }
+        })
+                .autocomplete( "instance" )._renderItem = function( ul, item ) {
+                return $( "<li>" )
+                    .append( "<div><b>" + item.name + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
+                    .appendTo( ul );
+        };
     } );
 </script>
 
 
 
 <div class="ui-widget">
-    <label for="tags">Available resources: </label>
+    <label for="tags">Entity identifier: </label>
     <input id="tags">
 </div>
 
