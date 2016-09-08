@@ -70,11 +70,6 @@ class UrlMappings
             action = "index"
         }
 
-        "/restws"{
-            controller = "restws"
-            action = "index"
-        }
-
         // access to a data collection
         "/$dataCollection" {
             controller = "uriRecord"

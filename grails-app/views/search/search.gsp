@@ -13,68 +13,52 @@
 
 <body>
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
-<script type="text/javascript" src="${resource(dir: 'js', file: 'search.js')}"></script>
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
+<script type="text/javascript" src="${resource(dir: 'js', file: 'search.js')}"></script>
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css" />
 
-<style>
-.ui-autocomplete {
-    max-height: 200px;
-    overflow-y: scroll;
-    /* prevent horizontal scrollbar */
-    overflow-x: hidden;
-}
-/* IE 6 doesn't support max-height
- * we use height instead, but this forces the menu to always be this tall
- */
-* html .ui-autocomplete {
-    height: 200px;
-}
-.ui-autocomplete-input
-{
-    width: 400px;
-}
-</style>
-
-<script>
-    $( function() {
-        $( "#tags" ).autocomplete({
-            minLength: 3,
-            source: function(request, response){
-                $.ajax({
-                    /*type: "POST",*/
-                    url: "${createLink(controller: 'restws',action: 'index')}",
-                    data: request,
-                    success: function (result) {
-                        response(result.item);
-                    },
-                    error: function (msg) {
-                        alert(msg.status + ' ' + msg.statusText);
-                    }
-                })
-            },
-            select: function (event, ui) {
-                $("#tags").val(ui.item.uri);
-                window.open(ui.item.uri,'_blank');
-                return false;
-            }
-        })
-                .autocomplete( "instance" )._renderItem = function( ul, item ) {
-                return $( "<li>" )
-                    .append( "<div><b>" + item.name + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
-                    .appendTo( ul );
-        };
-    } );
-</script>
-
-
-
-<div class="ui-widget">
-    <label for="tags">Entity identifier: </label>
-    <input id="tags">
-</div>
-
-
-
+<table>
+    <tr>
+        <td>
+            <label for="resources">Resources </label>
+        </td>
+        <td>
+            <div id="resources-widget-container">
+                <input id="resources">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="resIdent">Resource:Identifier </label>
+        </td>
+        <td>
+            <input id="resIdent" type="text">
+            <button id="validate">Validate</button>
+            <div id="validate-result"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="resIdentUrl">Resource:Identifier </label>
+        </td>
+        <td>
+            <input id="resIdentUrl" type="text">
+            <button id="idorgUrl">Find URL</button>
+            <div id="idorgUrl-result"></div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <label for="databases">Identifier </label>
+        </td>
+        <td>
+            <div id="databases-widget-container">
+                <input id="databases">
+            </div>
+        </td>
+    </tr>
+</table>
 </body>
 </html>
