@@ -18,10 +18,12 @@
 <script type="text/javascript" src="${resource(dir: 'js', file: 'search.js')}"></script>
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css" />
 
+
+
 <table>
     <tr>
         <td>
-            <label for="resources">Resources </label>
+            <label for="resources">Find valid database resource names </label>
         </td>
         <td>
             <div id="resources-widget-container">
@@ -29,9 +31,10 @@
             </div>
         </td>
     </tr>
+
     <tr>
         <td>
-            <label for="resIdent">Resource:Identifier </label>
+            <label for="resIdent">Validate a given resource/identifier, eg: chebi/CHEBI:36927 </label>
         </td>
         <td>
             <input id="resIdent" type="text">
@@ -39,9 +42,10 @@
             <div id="validate-result"></div>
         </td>
     </tr>
+
     <tr>
         <td>
-            <label for="resIdentUrl">Resource:Identifier </label>
+            <label for="resIdentUrl">Find identifiers.org URI for a given resource/identifier, eg: chebi/CHEBI:36927 </label>
         </td>
         <td>
             <input id="resIdentUrl" type="text">
@@ -51,7 +55,7 @@
     </tr>
     <tr>
         <td>
-            <label for="databases">Identifier </label>
+            <label for="databases">Find resources for a given identifier, eg: CHEBI:36927 </label>
         </td>
         <td>
             <div id="databases-widget-container">

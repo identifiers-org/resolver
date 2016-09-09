@@ -38,16 +38,21 @@ $( function() {
         if(validateField($("#resIdent").val())){
             $.ajax({
                 url: idorgrest+"validate/"+$("#resIdent").val(),
-                success: function(result){
+                success: function(result) {
                     var validationMessage = "Invalid resource/identifier.";
-                    if(result != null && result.valid==true){
+                    if (result != null && result.valid == true) {
                         validationMessage = "Valid resource/identifier.";
+                        $("#validate-result").removeClass("invalid-input").addClass("valid-input");
+                    }
+                    else {
+                        $("#validate-result").removeClass("valid-input").addClass("invalid-input");
                     }
                     $("#validate-result").html(validationMessage);
                 }
             });
         }else {
-            $("#validate-result").html("resource/identifier cannot be empty.");
+            $("#validate-result").removeClass("valid-input").addClass("invalid-input");
+            $("#validate-result").html("Please enter resource/identifier.");
         }
 
     });
@@ -59,13 +64,17 @@ $( function() {
                 success: function(result){
                     var validationMessage = "Invalid resource/identifier. Unable to find an identifiers.org URI";
                     if(result != null){
-                        console.log(result)
                         validationMessage = result.item.uri;
+                        $("#idorgUrl-result").removeClass("invalid-input").addClass("valid-input");
+                    }
+                    else {
+                        $("#idorgUrl-result").removeClass("valid-input").addClass("invalid-input");
                     }
                     $("#idorgUrl-result").html(validationMessage);
                 }
             });
         }else {
+            $("#idorgUrl-result").removeClass("valid-input").addClass("invalid-input");
             $("#idorgUrl-result").html("resource/identifier cannot be empty.");
         }
 
