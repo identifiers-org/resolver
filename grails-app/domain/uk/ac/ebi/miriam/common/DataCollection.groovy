@@ -67,6 +67,8 @@ class DataCollection implements Comparable
     String obsoleteComment
     /* if the data collection is obsolete, this field must have a value */
     String replacedBy
+
+    Boolean prefixed_id
     
     // database related configuration, for Hibernate
     static mapping = {
@@ -85,6 +87,7 @@ class DataCollection implements Comparable
         obsoleteComment column:"obsolete_comment", type:"text"   // longer than varchar(255)
         replacedBy column:"replacement"
         version false   // no version column
+        prefixed_id column: "prefixed_id"
 
         // synonyms
         //hasMany joinTable: [name: 'mir_synonyms', key: 'ptr_datatype', column: 'name', type: "text"]

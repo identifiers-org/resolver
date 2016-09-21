@@ -34,7 +34,7 @@
 
     <tr>
         <td>
-            <label for="resIdent">Validate a given resource/identifier, eg: chebi/CHEBI:36927 </label>
+            <label for="resIdent">Validate a given prefix:identifier, eg: CHEBI:36927 </label>
         </td>
         <td>
             <input id="resIdent" type="text">
@@ -43,16 +43,6 @@
         </td>
     </tr>
 
-    <tr>
-        <td>
-            <label for="resIdentUrl">Find identifiers.org URI for a given resource/identifier, eg: chebi/CHEBI:36927 </label>
-        </td>
-        <td>
-            <input id="resIdentUrl" type="text">
-            <button id="idorgUrl">Find URL</button>
-            <div id="idorgUrl-result"></div>
-        </td>
-    </tr>
     <tr>
         <td>
             <label for="databases">Find resources for a given identifier, eg: CHEBI:36927 </label>

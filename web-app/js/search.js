@@ -2,7 +2,8 @@
  * Created by sarala on 23/08/2016.
  */
 
-var idorgrest = "http://localhost:8090/miriamws/rest/resources/";
+//var idorgrest = "http://localhost:8090/miriamws/rest/resources/";
+var idorgrest = "http://ves-hx-4d:8100/miriamws/main/rest/resources/";
 
 $( function() {
     $( "#resources" ).autocomplete({
@@ -29,8 +30,9 @@ $( function() {
             }
         })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
+        console.log(item);
         return $( "<li>" )
-            .append( "<div><b>" + item.name + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
+            .append( "<div><b>" + item['@prefix'] + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
             .appendTo( ul );
     };
 
@@ -39,9 +41,9 @@ $( function() {
             $.ajax({
                 url: idorgrest+"validate/"+$("#resIdent").val(),
                 success: function(result) {
-                    var validationMessage = "Invalid resource/identifier.";
-                    if (result != null && result.valid == true) {
-                        validationMessage = "Valid resource/identifier.";
+                    var validationMessage = "Invalid prefix:identifier. Unable to find an identifiers.org URI.";
+                    if (result != null ) {
+                        validationMessage = result.item.uri;
                         $("#validate-result").removeClass("invalid-input").addClass("valid-input");
                     }
                     else {
@@ -52,30 +54,7 @@ $( function() {
             });
         }else {
             $("#validate-result").removeClass("valid-input").addClass("invalid-input");
-            $("#validate-result").html("Please enter resource/identifier.");
-        }
-
-    });
-
-    $("#idorgUrl").click(function(){
-        if(validateField($("#resIdentUrl").val())){
-            $.ajax({
-                url: idorgrest+$("#resIdentUrl").val(),
-                success: function(result){
-                    var validationMessage = "Invalid resource/identifier. Unable to find an identifiers.org URI";
-                    if(result != null){
-                        validationMessage = result.item.uri;
-                        $("#idorgUrl-result").removeClass("invalid-input").addClass("valid-input");
-                    }
-                    else {
-                        $("#idorgUrl-result").removeClass("valid-input").addClass("invalid-input");
-                    }
-                    $("#idorgUrl-result").html(validationMessage);
-                }
-            });
-        }else {
-            $("#idorgUrl-result").removeClass("valid-input").addClass("invalid-input");
-            $("#idorgUrl-result").html("resource/identifier cannot be empty.");
+            $("#validate-result").html("Please enter prefix:identifier.");
         }
 
     });
@@ -105,7 +84,7 @@ $( function() {
         })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
         return $( "<li>" )
-            .append( "<div><b>" + item.name + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
+            .append( "<div><b>" + item['@prefix'] + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
             .appendTo( ul );
     };
 

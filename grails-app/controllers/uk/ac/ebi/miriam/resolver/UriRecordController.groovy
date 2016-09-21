@@ -1,5 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
+import uk.ac.ebi.miriam.common.Identifier
 import uk.ac.ebi.miriam.common.ResourceRecord
 import uk.ac.ebi.miriam.exception.InvalidEntityIdentifierException
 import uk.ac.ebi.miriam.exception.ResolverErrorException
@@ -272,11 +273,21 @@ class UriRecordController
         String prefix = prefixedResource.substring(0,prefixedResource.indexOf(":"))
         String entity = prefixedResource.substring(prefixedResource.indexOf(":")+1)
 
-        def resource = Resource.findAllByResource_prefix(prefix)
+        def identifier = Identifier.findAllByUriPrefix("urn:miriam:"+prefix.toLowerCase())
+        def datacollection = identifier.dataCollection;
+
+
+        Profile profile = Profile.findByShortname("direct")
+        String preferredResourceId = profile.getPreferredResource(datacollection.id)
+        Resource resource = Resource.findById(preferredResourceId)
+
+        if(datacollection.prefixed_id[0] == true){
+            entity = prefixedResource;
+        }
 
         if(resource) {
-            if (Pattern.matches(resource.dataCollection.regexp[0], entity)) {
-                String redirectURL = "${resource.urlPrefix[0]}${entity}${resource.urlSuffix[0]}"
+            if (Pattern.matches(datacollection.regexp[0], entity)) {
+                String redirectURL = "${resource.urlPrefix}${entity}${resource.urlSuffix}"
                 redirect(url: redirectURL)
             } else
                 forward(controller: "error", action: "invalidIdentifier", params: [url: request.request.requestURL, dataCollection: resource.dataCollection, identifier: entity, regexp: resource.dataCollection.regexp])
