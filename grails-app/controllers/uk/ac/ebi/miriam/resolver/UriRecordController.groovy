@@ -274,8 +274,12 @@ class UriRecordController
         String entity = prefixedResource.substring(prefixedResource.indexOf(":")+1)
 
         def identifier = Identifier.findAllByUriPrefix("urn:miriam:"+prefix.toLowerCase())
-        def datacollection = identifier.dataCollection;
+        if(identifier.empty){
+            forward(controller:"error", action:"unknownDataCollection", params:[url:request.request.requestURL, dataCollection:prefix])
+            return
+        }
 
+        def datacollection = identifier.dataCollection;
 
         Profile profile = Profile.findByShortname("direct")
         String preferredResourceId = profile.getPreferredResource(datacollection.id)
