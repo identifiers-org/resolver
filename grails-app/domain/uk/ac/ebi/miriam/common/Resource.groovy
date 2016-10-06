@@ -59,7 +59,7 @@ class Resource
     /* URI prefix for conversion purposes */
     String convertPrefix
 
-    String resource_prefix
+//    String resource_prefix
 
     // GORM: unidirectional many-to-one relationship
     static belongsTo = [dataCollection:DataCollection]
@@ -92,6 +92,6 @@ class Resource
         version false   // no version column
 //        uriScheme column:"urischeme"
         convertPrefix column:"convertPrefix"
-        resource_prefix column:"resource_prefix"
+//        resource_prefix column:"resource_prefix"
     }
 }

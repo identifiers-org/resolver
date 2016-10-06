@@ -40,7 +40,7 @@
   <!-- also inform ES so we can host your colour palette file -->
  %{-- <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/develop/embl-petrol-colours.css" type="text/css" media="screen">--}%
    %{-- <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css')}" type="text/css" />--}%
-    <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css', base: 'http://static.identifiers.org/')}" type="text/css" />
+    <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css', base: '//static.identifiers.org/')}" type="text/css" />
   <!-- for production the above can be replaced with -->
 
   <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/mini/ebi-fluid-embl.css">
@@ -104,9 +104,9 @@
       <div class="grid_12 alpha" id="local-title">
         %{--<h1><a href="[service-url]" title="Back to [service-name] homepage">[service-name]</a></h1>--}%
         <!-- identifiers.org beta banner-->
-        <!--         <h1 class="icon icon-generic" data-icon="&gt;"><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+        <!--         <h1 class="icon icon-generic" data-icon="&gt;"><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: '//static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
          -->
-        <h1><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: 'http://static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+        <h1><a href="//identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: '//static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
 
       </div>
 
@@ -116,19 +116,19 @@
       <!-- NB: if you do not have a local-search, delete the following div, and drop the class="grid_12 alpha" class from local-title above -->
 
         <div class="grid_12 omega">
-            <form id="local-search" name="local-search" action="http://www.ebi.ac.uk/miriam/main/search" method="get">
+            <form id="local-search" name="local-search" action="//www.ebi.ac.uk/miriam/main/search" method="get">
                 <fieldset>
                     <div class="left">
                         <label>
                             <input type="text" name="query" id="local-searchbox" />
                         </label>
                         <!-- some example of search terms -->
-                        <span class="examples">Examples: <a href="http://www.ebi.ac.uk/miriam/main/search?query=ontology" title="Search for 'ontology'">ontology</a>, <a href="http://www.ebi.ac.uk/miriam/main/search?query=enzyme" title="Search for 'enzyme'">enzyme</a>, <a href="http://www.ebi.ac.uk/miriam/main/search?query=Japan" title="Search for 'Japan'">Japan</a>, <a href="http://www.ebi.ac.uk/miriam/main/search?query=EMBL" title="Search for 'EMBL'">EMBL</a></span>
+                        <span class="examples">Examples: <a href="//www.ebi.ac.uk/miriam/main/search?query=ontology" title="Search for 'ontology'">ontology</a>, <a href="//www.ebi.ac.uk/miriam/main/search?query=enzyme" title="Search for 'enzyme'">enzyme</a>, <a href="//www.ebi.ac.uk/miriam/main/search?query=Japan" title="Search for 'Japan'">Japan</a>, <a href="//www.ebi.ac.uk/miriam/main/search?query=EMBL" title="Search for 'EMBL'">EMBL</a></span>
                     </div>
 
                     <div class="right">
                         <input type="submit" value="Search" class="submit"> <!-- name="submit"  -->
-                        <span class="adv"><a href="http://www.ebi.ac.uk/miriam/main/tags/" id="adv-search" title="Search using types of data">Categories&nbsp;&amp;&nbsp;tags</a></span>
+                        <span class="adv"><a href="//www.ebi.ac.uk/miriam/main/tags/" id="adv-search" title="Search using types of data">Categories&nbsp;&amp;&nbsp;tags</a></span>
                     </div>
                 </fieldset>
             </form>
@@ -144,7 +144,7 @@
         <ul class="grid_24" id="local-nav">
           <li class="first"><g:link controller="info" action="intro" title="Identifiers.org">Home</g:link></li>
           <li><g:link controller="info" action="documentation" title="Documentation">Documentation</g:link>
-          <li><a href="http://identifiers.org/registry/" title="MIRIAM Registry">Registry</a></li>
+          <li><a href="//identifiers.org/registry/" title="MIRIAM Registry">Registry</a></li>
           <li><a href="services/sparql" title="SPARQL Endpoint">SPARQL Endpoint</a></li>
           <li class="last"><g:link controller="info" action="about" title="About">About</g:link></li>
           <!-- If you need to include functional (as opposed to purely navigational) links in your local menu,
@@ -211,7 +211,7 @@
 
       <section id="ebi-footer-meta">
         <p class="address">EMBL-EBI, Wellcome Trust Genome Campus, Hinxton, Cambridgeshire, CB10 1SD, UK &nbsp; &nbsp; +44 (0)1223 49 44 44</p>
-        <p class="legal">Copyright &copy; EMBL-EBI 2013 | EBI is an outstation of the <a href="http://www.embl.org">European Molecular Biology Laboratory</a> | <a href="/about/privacy">Privacy</a> | <a href="/about/cookies">Cookies</a> | <a href="/about/terms-of-use">Terms of use</a></p>
+        <p class="legal">Copyright &copy; EMBL-EBI 2013 | EBI is an outstation of the <a href="//www.embl.org">European Molecular Biology Laboratory</a> | <a href="/about/privacy">Privacy</a> | <a href="/about/cookies">Cookies</a> | <a href="/about/terms-of-use">Terms of use</a></p>
       </section>
 
     </div>

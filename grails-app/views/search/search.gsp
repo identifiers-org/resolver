@@ -15,9 +15,8 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-<script type="text/javascript" src="${resource(dir: 'js', file: 'search.js')}"></script>
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css" />
-
+<script type="text/javascript" src="${resource(dir: 'js', file: 'search.js', base: '//static.identifiers.org/')}"></script>
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css', base: '//static.identifiers.org/')}" type="text/css" />
 
 
 <table>

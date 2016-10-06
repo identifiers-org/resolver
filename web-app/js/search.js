@@ -3,7 +3,7 @@
  */
 
 //var idorgrest = "http://localhost:8090/miriamws/rest/resources/";
-var idorgrest = "http://www.ebi.ac.uk/miriamws/main/rest/resources/";
+var idorgrest = "//www.ebi.ac.uk/miriamws/main/rest/resources/";
 
 $( function() {
     $( "#resources" ).autocomplete({
