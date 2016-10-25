@@ -144,6 +144,7 @@
         <ul class="grid_24" id="local-nav">
           <li class="first"><g:link controller="info" action="intro" title="Identifiers.org">Home</g:link></li>
           <li><g:link controller="info" action="documentation" title="Documentation">Documentation</g:link>
+          <li><g:link controller="search" action="index" title="Ratifier">Ratifier</g:link>
           <li><a href="//identifiers.org/registry/" title="MIRIAM Registry">Registry</a></li>
           <li><a href="services/sparql" title="SPARQL Endpoint">SPARQL Endpoint</a></li>
           <li class="last"><g:link controller="info" action="about" title="About">About</g:link></li>

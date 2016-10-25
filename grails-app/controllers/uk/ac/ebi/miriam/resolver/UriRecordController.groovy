@@ -51,7 +51,10 @@ class UriRecordController
 
     // resolves the URL
     def resolve = {
-        resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
+        boolean prefixedResourceFound = resolvePrefixedResource(params.dataCollection, params.entity, (String) request.request.requestURL)
+
+        if(!prefixedResourceFound)
+            resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
     }
 
     def doiResolve ={
@@ -218,18 +221,71 @@ class UriRecordController
         }
     }
 
+    def resolvePrefixedResource(String rprefix, String prefixedResource, String url) {
+        Set<Resource> resources = Resource.findAllByPrefixAndObsolete(rprefix,false)
+
+        if(resources.empty)
+            return
+
+        DataCollection dataCollection = retrieveCollection(prefixedResource);
+
+        for(Resource resource: resources){
+            if(resource.dataCollection.id.equals(dataCollection.id)){
+                if(!dataCollection.prefixed_id){
+                    prefixedResource = prefixedResource.substring(prefixedResource.indexOf(":")+1);
+                }
+                String redirectURL = "${resource.urlPrefix}${prefixedResource}${resource.urlSuffix}"
+                withFormat {
+                    html{
+                        redirect(url: redirectURL)
+                    }
+                    rdf{
+                        forward(controller:"error", action:"unavailableFormat", params:[url:url])
+                    }
+                }
+
+                return true
+            }
+        }
+        return false
+    }
+
+    private DataCollection retrieveCollection(String prefixedId) {
+        if (prefixedId.contains(":")) {
+            String prefix = prefixedId.substring(0,prefixedId.indexOf(":"))
+            String entity = prefixedId.substring(prefixedId.indexOf(":")+1)
+
+            def identifier = Identifier.findByUriPrefix("urn:miriam:"+prefix.toLowerCase())
+
+            if(!identifier && !identifier.dataCollection ){
+                return null
+            }
+
+            def datacollection = identifier.dataCollection;
+
+            if(datacollection.prefixed_id){
+                entity = prefixedId
+            }
+
+            if (Pattern.matches(datacollection.regexp, entity)) {
+                return datacollection
+            }
+        }
+        return null;
+    }
+
 
     /**
-     * Resolves data collection URLs.
+     * Resolves data collection or prefixed URLs.
      */
     def resolveCollectionUrl = {
 
         if(params.dataCollection.contains(":")){
             resolveResourcePrefixUrl((String) request.request.requestURL, params.dataCollection);
-            return
         }
-
-        resolveCollectionUrlProcess((String) request.request.requestURL, params.dataCollection)
+        else {
+            resolveCollectionUrlProcess((String) request.request.requestURL, params.dataCollection)
+        }
     }
     
     private def resolveCollectionUrlProcess(String url, String namespace)
@@ -245,13 +301,8 @@ class UriRecordController
             }
             withFormat {
                 html {
-                    //redirects without a traling slash
-                    if (!url.endsWith("/")) {
-                        url = url + "/"
-                        redirect(url: url)
-                        return;
-                    }else
-                        renderPartialResponseHtml(data, (String) request.request.requestURL, obsolete) }   // also handles 'all'   //TODO: directly displays content from Identifiers.org
+                    redirect(url: "http://www.ebi.ac.uk/miriam/main/datatypes/" + data.id)
+                }
                 rdf { renderCollectionResponseRdf(data, (String) request.request.requestURL, obsolete) }
                 //rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
             }
@@ -293,8 +344,17 @@ class UriRecordController
             if (Pattern.matches(datacollection.regexp[0], entity)) {
                 String redirectURL = "${resource.urlPrefix}${entity}${resource.urlSuffix}"
                 redirect(url: redirectURL)
-            } else
-                forward(controller: "error", action: "invalidIdentifier", params: [url: request.request.requestURL, dataCollection: resource.dataCollection, identifier: entity, regexp: resource.dataCollection.regexp])
+            } else {
+                //this doesn't work
+                withFormat {
+                    html {
+                        forward(controller: "error", action: "invalidIdentifier", params: [url: url, dataCollection: resource.dataCollection, identifier: entity, regexp: resource.dataCollection.regexp])
+                    }
+                    rdf {
+                        forward(controller: "error", action: "unavailableFormat", params: [url: url])
+                    }
+                }
+            }
         }else{
             forward(controller:"error", action:"unknownDataResource", params:[url:request.request.requestURL, resourcePrefix:prefix])
         }

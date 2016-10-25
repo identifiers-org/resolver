@@ -3,20 +3,17 @@
  */
 
 //var idorgrest = "http://localhost:8090/miriamws/rest/resources/";
-var idorgrest = "//www.ebi.ac.uk/miriamws/main/rest/resources/";
+var idorgrest = "//dev.identifiers.org/rest/";
+//var idorgrest = "//localhost:8090/";
 
 $( function() {
     $( "#resources" ).autocomplete({
             source: function(request, response){
                 $.ajax({
                     type: "GET",
-                    url: idorgrest+request.term,
+                    url: idorgrest+"collections/name/"+request.term,
                     success: function (result) {
-                        if(result.item.constructor==Array) {
-                            response(result.item);
-                        }else{
-                            response(new Array(result.item))
-                        }
+                        response(result)
                     },
                     error: function (msg) {
                         console.log(msg.status + ' ' + msg.statusText);
@@ -24,32 +21,35 @@ $( function() {
                 })
             },
             select: function (event, ui) {
-                $("#resources").val(ui.item.uri);
-                window.open(ui.item.uri,'_blank');
+                $("#resources").val(ui.item.url);
+                window.open(ui.item.url,'_blank');
                 return false;
             }
         })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
-        console.log(item);
-        return $( "<li>" )
-            .append( "<div><b>" + item['@prefix'] + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
+         return $( "<li>" )
+            .append( "<div><b>" + item.prefix + "</b>&nbsp;&nbsp;" + item.url + "</div>" )
             .appendTo( ul );
     };
 
     $("#validate").click(function(){
         if(validateField($("#resIdent").val())){
+            $( "#progressbar" ).progressbar({
+                value: false
+            });
             $.ajax({
-                url: idorgrest+"validate/"+$("#resIdent").val(),
+                url: idorgrest+"identifiers/validate/"+$("#resIdent").val(),
                 success: function(result) {
-                    var validationMessage = "Invalid prefix:identifier. Unable to find an identifiers.org URI.";
-                    if (result != null ) {
-                        validationMessage = result.item.uri;
-                        $("#validate-result").removeClass("invalid-input").addClass("valid-input");
-                    }
-                    else {
-                        $("#validate-result").removeClass("valid-input").addClass("invalid-input");
-                    }
-                    $("#validate-result").html(validationMessage);
+                    validationMessage = result.url;
+                    $("#validate-result").html("<a href=\""+validationMessage+"\">"+validationMessage+"</a>");
+                    $("#validate-result").removeClass("invalid-input").addClass("valid-input");
+                    $( "#progressbar" ).hide();
+                },
+                error: function (xhr, ajaxOptions, thrownError){
+                    $("#validate-result").removeClass("valid-input").addClass("invalid-input");
+                    jsonValue = jQuery.parseJSON(xhr.responseText);
+                    $("#validate-result").html(jsonValue.message);
+                    $( "#progressbar" ).hide();
                 }
             });
         }else {
@@ -57,19 +57,16 @@ $( function() {
             $("#validate-result").html("Please enter prefix:identifier.");
         }
 
+
     });
 
     $( "#databases" ).autocomplete({
             source: function(request, response){
                 $.ajax({
                     type: "GET",
-                    url: idorgrest+"identifier/"+request.term,
+                    url: idorgrest+"identifiers/"+request.term,
                     success: function (result) {
-                        if(result.item.constructor==Array) {
-                            response(result.item);
-                        }else{
-                            response(new Array(result.item))
-                        }
+                        response(result);
                     },
                     error: function (msg) {
                         console.log(msg.status + ' ' + msg.statusText);
@@ -77,14 +74,14 @@ $( function() {
                 })
             },
             select: function (event, ui) {
-                $("#databases").val(ui.item.uri);
-                window.open(ui.item.uri,'_blank');
+                $("#databases").val(ui.item.url);
+                window.open(ui.item.url,'_blank');
                 return false;
             }
         })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
         return $( "<li>" )
-            .append( "<div><b>" + item['@prefix'] + "</b>&nbsp;&nbsp;" + item.uri + "</div>" )
+            .append( "<div><b>" + item.prefix + "</b>&nbsp;&nbsp;" + item.url + "</div>" )
             .appendTo( ul );
     };
 

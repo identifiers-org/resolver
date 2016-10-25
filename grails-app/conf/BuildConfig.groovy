@@ -4,8 +4,8 @@ grails.project.test.reports.dir = "target/test-reports"
 //grails.project.war.file = "target/${appName}-${appVersion}.war"
 grails.project.war.file = "target/identifiers_org.war"
 grails.servlet.version = "2.5"
-grails.project.source.level = 1.7
-grails.project.target.level = 1.7
+grails.project.source.level = 1.8
+grails.project.target.level = 1.8
 grails.project.dependency.resolver = "maven"
 
 grails.project.dependency.resolution = {
@@ -54,7 +54,7 @@ grails.project.dependency.resolution = {
     }
 
     plugins {
-        build ":tomcat:7.0.54"
+        build ":tomcat:8.0.33"
 
         // plugins for the compile step
         compile ":scaffold-core:1.3.2"

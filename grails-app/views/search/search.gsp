@@ -16,13 +16,15 @@
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 <script type="text/javascript" src="${resource(dir: 'js', file: 'search.js', base: '//static.identifiers.org/')}"></script>
+%{--<script type="text/javascript" src="${resource(dir: 'js', file: 'search.js')}"></script>--}%
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css', base: '//static.identifiers.org/')}" type="text/css" />
+%{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css" />--}%
 
 
 <table>
     <tr>
         <td>
-            <label for="resources">Find valid database resource names </label>
+            <label for="resources">Find valid database resource names, eg: pubmed </label>
         </td>
         <td>
             <div id="resources-widget-container">
@@ -38,6 +40,7 @@
         <td>
             <input id="resIdent" type="text">
             <button id="validate">Validate</button>
+            <div id="progressbar"></div>
             <div id="validate-result"></div>
         </td>
     </tr>

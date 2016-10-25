@@ -14,6 +14,9 @@
 {
     width: 400px;
 }
-
+#progressbar {
+    width: 130px;
+    height: 10px;
+}
 .invalid-input { color: red;}
 .valid-input { color: green;}
