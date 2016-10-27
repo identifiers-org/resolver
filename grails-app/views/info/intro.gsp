@@ -22,18 +22,8 @@
 <!-- right panel (1/4 of total width) -->
 <!-- latest news -->
 <div class="grid_6 alpha">
-    <div id="news_side_panel">
-        <div class="news_heading">
-            <div class="news_heading_left">
-                <a href="news" title="Access all news" class="icon icon-generic" data-icon="N">News</a>
-            </div>
-            <div class="news_heading_right">
-                <a href="https://twitter.com/biomodels" title="@biomodels" class="icon icon-socialmedia" data-icon="T" style="">&nbsp;</a>
-            </div>
-        </div>
-
-        <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages')+ 'home_news.html'}" charEncoding="UTF-8" />
-
+    <div class="panel-pane pane-custom pane-4 clearfix" >
+        <a class="twitter-timeline" href="https://twitter.com/IdentifiersOrg">Tweets by IdentifiersOrg</a> <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
     </div>
 </div>
 </body>
