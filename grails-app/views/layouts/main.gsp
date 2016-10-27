@@ -38,7 +38,7 @@
 
   <!-- you can replace this with [projectname]-colours.css. See http://frontier.ebi.ac.uk/web/style/colour for details of how to do this -->
   <!-- also inform ES so we can host your colour palette file -->
- %{-- <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/develop/embl-petrol-colours.css" type="text/css" media="screen">--}%
+  <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/css/compliance/develop/embl-petrol-colours.css" type="text/css" media="screen">
    %{-- <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css')}" type="text/css" />--}%
     <link rel="stylesheet" href="${resource(dir: 'css', file: 'static.css', base: '//static.identifiers.org/')}" type="text/css" />
   <!-- for production the above can be replaced with -->
@@ -67,7 +67,7 @@
 
 </head>
 
-<body class="level2" style="max-width: 1600px;"><!-- add any of your classes or IDs -->
+<body class="level1 section-services"><!-- add any of your classes or IDs -->
   <div id="skip-to">
     <ul>
       <li><a href="#content">Skip to main content</a></li>
@@ -106,7 +106,7 @@
         <!-- identifiers.org beta banner-->
         <!--         <h1 class="icon icon-generic" data-icon="&gt;"><a href="http://identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: '//static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
          -->
-        <h1><a href="//identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-small.png', base: '//static.identifiers.org/')}" alt="Identifiers.org logo"/></a></h1>
+        <h1><a href="//identifiers.org/"><img src="${resource(dir: 'images', file: 'identifiers-org_logo-new.png', base: '//static.identifiers.org/')}" alt="Identifiers.org logo" height="80" width="80" style="padding-right: 12px;"/>Identifiers.org</a></h1>
 
       </div>
 
