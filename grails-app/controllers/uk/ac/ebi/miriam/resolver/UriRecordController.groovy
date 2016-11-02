@@ -227,35 +227,44 @@ class UriRecordController
         if(resources.empty)
             return
 
-        DataCollection dataCollection = retrieveCollection(prefixedResource);
+        try {
+            DataCollection dataCollection = retrieveCollection(prefixedResource);
 
-        for(Resource resource: resources){
-            if(resource.dataCollection.id.equals(dataCollection.id)){
-                if(!dataCollection.prefixed_id){
-                    prefixedResource = prefixedResource.substring(prefixedResource.indexOf(":")+1);
-                }
-                String redirectURL = "${resource.urlPrefix}${prefixedResource}${resource.urlSuffix}"
-                withFormat {
-                    html{
-                        redirect(url: redirectURL)
-                    }
-                    rdf{
-                        forward(controller:"error", action:"unavailableFormat", params:[url:url])
-                    }
-                }
-
-                return true
+            if(dataCollection == null){
+                return false
             }
+
+            for(Resource resource: resources){
+                if(resource.dataCollection.id.equals(dataCollection.id)){
+                    if(!dataCollection.prefixed_id){
+                        prefixedResource = prefixedResource.substring(prefixedResource.indexOf(":")+1);
+                    }
+                    String redirectURL = "${resource.urlPrefix}${prefixedResource}${resource.urlSuffix}"
+                    withFormat {
+                        html{
+                            redirect(url: redirectURL)
+                        }
+                        rdf{
+                            forward(controller:"error", action:"unavailableFormat", params:[url:url])
+                        }
+                    }
+
+                    return true
+                }
+            }
+            return false
+        }catch (InvalidEntityIdentifierException e)
+        {
+            forward(controller:"error", action:"invalidIdentifier", params:[url:request.request.requestURL, dataCollection:e.dataCollection, identifier:e.identifier, regexp:e.regexp])
         }
-        return false
     }
 
     private DataCollection retrieveCollection(String prefixedId) {
         if (prefixedId.contains(":")) {
-            String prefix = prefixedId.substring(0,prefixedId.indexOf(":"))
-            String entity = prefixedId.substring(prefixedId.indexOf(":")+1)
+            String prefix = prefixedId.substring(0, prefixedId.indexOf(":"))
+            String entity = prefixedId.substring(prefixedId.indexOf(":") + 1)
 
-            def identifier = Identifier.findByUriPrefix("urn:miriam:"+prefix.toLowerCase())
+            def identifier = Identifier.findByUriPrefix("urn:miriam:" + prefix.toLowerCase())
 
             if(!identifier && !identifier.dataCollection ){
                 return null
@@ -263,12 +272,14 @@ class UriRecordController
 
             def datacollection = identifier.dataCollection;
 
-            if(datacollection.prefixed_id){
+            if (datacollection.prefixed_id) {
                 entity = prefixedId
             }
 
             if (Pattern.matches(datacollection.regexp, entity)) {
                 return datacollection
+            } else {
+                throw new InvalidEntityIdentifierException("The identifier '$entity' is invalid for the data collection '$prefix'!", prefix, entity, datacollection.regexp)
             }
         }
         return null;

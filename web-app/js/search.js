@@ -3,7 +3,8 @@
  */
 
 //var idorgrest = "http://localhost:8090/miriamws/rest/resources/";
-var idorgrest = "//dev.identifiers.org/rest/";
+var idorgrest = "//identifiers.org/rest/";
+var NoResultsLabel = "No results found.";
 //var idorgrest = "//localhost:8090/";
 
 $( function() {
@@ -16,20 +17,32 @@ $( function() {
                         response(result)
                     },
                     error: function (msg) {
+                        result = [NoResultsLabel];
+                        response(result);
                         console.log(msg.status + ' ' + msg.statusText);
                     }
                 })
             },
             select: function (event, ui) {
-                $("#resources").val(ui.item.url);
-                window.open(ui.item.url,'_blank');
-                return false;
+                if (ui.item.label === NoResultsLabel) {
+                    event.preventDefault();
+                }else{
+                    $("#resources").val(ui.item.url);
+                    window.open(ui.item.url,'_blank');
+                    return false;
+                }
             }
         })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
-         return $( "<li>" )
-            .append( "<div><b>" + item.prefix + "</b>&nbsp;&nbsp;" + item.url + "</div>" )
-            .appendTo( ul );
+        if (item.label === NoResultsLabel) {
+            return $("<li>")
+                .append("<div>" + item.label + "</div>")
+                .appendTo(ul);
+        }else {
+            return $("<li>")
+                .append("<div><b>" + item.prefix + "</b>&nbsp;&nbsp;" + item.url + "</div>")
+                .appendTo(ul);
+        }
     };
 
     $("#validate").click(function(){
@@ -69,20 +82,32 @@ $( function() {
                         response(result);
                     },
                     error: function (msg) {
+                        result = [NoResultsLabel];
+                        response(result);
                         console.log(msg.status + ' ' + msg.statusText);
                     }
                 })
             },
             select: function (event, ui) {
-                $("#databases").val(ui.item.url);
-                window.open(ui.item.url,'_blank');
-                return false;
+                if (ui.item.label === NoResultsLabel) {
+                    event.preventDefault();
+                }else {
+                    $("#databases").val(ui.item.url);
+                    window.open(ui.item.url, '_blank');
+                    return false;
+                }
             }
         })
         .autocomplete( "instance" )._renderItem = function( ul, item ) {
-        return $( "<li>" )
-            .append( "<div><b>" + item.prefix + "</b>&nbsp;&nbsp;" + item.url + "</div>" )
-            .appendTo( ul );
+        if (item.label === NoResultsLabel) {
+            return $("<li>")
+                .append("<div>" + item.label + "</div>")
+                .appendTo(ul);
+        }else {
+            return $("<li>")
+                .append("<div><b>" + item.prefix + "</b>&nbsp;&nbsp;" + item.url + "</div>")
+                .appendTo(ul);
+        }
     };
 
     function validateField(inputValue){

@@ -8,7 +8,7 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <html>
 <head>
-    <title>Identifiers.org | search</title>
+    <title>Identifiers.org | Advanced Search</title>
 </head>
 
 <body>
@@ -24,7 +24,7 @@
 <table>
     <tr>
         <td>
-            <label for="resources">Find valid database resource names, eg: pubmed </label>
+            <label for="resources">Find valid database resource names, eg: CHEBI </label>
         </td>
         <td>
             <div id="resources-widget-container">
@@ -47,7 +47,7 @@
 
     <tr>
         <td>
-            <label for="databases">Find resources for a given identifier, eg: CHEBI:36927 </label>
+            <label for="databases">Alpha: Find resources for a given identifier, eg: CHEBI:36927 </label>
         </td>
         <td>
             <div id="databases-widget-container">
