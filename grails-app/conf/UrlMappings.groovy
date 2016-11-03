@@ -74,6 +74,13 @@ class UrlMappings
             controller = "service"
             action = "index"
         }
+
+        "/info" {
+            controller = "service"
+            action = "info"
+        }
+
+
         // access to a data collection
         "/$dataCollection" {
             controller = "uriRecord"

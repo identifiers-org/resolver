@@ -7,4 +7,8 @@ class ServiceController {
     def index() {
         render(view: "service")
     }
+
+    def info() {
+        render (view: "info")
+    }
 }
