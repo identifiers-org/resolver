@@ -29,22 +29,22 @@ class UrlMappings
         
         // root URL
         "/" {
-	        controller = "info"
+	        controller = "general"
 	        action = "intro"
         }
 
         "/documentation" {
-            controller = "info"
+            controller = "general"
 	        action = "documentation"
         }
         
         "/news" {
-            controller = "info"
+            controller = "general"
 	        action = "news"
         }
 
         "/about" {
-            controller = "info"
+            controller = "general"
 	        action = "about"
         }
 

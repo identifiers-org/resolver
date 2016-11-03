@@ -7,7 +7,7 @@ package uk.ac.ebi.miriam.resolver
  * Camille Laibe
  * 20110811
  */
-class InfoController
+class GeneralController
 {
     static layout = 'main'   // Sitemesh view layouts template
     

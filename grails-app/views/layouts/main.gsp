@@ -142,10 +142,10 @@
 
       <nav>
         <ul class="grid_24" id="local-nav">
-          <li class="first"><g:link controller="info" action="intro" title="Identifiers.org">Home</g:link></li>
-          <li><g:link controller="info" action="documentation" title="Documentation">Documentation</g:link>
+          <li class="first"><g:link controller="general" action="intro" title="Identifiers.org">Home</g:link></li>
+          <li><g:link controller="general" action="documentation" title="Documentation">Documentation</g:link>
           <li><g:link controller="service" action="index" title="Services">Services</g:link>
-          <li class="last"><g:link controller="info" action="about" title="About">About</g:link></li>
+          <li class="last"><g:link controller="general" action="about" title="About">About</g:link></li>
           <!-- If you need to include functional (as opposed to purely navigational) links in your local menu,
                add them here, and give them a class of "functional". Remember: you'll need a class of "last" for
                whichever one will show up last...

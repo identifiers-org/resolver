@@ -46,7 +46,7 @@ class RedirectController
         }
         else   // default: front page
         {
-            forward(controller: "info", action: "intro")   // "request" does not work
+            forward(controller: "general", action: "intro")   // "request" does not work
         }
     }
 }
