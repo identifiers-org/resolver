@@ -144,9 +144,7 @@
         <ul class="grid_24" id="local-nav">
           <li class="first"><g:link controller="info" action="intro" title="Identifiers.org">Home</g:link></li>
           <li><g:link controller="info" action="documentation" title="Documentation">Documentation</g:link>
-          <li><g:link controller="search" action="index" title="Advanced Search">Advanced Search</g:link>
-          <li><a href="//identifiers.org/registry/" title="MIRIAM Registry">Registry</a></li>
-          <li><a href="services/sparql" title="SPARQL Endpoint">SPARQL Endpoint</a></li>
+          <li><g:link controller="service" action="index" title="Services">Services</g:link>
           <li class="last"><g:link controller="info" action="about" title="About">About</g:link></li>
           <!-- If you need to include functional (as opposed to purely navigational) links in your local menu,
                add them here, and give them a class of "functional". Remember: you'll need a class of "last" for
