@@ -5,7 +5,8 @@
   Time: 09:58
 --%>
 
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page import="grails.util.Holders; uk.ac.ebi.miriam.common.Constants" contentType="text/html;charset=UTF-8" %>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Identifiers.org | Advanced Search</title>
@@ -20,6 +21,7 @@
 <link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css', base: '//static.identifiers.org/')}" type="text/css" />
 %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css" />--}%
 
+<h3 class='icon icon-functional' data-icon='1'>Advanced Search</h3>
 
 <table>
     <tr>
@@ -56,5 +58,8 @@
         </td>
     </tr>
 </table>
+
+<c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'advSearch.html'}" charEncoding="UTF-8" />
+
 </body>
 </html>

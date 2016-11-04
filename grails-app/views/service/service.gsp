@@ -38,7 +38,7 @@
 
 <div class="pane-content">
 
-    <h3><a href="info"><span class='icon icon-generic' data-icon='i'></span>Info</a></h3>
+    <h3><a href="info"><span class='icon icon-generic' data-icon='i'></span>Info Service</a></h3>
 
     <p>Info service provide access to the Registry's records to identify and retrieve metadata about data entities.</p>
 </div>
