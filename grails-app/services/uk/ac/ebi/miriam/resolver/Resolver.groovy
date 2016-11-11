@@ -63,7 +63,7 @@ class Resolver
         if(u1 == u2) {
             return a.id <=> b.id
         }
-        u1 <=> u2
+        u2 <=> u1
     } as Comparator
 
     /**

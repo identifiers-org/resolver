@@ -63,7 +63,7 @@
 
   <!-- custom build (lacks most of the "advanced" HTML5 support -->
   <script src="//www.ebi.ac.uk/web_guidelines/js/libs/modernizr.custom.49274.js"></script>
-  <link rel='shortcut icon' href='images/favicon.ico' type='image/x-icon' />
+  <link rel='shortcut icon' href='//static.identifiers.org/images/favicon.ico' type='image/x-icon' />
 
 </head>
 

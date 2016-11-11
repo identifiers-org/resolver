@@ -46,7 +46,7 @@ class DataCollection implements Comparable
     /* deprecated URIs */
     // TODO: List<Identifier> deprecatedURIs
     // GORM one-to-many relationships
-    static hasMany = [uris: Identifier, resources: Resource, synonyms: Synonym]   // , tags: Tag
+    static hasMany = [uris: Identifier, resources: Resource, synonyms: Synonym, aliasPrefixes:PrefixAlias]   // , tags: Tag
     /* definition of the data collection */
     String definition
     /* regular expression of the identifiers used by the data collection */
@@ -88,6 +88,7 @@ class DataCollection implements Comparable
         replacedBy column:"replacement"
         version false   // no version column
         prefixed_id column: "prefixed_id"
+        aliasPrefixes fetch: "join"
 
         // synonyms
         //hasMany joinTable: [name: 'mir_synonyms', key: 'ptr_datatype', column: 'name', type: "text"]

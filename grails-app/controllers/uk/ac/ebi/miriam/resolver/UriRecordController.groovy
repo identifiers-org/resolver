@@ -1,6 +1,7 @@
 package uk.ac.ebi.miriam.resolver
 
 import uk.ac.ebi.miriam.common.Identifier
+import uk.ac.ebi.miriam.common.PrefixAlias
 import uk.ac.ebi.miriam.common.ResourceRecord
 import uk.ac.ebi.miriam.exception.InvalidEntityIdentifierException
 import uk.ac.ebi.miriam.exception.ResolverErrorException
@@ -266,11 +267,18 @@ class UriRecordController
 
             def identifier = Identifier.findByUriPrefix("urn:miriam:" + prefix.toLowerCase())
 
-            if(!identifier && !identifier.dataCollection ){
-                return null
+            def datacollection
+
+            if(identifier == null){
+                //check if its an alias prefix
+                datacollection = findCollectionFromAlias(prefix)
+                if(datacollection==null)
+                    return null
+            }else {
+                 datacollection = identifier.dataCollection;
             }
 
-            def datacollection = identifier.dataCollection;
+
 
             if (datacollection.prefixed_id) {
                 entity = prefixedId
@@ -283,6 +291,14 @@ class UriRecordController
             }
         }
         return null;
+    }
+
+    private DataCollection findCollectionFromAlias(String prefix){
+        def prefixAlias = PrefixAlias.findByName(prefix)
+        if(prefixAlias!=null){
+            return prefixAlias.dataCollection
+        }else
+            return null
     }
 
 
@@ -335,24 +351,31 @@ class UriRecordController
         String prefix = prefixedResource.substring(0,prefixedResource.indexOf(":"))
         String entity = prefixedResource.substring(prefixedResource.indexOf(":")+1)
 
-        def identifier = Identifier.findAllByUriPrefix("urn:miriam:"+prefix.toLowerCase())
-        if(identifier.empty){
-            forward(controller:"error", action:"unknownDataCollection", params:[url:request.request.requestURL, dataCollection:prefix])
-            return
-        }
+        def identifier = Identifier.findByUriPrefix("urn:miriam:"+prefix.toLowerCase())
 
-        def datacollection = identifier.dataCollection;
+        def datacollection
+
+        if(!identifier){
+            //check if its an alias prefix
+            datacollection = findCollectionFromAlias(prefix)
+            if(datacollection==null) {
+                forward(controller: "error", action: "unknownDataCollection", params: [url: request.request.requestURL, dataCollection: prefix])
+                return
+            }
+        }else {
+            datacollection = identifier.dataCollection
+        }
 
         Profile profile = Profile.findByShortname("direct")
         String preferredResourceId = profile.getPreferredResource(datacollection.id)
         Resource resource = Resource.findById(preferredResourceId)
 
-        if(datacollection.prefixed_id[0] == true){
+        if(datacollection.prefixed_id == true){
             entity = prefixedResource;
         }
 
         if(resource) {
-            if (Pattern.matches(datacollection.regexp[0], entity)) {
+            if (Pattern.matches(datacollection.regexp, entity)) {
                 String redirectURL = "${resource.urlPrefix}${entity}${resource.urlSuffix}"
                 redirect(url: redirectURL)
             } else {
