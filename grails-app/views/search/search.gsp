@@ -30,13 +30,16 @@
 
                 <p class="row column">
                     <label for="resources">Find valid database resource names, eg: CHEBI </label>
-                    <input type="text" name="username" placeholder="Enter a resource name" value="" id="resources">
+                    <input type="text" name="resources" placeholder="Enter a resource name" value="" id="resources">
+
+                    <label for="providercodes">Find provider codes for a prefix, eg: chebi </label>
+                    <input type="text" name="providercodes" placeholder="Enter a prefix" value="" id="providercodes">
 
                     <label for="databases">Alpha: Find resources for a given identifier, eg: CHEBI:36927 </label>
-                    <input type="text" name="username" placeholder="Enter an identifier" value="" id="databases">
+                    <input type="text" name="databases" placeholder="Enter an identifier" value="" id="databases">
 
                     <label for="resIdent">Validate a given prefix:identifier, eg: CHEBI:36927 </label>
-                    <input type="text" name="username" placeholder="Enter a prefix:identifier" value="" id="resIdent">
+                    <input type="text" name="resIdent" placeholder="Enter a prefix:identifier" value="" id="resIdent">
 
                     <input type="submit" class="button" value="Validate" id="validate">
                     <label id="validate-result"></label>

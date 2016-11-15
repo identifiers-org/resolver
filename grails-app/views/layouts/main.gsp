@@ -47,9 +47,6 @@
 
     <script type="text/javascript" charset="utf-8" async="" src="https://platform.twitter.com/js/timeline.f8bf188a26c0fb191f8cdd1eb88ad3c7.js"></script>
     <script type="text/javascript" src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-    <script type="text/javascript" src="//ebiwd.github.io/EBI-Pattern-library/sample-site/migrations/testMigration.js"></script>
-    <script data-note="just-for-the-diff" src="//cemerick.github.io/jsdifflib/diffview.js"></script>
-    <script data-note="just-for-the-diff" src="//cemerick.github.io/jsdifflib/difflib.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
 
     <link rel="stylesheet" href="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/libraries/foundation-6/css/foundation.css" type="text/css">
@@ -62,12 +59,6 @@
     <script defer="defer" src="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/js/script.js"></script>
     <script src="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/libraries/foundation-6/js/foundation.js"></script>
     <script src="//www.ebi.ac.uk/web_guidelines/EBI-Framework/v1.1/js/foundationExtendEBI.js"></script>
-    <link rel="stylesheet" href="//cemerick.github.io/jsdifflib/diffview.css" type="text/css">
-    <style type="text/css" data-note="just-for-the-diff">tbody td {
-        padding: 0 !important;
-        word-wrap: break-word;
-        font-size: .8rem;
-    }</style>
 
 </head>
 

@@ -45,6 +45,42 @@ $( function() {
         }
     };
 
+    $( "#providercodes" ).autocomplete({
+        source: function(request, response){
+            $.ajax({
+                type: "GET",
+                url: idorgrest+"collections/provider/"+request.term,
+                success: function (result) {
+                    response(result)
+                },
+                error: function (msg) {
+                    result = [NoResultsLabel];
+                    response(result);
+                    console.log(msg.status + ' ' + msg.statusText);
+                }
+            })
+        },
+        select: function (event, ui) {
+            if (ui.item.label === NoResultsLabel) {
+                event.preventDefault();
+            }else{
+                $("#providercodes").val(ui.item.resourcePrefix);
+                return false;
+            }
+        }
+    })
+        .autocomplete( "instance" )._renderItem = function( ul, item ) {
+        if (item.label === NoResultsLabel) {
+            return $("<li>")
+                .append("<div>" + item.label + "</div>")
+                .appendTo(ul);
+        }else {
+            return $("<li>")
+                .append("<div><b>" + item.resourcePrefix + "</b>&nbsp;&nbsp;" + item.info + "</div>")
+                .appendTo(ul);
+        }
+    };
+
     $("#validate").click(function(){
         if(validateField($("#resIdent").val())){
             $( "#progressbar" ).progressbar({
