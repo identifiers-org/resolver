@@ -22,44 +22,34 @@
 %{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'search.css')}" type="text/css" />--}%
 
 <h3 class='icon icon-functional' data-icon='1'>Advanced Search</h3>
+<div class="small-12 medium-12 large-12 columns">
 
-<table>
-    <tr>
-        <td>
-            <label for="resources">Find valid database resource names, eg: CHEBI </label>
-        </td>
-        <td>
-            <div id="resources-widget-container">
-                <input id="resources">
-            </div>
-        </td>
-    </tr>
 
-    <tr>
-        <td>
-            <label for="resIdent">Validate a given prefix:identifier, eg: CHEBI:36927 </label>
-        </td>
-        <td>
-            <input id="resIdent" type="text">
-            <button id="validate">Validate</button>
-            <div id="progressbar"></div>
-            <div id="validate-result"></div>
-        </td>
-    </tr>
+    <div id="advSearch" class="row">
+        <div class="medium-6 medium-centered large-6 large-centered columns">
 
-    <tr>
-        <td>
-            <label for="databases">Alpha: Find resources for a given identifier, eg: CHEBI:36927 </label>
-        </td>
-        <td>
-            <div id="databases-widget-container">
-                <input id="databases">
-            </div>
-        </td>
-    </tr>
-</table>
+                <p class="row column">
+                    <label for="resources">Find valid database resource names, eg: CHEBI </label>
+                    <input type="text" name="username" placeholder="Enter a resource name" value="" id="resources">
+
+                    <label for="databases">Alpha: Find resources for a given identifier, eg: CHEBI:36927 </label>
+                    <input type="text" name="username" placeholder="Enter an identifier" value="" id="databases">
+
+                    <label for="resIdent">Validate a given prefix:identifier, eg: CHEBI:36927 </label>
+                    <input type="text" name="username" placeholder="Enter a prefix:identifier" value="" id="resIdent">
+
+                    <input type="submit" class="button" value="Validate" id="validate">
+                    <label id="validate-result"></label>
+                    <div id="progressbar"></div>
+
+                </div>
+        </div>
+    </div>
 
 <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'advSearch.html'}" charEncoding="UTF-8" />
+</div>
+
+
 
 </body>
 </html>
