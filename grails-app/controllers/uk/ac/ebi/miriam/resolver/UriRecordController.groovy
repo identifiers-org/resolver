@@ -1,5 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
+import uk.ac.ebi.miriam.common.Format
 import uk.ac.ebi.miriam.common.Identifier
 import uk.ac.ebi.miriam.common.PrefixAlias
 import uk.ac.ebi.miriam.common.ResourceRecord
@@ -126,13 +127,6 @@ class UriRecordController
             }
             else if (!request.serverName.contains("info."))   // canonical URIs
             {
-                // if only one resource redirect
-/*                if(record.dataCollection.resources.size() == 1)
-                {
-                    Resource preferredResource = Resource.findById(record.dataCollection.resources.iterator().next().id);
-                    redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
-                    return;
-                }*/
 
                 // if profile is not provided, the assigns the 'direct' profile
                 if(params.profile == null)
@@ -157,8 +151,23 @@ class UriRecordController
                         }
                         else
                         {
-                            // direct redirection (no top banner is displayed)
-                            redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
+                            withFormat {
+                                html{
+                                    // direct redirection (no top banner is displayed)
+                                    redirect(url: preferredResource.urlPrefix + params.entity + preferredResource.urlSuffix);
+                                }
+                                rdf{
+                                    Format format = Resolver.getDirectResourceIdWithRDF(record.dataCollection.id)
+                                    if(format){
+                                        redirect(url: format.urlPrefix + params.entity + format.urlSuffix)
+                                    }
+                                    else{
+                                        forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL])
+                                    }
+
+                                }
+                            }
+
                         }
                     }
                     else   // profile is private
@@ -193,14 +202,6 @@ class UriRecordController
                 withFormat {
                     html { renderResponseHtml(record) }   // also handles 'all'
                     rdf { renderResponseRdf(record)}
-                }
-            }
-            else   // other URIs: error
-            {
-                withFormat {
-                    html{ }
-                    rdf { forward(controller:"error", action:"unavailableFormat", params:[url:request.request.requestURL]) }
-
                 }
             }
         }

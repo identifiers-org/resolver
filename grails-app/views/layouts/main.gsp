@@ -189,7 +189,7 @@
                               <li class="functional"><a href="#" class="icon icon-generic" data-icon="\">Feedback</a></li>
                               <li class="functional"><a href="#" class="icon icon-functional" data-icon="r">Share</a></li>--}%
 
-                    <li class="menu-412 menu-feedback functional right last" style="float: right" id="feedback"><a href="//www.ebi.ac.uk/support/miriam" target="_blank" class="icon icon-generic" data-icon="\">Feedback</a></li>
+                    <li class="menu-412 menu-feedback functional right last" style="float: right" id="feedback"><a href="//www.ebi.ac.uk/support/identifiers.org" target="_blank" class="icon icon-generic" data-icon="\">Feedback</a></li>
                 </ul>
 
             </nav>

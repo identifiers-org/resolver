@@ -1,6 +1,7 @@
 package uk.ac.ebi.miriam.resolver
 
 import grails.util.Holders
+import uk.ac.ebi.miriam.common.Format
 import uk.ac.ebi.miriam.common.Resource
 import uk.ac.ebi.miriam.common.UriRecord
 import uk.ac.ebi.miriam.common.UrlRecord
@@ -264,6 +265,45 @@ class Resolver
      */
     public static String getDirectResourceId(String id){
 
+        Set<Resource> runningResources = getRunningResources(id);
+
+        if(runningResources){
+            Resource best = runningResources.first()
+            return best.id
+        }
+
+        return null
+    }
+
+    private static boolean isEndorsedResource(Resource r) {
+        r?.institution?.contains("European Bioinformatics Institute") &&
+                isResourceUp(r) && !r.obsolete
+    }
+
+    private static boolean isResourceUp(Resource r) {
+        final Integer state = r?.reliability?.state //int can't handle null
+        state > 0 && state <= 3
+    }
+
+    public static Format getDirectResourceIdWithRDF(String id){
+
+        Set<Resource> runningResources= getRunningResources(id);
+
+        if (runningResources) {
+            for (Resource resource : runningResources) {
+                for (Format format : resource.format) {
+                    if (format.mimetype.displaytext.equals("RDF")) {
+                        return format;
+                    }
+                }
+            }
+        }
+
+        return null
+    }
+
+    private static Set<Resource> getRunningResources(String id){
+
         boolean collectionExists = DataCollection.exists(id)
         if (collectionExists){
             def data = DataCollection.load id
@@ -279,7 +319,7 @@ class Resolver
                 if (!r.obsolete) {
                     if (isResourceUp(r)) {
                         if (r.primary) {
-                            return r.id
+                            return runningResources << r
                         }
                         runningResources.add(r)
                         if (isEndorsedResource(r)) {
@@ -296,20 +336,8 @@ class Resolver
             if(!runningResources) {
                 runningResources.addAll(resources)
             }
-            Resource best = runningResources.first()
-            return best.id
+            return runningResources
         }
-
         return null
-    }
-
-    private static boolean isEndorsedResource(Resource r) {
-        r?.institution?.contains("European Bioinformatics Institute") &&
-                isResourceUp(r) && !r.obsolete
-    }
-
-    private static boolean isResourceUp(Resource r) {
-        final Integer state = r?.reliability?.state //int can't handle null
-        state > 0 && state <= 3
     }
 }
