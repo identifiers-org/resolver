@@ -80,6 +80,11 @@ class UrlMappings
             action = "info"
         }
 
+        "/restws" {
+            controller = "service"
+            action = "restws"
+        }
+
 
         // access to a data collection
         "/$dataCollection" {

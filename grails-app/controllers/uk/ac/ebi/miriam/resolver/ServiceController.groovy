@@ -11,4 +11,12 @@ class ServiceController {
     def info() {
         render (view: "info")
     }
+
+    def restws() {
+        render (view: "restws")
+    }
+
+    def xmlGen(){
+
+    }
 }

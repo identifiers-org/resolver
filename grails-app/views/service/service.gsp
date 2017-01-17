@@ -15,7 +15,7 @@
 
 <div class="pane-content">
 
-    <h3><a href="registry"><span class='icon icon-generic' data-icon='D'></span>Registry</a></h3>
+    <h3><span class='icon icon-generic' data-icon='D'></span>&nbsp;&nbsp;<a href="registry">Registry</a></h3>
 
     <p>The Registry provides the necessary information to allow users to generate unique, perennial and unambiguous identifiers for scientific data.</p>
 </div>
@@ -24,31 +24,38 @@
 
 <div class="pane-content">
 
-    <h3><a href="services/sparql"><span class='icon icon-generic' data-icon='d'></span>SPARQL Endpoint</a></h3>
+    <h3><span class='icon icon-generic' data-icon='d'></span>&nbsp;&nbsp;<a href="services/sparql">SPARQL Endpoint</a></h3>
 
     <p>SPARQL endpoint to perform conversions between different URI schemes recorded in the Registry.</p>
 </div>
 
 <div class="pane-content">
 
-    <h3><a href="search"><span class='icon icon-functional' data-icon='1'></span>Advanced Search</a></h3>
+    <h3><span class='icon icon-functional' data-icon='1'></span>&nbsp;&nbsp;<a href="search">Advanced Search</a></h3>
 
     <p>Advanced search to find valid prefixes, identifiers and providers.</p>
 </div>
 
 <div class="pane-content">
 
-    <h3><a href="info"><span class='icon icon-generic' data-icon='i'></span>Info Service</a></h3>
+    <h3><span class='icon icon-generic' data-icon='i'></span>&nbsp;&nbsp;<a href="info">Info Service</a></h3>
 
     <p>Info service provide access to the Registry's records to identify and retrieve metadata about data entities.</p>
 </div>
 
 <div class="pane-content">
 
-    <h3><a href="rest"><span class='icon icon-generic' data-icon='('></span>Web services</a></h3>
+    <h3><span class='icon icon-generic' data-icon='('></span>&nbsp;&nbsp;<a href="restws">Web services</a></h3>
 
     <p>REST Web Services for programmatic access.</p>
 </div>
+
+%{--<div class="pane-content">
+
+    <h3><span class='icon icon-functional' data-icon='='>&nbsp;&nbsp;</span>Download</h3>
+
+    <p>Registry's content in XML is available <g:link controller="service" action="xmlGen" title="Registry's content in XML">here</g:link>.</p>
+</div>--}%
 
 </body>
 </html>
