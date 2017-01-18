@@ -1,17 +1,8 @@
 package uk.ac.ebi.miriam.xml
 
-import uk.ac.ebi.miriam.common.DataCollection
-import uk.ac.ebi.miriam.common.Identifier
-import uk.ac.ebi.miriam.common.PrefixAlias
-import uk.ac.ebi.miriam.common.Reliability
-import uk.ac.ebi.miriam.common.Resource
-import uk.ac.ebi.miriam.common.Synonym
-import uk.ac.ebi.miriam.common.Tag
-import uk.ac.ebi.miriam.common.TagLink
+import uk.ac.ebi.miriam.common.*
 
-import java.sql.Timestamp
 import java.text.DateFormat
-import java.text.SimpleDateFormat
 
 /**
  * Created by sarala on 16/01/2017.
