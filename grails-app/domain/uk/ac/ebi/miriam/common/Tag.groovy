@@ -40,4 +40,12 @@ class Tag
 
     // GORM: unidirectional many-to-many relationship
     // TODO
+    static mapping = {
+        table "mir_tag"
+        id generator:"assigned", column:"id", type:"string"
+        name column:"tag"
+        description column:"info"
+
+        version false  // no version column
+    }
 }

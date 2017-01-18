@@ -84,16 +84,16 @@ class Reliability
 
         switch (state) {
             case 0:
-                humanState = "Failure"
+                humanState = "Down"
                 break
             case 1:
-                humanState = "Resource working"
+                humanState = "Up"
                 break
             case 2:
-                humanState = "Unknow (no keyword)"
+                humanState = "Unknown"
                 break
             case 3:
-                humanState = "Probably up (Ajax)"
+                humanState = "Probably up"
                 break
             default:
                 humanState = "Unknown"

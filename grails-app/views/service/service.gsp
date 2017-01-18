@@ -50,12 +50,12 @@
     <p>REST Web Services for programmatic access.</p>
 </div>
 
-%{--<div class="pane-content">
+<div class="pane-content">
 
     <h3><span class='icon icon-functional' data-icon='='>&nbsp;&nbsp;</span>Download</h3>
 
-    <p>Registry's content in XML is available <g:link controller="service" action="xmlGen" title="Registry's content in XML">here</g:link>.</p>
-</div>--}%
+    <p>Registry's content in XML is available <g:link controller="service" action="registryxml" title="Registry's content in XML">here</g:link>.</p>
+</div>
 
 </body>
 </html>
