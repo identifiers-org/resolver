@@ -54,9 +54,14 @@ class UrlMappings
         }
 
         // allows "/registry" and "/registry/"
-        "/registry" {
+/*        "/registry" {
             controller = "redirect"
             action = "external"
+        }*/
+
+        "/registry" {
+            controller = "registry"
+            action = "index"
         }
 
         // virtual SPARQL endpoint for URI schemes conversion
