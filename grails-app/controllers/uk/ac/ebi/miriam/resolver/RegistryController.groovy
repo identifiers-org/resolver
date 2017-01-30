@@ -1,11 +1,13 @@
 package uk.ac.ebi.miriam.resolver
 
-import grails.converters.JSON
+import grails.util.Holders
 import groovy.json.JsonSlurper
 import uk.ac.ebi.miriam.common.DataCollection
+import uk.ac.ebi.miriam.common.Identifier
 import uk.ac.ebi.miriam.common.Registry
 import uk.ac.ebi.miriam.common.RegistryResult
 import uk.ac.ebi.miriam.common.Resource
+import uk.ac.ebi.miriam.common.Synonym
 
 class RegistryController {
 
@@ -14,10 +16,21 @@ class RegistryController {
     def index() {
         Registry registry = new Registry();
 
-        URL url = new URL("http://wwwdev.ebi.ac.uk/ebisearch/ws/rest/identifiers_registry?query=domain_source:identifiers_registry&format=json")
-        def result = new JsonSlurper().parseText(url.text)
+        URL url = new URL(constructSearchURL())
+        try {
+            def result = new JsonSlurper().parseText(url.text)
+            Map jsonResult = (Map) result
+            populateResults(registry,jsonResult)
+        }catch (IOException e){
+            registry.message = "Invalid search query."
+        }
 
-        Map jsonResult = (Map) result;
+        render(view: "registry" , model: [registry: registry ])
+    }
+
+    private void populateResults(Registry registry, Map jsonResult){
+        Integer hitCount = (Integer) jsonResult.get("hitCount");
+        registry.hitcount = hitCount
 
         List entries = (List) jsonResult.get("entries");
 
@@ -29,9 +42,10 @@ class RegistryController {
                 registryResult.name = dataCollection.name
                 registryResult.type = RegistryResult.ResourceType.COLLECTION
                 registryResult.description = dataCollection.definition
-                registryResult.prefix = dataCollection.namespace()
-                registryResult.link = "http://identifiers.org/miriam.collection/"+dataCollection.id
-
+                registryResult.prefix = getNameSpace(dataCollection)
+                registryResult.link = Holders.getGrailsApplication().config.grails.serverURL+"/"+ registryResult.prefix
+                registryResult.synonyms = getSynonyms(dataCollection)
+                registry.results.add(registryResult)
             }
             else {
                 Resource resource = Resource.findById(id)
@@ -40,19 +54,81 @@ class RegistryController {
                     registryResult.type = RegistryResult.ResourceType.RESOURCE
                     registryResult.homepage = resource.urlRoot
                     registryResult.prefix = resource.prefix
-                    registryResult.link = "http://identifiers.org/miriam.resource/" + resource.id
+                    registryResult.link = Holders.getGrailsApplication().config.grails.serverURL + "/miriam.resource/" + resource.id
                     registryResult.upTime = resource.reliability.uptimePercent()
                     registryResult.primary = resource.primary
+                    registryResult.institute = resource.institution
+                    registryResult.location = resource.location
+                    registryResult.idorglink = Holders.getGrailsApplication().config.grails.serverURL+"/"+ getNameSpace(resource.dataCollection)+"/"+resource.exampleId
+                    registry.results.add(registryResult)
                 }
             }
-            registry.results.add(registryResult)
+
+
         };
 
-        render(view: "registry" , model: [registry: registry ])
+
+        if(hitCount!=0){
+            registry.message = hitCount + " results found."
+        }
+        else{
+            registry.message = "No results found."
+        }
+
+        if(params.query != null)
+            registry.query = params.query;
+    }
+
+    private String getSynonyms(DataCollection dataCollection){
+        if(dataCollection.synonyms.empty){
+            return "";
+        }
+
+        String synonyms = "(";
+        dataCollection.synonyms.each {Synonym synonym ->
+            synonyms += synonym.name + ", "
+        }
+        synonyms = synonyms.substring(0,synonyms.length()-2) + ")"
+
     }
 
     def filter(){
 
         render(view: "registry")
+    }
+
+    private String constructSearchURL(){
+        String searchUrl = Holders.getGrailsApplication().config.getProperty('searchURL')
+
+        if(params.query==null || params.query.empty){
+            searchUrl +="?query=domain_source:identifiers_registry"
+        }else{
+
+            searchUrl +="?query="+URLEncoder.encode(params.query, "UTF-8").replace("+", "%20")
+        }
+
+        searchUrl += "&format=json"
+
+        if(params.offset!=null) {
+            String limit = "&start=" + params.offset + "&size=" + params.max
+            return searchUrl+limit;
+        }
+        return searchUrl;
+    }
+
+    private String getNameSpace(DataCollection dataCollection){
+        List<Identifier> uris = Identifier.findAllByDataCollection(dataCollection);
+
+        String namespace = null
+
+        uris.each {
+            if ((!it.deprecated) && (it.type == "URN"))
+            {
+                String uri = it.uriPrefix
+                namespace = uri.substring(uri.lastIndexOf(":")+1)
+            }
+        }
+
+        return namespace
     }
 }

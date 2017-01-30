@@ -7,13 +7,19 @@ class RegistryResult {
 
     public enum ResourceType {COLLECTION, RESOURCE}
 
-    String name;
-    ResourceType type;
-    String description;
-    String prefix;
-    String link;
-    String homepage;
-    Integer upTime;
-    Boolean primary;
+    String name
+    ResourceType type
+    String description
+    String prefix
+    String link
+    String homepage
+    Integer upTime
+    Boolean primary
+
+    String institute
+    String location
+    String synonyms
+    String idorglink
+
 
 }

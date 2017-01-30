@@ -17,32 +17,23 @@
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
 %{--<script type="text/javascript" src="${resource(dir: 'js', file: 'registry.js', base: '//static.identifiers.org/')}"></script>--}%
 <script type="text/javascript" src="${resource(dir: 'js', file: 'registry.js')}"></script>
+%{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'registry.css', base: '//static.identifiers.org/')}" type="text/css" />--}%
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'registry.css')}" type="text/css" />
 
 <section>
 
     <div id="main-content-area" class="row">
         <div class="small-12 columns">
             <h2 class='icon icon-generic' data-icon='D'>&nbsp;&nbsp;Registry</h2>
+            <p>${registry.message}</p>
         </div>
 
         %{--to work with facets--}%
       %{--  <div class="small-12 medium-9 medium-push-3 columns">--}%
 
+
+
         <div class="small-12 medium-12 columns">
-
-%{--            <ul class="pagination" role="navigation" aria-label="Pagination">
-                <li class="pagination-previous disabled">Previous <span class="show-for-sr">page</span></li>
-                <li class="current"><span class="show-for-sr">You're on page</span> 1</li>
-                <li><a href="#" aria-label="Page 2">2</a></li>
-                <li><a href="#" aria-label="Page 3">3</a></li>
-                <li><a href="#" aria-label="Page 4">4</a></li>
-                <li class="ellipsis" aria-hidden="true"></li>
-                <li><a href="#" aria-label="Page 12">12</a></li>
-                <li><a href="#" aria-label="Page 13">13</a></li>
-                <li class="pagination-next"><a href="#" aria-label="Next page">Next <span class="show-for-sr">page</span></a></li>
-            </ul>--}%
-
-            <g:paginate controller="registry" action="index" total="${registry.results.size()}"/>
 
             <table class="hover">
                 <tbody>
@@ -52,23 +43,28 @@
 
                         <g:if test="${it.type == uk.ac.ebi.miriam.common.RegistryResult.ResourceType.COLLECTION}">
                             <h4>
-                                <a href="${it.link}" >${it.name}</a>
+                                <b><a href="${it.link}" >${it.name}</a></b>&nbsp;&nbsp;${it.synonyms}
                             </h4>
+
                             ${it.description}</br>
-                            <b>namespace:</b> ${it.prefix}
+                            <b>Namespace:</b> ${it.prefix}</br>
+                            <b>URI:</b> <a href="${it.link}" >${it.link}</a>
                         </g:if>
                         <g:else>
                             <h4 class="icon icon-generic" data-icon="R">
-                                <a href="${it.link}" >${it.name}</a>
+                                <b><a href="${it.link}" >${it.name}</a></b>
                             </h4>
-                            <g:if test="${!it.prefix.empty}">
-                                <b>provider_code:</b> ${it.prefix}</br>
+                            <g:if test="${it.prefix!=null && !it.prefix.empty}">
+                                <b>Provider_code:</b> ${it.prefix}</br>
                             </g:if>
                             <g:if test="${it.primary}">
-                                <b>primary:</b> ${it.primary}</br>
+                                <b>Primary:</b> ${it.primary}</br>
                             </g:if>
-                            <b>home:</b> <a href="${it.homepage}">${it.homepage}</a></br>
-                            <b>uptime:</b> ${it.upTime}%
+                            <b>Home:</b> <a href="${it.homepage}">${it.homepage}</a></br>
+                            <b>Institution:</b> ${it.institute}</br>
+                            <b>Location:</b> ${it.location}</br>
+                            <b>Example:</b> <a href="${it.idorglink}" >${it.idorglink}</a></br>
+                            <b>Uptime:</b> ${it.upTime}%
                         </g:else>
 
                     </td>
@@ -78,6 +74,7 @@
                 </tbody>
             </table>
 
+        <g:paginate controller="registry" params="${[query:registry.query]}" action="index" total="${registry.hitcount}"/>
 
         </div> <!-- /medium-7 -->
 

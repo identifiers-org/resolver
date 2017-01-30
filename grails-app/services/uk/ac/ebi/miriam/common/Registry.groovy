@@ -7,7 +7,9 @@ package uk.ac.ebi.miriam.common
 class Registry {
 
     int hitcount;
-    List<RegistryResult> results = new ArrayList<RegistryResult>();
+    ArrayList<RegistryResult> results = new ArrayList<RegistryResult>();
+    String query="";
+    String message
 
 
 }

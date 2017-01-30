@@ -140,7 +140,35 @@
             </div>
 
                 <div class="columns medium-6  last">
-                    <form id="local-search" name="local-search" action="//www.ebi.ac.uk/miriam/main/search"
+                    <g:form id="local-search" name="local-search" controller="registry" action="index"
+                          method="get">
+                        <fieldset>
+                            <div class="input-group">
+                                <label>
+                                    <g:if test="${registry!=null}">
+                                        <g:textField name="query" value="${registry.query}"/>
+                                    </g:if>
+                                    <g:else>
+                                        <g:textField name="query"/>
+                                    </g:else>
+
+                                    <p class="examples">Examples:
+                                            <g:link controller="registry" action="index" params="[query:'ontology']" >ontology</g:link>,
+                                            <g:link controller="registry" action="index" params="[query:'enzyme']" >enzyme</g:link>,
+                                            <g:link controller="registry" action="index" params="[query:'EMBL']" >EMBL</g:link>,
+                                            <g:link controller="registry" action="index" params="[query:'Japan']" >Japan</g:link>
+                                </p>
+                                </label>
+
+                                <div class="input-group-button"><input type="submit" value="Search"
+                                                                       class="submit button secondary">
+
+                                </div>
+                            </div>
+                        </fieldset>
+                    </g:form>
+
+                    %{--<form id="local-search" name="local-search" action="//www.ebi.ac.uk/miriam/main/search"
                           method="get">
                         <fieldset>
                             <div class="input-group">
@@ -171,7 +199,7 @@
                                 </div>
                             </div>
                         </fieldset>
-                    </form>
+                    </form>--}%
                 </div>
 
                 <nav>

@@ -66,17 +66,23 @@ environments {
         grails.serverURL = "http://identifiers.org" //"http://ves-"+System.getenv("DATACENTRE")+"-4c:8080" //"http://identifiers.org"
         subdomain = "http://info.identifiers.org"
         staticpages = "http://static.identifiers.org/"
+        searchURL="http://www.ebi.ac.uk/ebisearch/ws/rest/identifiers_registry"
     }
     development {
         grails.serverURL = "http://dev.identifiers.org"
         subdomain = "http://dev.info.identifiers.org"
         staticpages = "http://dev.static.identifiers.org/"
+        searchURL="http://wwwdev.ebi.ac.uk/ebisearch/ws/rest/identifiers_registry"
 
     }
     test {
         grails.serverURL = "http://localhost:8080"
         subdomain = "http://info.localhost:8080"
         staticpages = "http://dev.static.identifiers.org/"
+        searchURL="http://wwwdev.ebi.ac.uk/ebisearch/ws/rest/identifiers_registry"
+    }
+    alpha {
+
     }
 
 }
