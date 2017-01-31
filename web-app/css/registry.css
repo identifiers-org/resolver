@@ -7,3 +7,7 @@ span.currentStep{
     padding-right: 5px;
     padding-left: 5px;
 }
+
+div.collapse {
+    display: none;
+}

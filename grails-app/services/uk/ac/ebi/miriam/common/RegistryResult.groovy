@@ -15,6 +15,7 @@ class RegistryResult {
     String homepage
     Integer upTime
     Boolean primary
+    String pattern
 
     String institute
     String location
@@ -22,4 +23,10 @@ class RegistryResult {
     String idorglink
 
 
+    public String getShortDescription(){
+        if(description.length()<150){
+            return description
+        }
+        return description.substring(0,150) + "..."
+    }
 }

@@ -43,6 +43,7 @@ class RegistryController {
                 registryResult.type = RegistryResult.ResourceType.COLLECTION
                 registryResult.description = dataCollection.definition
                 registryResult.prefix = getNameSpace(dataCollection)
+                registryResult.pattern = dataCollection.regexp
                 registryResult.link = Holders.getGrailsApplication().config.grails.serverURL+"/"+ registryResult.prefix
                 registryResult.synonyms = getSynonyms(dataCollection)
                 registry.results.add(registryResult)
@@ -51,6 +52,8 @@ class RegistryController {
                 Resource resource = Resource.findById(id)
                 if (resource != null) {
                     registryResult.name = resource.info
+                   // System.out.println(registryResult.name + " "+ resource.dataCollection.definition);
+                    registryResult.description = resource.dataCollection.definition
                     registryResult.type = RegistryResult.ResourceType.RESOURCE
                     registryResult.homepage = resource.urlRoot
                     registryResult.prefix = resource.prefix

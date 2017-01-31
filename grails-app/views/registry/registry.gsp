@@ -39,21 +39,45 @@
                 <tbody>
                 <g:each in="${registry.results}">
                 <tr>
+
                     <td>
 
                         <g:if test="${it.type == uk.ac.ebi.miriam.common.RegistryResult.ResourceType.COLLECTION}">
-                            <h4>
+
+                            <div class="expand">
+                                <h4>
+                                <img src="images/collection_icon.svg" height="30" width="30">
                                 <b><a href="${it.link}" >${it.name}</a></b>&nbsp;&nbsp;${it.synonyms}
                             </h4>
 
+                                <div class="shortdescription">
+                                ${it.getShortDescription()}
+                                </div>
+
+                            </div>
+                            <div class="collapse">
                             ${it.description}</br>
+
                             <b>Namespace:</b> ${it.prefix}</br>
-                            <b>URI:</b> <a href="${it.link}" >${it.link}</a>
+                            <b>URI:</b> <a href="${it.link}" >${it.link}</a></br>
+                            <b>Identifier pattern:</b> ${it.pattern}
+
+                            </div>
+
                         </g:if>
                         <g:else>
-                            <h4 class="icon icon-generic" data-icon="R">
+                            <div class="expand">
+                            <h4>
+                                <img src="images/resource_icon.svg" height="30" width="30">
                                 <b><a href="${it.link}" >${it.name}</a></b>
                             </h4>
+                                <div class="shortdescription">
+                                    ${it.getShortDescription()}
+                                </div>
+                            </div>
+
+                            <div class="collapse">
+                            ${it.description}</br>
                             <g:if test="${it.prefix!=null && !it.prefix.empty}">
                                 <b>Provider_code:</b> ${it.prefix}</br>
                             </g:if>
@@ -65,9 +89,10 @@
                             <b>Location:</b> ${it.location}</br>
                             <b>Example:</b> <a href="${it.idorglink}" >${it.idorglink}</a></br>
                             <b>Uptime:</b> ${it.upTime}%
+                            </div>
                         </g:else>
-
                     </td>
+
                 </tr>
                 </g:each>
 
