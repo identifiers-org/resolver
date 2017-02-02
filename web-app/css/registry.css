@@ -11,3 +11,8 @@ span.currentStep{
 div.collapse {
     display: none;
 }
+
+a.expandicon{
+    float: right;
+    font-size: 80%;
+}

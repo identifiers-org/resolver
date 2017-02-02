@@ -5,9 +5,10 @@
 $( function() {
     $(".collapse").hide();
 
-    $(".expand").click(function () {
+    $(".expandicon").click(function () {
 
-        $expand = $(this);
+        $expandicon = $(this);
+        $expand = $(this).parent();
         //getting the next element
         $collapse = $expand.next();
         //open up the content needed - toggle the slide- if visible, slide up, if not slidedown.
@@ -16,8 +17,14 @@ $( function() {
             //change text of header based on visibility of content div
             $shortdescription = $expand.find(".shortdescription");
                 //change text based on condition
-            $collapse.is(":visible") ? $shortdescription.hide() : $shortdescription.show();
+            if($collapse.is(":visible")){
+                $shortdescription.hide();
+                $expandicon.attr('data-icon','w');
 
+            }else {
+                $shortdescription.show();
+                $expandicon.attr('data-icon','u');
+            }
         });
     });
 

@@ -46,6 +46,7 @@ class RegistryController {
                 registryResult.pattern = dataCollection.regexp
                 registryResult.link = Holders.getGrailsApplication().config.grails.serverURL+"/"+ registryResult.prefix
                 registryResult.synonyms = getSynonyms(dataCollection)
+                registryResult.idorglink = Holders.getGrailsApplication().config.grails.serverURL+"/"+ getNameSpace(dataCollection)+"/"+ getExample(dataCollection);
                 registry.results.add(registryResult)
             }
             else {
@@ -82,16 +83,24 @@ class RegistryController {
             registry.query = params.query;
     }
 
+    private String getExample(DataCollection dataCollection){
+        for (String example : dataCollection.resources.exampleId.iterator()){
+            if (example!=null && !example.empty){
+                return example
+            }
+        }
+    }
+
     private String getSynonyms(DataCollection dataCollection){
         if(dataCollection.synonyms.empty){
             return "";
         }
 
-        String synonyms = "(";
+        String synonyms = "";
         dataCollection.synonyms.each {Synonym synonym ->
             synonyms += synonym.name + ", "
         }
-        synonyms = synonyms.substring(0,synonyms.length()-2) + ")"
+        synonyms = synonyms.substring(0,synonyms.length()-2)
 
     }
 

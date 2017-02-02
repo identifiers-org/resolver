@@ -15,16 +15,16 @@
 <link rel="stylesheet" href="//code.jquery.com/ui/1.12.0/themes/base/jquery-ui.css">
 <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
 <script src="https://code.jquery.com/ui/1.12.0/jquery-ui.js"></script>
-%{--<script type="text/javascript" src="${resource(dir: 'js', file: 'registry.js', base: '//static.identifiers.org/')}"></script>--}%
-<script type="text/javascript" src="${resource(dir: 'js', file: 'registry.js')}"></script>
-%{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'registry.css', base: '//static.identifiers.org/')}" type="text/css" />--}%
-<link rel="stylesheet" href="${resource(dir: 'css', file: 'registry.css')}" type="text/css" />
+<script type="text/javascript" src="${resource(dir: 'js', file: 'registry.js', base: '//static.identifiers.org/')}"></script>
+%{--<script type="text/javascript" src="${resource(dir: 'js', file: 'registry.js')}"></script>--}%
+<link rel="stylesheet" href="${resource(dir: 'css', file: 'registry.css', base: '//static.identifiers.org/')}" type="text/css" />
+%{--<link rel="stylesheet" href="${resource(dir: 'css', file: 'registry.css')}" type="text/css" />--}%
 
 <section>
 
     <div id="main-content-area" class="row">
         <div class="small-12 columns">
-            <h2 class='icon icon-generic' data-icon='D'>&nbsp;&nbsp;Registry</h2>
+            <h2>Registry</h2>
             <p>${registry.message}</p>
         </div>
 
@@ -45,10 +45,15 @@
                         <g:if test="${it.type == uk.ac.ebi.miriam.common.RegistryResult.ResourceType.COLLECTION}">
 
                             <div class="expand">
-                                <h4>
-                                <img src="images/collection_icon.svg" height="30" width="30">
-                                <b><a href="${it.link}" >${it.name}</a></b>&nbsp;&nbsp;${it.synonyms}
-                            </h4>
+                                %{--<p class='icon icon-generic' data-icon='D'>--}%
+                                <b class='icon icon-generic' data-icon='D'>&nbsp;&nbsp;
+                                    <a href="${it.link}" >${it.name}</a>&nbsp;&nbsp;
+
+                                    [Namespace: ${it.prefix}]&nbsp;&nbsp;
+                                </b>
+                                    <a class="expandicon icon icon-functional" data-icon="u" title="Information"></a>
+
+                                %{--</p>--}%
 
                                 <div class="shortdescription">
                                 ${it.getShortDescription()}
@@ -56,31 +61,37 @@
 
                             </div>
                             <div class="collapse">
-                            ${it.description}</br>
+                            ${it.description}</br></br>
 
-                            <b>Namespace:</b> ${it.prefix}</br>
+                            <g:if test="${!it.synonyms.empty}">
+                                <b>Synonyms: </b>${it.synonyms} </br>
+                            </g:if>
                             <b>URI:</b> <a href="${it.link}" >${it.link}</a></br>
-                            <b>Identifier pattern:</b> ${it.pattern}
-
+                            <b>Identifier pattern:</b> ${it.pattern}</br>
+                            <b>Example:</b> <a href="${it.idorglink}" >${it.idorglink}</a>
                             </div>
 
                         </g:if>
                         <g:else>
                             <div class="expand">
-                            <h4>
-                                <img src="images/resource_icon.svg" height="30" width="30">
-                                <b><a href="${it.link}" >${it.name}</a></b>
-                            </h4>
+                            %{--<p class="icon icon-generic" data-icon="R">--}%
+                                <b class="icon icon-generic" data-icon="R">&nbsp;&nbsp;
+                                    <a href="${it.link}" >${it.name}</a>&nbsp;&nbsp;
+                                    <g:if test="${it.prefix!=null && !it.prefix.empty}">
+                                        [Provider code: ${it.prefix}] &nbsp;&nbsp;
+                                    </g:if>
+
+                                </b>
+
+                                <a class="expandicon icon icon-functional" data-icon="u" title="Information"></a>
+                            %{--</p>--}%
                                 <div class="shortdescription">
                                     ${it.getShortDescription()}
                                 </div>
                             </div>
 
                             <div class="collapse">
-                            ${it.description}</br>
-                            <g:if test="${it.prefix!=null && !it.prefix.empty}">
-                                <b>Provider_code:</b> ${it.prefix}</br>
-                            </g:if>
+                            ${it.description}</br></br>
                             <g:if test="${it.primary}">
                                 <b>Primary:</b> ${it.primary}</br>
                             </g:if>
