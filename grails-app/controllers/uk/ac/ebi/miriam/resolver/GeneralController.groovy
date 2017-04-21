@@ -31,4 +31,8 @@ class GeneralController
     def about = {
         render(view:"about")
     }
+
+    def requestprefix = {
+        redirect(url: "https://docs.google.com/forms/d/e/1FAIpQLSfrvItfMGrBrau-hmSe7l2-Fp7c1j953UUcmhdKb0Q9HUuL8w/viewform")
+    }
 }

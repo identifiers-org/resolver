@@ -48,6 +48,11 @@ class UrlMappings
 	        action = "about"
         }
 
+        "/request/prefix" {
+            controller = "general"
+            action = "requestprefix"
+        }
+
         "/media/$file" {
             controller = "media"
             action = "download"

@@ -1,5 +1,6 @@
 package uk.ac.ebi.miriam.resolver
 
+import grails.util.Holders
 import uk.ac.ebi.miriam.common.Format
 import uk.ac.ebi.miriam.common.Identifier
 import uk.ac.ebi.miriam.common.PrefixAlias
@@ -53,6 +54,13 @@ class UriRecordController
 
     // resolves the URL
     def resolve = {
+
+        //handle doi and ark
+        if(params.dataCollection.startsWith("doi:")){
+            params.setProperty("dataCollection","doi")
+            params.setProperty("entity",request.forwardURI.substring(1))
+        }
+
         boolean prefixedResourceFound = resolvePrefixedResource(params.dataCollection, params.entity, (String) request.request.requestURL)
 
         if(!prefixedResourceFound)
@@ -199,9 +207,15 @@ class UriRecordController
             }
             if (request.serverName.contains("info."))   // info subdomain URIs
             {
-                withFormat {
-                    html { renderResponseHtml(record) }   // also handles 'all'
-                    rdf { renderResponseRdf(record)}
+                //accept header is not recognised - temparory solution to this problem
+                if (Holders.config.grails.mime.types.get("rdf").contains(request.getHeader("Accept"))) {
+                    renderResponseRdf(record)
+                }
+                else{
+                    withFormat {
+                        html { renderResponseHtml(record) }   // also handles 'all'
+                        rdf { renderResponseRdf(record)}
+                    }
                 }
             }
         }
@@ -406,6 +420,13 @@ class UriRecordController
         String namespace = ""
         String entityId = ""
 
+        if(request.forwardURI.startsWith("/ark:")){
+            params.setProperty("dataCollection","ark")
+            params.setProperty("entity",request.forwardURI.substring(1))
+            resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
+            return
+        }
+
         // performs so more checks to be sure the request is malformed
         def url = (String) request.request.requestURL
         def parts = url.split('/')   // [http:, , identifiers.org, doi, 10.1038, nbt1155]
@@ -453,6 +474,7 @@ class UriRecordController
         {
             if (!entityId.empty)
             {
+                params.setProperty("entity", entityId)
                 resolveProcess((String) request.request.requestURL, namespace, entityId, params, request)
             }
             else
