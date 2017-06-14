@@ -46,7 +46,7 @@ class RegistryController {
                 registryResult.pattern = dataCollection.regexp
                 registryResult.link = Holders.getGrailsApplication().config.grails.serverURL+"/"+ registryResult.prefix
                 registryResult.synonyms = getSynonyms(dataCollection)
-                registryResult.idorglink = Holders.getGrailsApplication().config.grails.serverURL+"/"+ getNameSpace(dataCollection)+"/"+ getExample(dataCollection);
+                registryResult.idorglink = Holders.getGrailsApplication().config.grails.serverURL+"/"+ getCompactId(dataCollection, getExample(dataCollection));
                 registry.results.add(registryResult)
             }
             else {
@@ -63,7 +63,7 @@ class RegistryController {
                     registryResult.primary = resource.primary
                     registryResult.institute = resource.institution
                     registryResult.location = resource.location
-                    registryResult.idorglink = Holders.getGrailsApplication().config.grails.serverURL+"/"+ getNameSpace(resource.dataCollection)+"/"+resource.exampleId
+                    registryResult.idorglink = Holders.getGrailsApplication().config.grails.serverURL+"/"+ getCompactId(resource.dataCollection,resource.exampleId);
                     registry.results.add(registryResult)
                 }
             }
@@ -81,6 +81,15 @@ class RegistryController {
 
         if(params.query != null)
             registry.query = params.query;
+    }
+
+    private String getCompactId(DataCollection dataCollection, String exampleID){
+        if(dataCollection.prefixed_id){
+            return exampleID
+        }else{
+            return getNameSpace(dataCollection)+":"+ exampleID
+        }
+
     }
 
     private String getExample(DataCollection dataCollection){
