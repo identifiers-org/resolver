@@ -66,8 +66,10 @@ class XMLGenerator {
                                 location(r.location)
 
                                 Reliability rb = r.reliability
-                                if (rb)
+                                if (rb) {
+                                    keyword(rb.keyword)
                                     status(state: rb.getHumanState(rb.state), reliability: rb.uptimePercent())
+                                }
                             }
                         }
                     }

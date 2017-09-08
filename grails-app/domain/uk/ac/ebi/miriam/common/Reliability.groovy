@@ -38,6 +38,7 @@ class Reliability
     Integer unknown
     Boolean ajax
     Integer state   // O: failure; 1: resource working; 2: unknow (no keyword); 3: probably up (Ajax)*
+    String keyword
 
     // GORM: unidirectional one-to-one relationship
     static belongsTo = [resource:Resource]
@@ -50,6 +51,7 @@ class Reliability
         unknown column:"unknown"
         ajax column:"ajax"
         state column:"state"
+        keyword column: "keyword"
 
         resource column:"resource_id", type:"string"   // foreign key
 

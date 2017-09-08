@@ -12,7 +12,7 @@
         <p>Sorry, the requested page does not exist.</p>
 
         <h3>Report bug</h3>
-        <p>If you think this is the result of an error on our side, please report it to:<a href="mailto:biomodels-net-support@lists.sf.net" target="_top">biomodels-net-support</a> (including the requested URL).</p>
+        <p>If you think this is the result of an error on our side, please report it to <a href="mailto:identifiers-org@ebi.ac.uk" target="_top"> identifiers.org support</a> (including the requested URL).</p>
 
   </body>
 </html>

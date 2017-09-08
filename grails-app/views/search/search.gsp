@@ -29,11 +29,11 @@
         <div class="medium-6 medium-centered large-6 large-centered columns">
 
                 <p class="row">
-                    <label for="resources">Find valid database resource names, eg: CHEBI.
-                    A list of all valid databases can be found <a href="rest/collections/" target="_blank">here</a>.
+                    <label for="resources">Find valid prefixes, eg: CHEBI.
+                    A list of all valid prefixes can be found <a href="rest/collections/" target="_blank">here</a>.
                     </label>
                     %{--<div class="row">--}%
-                    <input type="text" name="resources" placeholder="Enter a resource name" value="" id="resources">
+                    <input type="text" name="resources" placeholder="Enter a collection name" value="" id="resources">
                     %{--<input type="submit" class="button columns medium-2" value="Show All" id="showall"/>--}%
                     %{--</div>--}%
 
