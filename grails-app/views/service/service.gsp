@@ -15,7 +15,7 @@
 
 <div class="pane-content">
 
-    <h3><span class='icon icon-generic' data-icon='D'></span>&nbsp;&nbsp;<a href="registry">Registry</a></h3>
+    <h3><span class='icon icon-generic' data-icon='D'></span>&nbsp;&nbsp;<a href="//www.ebi.ac.uk/miriam/main/collections">Registry</a></h3>
 
     <p>The Registry provides the necessary information to allow users to generate unique, perennial and unambiguous identifiers for scientific data.</p>
 </div>
@@ -24,23 +24,9 @@
 
 <div class="pane-content">
 
-    <h3><span class='icon icon-generic' data-icon='d'></span>&nbsp;&nbsp;<a href="services/sparql">SPARQL Endpoint</a></h3>
-
-    <p>SPARQL endpoint to perform conversions between different URI schemes recorded in the Registry.</p>
-</div>
-
-<div class="pane-content">
-
     <h3><span class='icon icon-functional' data-icon='1'></span>&nbsp;&nbsp;<a href="search">Advanced Search</a></h3>
 
     <p>Advanced search to find valid prefixes, identifiers and providers.</p>
-</div>
-
-<div class="pane-content">
-
-    <h3><span class='icon icon-generic' data-icon='i'></span>&nbsp;&nbsp;<a href="info">Info Service</a></h3>
-
-    <p>Info service provide access to the Registry's records to identify and retrieve metadata about data entities.</p>
 </div>
 
 <div class="pane-content">
@@ -52,10 +38,29 @@
 
 <div class="pane-content">
 
-    <h3><span class='icon icon-functional' data-icon='='>&nbsp;&nbsp;</span>Download</h3>
+    <h3><span class='icon icon-functional' data-icon='='></span>&nbsp;&nbsp;<a href="download">Download</a></h3>
 
-    <p>Registry's content in XML is available <g:link controller="service" action="registryxml" title="Registry's content in XML">here</g:link>.</p>
+    <p>Download Registry's content in diffent formats.</p>
 </div>
+
+%{--<div class="panel-separator"></div>--}%
+
+<div class="pane-content">
+
+    <h3><span class='icon icon-generic' data-icon='d'></span>&nbsp;&nbsp;<a href="services/sparql">SPARQL Endpoint</a></h3>
+
+    <p>SPARQL endpoint to perform conversions between different URI schemes recorded in the Registry.</p>
+</div>
+
+
+<div class="pane-content">
+
+    <h3><span class='icon icon-generic' data-icon='i'></span>&nbsp;&nbsp;<a href="info">Info Service</a></h3>
+
+    <p>Info service provide access to the Registry's records to identify and retrieve metadata about data entities.</p>
+</div>
+
+
 
 </body>
 </html>

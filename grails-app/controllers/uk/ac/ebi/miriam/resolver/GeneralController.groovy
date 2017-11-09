@@ -13,7 +13,8 @@ class GeneralController
     
 
     def intro = {
-        render(view:"intro")
+       // render(view:"intro")
+        render(view:"home")
     }
 
     def news = {

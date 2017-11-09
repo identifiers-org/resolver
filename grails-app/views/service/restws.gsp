@@ -15,5 +15,7 @@
 
 <body>
 <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages') + 'restws.html'}" charEncoding="UTF-8" />
+
+<p>Access MIRIAM Web Services <a href="https://www.ebi.ac.uk/miriam/main/mdb?section=ws">here.</a></p>
 </body>
 </html>

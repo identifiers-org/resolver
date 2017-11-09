@@ -152,12 +152,15 @@
                                         <g:textField name="query"/>
                                     </g:else>
 
-                                    <p class="examples">Examples:
+                                    <div class="text-right">
+                                    <g:link controller="search" action="index" >Advanced search</g:link>
+                                    </div>
+                                    %{--<p class="examples">Examples:
                                             <g:link controller="registry" action="index" params="[query:'ontology']" >ontology</g:link>,
                                             <g:link controller="registry" action="index" params="[query:'enzyme']" >enzyme</g:link>,
                                             <g:link controller="registry" action="index" params="[query:'EMBL']" >EMBL</g:link>,
                                             <g:link controller="registry" action="index" params="[query:'Japan']" >Japan</g:link>
-                                </p>
+                                    </p>--}%
                                 </label>
 
                                 <div class="input-group-button"><input type="submit" value="Search"
@@ -201,11 +204,12 @@
                         </fieldset>
                     </form>--}%
                 </div>
-
+                    %{--<h2 class="white-color">Identifier resolution service for life science data</h2>--}%
                 <nav>
                     %{--<ul class="grid_24 dropdown menu float-left columns medium-12" id="local-nav" data-dropdown-menu="true">--}%
                 <ul class="grid_24 menu float-left columns medium-12" id="local-nav" data-dropdown-menu="true">
                     <li class="first"><g:link controller="general" action="intro" title="Identifiers.org">Home</g:link></li>
+                    %{--<li><a href="//www.ebi.ac.uk/miriam/main/collections">Registry</a></li>--}%
                     <li><g:link controller="general" action="documentation" title="Documentation">Documentation</g:link>
                     <li><g:link controller="service" action="index" title="Services">Services</g:link>
                     <li class="last"><g:link controller="general" action="about" title="About">About</g:link></li>
@@ -217,7 +221,8 @@
                               <li class="functional"><a href="#" class="icon icon-generic" data-icon="\">Feedback</a></li>
                               <li class="functional"><a href="#" class="icon icon-functional" data-icon="r">Share</a></li>--}%
                     <li class="menu-412 menu-feedback functional float-right" id="feedback"><a href="//www.ebi.ac.uk/support/identifiers.org" target="_blank" class="icon icon-generic" data-icon="\">Feedback</a></li>
-                    <li class="float-right"><a href="//identifiers.org/request/prefix" target="_blank" class="icon icon-functional" data-icon="D">Request Prefix</a></li>
+                    %{--<li class="float-right"><a href="//identifiers.org/request/prefix" target="_blank" class="icon icon-functional" data-icon="D">Request Prefix</a></li>--}%
+                    %{--<li class="float-right"><g:link controller="general" action="about" title="About">About</g:link></li>--}%
 
                 </ul>
 

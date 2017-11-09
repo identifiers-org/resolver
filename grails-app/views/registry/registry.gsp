@@ -24,7 +24,6 @@
 
     <div id="main-content-area" class="row">
         <div class="small-12 columns">
-            <h2>Registry</h2>
             <p>${registry.message}</p>
         </div>
 

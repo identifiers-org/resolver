@@ -22,6 +22,10 @@ class ServiceController {
         render (view: "restws")
     }
 
+    def download() {
+        render (view: "download")
+    }
+
     def registryxml(){
         DateFormat df = new SimpleDateFormat("EEE, dd MMM yyyy HH:mm:ss z");
         df.setTimeZone(TimeZone.getTimeZone("GMT"));

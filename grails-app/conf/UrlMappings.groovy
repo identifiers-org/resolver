@@ -95,6 +95,11 @@ class UrlMappings
             action = "restws"
         }
 
+        "/download" {
+            controller = "service"
+            action = "download"
+        }
+
         "/service/$action" (controller:"service"){
             action = $action
         }
