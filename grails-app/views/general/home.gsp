@@ -21,7 +21,7 @@
 <body>
 <!-- main content (3/4 of total width) -->
 <div id="home_main_content" class="small-12 medium-9 column">
-%{--    <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages')+ 'intro.html'}" charEncoding="UTF-8" />--}%
+    <c:import url="${Holders.getGrailsApplication().config.getProperty('staticpages')+ 'intro.html'}" charEncoding="UTF-8" />
 
 %{--    <label for="resIdent">Validate a given prefix:identifier, eg: CHEBI:36927 </label>
     <input type="text" name="resIdent" placeholder="Enter a prefix:identifier and press Enter" value="" id="resIdent">
@@ -29,7 +29,6 @@
     <label id="validate-result"></label>
     <div id="progressbar"></div>--}%
 
-    <p>Identifiers.org is an established resolving system that enables the referencing of data for the scientific community, with a current focus on the Life Sciences domain. It handles persistent identifiers in the form of URIs and CURIEs. This allows the referencing of data in both a location-independent and resource-dependent manner. The provision of resolvable identifiers (URLs) fits well with the Semantic Web vision, and the Linked Data initiative.</p>
 
     %{--<h2>Identifier resolution service for life science data</h2>--}%
 
@@ -77,7 +76,7 @@
         <div class="columns medium-6">
             <div class="callout">
             <h3 class="text-center">Meta resolvers</h3>
-            <p>Idetifiers.org share a common prefix registry with N2T resolver, based in California Digital Library which enable users to resolve Compact Identifiers using <a href="https://identifiers.org">Identifiers.org</a> or <a href="https://n2t.net/">N2T</a> resolvers.</p>
+            <p>Idetifiers.org share a common prefix registry with N2T.net resolver, based in California Digital Library which enable users to resolve Compact Identifiers using <a href="https://identifiers.org">Identifiers.org</a> or <a href="https://n2t.net/">N2T.net</a> resolvers.</p>
             </div>
             </div>
     </div>

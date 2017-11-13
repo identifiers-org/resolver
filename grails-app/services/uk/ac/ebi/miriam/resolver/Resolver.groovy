@@ -319,6 +319,7 @@ class Resolver
                 if (!r.obsolete) {
                     if (isResourceUp(r)) {
                         if (r.primary) {
+                            runningResources.clear();
                             return runningResources << r
                         }
                         runningResources.add(r)
