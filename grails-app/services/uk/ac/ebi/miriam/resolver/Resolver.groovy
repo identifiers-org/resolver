@@ -59,8 +59,8 @@ class Resolver
      * we fall back on the natural order of the resources' id.
      */
     private static final Comparator RESOURCE_COMPARATOR = { Resource a, Resource b ->
-        int u1 = a.reliability.uptimePercent()
-        int u2 = b.reliability.uptimePercent()
+        int u1 = a.reliability!=null ? a.reliability.uptimePercent() : 0;
+        int u2 = b.reliability!=null ? b.reliability.uptimePercent() : 0;
         if(u1 == u2) {
             return a.id <=> b.id
         }
@@ -309,7 +309,6 @@ class Resolver
             def data = DataCollection.load id
             //TODO data.resources should return all resources, not just one.
             def resources = Resource.findAllByDataCollection data
-
 
             Set<Resource> runningResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)
             Set<Resource> endorsedResources = new TreeSet<Resource>(RESOURCE_COMPARATOR)

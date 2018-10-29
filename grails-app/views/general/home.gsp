@@ -75,8 +75,8 @@
 
         <div class="columns medium-6">
             <div class="callout">
-            <h3 class="text-center">Meta resolvers</h3>
-            <p>Idetifiers.org share a common prefix registry with N2T.net resolver, based in California Digital Library which enable users to resolve Compact Identifiers using <a href="https://identifiers.org">Identifiers.org</a> or <a href="https://n2t.net/">N2T.net</a> resolvers.</p>
+            <h3 class="text-center">Meta-resolvers</h3>
+            <p>Identifiers.org share a common prefix registry with N2T.net, based at the California Digital Library, enabling users to resolve Compact Identifiers using the <a href="//identifiers.org">Identifiers.org</a> or <a href="//n2t.net/">N2T.net</a> meta-resolver.</p>
             </div>
             </div>
     </div>

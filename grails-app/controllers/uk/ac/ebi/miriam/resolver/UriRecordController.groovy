@@ -55,12 +55,23 @@ class UriRecordController
     // resolves the URL
     def resolve = {
 
-        //handle doi and ark
+        //handle doi and mzspec
         if(params.dataCollection.startsWith("doi:")){
             params.setProperty("dataCollection","doi")
             params.setProperty("entity",request.forwardURI.substring(1))
         }
-
+        else if(request.forwardURI.startsWith("/mzspec:")){
+            params.setProperty("dataCollection","mzspec")
+            params.setProperty("entity",request.forwardURI.substring(1))
+            resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
+            return
+        }
+        else if(request.forwardURI.startsWith("/kaggle:") || request.forwardURI.startsWith("/ga4ghdos:")){
+            params.setProperty("dataCollection",request.forwardURI.substring(1,request.forwardURI.indexOf(':')))
+            params.setProperty("entity",request.forwardURI.substring(request.forwardURI.indexOf(':')+1))
+            resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
+            return
+        }
         boolean prefixedResourceFound = resolvePrefixedResource(params.dataCollection, params.entity, (String) request.request.requestURL)
 
         if(!prefixedResourceFound)
@@ -238,6 +249,7 @@ class UriRecordController
     }
 
     def resolvePrefixedResource(String rprefix, String prefixedResource, String url) {
+
         Set<Resource> resources = Resource.findAllByPrefixAndObsolete(rprefix,false)
 
         if(resources.empty)
