@@ -66,7 +66,7 @@ class UriRecordController
             resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
             return
         }
-        else if(request.forwardURI.startsWith("/kaggle:") || request.forwardURI.startsWith("/ga4ghdos:")){
+        else if(request.forwardURI.startsWith("/kaggle:") || request.forwardURI.startsWith("/ga4ghdos:") || request.forwardURI.startsWith("/occ:")){
             params.setProperty("dataCollection",request.forwardURI.substring(1,request.forwardURI.indexOf(':')))
             params.setProperty("entity",request.forwardURI.substring(request.forwardURI.indexOf(':')+1))
             resolveProcess((String) request.request.requestURL, params.dataCollection, params.entity, params, request)
